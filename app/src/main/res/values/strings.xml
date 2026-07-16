@@ -158,5 +158,8 @@
     <string name="new_package">New Package</string>
     <string name="add_to_package_2">Add To Package</string>
     <string name="new_package_">NEW PACKAGE</string>
+    <string name="package_">Package</string>
+    <string name="package_created_successfully">Package created successfully!</string>
+    <string name="added_to_package_successfully">Added to package successfully!</string>
 
 </resources>

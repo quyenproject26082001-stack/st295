@@ -39,6 +39,7 @@ import com.create.lalala.ui.home.HomeActivity
 import com.create.lalala.dialog.CreateNameDialog
 import com.create.lalala.ui.my_creation.fragment.MyAvatarFragment
 import com.create.lalala.ui.my_creation.fragment.MyDesignFragment
+import com.create.lalala.ui.my_creation.fragment.PackageFragment
 import com.create.lalala.ui.my_creation.view_model.MyCreationViewModel
 import com.create.lalala.ui.permission.PermissionViewModel
 import kotlinx.coroutines.launch
@@ -52,9 +53,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     ) { _ ->
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
+        val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
         when {
             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.resetSelectionMode()
             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.resetSelectionMode()
+            packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.resetSelectionMode()
         }
         exitSelectionMode()
     }
@@ -65,6 +68,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
     private var myAvatarFragment: MyAvatarFragment? = null
     private var myDesignFragment: MyDesignFragment? = null
+    private var packageFragment: PackageFragment? = null
     private var isInSelectionMode = false
     private var isAllSelected = false
     private var pendingDownloadList: ArrayList<String>? = null
@@ -102,13 +106,21 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                                         imvTabBackground.setImageResource(R.drawable.bg_avatar_slt)
                                         setupSelectedTab(tvMyPride)
                                         setupUnselectedTab(tvMyDesign)
+                                        setupUnselectedTab(tvPackage)
                                         showFragment(ValueKey.AVATAR_TYPE)
                                     }
                                     ValueKey.MY_DESIGN_TYPE -> {
                                         imvTabBackground.setImageResource(R.drawable.bg_design_slt)
                                         setupUnselectedTab(tvMyPride)
                                         setupSelectedTab(tvMyDesign)
+                                        setupUnselectedTab(tvPackage)
                                         showFragment(ValueKey.MY_DESIGN_TYPE)
+                                    }
+                                    ValueKey.PACKAGE_TYPE -> {
+                                        setupUnselectedTab(tvMyPride)
+                                        setupUnselectedTab(tvMyDesign)
+                                        setupSelectedTab(tvPackage)
+                                        showFragment(ValueKey.PACKAGE_TYPE)
                                     }
                                 }
                                 updateBottomButtonsVisibility()
@@ -151,9 +163,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                     if (isInSelectionMode) {
                         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
                         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
+                        val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
                         when {
                             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.resetSelectionMode()
                             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.resetSelectionMode()
+                            packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.resetSelectionMode()
                         }
                     } else {
                         startIntentWithClearTop(HomeActivity::class.java)
@@ -173,6 +187,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
             btnMyPixel.tap { viewModel.setTypeStatus(ValueKey.AVATAR_TYPE) }
             btnMyDesign.tap { viewModel.setTypeStatus(ValueKey.MY_DESIGN_TYPE) }
+            btnPackage.tap { viewModel.setTypeStatus(ValueKey.PACKAGE_TYPE) }
 
             // WhatsApp, Telegram buttons in lnlBottom
             val layoutBottom = lnlBottom.getChildAt(0)
@@ -186,11 +201,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             }
 
             // Share/Download buttons in flBottomView (select mode)
-            bottomView.btnWhatsapp.tap(800) {
+            bottomView.btnShare.tap(800) {
                 val paths = getSelectedPathsFromCurrentFragment()
                 handleShare(paths)
             }
-            bottomView.btnTelegram.tap(800) {
+            bottomView.btnDownload.tap(800) {
                 val paths = getSelectedPathsFromCurrentFragment()
                 if (paths.isEmpty()) { showToast(R.string.please_select_an_image); return@tap }
                 checkStoragePermissionForDownload(paths)
@@ -234,6 +249,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     private fun handleSelectAllFromCurrentFragment() {
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
+        val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
 
         val doSelect: (() -> Unit)
         val doDeselect: (() -> Unit)
@@ -246,6 +262,10 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             designFragment is MyDesignFragment && designFragment.isVisible -> {
                 doSelect = { designFragment.selectAllItems() }
                 doDeselect = { designFragment.deselectAllItems() }
+            }
+            packageFragment is PackageFragment && packageFragment.isVisible -> {
+                doSelect = { packageFragment.selectAllItems() }
+                doDeselect = { packageFragment.deselectAllItems() }
             }
             else -> return
         }
@@ -264,10 +284,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     private fun handleDeleteSelectedFromCurrentFragment() {
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
+        val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
 
         when {
             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.deleteSelectedItems()
             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.deleteSelectedItems()
+            packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.deleteSelectedItems()
         }
     }
 
@@ -313,6 +335,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         binding.apply {
             tvMyPride.select()
             tvMyDesign.select()
+            tvPackage.select()
         }
     }
 
@@ -411,14 +434,25 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             myDesignFragment = MyDesignFragment()
             transaction.add(R.id.frmList, myDesignFragment!!, "MyDesignFragment")
         }
+        if (packageFragment == null) {
+            packageFragment = PackageFragment()
+            transaction.add(R.id.frmList, packageFragment!!, "PackageFragment")
+        }
         when (type) {
             ValueKey.AVATAR_TYPE -> {
                 myAvatarFragment?.let { transaction.show(it) }
                 myDesignFragment?.let { transaction.hide(it) }
+                packageFragment?.let { transaction.hide(it) }
             }
             ValueKey.MY_DESIGN_TYPE -> {
                 myAvatarFragment?.let { transaction.hide(it) }
                 myDesignFragment?.let { transaction.show(it) }
+                packageFragment?.let { transaction.hide(it) }
+            }
+            ValueKey.PACKAGE_TYPE -> {
+                myAvatarFragment?.let { transaction.hide(it) }
+                myDesignFragment?.let { transaction.hide(it) }
+                packageFragment?.let { transaction.show(it) }
             }
         }
 
@@ -464,10 +498,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         if (isInSelectionMode) {
             val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
             val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
+            val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
 
             when {
                 avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.resetSelectionMode()
                 designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.resetSelectionMode()
+                packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.resetSelectionMode()
             }
             exitSelectionMode()
         }
@@ -520,6 +556,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         binding.flBottomView.visible()
         // Avatar tab: keep lnlBottom (whatsapp/telegram), move closer to flBottomView
         // Design tab: hide lnlBottom (no whatsapp/telegram)
+        if (viewModel.typeStatus.value == ValueKey.PACKAGE_TYPE) {
+            binding.lnlBottom.gone()
+            return
+        }
+
         if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
             binding.lnlBottom.visible()
             binding.lnlBottom.translationY = (15f * resources.displayMetrics.density)
@@ -539,13 +580,16 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         val currentlyEmpty = when (viewModel.typeStatus.value) {
             ValueKey.AVATAR_TYPE -> myAvatarFragment?.getAllPaths()?.isEmpty() ?: true
             ValueKey.MY_DESIGN_TYPE -> myDesignFragment?.getAllPaths()?.isEmpty() ?: true
+            ValueKey.PACKAGE_TYPE -> packageFragment?.getAllPackageIds()?.isEmpty() ?: true
             else -> true
         }
         if (!currentlyEmpty) {
             if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
                 binding.lnlBottom.visible()
-            } else {
+            } else if (viewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
                 binding.lnlBottom.invisible()
+            } else {
+                binding.lnlBottom.gone()
             }
             binding.lnlBottom.translationY = (-0f*resources.displayMetrics.density)
         }

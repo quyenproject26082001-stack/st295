@@ -1,0 +1,178 @@
+package com.create.lalala.ui.package_view
+
+import android.content.Intent
+import android.view.LayoutInflater
+import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.create.lalala.R
+import com.create.lalala.core.base.BaseActivity
+import com.create.lalala.core.extensions.gone
+import com.create.lalala.core.extensions.handleBackLeftToRight
+import com.create.lalala.core.extensions.hideNavigation
+import com.create.lalala.core.extensions.tap
+import com.create.lalala.core.extensions.visible
+import com.create.lalala.core.helper.LanguageHelper
+import com.create.lalala.core.utils.key.IntentKey
+import com.create.lalala.core.utils.state.HandleState
+import com.create.lalala.databinding.ActivityViewAllPackageBinding
+import com.create.lalala.dialog.YesNoDialog
+import com.create.lalala.ui.my_creation.adapter.PackageItemAdapter
+import com.create.lalala.ui.my_creation.view_model.MyCreationViewModel
+import com.create.lalala.ui.my_creation.view_model.ViewAllPackageViewModel
+import kotlinx.coroutines.launch
+
+class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
+    private val viewModel: ViewAllPackageViewModel by viewModels()
+    private val shareViewModel: MyCreationViewModel by viewModels()
+    private val packageItemAdapter by lazy { PackageItemAdapter() }
+    private var isInSelectionMode = false
+    private var isAllSelected = false
+
+    override fun setViewBinding(): ActivityViewAllPackageBinding {
+        return ActivityViewAllPackageBinding.inflate(LayoutInflater.from(this))
+    }
+
+    override fun initView() {
+        val packageId = intent.getStringExtra(IntentKey.PACKAGE_ID_KEY).orEmpty()
+        viewModel.loadPackage(this, packageId)
+        binding.rcvPackageItem.adapter = packageItemAdapter
+        binding.rcvPackageItem.itemAnimator = null
+        binding.actionBar.tvCenter.text = intent.getStringExtra(IntentKey.PACKAGE_NAME_KEY).orEmpty()
+    }
+
+    override fun dataObservable() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.itemList.collect { list ->
+                    packageItemAdapter.submitList(list)
+                }
+            }
+        }
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                shareViewModel.downloadState.collect { state ->
+                    when (state) {
+                        HandleState.LOADING -> showLoading()
+                        HandleState.SUCCESS -> {
+                            dismissLoading()
+                            showToast(R.string.download_success)
+                        }
+                        else -> {
+                            dismissLoading()
+                            showToast(R.string.download_failed_please_try_again_later)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    override fun viewListener() {
+        binding.actionBar.btnActionBarLeft.tap {
+            if (isInSelectionMode) resetSelectionMode() else handleBackLeftToRight()
+        }
+        binding.actionBar.btnActionBarNextRight.tap { handleDeleteSelected() }
+        binding.actionBar.btnActionBarRight.tap { handleSelectAll() }
+        binding.bottomView.btnRight.tap { shareViewModel.shareImages(this, viewModel.getSelectedPaths()) }
+        binding.bottomView.btnDownLoad.tap {
+            val paths = viewModel.getSelectedPaths()
+            if (paths.isEmpty()) {
+                showToast(R.string.please_select_an_image)
+            } else {
+                shareViewModel.downloadFiles(this, paths)
+            }
+        }
+        packageItemAdapter.onItemClick = { path ->
+            if (!isInSelectionMode) {
+                startActivity(Intent(this, ViewPackageActivity::class.java).apply {
+                    putExtra(IntentKey.INTENT_KEY, path)
+                    putExtra(IntentKey.PACKAGE_ID_KEY, viewModel.packageId)
+                })
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            }
+        }
+        packageItemAdapter.onLongClick = { position ->
+            viewModel.showLongClick(position)
+            enterSelectionMode()
+            updateSelectAllIcon(viewModel.itemList.value.all { it.isSelected })
+        }
+        packageItemAdapter.onItemTick = { position ->
+            viewModel.toggleSelect(position)
+            updateSelectAllIcon(viewModel.itemList.value.all { it.isSelected })
+        }
+    }
+
+    override fun initActionBar() {
+        binding.actionBar.apply {
+            btnActionBarLeft.visible()
+            tvCenter.visible()
+            btnActionBarNextRight.gone()
+            btnActionBarRight.gone()
+        }
+        binding.flBottom.gone()
+    }
+
+    private fun enterSelectionMode() {
+        isInSelectionMode = true
+        isAllSelected = false
+        binding.actionBar.btnActionBarNextRight.visible()
+        binding.actionBar.btnActionBarNextRight.setImageResource(R.drawable.ic_delete_creation)
+        binding.actionBar.btnActionBarRight.visible()
+        binding.actionBar.btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
+        binding.flBottom.visible()
+    }
+
+    private fun resetSelectionMode() {
+        isInSelectionMode = false
+        isAllSelected = false
+        viewModel.clearSelection()
+        binding.actionBar.btnActionBarNextRight.gone()
+        binding.actionBar.btnActionBarRight.gone()
+        binding.flBottom.gone()
+    }
+
+    private fun handleSelectAll() {
+        if (isAllSelected) {
+            viewModel.selectAll(false)
+            updateSelectAllIcon(false)
+        } else {
+            viewModel.selectAll(true)
+            updateSelectAllIcon(true)
+        }
+    }
+
+    private fun updateSelectAllIcon(allSelected: Boolean) {
+        isAllSelected = allSelected
+        binding.actionBar.btnActionBarRight.setImageResource(
+            if (allSelected) R.drawable.ic_select_all else R.drawable.ic_not_select_all
+        )
+    }
+
+    private fun handleDeleteSelected() {
+        val selectedPaths = viewModel.getSelectedPaths()
+        if (selectedPaths.isEmpty()) {
+            showToast(R.string.please_select_an_image)
+            return
+        }
+        val dialog = YesNoDialog(this, R.string.delete, R.string.are_you_sure_want_to_delete_this_item)
+        LanguageHelper.setLocale(this)
+        dialog.show()
+        dialog.onNoClick = {
+            dialog.dismiss()
+            hideNavigation()
+        }
+        dialog.onYesClick = {
+            viewModel.deletePaths(this, selectedPaths)
+            dialog.dismiss()
+            hideNavigation()
+            resetSelectionMode()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (viewModel.packageId.isNotEmpty()) viewModel.loadPackage(this, viewModel.packageId)
+    }
+}

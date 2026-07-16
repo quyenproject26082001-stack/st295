@@ -2,6 +2,7 @@ package com.create.lalala.core.utils.key
 
 object ValueKey {
     const val DOWNLOAD_ALBUM = "ST295_Horror_Emoji_Maker"
+    const val PACKAGE_ALBUM = "ST295_Horror_Emoji_Maker_Package"
     const val DOWNLOAD_ALBUM_BACKGROUND = "Image Background"
     const val RANDOM_TEMP_ALBUM = "RANDOM_TEMP_ALBUM"
 
@@ -13,6 +14,7 @@ object ValueKey {
     const val DATA_FILE_API_INTERNAL = "data_api_json.txt"
     const val SUGGESTION_FILE_INTERNAL = "suggestion_json.txt"
     const val EDIT_FILE_INTERNAL = "data_edit.json"
+    const val PACKAGE_FILE_INTERNAL = "package_data.json"
 
     const val TYPE_VIEW = 0
     const val TYPE_SUCCESS = 1
@@ -24,6 +26,7 @@ object ValueKey {
     const val AVATAR_TYPE = 0
     const val MY_DESIGN_TYPE = 1
     const val PRIDE_OVERLAY_TYPE = 2
+    const val PACKAGE_TYPE = 3
 
     const val PRIDE_ALBUM = "pride_overlay"
 

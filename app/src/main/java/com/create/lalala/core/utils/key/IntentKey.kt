@@ -8,4 +8,6 @@ object IntentKey {
     const val PATH_KEY = "PATH_KEY"
     const val STATUS_FROM_KEY = "STATUS_FROM_KEY"
     const val TAB_KEY = "TAB_KEY"
+    const val PACKAGE_ID_KEY = "PACKAGE_ID_KEY"
+    const val PACKAGE_NAME_KEY = "PACKAGE_NAME_KEY"
 }

@@ -83,8 +83,8 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
                 setImageActionBar(btnActionBarRight, R.drawable.ic_delete_view)
             }
             includeLayoutBottom.apply {
-                btnTelegram.visible()
-                btnWhatsapp.visible()
+                btnShare.visible()
+                btnDownload.visible()
             }
 
             // Set scaleType based on content type
@@ -135,10 +135,10 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
             }
 
 
-            includeLayoutBottom.btnWhatsapp.tap(2000) {
+            includeLayoutBottom.btnShare.tap(2000) {
                 viewModel.shareFiles(this@ViewActivity)
             }
-            includeLayoutBottom.btnTelegram.tap(2000) {
+            includeLayoutBottom.btnDownload.tap(2000) {
                 checkStoragePermission()
             }
         }

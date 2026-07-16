@@ -124,6 +124,26 @@
 
             </FrameLayout>
 
+            <FrameLayout
+                android:id="@+id/btnPackage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                    android:id="@+id/tvPackage"
+                    style="@style/single_marquee"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/howli_layers_base"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/package_"
+                    android:textColor="@color/app"
+                    android:textSize="18sp" />
+
+            </FrameLayout>
+
         </LinearLayout>
 
     </FrameLayout>
