@@ -41,7 +41,7 @@
                 android:id="@+id/lnlAddItem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FFCC33"
+                android:background="#FFFFFF"
                 android:visibility="visible">
 
                 <ImageView
@@ -49,8 +49,8 @@
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
-                    android:padding="10dp"
-
+                    android:padding="12dp"
+                    android:layout_marginBottom="10dp"
                     android:src="@drawable/ic_add_image" />
 
                 <LinearLayout
@@ -67,14 +67,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/add_image"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:gravity="center"
                         android:visibility="visible"
+                        android:includeFontPadding="false"
                         android:fontFamily="@font/howli_layers_base"
-                        android:textSize="8.5sp"
+                        android:textSize="12sp"
                         />
 
-
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.2" />
 
 
                 </LinearLayout>

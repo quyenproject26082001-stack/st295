@@ -71,6 +71,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lnlBottom"
         app:layout_constraintTop_toBottomOf="@id/flActionBar">
 
         <!--    flSave-->
@@ -102,10 +103,10 @@
         android:id="@+id/flFunction"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="0dp"
         android:clipChildren="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardSave">
+        app:layout_constraintTop_toBottomOf="@id/gl">
 
         <ImageView
             android:id="@+id/bg_bg"
@@ -113,7 +114,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="0dp"
-            android:background="@drawable/bg_cus" />
+            android:background="@color/app" />
 
         <ImageView
             android:id="@+id/bg_other"
@@ -121,7 +122,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="0dp"
-            android:background="@drawable/bg_cus"
+            android:background="@color/app"
             android:visibility="gone" />
 
 
@@ -129,12 +130,12 @@
             android:id="@+id/sectionTab"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:layout_marginHorizontal="12dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:background="@color/transparent"
             android:orientation="horizontal"
             android:visibility="gone"
-            tools:visibility="gone">
+            tools:visibility="visible">
 
             <!--                btnBackgroundImage-->
             <FrameLayout
@@ -150,21 +151,17 @@
                     android:layout_height="match_parent"
                     android:scaleType="fitXY" />
 
-                <TextView
-                    android:id="@+id/subTabImage"
-                    android:layout_width="12dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:background="@drawable/un_selected_tab_sub"
-                    android:visibility="gone" />
+
 
                 <!--                imvFocusImage (nền khi chọn)-->
-                <ImageView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/imvFocusImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/selected_tab"
+                    app:cardBackgroundColor="@color/white"
+                    app:strokeColor="@color/transparent"
+                    app:cardCornerRadius="16dp"
                     android:visibility="visible" />
 
                 <!--                tvBackgroundImage-->
@@ -181,10 +178,19 @@
                     android:textColor="@color/app"
                     android:textSize="16sp" />
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/subTabImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:strokeColor="@color/transparent"
+                    app:cardBackgroundColor="#33000000"
+                    app:cardCornerRadius="16dp"
+                    android:visibility="gone" />
+
             </FrameLayout>
 
             <Space
-                android:layout_width="8dp"
+                android:layout_width="16dp"
                 android:layout_height="match_parent" />
             <!--                btnBackgroundColor-->
             <FrameLayout
@@ -201,22 +207,16 @@
                     android:layout_height="match_parent"
                     android:scaleType="fitXY" />
 
-                <TextView
-                    android:id="@+id/subTabColor"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="start"
-                    android:background="@drawable/un_selected_tab_sub"
-                    android:visibility="gone" />
-
                 <!--                imvFocusColor (nền xanh khi chọn)-->
-                <ImageView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/imvFocusColor"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     android:scaleX="1"
-                    android:src="@drawable/un_selected_tab"
+                    app:strokeColor="@color/transparent"
+                    app:cardCornerRadius="16dp"
+                    app:cardBackgroundColor="@color/white"
                     android:visibility="gone"
                     tools:visibility="visible" />
 
@@ -235,6 +235,15 @@
                     android:textColor="#C13F74"
                     android:textSize="16sp" />
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/subTabColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:strokeColor="@color/transparent"
+                    app:cardBackgroundColor="#33000000"
+                    app:cardCornerRadius="16dp"
+                    android:visibility="gone" />
+
             </FrameLayout>
         </LinearLayout>
 
@@ -244,7 +253,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="62dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="0dp"
             android:orientation="vertical"
             android:visibility="gone"
             tools:visibility="visible">
@@ -313,7 +322,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="11.5dp"
-                android:layout_marginBottom="22dp"
+                android:layout_marginBottom="0dp"
                 android:clipToPadding="false"
 
                 android:paddingBottom="60dp"
@@ -327,7 +336,7 @@
             android:id="@+id/lnlSpeech"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="22dp"
+            android:layout_marginBottom="0dp"
             android:orientation="vertical"
             android:visibility="gone"
             android:layout_marginHorizontal="8dp"
@@ -356,7 +365,7 @@
                 android:paddingBottom="60dp"
 
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="4"
+                app:spanCount="5"
                 tools:listitem="@layout/item_speech" />
         </LinearLayout>
 
@@ -367,7 +376,7 @@
             android:layout_height="match_parent"
             android:clipChildren="false"
             android:isScrollContainer="true"
-            android:paddingTop="55dp"
+            android:paddingTop="25dp"
             android:paddingBottom="50dp"
             android:scrollbars="none"
             android:visibility="gone"
@@ -403,9 +412,9 @@
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="start"
                     android:text="@string/text"
-                    android:textColor="@color/app"
+                    android:textColor="@color/white"
                     android:includeFontPadding="false"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -444,8 +453,8 @@
                     android:gravity="start"
                     android:text="@string/font"
                     android:includeFontPadding="false"
-                    android:textColor="@color/app"
-                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/edtText" />
 
@@ -456,7 +465,7 @@
                     android:layout_height="60dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="0dp"
                     android:clipChildren="false"
                     android:clipToPadding="true"
                     android:orientation="horizontal"
@@ -477,8 +486,8 @@
                     android:gravity="start"
                     android:text="@string/color_text"
                     android:includeFontPadding="false"
-                    android:textColor="@color/app"
-                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rcvFont" />
 
@@ -508,11 +517,12 @@
         <!--                    btnDoneText-->
         <ImageView
             android:id="@+id/btnDoneText"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="top|end"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="13dp"
             android:layout_marginEnd="16dp"
+            android:tint="@color/white"
             android:src="@drawable/ic_done_background"
             android:visibility="gone"
             tools:visibility="visible" />
@@ -524,22 +534,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lnlBottom"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="38dp"
         android:layout_marginHorizontal="0dp"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/bg_bottom"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <!--        btnBackground-->
         <ImageView
             android:id="@+id/btnBackground"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="60dp"
+            android:layout_width="82dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_background_selected"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -548,8 +558,9 @@
         <!--        btnSticker-->
         <ImageView
             android:id="@+id/btnSticker"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="82dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_sticker"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -560,8 +571,9 @@
         <!--        btnSpeech-->
         <ImageView
             android:id="@+id/btnSpeech"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="82dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_speech"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -572,9 +584,10 @@
         <!--        btnText-->
         <ImageView
             android:id="@+id/btnText"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="60dp"
+            android:layout_width="82dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_text"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -589,7 +602,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:rotationY="-83"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
     <!--    <FrameLayout-->

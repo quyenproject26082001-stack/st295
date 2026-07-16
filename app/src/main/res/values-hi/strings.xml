@@ -148,5 +148,10 @@
     <string name="horror_emoji">Horror Emoji</string>
     <string name="emoji_maker">Emoji Maker</string>
     <string name="emoji_copy">Emoji Copy</string>
+    <string name="add_to_package">Add To Package</string>
+    <string name="add_to_package_">ADD TO PACKAGE</string>
+    <string name="new_package">New Package</string>
+    <string name="add_to_package_2">Add To Package</string>
+    <string name="new_package_">NEW PACKAGE</string>
 
 </resources>

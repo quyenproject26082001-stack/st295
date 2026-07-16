@@ -27,6 +27,8 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -400,7 +402,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
             backgroundImageAdapter.apply {
                 onAddImageClick = {
-                        checkStoragePermission()
+                    checkStoragePermission()
                 }
                 onBackgroundImageClick = { path, position ->
                     viewModel.checkDataInternet(this@AddCharacterActivity) {
@@ -479,7 +481,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
             rcvSpeech.apply {
                 adapter = speechAdapter
-                layoutManager = GridLayoutManager(this@AddCharacterActivity, 4)
+                layoutManager = GridLayoutManager(this@AddCharacterActivity, 5)
                 itemAnimator = null
                 setItemViewCacheSize(200)
                 setHasFixedSize(true)
@@ -547,7 +549,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 delay(1000)
 //
 //                binding.drawView.autoSelectFirstDraw()
-                dismissLoading(true)
+                dismissLoading()
                 delay(500)
                 binding.drawView.autoSelectFirstDraw()
             }
@@ -718,8 +720,9 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                         tvBackgroundColor,
                         imvFocusColor,
                         subTabColor,
-                        isLeftTab = false
-                    )
+                        isLeftTab = false,
+
+                        )
                     setupUnselectedTabBackground(
                         btnBackgroundImage,
                         tvBackgroundImage,
@@ -738,7 +741,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
     private fun setupSelectedTabBackground(
         tabView: View,
         textView: android.widget.TextView,
-        focusImage: android.widget.ImageView,
+        focusImage: View,
         subTab: View,
         isLeftTab: Boolean
     ) {
@@ -756,12 +759,22 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 //        }
 
         // Apply gradient color from top to bottom - WHITE gradient for selected
-        textView.setTextColor(Color.parseColor("#FFFFFF"))
-
+        textView.setTextColor(Color.parseColor("#FF8600"))
+        val density =
+            focusImage.resources.displayMetrics.density
         // Show selected_tab drawable
-        focusImage.setImageResource(R.drawable.selected_tab)
+//        focusImage.updatePadding(
+//            left = (8 * density).toInt(),
+//            top = (4 * density).toInt(),
+//            right = (8 * density).toInt(),
+//            bottom = (4 * density).toInt()
+//        )
         focusImage.scaleX = 1f
         focusImage.visible()
+        tabView.updateLayoutParams {
+            width =(156* resources.displayMetrics.density).toInt()
+            height = (36*resources.displayMetrics.density).toInt()
+        }
 
         // Hide subTab
         subTab.gone()
@@ -770,15 +783,20 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
     private fun setupUnselectedTabBackground(
         tabView: View,
         textView: android.widget.TextView,
-        focusImage: android.widget.ImageView,
+        focusImage: View,
         subTab: View,
         isLeftTab: Boolean
     ) {
         // Set weight = 1
-        val params = tabView.layoutParams as android.widget.LinearLayout.LayoutParams
-        params.weight = 1f
-        params.topMargin = UnitHelper.dpToPx(this, 0f).toInt()
-        tabView.layoutParams = params
+//        val params = tabView.layoutParams as android.widget.LinearLayout.LayoutParams
+//        params.weight = 1f
+//        params.topMargin = UnitHelper.dpToPx(this, 0f).toInt()
+//        tabView.layoutParams = params
+
+        tabView.updateLayoutParams {
+            width =(154* resources.displayMetrics.density).toInt()
+            height = (34*resources.displayMetrics.density).toInt()
+        }
 
         // Set text size = 14sp, color = colorPrimary
         textView.textSize = 16f
@@ -787,17 +805,24 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 //            textView.setupUnselectedTab()
 //        }
         // Apply RED gradient for unselected
-        textView.setTextColor(Color.parseColor("#333333"))
-
-
+        textView.setTextColor(Color.parseColor("#FF8600"))
+        val density =
+            focusImage.resources.displayMetrics.density
+        subTab.visible()
         // Show un_selected_tab drawable
-        focusImage.setImageResource(R.drawable.un_selected_tab)
+        focusImage.updatePadding(
+            left = (8 * density).toInt(),
+            top = (4 * density).toInt(),
+            right = (8 * density).toInt(),
+            bottom = (2 * density).toInt()
+        )
         // Flip horizontally if on left side
         focusImage.scaleX = if (isLeftTab) -1f else 1f
         focusImage.visible()
 
         // Show subTab
-        subTab.gone()
+        subTab.visible()
+
     }
 
     private fun setupTypeNavigation(type: Int) {
@@ -886,7 +911,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                     speechAdapter.submitList(viewModel.speechList)
                     textFontAdapter.submitListReset(viewModel.textFontList)
                     textColorAdapter.submitListReset(viewModel.textColorList)
-                    dismissLoading(true)
+                    dismissLoading()
                     showInterAll()
                 }
             }
@@ -1096,7 +1121,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                         is SaveState.Loading -> showLoading()
 
                         is SaveState.Error -> {
-                            dismissLoading(true)
+                            dismissLoading()
                             withContext(Dispatchers.Main) {
                                 showToast(R.string.save_failed_please_try_again)
                             }
@@ -1111,7 +1136,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                                 R.anim.slide_in_right,
                                 R.anim.slide_out_left
                             )
-                            dismissLoading(true)
+                            dismissLoading()
                             withContext(Dispatchers.Main) {
                                 showInterAll { startActivity(intent, options.toBundle()) }
                             }

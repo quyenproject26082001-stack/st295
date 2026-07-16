@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@color/app"
+        android:id="@+id/btnAdd"
+        >
+
+        <ImageView
+            android:id="@+id/ic_add_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/ic_add_package" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/howli_layers_base"
+            android:text="@string/new_package"
+            android:textColor="@color/white" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:strokeColor="#212121"
+        tools:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@color/white"
+        android:id="@+id/btnAvailabe"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            tools:src="@color/blue_app"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:background="@color/app"
+            android:layout_gravity="bottom"
+            android:id="@+id/tvPackageName"
+            android:textColor="@color/white"
+            tools:text="Package_1"
+            style="@style/single_marquee"
+            android:gravity="center"
+            android:fontFamily="@font/howli_layers_base"
+            />
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

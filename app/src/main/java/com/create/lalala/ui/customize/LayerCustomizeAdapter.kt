@@ -27,33 +27,14 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
     var onNoneClick: ((Int) -> Unit) = {}
     var onRandomClick: (() -> Unit) = {}
 
-    fun getLockedGifItems(): List<String> {
-        return GifUnlockStore.getLockedItems(currentList)
-    }
-
-    fun getLockedGifItems(items: List<ItemNavCustomModel>): List<String> {
-        return GifUnlockStore.getLockedItems(items)
-    }
-
-    fun getFirstLockedGifItem(items: List<ItemNavCustomModel>): String? {
-        return GifUnlockStore.getFirstLockedItem(items)
-    }
-
     fun getUnlockedGifPositions(items: List<ItemNavCustomModel>): List<Int> {
         return GifUnlockStore.getUnlockedPositions(items)
-    }
-
-    fun unlockGifItems(paths: List<String>) {
-        GifUnlockStore.unlockItems(paths)
-        notifyDataSetChanged()
     }
 
     inner class CustomizeViewHolder(val binding: ItemCustomizeBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(item: ItemNavCustomModel, position: Int) {
             binding.apply {
                 val cornerRadiusPx = (16f * context.resources.displayMetrics.density).toInt()
-                val isGifLocked = isGifLocked(item, position)
-
                 val itemType = when (item.path) {
                     AssetsKey.NONE_LAYER -> "NONE"
                     AssetsKey.RANDOM_LAYER -> "RANDOM"
@@ -89,7 +70,6 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                         btnNone.visible()
                         btnRandom.gone()
                         imvImage.gone()
-                        vGifLock.gone()
                         sflShimmer.stopShimmer()
                         sflShimmer.gone()
                     }
@@ -97,7 +77,6 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                         btnNone.gone()
                         btnRandom.visible()
                         imvImage.gone()
-                        vGifLock.gone()
                         sflShimmer.stopShimmer()
                         sflShimmer.gone()
                     }
@@ -105,12 +84,35 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                         btnNone.gone()
                         imvImage.visible()
                         btnRandom.gone()
-                        if (isGifLocked) vGifLock.visible() else vGifLock.gone()
                         sflShimmer.visible()
                         sflShimmer.startShimmer()
+                        val imagePath = item.path
+                        val thumbPath = item.thumb.ifEmpty { imagePath }
                         Glide.with(root)
-                            .load(item.thumb.ifEmpty { item.path })
+                            .load(thumbPath)
                             .transform(RoundedCorners(cornerRadiusPx))
+                            .error(
+                                Glide.with(root)
+                                    .load(imagePath)
+                                    .transform(RoundedCorners(cornerRadiusPx))
+                                    .listener(object : RequestListener<Drawable> {
+                                        override fun onResourceReady(r: Drawable, m: Any, t: Target<Drawable?>?, d: DataSource, f: Boolean): Boolean {
+                                            sflShimmer.stopShimmer()
+                                            sflShimmer.gone()
+                                            return false
+                                        }
+
+                                        override fun onLoadFailed(e: GlideException?, m: Any?, t: Target<Drawable?>, f: Boolean): Boolean {
+                                            sflShimmer.stopShimmer()
+                                            sflShimmer.gone()
+                                            android.util.Log.e(
+                                                "ItemCustomizeImage",
+                                                "path fallback failed | thumb=$thumbPath | path=$imagePath | error=${e?.message}"
+                                            )
+                                            return false
+                                        }
+                                    })
+                            )
                             .listener(object : RequestListener<Drawable> {
                                 override fun onResourceReady(r: Drawable, m: Any, t: Target<Drawable?>?, d: DataSource, f: Boolean): Boolean {
                                     sflShimmer.stopShimmer()
@@ -118,6 +120,10 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                                     return false
                                 }
                                 override fun onLoadFailed(e: GlideException?, m: Any?, t: Target<Drawable?>, f: Boolean): Boolean {
+                                    android.util.Log.e(
+                                        "ItemCustomizeImage",
+                                        "thumb failed and path fallback failed | thumb=$thumbPath | path=$imagePath | error=${e?.message}"
+                                    )
                                     return false
                                 }
                             })
@@ -126,7 +132,10 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                 }
 
                 binding.imvImage.tap(100) {
-                    if (isGifLocked(item, position)) return@tap
+                    android.util.Log.d(
+                        "ItemCustomizeClick",
+                        "position=$position | adapterPosition=$bindingAdapterPosition | path=${item.path} | thumb=${item.thumb} | positionCustom=${item.positionCustom} | positionNavigation=${item.positionNavigation} | isSelected=${item.isSelected} | colorCount=${item.listImageColor.size}"
+                    )
                     onItemClick.invoke(item, position)
                 }
 
@@ -140,13 +149,6 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
 
         }
 
-        private fun isGifLocked(item: ItemNavCustomModel, position: Int): Boolean {
-            return isGifLocked(item, position, currentList)
-        }
-    }
-
-    private fun isGifLocked(item: ItemNavCustomModel, position: Int, items: List<ItemNavCustomModel>): Boolean {
-        return GifUnlockStore.isLocked(item, position, items)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomizeViewHolder {

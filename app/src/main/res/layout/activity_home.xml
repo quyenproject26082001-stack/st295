@@ -40,11 +40,11 @@
         android:id="@+id/imgAppName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="11dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="0dp"
         android:adjustViewBounds="true"
         android:src="@drawable/img_app_name"
-        app:layout_constraintDimensionRatio="346:131"
+        app:layout_constraintDimensionRatio="322:96"
         app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
 
 
@@ -87,6 +87,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glCreationStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glCreationEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
             <!--            btnEmoji-->
             <ImageView
                 android:id="@+id/btnEmoji"
@@ -115,6 +129,7 @@
                 android:clipToOutline="false"
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
+                android:paddingVertical="4dp"
                 android:text="@string/play"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -124,7 +139,7 @@
                 app:layout_constraintTop_toTopOf="@+id/btnEmoji"
                 app:layout_constraintVertical_bias="1.0"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="6.dp" />
+                app:outerStrokeWidth="3.5dp" />
 
             <ImageView
                 android:id="@+id/btnHorror"
@@ -151,6 +166,7 @@
                 android:layout_marginEnd="0dp"
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
+                android:paddingVertical="4dp"
                 android:text="@string/horror_emoji"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -161,7 +177,7 @@
                 app:layout_constraintVertical_bias="1.0"
                 app:outerStrokeColor="@color/app1"
                 android:layout_marginBottom="12dp"
-                app:outerStrokeWidth="6.dp" />
+                app:outerStrokeWidth="3.5dp" />
 
             <ImageView
                 android:id="@+id/btnMaker"
@@ -189,6 +205,7 @@
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
                 android:maxLines="2"
+                android:paddingVertical="4dp"
                 android:text="@string/emoji_maker"
                 android:textColor="#ffffff"
                 android:textSize="20sp"
@@ -196,7 +213,7 @@
                 app:layout_constraintEnd_toEndOf="@id/btnMaker"
                 app:layout_constraintStart_toStartOf="@id/btnMaker"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="6.dp" />
+                app:outerStrokeWidth="3.5dp" />
 
 
             <ImageView
@@ -225,6 +242,7 @@
                 android:gravity="center"
                 android:letterSpacing="0.05"
                 android:shadowColor="@color/white"
+                android:paddingVertical="4dp"
                 android:layout_marginBottom="12dp"
                 android:shadowDy="2"
                 android:shadowRadius="1"
@@ -235,20 +253,20 @@
                 app:layout_constraintEnd_toEndOf="@id/btnEmojiCopy"
                 app:layout_constraintStart_toStartOf="@id/btnEmojiCopy"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="6.dp" />
+                app:outerStrokeWidth="3.5dp" />
 
             <ImageView
                 android:id="@+id/btnMyCreation"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 app:layout_constraintDimensionRatio="156:165"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_home_5"
-                app:layout_constraintEnd_toEndOf="@id/btnEmojiCopy"
-                app:layout_constraintStart_toStartOf="@id/btnEmojiCopy"
+                app:layout_constraintEnd_toStartOf="@id/glCreationEnd"
+                app:layout_constraintStart_toEndOf="@id/glCreationStart"
                 app:layout_constraintTop_toBottomOf="@+id/btnMaker" />
 
             <!--            tv2-->
@@ -262,10 +280,8 @@
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
                 android:letterSpacing="0.05"
-                android:shadowColor="@color/white"
                 android:layout_marginBottom="12dp"
-                android:shadowDy="2"
-                android:shadowRadius="1"
+                android:paddingVertical="4dp"
                 android:text="@string/my_creation"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -273,7 +289,7 @@
                 app:layout_constraintEnd_toEndOf="@id/btnMyCreation"
                 app:layout_constraintStart_toStartOf="@id/btnMyCreation"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="6.dp" />
+                app:outerStrokeWidth="3.5dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

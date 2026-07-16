@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_app"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/btnSettings"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_setting"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgAppName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_app_name"
+        app:layout_constraintDimensionRatio="322:96"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
+
+
+    <!--    scvMain-->
+    <ScrollView
+        android:id="@+id/scvMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgAppName">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp">
+
+            <!--            glOverStart-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glOverStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="33dp" />
+
+            <!--            glOverEnd-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glOverEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.93" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glOverCenter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glCreationStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glCreationEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+            <!--            btnEmoji-->
+            <ImageView
+                android:id="@+id/btnEmoji"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_home_1"
+                app:layout_constraintDimensionRatio="156:165"
+                app:layout_constraintEnd_toStartOf="@id/glOverCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            tv1-->
+
+
+            <!--            btnHorror-->
+            <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                android:id="@+id/tv1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="12dp"
+                android:clipToOutline="false"
+                android:fontFamily="@font/howli_layers_base"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="@string/play"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEmoji"
+                app:layout_constraintEnd_toEndOf="@id/btnEmoji"
+                app:layout_constraintStart_toStartOf="@id/btnEmoji"
+                app:layout_constraintTop_toTopOf="@+id/btnEmoji"
+                app:layout_constraintVertical_bias="1.0"
+                app:outerStrokeColor="@color/app1"
+                app:outerStrokeWidth="3.5dp" />
+
+            <ImageView
+                android:id="@+id/btnHorror"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_home_2"
+                app:layout_constraintDimensionRatio="156:165"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/glOverCenter"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            tv2-->
+
+
+            <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                android:id="@+id/tv2"
+                style="@style/single_marquee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/howli_layers_base"
+                android:gravity="center"
+                android:paddingVertical="4dp"
+                android:text="@string/horror_emoji"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnHorror"
+                app:layout_constraintEnd_toEndOf="@id/btnHorror"
+                app:layout_constraintStart_toStartOf="@id/btnHorror"
+                app:layout_constraintTop_toTopOf="@+id/btnHorror"
+                app:layout_constraintVertical_bias="1.0"
+                app:outerStrokeColor="@color/app1"
+                android:layout_marginBottom="12dp"
+                app:outerStrokeWidth="3.5dp" />
+
+            <ImageView
+                android:id="@+id/btnMaker"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitXY"
+                app:layout_constraintDimensionRatio="156:165"
+                android:src="@drawable/img_home_3"
+                app:layout_constraintEnd_toStartOf="@id/glOverCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnHorror" />
+
+
+            <!--            tv2-->
+            <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                android:id="@+id/tv3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/howli_layers_base"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingVertical="4dp"
+                android:text="@string/emoji_maker"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnMaker"
+                app:layout_constraintEnd_toEndOf="@id/btnMaker"
+                app:layout_constraintStart_toStartOf="@id/btnMaker"
+                app:outerStrokeColor="@color/app1"
+                app:outerStrokeWidth="3.5dp" />
+
+
+            <ImageView
+                android:id="@+id/btnEmojiCopy"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintDimensionRatio="156:165"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_home_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/glOverCenter"
+                app:layout_constraintTop_toBottomOf="@+id/btnHorror" />
+
+            <!--            tv2-->
+            <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                android:id="@+id/tv4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/howli_layers_base"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:shadowColor="@color/white"
+                android:paddingVertical="4dp"
+                android:layout_marginBottom="12dp"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="@string/emoji_copy"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEmojiCopy"
+                app:layout_constraintEnd_toEndOf="@id/btnEmojiCopy"
+                app:layout_constraintStart_toStartOf="@id/btnEmojiCopy"
+                app:outerStrokeColor="@color/app1"
+                app:outerStrokeWidth="3.5dp" />
+
+            <ImageView
+                android:id="@+id/btnMyCreation"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintDimensionRatio="156:165"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_home_5"
+                app:layout_constraintEnd_toStartOf="@id/glCreationEnd"
+                app:layout_constraintStart_toEndOf="@id/glCreationStart"
+                app:layout_constraintTop_toBottomOf="@+id/btnMaker" />
+
+            <!--            tv2-->
+            <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                android:id="@+id/tv5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="@font/howli_layers_base"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="12dp"
+                android:paddingVertical="4dp"
+                android:text="@string/my_creation"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnMyCreation"
+                app:layout_constraintEnd_toEndOf="@id/btnMyCreation"
+                app:layout_constraintStart_toStartOf="@id/btnMyCreation"
+                app:outerStrokeColor="@color/app1"
+                app:outerStrokeWidth="3.5dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <!--    flNativeCollab-->
+    <FrameLayout
+        android:id="@+id/flNativeCollab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"></FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

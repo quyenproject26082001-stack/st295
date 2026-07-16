@@ -1,8 +1,6 @@
 package com.create.lalala.ui.customize
 
 import android.annotation.SuppressLint
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
@@ -33,12 +31,10 @@ import com.create.lalala.core.utils.state.SaveState
 import com.create.lalala.data.model.custom.ItemNavCustomModel
 import com.create.lalala.databinding.ActivityCustomizeBinding
 import com.create.lalala.dialog.YesNoDialog
-import com.create.lalala.data.local.PersistenceRepository
 import com.create.lalala.ui.home.DataViewModel
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.helper.MediaHelper
 import com.create.lalala.data.model.custom.SuggestionModel
-import com.create.lalala.dialog.GifDialog
 import com.create.lalala.ui.add_character.AddCharacterActivity
 import com.create.lalala.ui.my_creation.MyCreationActivity
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -57,9 +53,6 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         const val MIN_SCALE = 0.5f
         const val MAX_SCALE = 1.5f
         const val SCALE_STEP = 0.05f
-        private const val GIFT_COOLDOWN_END_TIME_KEY = "gift_cooldown_end_time"
-        private const val GIFT_FREE_PENDING_KEY = "gift_free_pending"
-        private const val CLEAR_GIFT_COOLDOWN_ON_START = false
     }
 
     private val viewModel: CustomizeCharacterViewModel by viewModels()
@@ -69,10 +62,6 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     val colorLayerCustomizeAdapter by lazy { ColorLayerCustomizeAdapter(this) }
     val layerCustomizeAdapter by lazy { LayerCustomizeAdapter(this) }
     val bottomNavigationCustomizeAdapter by lazy { BottomNavigationCustomizeAdapter(this) }
-    private val giftCountdownHandler = Handler(Looper.getMainLooper())
-    private var giftCountdownRunnable: Runnable? = null
-    private var giftCountdownSecondsLeft = 0
-    private var isGiftCooldownRunning = false
     val hideList: ArrayList<View> by lazy {
         arrayListOf(
             binding.btnRandom,
@@ -90,9 +79,6 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
     override fun initView() {
         initRcv()
-        binding.btnGif.setImageResource(R.drawable.ic_gift_waiting)
-        binding.tvTimeCountDown.visibility = View.INVISIBLE
-        restoreGiftCooldownIfNeeded()
         lifecycleScope.launch { showLoading() }
         dataViewModel.ensureData(this)
 
@@ -198,13 +184,6 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             }
             btnColor.tap { viewModel.checkDataInternet(this@CustomizeCharacterActivity) { handleStatusColor() } }
             btnHide.tap { viewModel.checkDataInternet(this@CustomizeCharacterActivity) { viewModel.setIsHideView() } }
-            btnGif.tap {
-                if (isGiftCooldownRunning) {
-                    showToast(R.string.advertisement_not_ready)
-                    return@tap
-                }
-                handleGifDialog()
-            }
             btnMan.tap { handleGenderSwitch(1) }
             btnWooman.tap { handleGenderSwitch(2) }
 
@@ -439,126 +418,6 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                     )
                 }
         }
-    }
-
-    private fun handleGifDialog() {
-        val rewardPaths = viewModel.bottomNavigationList.value
-            .shuffled()
-            .mapNotNull { navigation ->
-                val layerItems = viewModel.itemNavList.getOrNull(navigation.layerIndex).orEmpty()
-                layerCustomizeAdapter.getFirstLockedGifItem(layerItems)
-            }
-            .distinct()
-        if (rewardPaths.isEmpty()) {
-            showToast(R.string.all_items_unlocked)
-            return
-        }
-
-        val dialogGif = GifDialog(this, rewardPaths, hasPendingGiftFreeSpin())
-        dialogGif.onCooldownStart = { secondsLeft ->
-            startGiftCooldown(secondsLeft)
-        }
-        dialogGif.onFreeUsed = {
-            setPendingGiftFreeSpin(false)
-        }
-        dialogGif.onAutoCollectClick = { collectedPaths ->
-            layerCustomizeAdapter.unlockGifItems(collectedPaths)
-            layerCustomizeAdapter.submitList(viewModel.itemNavList[viewModel.positionNavSelected])
-            setPendingGiftFreeSpin(true)
-        }
-        dialogGif.onCollectClick = { collectedPaths ->
-            layerCustomizeAdapter.unlockGifItems(collectedPaths)
-            layerCustomizeAdapter.submitList(viewModel.itemNavList[viewModel.positionNavSelected])
-            dialogGif.dismiss()
-            window.decorView.post {
-                applyUiCustomize()
-                hideNavigation()
-            }
-        }
-        dialogGif.onCloseClick = {
-            dialogGif.dismiss()
-            window.decorView.post {
-                applyUiCustomize()
-                hideNavigation()
-            }
-        }
-        dialogGif.show()
-        hideNavigation()
-    }
-
-    private fun startGiftCooldown(secondsLeft: Int, shouldSaveEndTime: Boolean = true) {
-        giftCountdownRunnable?.let { giftCountdownHandler.removeCallbacks(it) }
-        giftCountdownSecondsLeft = secondsLeft
-        isGiftCooldownRunning = true
-        if (shouldSaveEndTime) {
-            val endTime = System.currentTimeMillis() + secondsLeft * 1_000L
-            PersistenceRepository.setStringSetting(this, GIFT_COOLDOWN_END_TIME_KEY, endTime.toString())
-        }
-        updateGiftCooldownUi()
-        giftCountdownRunnable = object : Runnable {
-            override fun run() {
-                giftCountdownSecondsLeft--
-                updateGiftCooldownUi()
-                if (giftCountdownSecondsLeft > 0) {
-                    giftCountdownHandler.postDelayed(this, 1_000L)
-                } else {
-                    finishGiftCooldown()
-                }
-            }
-        }
-        giftCountdownHandler.postDelayed(giftCountdownRunnable!!, 1_000L)
-    }
-
-    private fun finishGiftCooldown() {
-        isGiftCooldownRunning = false
-        giftCountdownSecondsLeft = 0
-        giftCountdownRunnable?.let { giftCountdownHandler.removeCallbacks(it) }
-        giftCountdownRunnable = null
-        PersistenceRepository.setStringSetting(this, GIFT_COOLDOWN_END_TIME_KEY, "0")
-        binding.btnGif.setImageResource(R.drawable.ic_gift_waiting)
-        binding.tvTimeCountDown.visibility = View.INVISIBLE
-    }
-
-    private fun restoreGiftCooldownIfNeeded() {
-        if (CLEAR_GIFT_COOLDOWN_ON_START) {
-            PersistenceRepository.setStringSetting(this, GIFT_COOLDOWN_END_TIME_KEY, "0")
-            setPendingGiftFreeSpin(false)
-            finishGiftCooldown()
-            return
-        }
-        val endTime = PersistenceRepository
-            .getStringSetting(this, GIFT_COOLDOWN_END_TIME_KEY, "0")
-            .toLongOrNull() ?: 0L
-        val secondsLeft = ((endTime - System.currentTimeMillis()) / 1_000L).toInt()
-        if (secondsLeft > 0) {
-            startGiftCooldown(secondsLeft, shouldSaveEndTime = false)
-        } else {
-            PersistenceRepository.setStringSetting(this, GIFT_COOLDOWN_END_TIME_KEY, "0")
-            binding.btnGif.setImageResource(R.drawable.ic_gift_waiting)
-            binding.tvTimeCountDown.visibility = View.INVISIBLE
-        }
-    }
-
-    private fun updateGiftCooldownUi() {
-        binding.btnGif.setImageResource(R.drawable.ic_gif)
-        binding.tvTimeCountDown.visibility = View.VISIBLE
-        binding.tvTimeCountDown.text = formatGiftCountdown(giftCountdownSecondsLeft)
-    }
-
-    private fun hasPendingGiftFreeSpin(): Boolean {
-        return PersistenceRepository.getStringSetting(this, GIFT_FREE_PENDING_KEY, "0") == "1"
-    }
-
-    private fun setPendingGiftFreeSpin(pending: Boolean) {
-        PersistenceRepository.setStringSetting(this, GIFT_FREE_PENDING_KEY, if (pending) "1" else "0")
-    }
-
-    private fun formatGiftCountdown(seconds: Int): String {
-        val safeSeconds = seconds.coerceAtLeast(0)
-        val hours = safeSeconds / 3600
-        val minutes = (safeSeconds % 3600) / 60
-        val secs = safeSeconds % 60
-        return String.format("%02d:%02d:%02d", hours, minutes, secs)
     }
 
     private fun initData() {
@@ -1176,8 +1035,6 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     }
 
     override fun onDestroy() {
-        giftCountdownRunnable?.let { giftCountdownHandler.removeCallbacks(it) }
-        giftCountdownRunnable = null
         super.onDestroy()
         viewModel.setIsCreated(false)
     }

@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_margin="4.5dp"
+    android:layout_margin="4.dp"
     android:layout_height="wrap_content">
 
     <FrameLayout
@@ -18,10 +18,9 @@
             android:id="@+id/cardSticker"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:strokeColor="#333333"
-            app:strokeWidth="2dp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="8dp"
+            app:strokeColor="@color/transparent"
             app:cardElevation="0dp">
 
             <ImageView

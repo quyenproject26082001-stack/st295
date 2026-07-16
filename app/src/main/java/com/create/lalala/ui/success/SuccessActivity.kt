@@ -57,10 +57,8 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
 
     private fun setButtonBackgrounds() {
         binding.includeLayoutBottom.apply {
-            
-            tvDownload.select()
-            tvShare.select()
-
+            btnDownload.select()
+            btnMyCreation.select()
         }
     }
 
@@ -98,14 +96,14 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
             }
 
             // My Album button
-            includeLayoutBottom.btnWhatsapp.tap(2590) {
+            includeLayoutBottom.btnMyCreation.tap(2590) {
                 showInterAll {
                     startIntentRightToLeft(MyCreationActivity::class.java, IntentKey.TAB_KEY, ValueKey.MY_DESIGN_TYPE)
                 }
             }
 
             // Download button
-            includeLayoutBottom.btnTelegram.tap(2000) {
+            includeLayoutBottom.btnDownload.tap(2000) {
                 checkStoragePermission()
             }
 

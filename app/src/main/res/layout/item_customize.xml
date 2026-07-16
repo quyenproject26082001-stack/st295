@@ -71,7 +71,7 @@
 
             android:layout_margin="1dp"
             android:scaleType="fitXY"
-            app:tint="#333333"
+            app:tint="#212121"
             android:src="@drawable/ic_none"
             android:visibility="gone"
             />
@@ -85,25 +85,12 @@
             android:layout_margin="1dp"
             android:focusable="true"
             android:padding="16dp"
-            app:tint="#333333"
+            app:tint="#212121"
 
             android:translationY="-2dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_random_layer"
             android:visibility="gone" />
-
-        <FrameLayout
-            android:id="@+id/vGifLock"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/background_gif"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="gone">
-
-
-        </FrameLayout>
-
 
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

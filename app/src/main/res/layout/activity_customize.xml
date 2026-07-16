@@ -74,34 +74,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.6" />
 
-    <!--    btnFlip-->
-    <ImageView
-        android:id="@+id/btnGif"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="8dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_gift_waiting"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="@id/tvTimeCountDown"
-        app:layout_constraintEnd_toEndOf="@id/tvTimeCountDown"
-        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
-
-    <com.create.lalala.core.custom.text.DoubleStrokeTextView
-        android:id="@+id/tvTimeCountDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btnGif"
-        android:text="00:30:00"
-        app:outerStrokeWidth="2.5dp"
-        android:includeFontPadding="false"
-        android:layout_marginEnd="2dp"
-        android:layout_marginTop="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:outerStrokeColor="@color/app"
-        android:textColor="@color/white"
-        android:fontFamily="@font/howli_layers_base"
-        />
     <!--    btnHide-->
     <ImageView
         android:id="@+id/btnHide"
@@ -113,7 +85,7 @@
         android:src="@drawable/ic_show"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGif" />
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
 
 
     <TextView
@@ -214,16 +186,16 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="0dp"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="6dp"
         android:background="@color/transparent"
         android:elevation="1dp"
         android:orientation="horizontal"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="7dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/flBottomNav"
         app:layout_constraintEnd_toStartOf="@id/btnRandom"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
         tools:visibility="visible">
         <!--    btnColor-->
         <ImageView
@@ -262,7 +234,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:strokeColor="#333333"
+                app:strokeColor="#FF8600"
                 app:strokeWidth="2dp">
 
 
@@ -301,25 +273,24 @@
         android:id="@+id/btnRandom"
         android:layout_width="40dp"
         android:layout_height="38.8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="4dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_random"
         android:elevation="2dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
-        app:layout_constraintEnd_toStartOf="@id/btnMove" />
+        android:layout_marginBottom="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/btnMove"
+        app:layout_constraintEnd_toEndOf="@id/btnMove" />
 
     <ImageView
         android:id="@+id/btnMove"
         android:layout_width="39dp"
         android:layout_height="39dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="4dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:elevation="2dp"
         android:src="@drawable/ic_move"
-        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
+        app:layout_constraintTop_toTopOf="@id/color"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -328,7 +299,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/glHorizontal"
-        android:background="@drawable/bg_cus"
+        android:background="#FF8600"
         android:layout_marginTop="61dp"/>
 
 
@@ -336,24 +307,23 @@
         android:id="@+id/layoutMove"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/bg_cus"
-        android:visibility="gone"
+        android:background="#FF8600"
         android:layout_marginTop="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/glHorizontal"
-        tools:visibility="visible">
+        android:visibility="invisible">
 
         <com.create.lalala.core.custom.text.DoubleStrokeTextView
             android:id="@+id/btnResetMove"
             android:layout_width="120dp"
             android:layout_height="38dp"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/bg_btn_move"
             android:text="@string/reset"
-            android:textSize="16sp"
-            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textColor="@color/app"
             android:gravity="center"
             app:layout_constraintBottom_toTopOf="@id/btnMoveUp"
             android:fontFamily="@font/howli_layers_base"
@@ -415,7 +385,8 @@
             android:id="@+id/btnMoveLeft"
             android:layout_width="38dp"
             android:layout_height="38dp"
-            app:layout_constraintHorizontal_bias=".38"
+            app:layout_constraintVertical_bias=".6"
+            app:layout_constraintHorizontal_bias=".4"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/ic_arrow_move"
             app:layout_constraintEnd_toEndOf="parent"
@@ -479,7 +450,7 @@
         app:layout_constraintTop_toTopOf="@id/bg_cus"
         app:spanCount="5"
         android:visibility="visible"
-        tools:visibility="gone"
+        tools:visibility="visible"
         android:layout_marginBottom="10dp"
         tools:itemCount="50"
         tools:listitem="@layout/item_customize" />
@@ -489,23 +460,21 @@
     <FrameLayout
         android:id="@+id/flBottomNav"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="0dp"
         android:layout_marginBottom="0dp"
         android:clipChildren="false"
-        android:background="@drawable/bg_bottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+app:layout_constraintBottom_toTopOf="@id/layoutMove"
+        >
 
         <!--        rcvNavigation-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvNavigation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="15dp"
+            android:layout_height="wrap_content"
             android:clipChildren="false"
-            android:paddingTop="10.5dp"
             android:layout_gravity="center_vertical"
             android:clipToPadding="false"
             android:layerType="hardware"

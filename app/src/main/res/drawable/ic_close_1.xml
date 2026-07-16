@@ -3,19 +3,17 @@
     android:height="30dp"
     android:viewportWidth="30"
     android:viewportHeight="30">
-    <group>
-        <path
-            android:fillColor="#FFFFFFFF"
-            android:pathData="M0 13.33c0-7.36 5.97-13.33 13.33-13.33h3.34c7.36 0 13.33 5.97 13.33 13.33v3.34c0 7.36-5.97 13.33-13.33 13.33h-3.34c-7.36 0-13.33-5.97-13.33-13.33z"/>
-        <path
-            android:strokeColor="#FF333333"
-            android:strokeWidth="1.67"
-            android:pathData="M0.83 13.33c0-6.9 5.6-12.5 12.5-12.5h3.33c6.9 0 12.5 5.6 12.5 12.5v3.33c0 6.9-5.6 12.5-12.5 12.5h-3.33c-6.9 0-12.5-5.6-12.5-12.5z"/>
-        <path
-            android:strokeColor="#FF333333"
-            android:strokeWidth="2"
-            android:strokeLineCap="round"
-            android:strokeLineJoin="round"
-            android:pathData="M21 9L9 21M9 9l12 12"/>
-    </group>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M0.83 12c0-2.96 1.18-5.8 3.27-7.9 2.09-2.09 4.94-3.27 7.9-3.27h5.99c6.17 0 11.17 5 11.17 11.17v5.99c0 6.17-5 11.17-11.17 11.17h-5.99c-2.96 0-5.8-1.18-7.9-3.27-2.09-2.09-3.27-4.94-3.27-7.9z"/>
+    <path
+        android:strokeColor="#FFFF8600"
+        android:strokeWidth="1.67"
+        android:pathData="M0.83 12c0-2.96 1.18-5.8 3.27-7.9 2.09-2.09 4.94-3.27 7.9-3.27h5.99c6.17 0 11.17 5 11.17 11.17v5.99c0 6.17-5 11.17-11.17 11.17h-5.99c-2.96 0-5.8-1.18-7.9-3.27-2.09-2.09-3.27-4.94-3.27-7.9z"/>
+    <path
+        android:strokeColor="#FFFF8600"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M20.4 9.6L9.6 20.4m0-10.8l10.8 10.8"/>
 </vector>

@@ -33,9 +33,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:maxHeight="329dp"
+        android:minHeight="178dp"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="110dp"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintDimensionRatio="232:178"
         android:layout_gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="59dp"
         android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="23dp"
+        android:layout_marginHorizontal="16dp"
 
         app:layout_constraintTop_toBottomOf="@id/btnNotification"
         android:background="@drawable/bg_frame_per">
@@ -90,8 +91,9 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/howli_layers_base"
             android:gravity="start"
+            android:includeFontPadding="false"
             android:text="@string/storage"
-            android:textColor="@color/white"
+            android:textColor="@color/app"
             android:textSize="14sp" />
 
         <ImageView
@@ -101,7 +103,7 @@
             android:layout_alignParentEnd="true"
             android:scaleType="fitCenter"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="25dp"
+            android:layout_marginEnd="16dp"
             android:src="@drawable/ic_sw_off" />
     </RelativeLayout>
 
@@ -112,7 +114,7 @@
         android:layout_height="59dp"
         app:layout_constraintTop_toBottomOf="@id/txtPermission"
         android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="23dp"
+        android:layout_marginHorizontal="16dp"
         android:background="@drawable/bg_frame_per">
 
         <com.create.lalala.core.custom.text.DoubleStrokeTextView
@@ -122,8 +124,9 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/howli_layers_base"
             android:gravity="start"
+            android:includeFontPadding="false"
             android:text="@string/notification"
-            android:textColor="@color/white"
+            android:textColor="@color/app"
             android:textSize="14sp" />
 
         <ImageView
@@ -134,7 +137,7 @@
             android:layout_centerVertical="true"
 
             android:scaleType="fitCenter"
-            android:layout_marginEnd="25dp"
+            android:layout_marginEnd="16dp"
             android:src="@drawable/ic_sw_on" />
     </RelativeLayout>
 

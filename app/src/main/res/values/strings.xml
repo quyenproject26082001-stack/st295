@@ -4,17 +4,17 @@
 
 
     <string name="go_to_setting_message">The app needs this permission</string>
-    <string name="settings">SETTINGS</string>
+    <string name="settings">Settings</string>
     <string name="this_action_can_contain_ads">This action can contain ads</string>
     <string name="not_select_lang">Please select a language</string>
     <string name="next">NEXT</string>
-    <string name="language"> LANGUAGE </string>
+    <string name="language"> Language </string>
 
     <string name="title_1">Create Emoji As You Like</string>
     <string name="title_2">Create Your Signature Horror Emojis</string>
     <string name="title_3">Make New Fun Emoji Packs</string>
 
-    <string name="permission">\u00A0PERMISSION\u00A0</string>
+    <string name="permission">\u00A0Permission\u00A0</string>
     <string name="storage">\u00A0\u00A0STORAGE\u00A0\u00A0</string>
     <string name="continue_per">Continue</string>
     <string name="notification">\u00A0\u00A0NOTIFICATION\u00A0\u00A0</string>
@@ -25,9 +25,9 @@
     <string name="to_access">to access photos on your device</string>
     <string name="to_access_13">to access notification on your device</string>
 
-    <string name="rate_us">\u00A0\u00A0RATE US\u00A0\u00A0</string>
-    <string name="share_app">\u00A0\u00A0SHARE APP\u00A0\u00A0</string>
-    <string name="privacy_policy"><![CDATA[\u00A0\u00A0PRIVACY & POLICY\u00A0\u00A0]]></string>
+    <string name="rate_us">\u00A0\u00A0Rate Us\u00A0\u00A0</string>
+    <string name="share_app">\u00A0\u00A0Share App\u00A0\u00A0</string>
+    <string name="privacy_policy"><![CDATA[\u00A0\u00A0Privacy & Policy\u00A0\u00A0]]></string>
 
     <string name="zero_star_title">Do you like the app?</string>
     <string name="zero_star">Let us know your experience</string>
@@ -51,14 +51,14 @@
     <string name="rate">Rate</string>
     <string name="exit">Exit</string>
     <string name="have_rated">Thank you for rate our app</string>
-    <string name="share">SHARE</string>
+    <string name="share">Share</string>
     <string name="delete">DELETE</string>
-    <string name="download">DOWNLOAD</string>
-    <string name="yes">YES</string>
-    <string name="no">NO</string>
+    <string name="download">Download</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="ok">Ok</string>
     <string name="wait_a_minute">PLEASE WAIT A MOMENT</string>
-    <string name="reset">RESET</string>
+    <string name="reset">Reset</string>
     <string name="download_success">Download successful to the ST295_Horror_Emoji_Maker album</string>
     <string name="please_check_your_internet">Please check your internet</string>
     <string name="please_select_an_image">Please select an image</string>
@@ -72,7 +72,7 @@
     <string name="download_failed_please_try_again_later">Download failed, please try again later!</string>
     <string name="save_failed_please_try_again">Save failed, please try again!</string>
     <string name="delete_failed_please_try_again">Delete failed, please try again!</string>
-    <string name="my_creation">MY CREATION</string>
+    <string name="my_creation">My Creation</string>
     <string name="delete_your_customize">Delete your customize</string>
     <string name="are_you_sure_you_want_to_delete_the_image">Are you sure you want to delete the image?</string>
     <string name="haven_t_saved_it_yet_do_you_want_to_exit">Haven’t saved it yet, are you sure to exit?</string>
@@ -81,7 +81,7 @@
     <string name="no_item_here">No Item Here</string>
     <string name="quick_maker">Quick Maker</string>
     <string name="my_character">My Pixel</string>
-    <string name="category">CATEGORY</string>
+    <string name="category">Category</string>
 
     <string name="add_to_whatsapp">Add to Whatsapp</string>
     <string name="add_to_telegram">Add to Telegram</string>
@@ -99,14 +99,14 @@
     <string name="background">Background</string>
     <string name="image">IMAGE</string>
     <string name="color">COLOR</string>
-    <string name="add_image">ADD IMAGE</string>
+    <string name="add_image">Add Image</string>
     <string name="sticker">Sticker</string>
     <string name="speech_bubbles">Speech Bubbles</string>
-    <string name="text">TEXT</string>
+    <string name="text">Text</string>
     <string name="type_your_content">Type your content...</string>
     <string name="font">Font</string>
     <string name="choose_color">Choose Color</string>
-    <string name="done">SAVE</string>
+    <string name="done">Save</string>
     <string name="null_edt">Please enter text</string>
     <string name="input_text">Input text</string>
     <string name="hello_world">Type your content...</string>
@@ -131,8 +131,8 @@
     <string name="try_again">TRY AGAIN</string>
     <string name="instruction">INSTRUCTION</string>
     <string name="stop">STOP</string>
-    <string name="cancel">CANCEL</string>
-    <string name="image_has_been_saved_successful">IMAGE HAS BEEN SAVED SUCCESSFULLY!</string>
+    <string name="cancel">Cancel</string>
+    <string name="image_has_been_saved_successful">Emoji has been saved successfully!</string>
     <string name="cosplay">COSPLAY</string>
     <string name="guide_cosplay"><![CDATA[<b><font color="#FFCC33">Cosplay Mode</font></b>, players are randomly given <b><font color="#FFCC33">one reference image</font></b> to follow. Your task is to recreate that character as accurately as possible by choosing the right <b><font color="#FFCC33">hairstyles, outfits, colors, and accessories</font></b>. Every correct match increases your <b><font color="#FFCC33">percentage score (%)</font></b>. The closer your character looks to the random image, the higher your final score will be. Pay attention to small details to achieve the best cosplay result.]]></string>
     <string name="cat_nrandom">cat \nrandom</string>
@@ -153,5 +153,10 @@
     <string name="horror_emoji">Horror Emoji</string>
     <string name="emoji_maker">Emoji Maker</string>
     <string name="emoji_copy">Emoji Copy</string>
+    <string name="add_to_package">Add To Package</string>
+    <string name="add_to_package_">ADD TO PACKAGE</string>
+    <string name="new_package">New Package</string>
+    <string name="add_to_package_2">Add To Package</string>
+    <string name="new_package_">NEW PACKAGE</string>
 
 </resources>

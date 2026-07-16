@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="95dp"
+    android:layout_height="105dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/transparent">
 
@@ -92,6 +92,7 @@
         android:layout_marginHorizontal="10dp"
         android:fontFamily="@font/howli_layers_base"
         android:gravity="center"
+        android:paddingVertical="5dp"
         android:text="@string/language"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -117,6 +118,7 @@
         android:textColor="@color/white"
         android:textSize="30sp"
         android:visibility="gone"
+        android:paddingVertical="5dp"
         tools:visibility="visible"
         app:outerStrokeColor="@color/app"
         app:outerStrokeWidth="5dp"

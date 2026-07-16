@@ -131,9 +131,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     private fun updateText() {
         binding.apply {
             tv1.text = strings(R.string.play)
-            tv2.text = strings(R.string.cosplay_cat)
-            tv3.text = strings(R.string.cat_nrandom)
-            tv4.text = strings(R.string.creation)
+            tv2.text = strings(R.string.horror_emoji)
+            tv3.text = strings(R.string.emoji_maker)
+            tv4.text = strings(R.string.emoji_copy)
+            tv5.text = strings(R.string.my_creation)
         }
     }
 
