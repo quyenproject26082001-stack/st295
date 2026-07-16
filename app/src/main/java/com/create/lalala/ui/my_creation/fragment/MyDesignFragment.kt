@@ -72,7 +72,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
                         binding.layoutNoItem.isVisible = list.isEmpty()
                         if (myCreationViewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
                             if (list.isEmpty()) myAlbumActivity.binding.lnlBottom.gone()
-                            else myAlbumActivity.binding.lnlBottom.invisible()
+                            else myAlbumActivity.binding.lnlBottom.visible()
                         }
                     }
                 }
@@ -251,7 +251,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
         if (!hidden) {
             val isEmpty = viewModel.myDesignList.value.isEmpty()
             if (isEmpty) myAlbumActivity.binding.lnlBottom.gone()
-            else myAlbumActivity.binding.lnlBottom.invisible()
+            else myAlbumActivity.binding.lnlBottom.visible()
         }
     }
 

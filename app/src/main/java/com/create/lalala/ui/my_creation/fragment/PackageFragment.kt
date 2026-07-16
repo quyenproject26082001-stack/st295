@@ -64,7 +64,11 @@ class PackageFragment : BaseFragment<FragmentPackageBinding>() {
     override fun viewListener() {
         packageAdapter.onItemClick = { packageModel ->
             if (packageAdapter.items.any { it.isShowSelection }) {
-                resetSelectionMode()
+                val position = viewModel.packageList.value.indexOfFirst { it.id == packageModel.id }
+                if (position != -1) {
+                    viewModel.toggleSelect(position)
+                    myAlbumActivity.updateSelectAllIcon(viewModel.packageList.value.all { it.isSelected })
+                }
             } else {
                 val intent = Intent(myAlbumActivity, ViewAllPackageActivity::class.java)
                 intent.putExtra(IntentKey.PACKAGE_ID_KEY, packageModel.id)

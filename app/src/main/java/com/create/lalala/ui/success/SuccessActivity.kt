@@ -8,6 +8,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import androidx.activity.viewModels
@@ -197,7 +198,11 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
     private fun createCenterDialog(view: android.view.View): Dialog {
         return Dialog(this).apply {
             requestWindowFeature(Window.FEATURE_NO_TITLE)
+            setCancelable(true)
+            setCanceledOnTouchOutside(true)
             setContentView(view)
+            view.setOnClickListener { dismiss() }
+            (view as? ViewGroup)?.getChildAt(0)?.setOnClickListener { }
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             setOnShowListener {
                 window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)

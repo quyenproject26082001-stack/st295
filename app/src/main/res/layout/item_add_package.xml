@@ -25,12 +25,15 @@
             android:src="@drawable/ic_add_package" />
 
         <TextView
+            android:id="@+id/tvAddPackage"
+            style="@style/single_marquee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/howli_layers_base"
             android:text="@string/new_package"
+            android:gravity="center"
             android:textColor="@color/white" />
 
 
@@ -55,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:id="@+id/ivItem"
-            tools:src="@color/blue_app"/>
+            tools:src="@drawable/item_empty"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="22dp"

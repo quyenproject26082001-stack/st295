@@ -8,6 +8,7 @@ import com.bumptech.glide.signature.ObjectKey
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseAdapter
 import com.create.lalala.core.extensions.gone
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.data.model.PackageModel
@@ -43,13 +44,20 @@ class AddPackageAdapter : BaseAdapter<PackageModel, ItemAddPackageBinding>(ItemA
             btnAdd.gone()
             btnAvailable.visible()
             tvPackageName.text = item.name
-            val previewPath = item.items.firstOrNull().orEmpty().ifEmpty { item.previewPath }
-            val file = File(previewPath)
-            Glide.with(root.context)
-                .load(file.takeIf { it.exists() })
-                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                .signature(ObjectKey(file.lastModified()))
-                .into(ivItem)
+            tvAddPackage.select()
+            tvPackageName.select()
+            val firstItemPath = item.items.firstOrNull().orEmpty()
+            val file = File(firstItemPath)
+            if (firstItemPath.isNotEmpty() && file.exists()) {
+                Glide.with(root.context)
+                    .load(file)
+                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                    .signature(ObjectKey(file.lastModified()))
+                    .into(ivItem)
+            } else {
+                Glide.with(root.context).clear(ivItem)
+                ivItem.setImageResource(R.drawable.item_empty)
+            }
 
             val selected = item.id == selectedPackageId
             btnAvailable.strokeColor = if (selected) ContextCompat.getColor(root.context, R.color.app) else Color.parseColor("#212121")

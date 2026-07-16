@@ -103,14 +103,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                             if (type != -1) {
                                 when (type) {
                                     ValueKey.AVATAR_TYPE -> {
-                                        imvTabBackground.setImageResource(R.drawable.bg_avatar_slt)
                                         setupSelectedTab(tvMyPride)
                                         setupUnselectedTab(tvMyDesign)
                                         setupUnselectedTab(tvPackage)
                                         showFragment(ValueKey.AVATAR_TYPE)
                                     }
                                     ValueKey.MY_DESIGN_TYPE -> {
-                                        imvTabBackground.setImageResource(R.drawable.bg_design_slt)
                                         setupUnselectedTab(tvMyPride)
                                         setupSelectedTab(tvMyDesign)
                                         setupUnselectedTab(tvPackage)
@@ -193,19 +191,25 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             val layoutBottom = lnlBottom.getChildAt(0)
             layoutBottom.findViewById<View>(R.id.btnRight)?.tap(800) {
                 val paths = getAllPathsFromCurrentFragment()
-                handleAddToWhatsApp(paths)
+                when (viewModel.typeStatus.value) {
+                    ValueKey.AVATAR_TYPE -> handleAddToWhatsApp(paths)
+                    ValueKey.MY_DESIGN_TYPE -> handleAddToWhatsApp(paths)
+                }
             }
             layoutBottom.findViewById<View>(R.id.btnLeft)?.tap(800) {
                 val paths = getAllPathsFromCurrentFragment()
-                handleAddToTelegram(paths)
+                when (viewModel.typeStatus.value) {
+                    ValueKey.AVATAR_TYPE -> handleAddToTelegram(paths)
+                    ValueKey.MY_DESIGN_TYPE -> handleAddToTelegram(paths)
+                }
             }
 
             // Share/Download buttons in flBottomView (select mode)
-            bottomView.btnShare.tap(800) {
+            bottomView.root.findViewById<View>(R.id.btnShare)?.tap(800) {
                 val paths = getSelectedPathsFromCurrentFragment()
                 handleShare(paths)
             }
-            bottomView.btnDownload.tap(800) {
+            bottomView.root.findViewById<View>(R.id.btnDownload)?.tap(800) {
                 val paths = getSelectedPathsFromCurrentFragment()
                 if (paths.isEmpty()) { showToast(R.string.please_select_an_image); return@tap }
                 checkStoragePermissionForDownload(paths)
@@ -325,8 +329,8 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             btnActionBarRight.setImageResource(R.drawable.ic_delete_creation)
             tvCenter.visible()
             tvCenter.setText(R.string.my_creation)
-            btnActionBarRight.translationX = -6 * resources.displayMetrics.density
-            btnActionBarRight.translationY = 4 * resources.displayMetrics.density
+            btnActionBarRight.translationX = -5 * resources.displayMetrics.density
+            btnActionBarNextRight.translationX = -1 * resources.displayMetrics.density
             btnActionBarRight.invisible()
         }
     }
@@ -538,7 +542,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         binding.actionBar.apply {
             btnActionBarNextRight.visible()
             btnActionBarNextRight.setImageResource(R.drawable.ic_delete_creation)
-            btnActionBarNextRight.translationY = 0f * resources.displayMetrics.density
+            btnActionBarNextRight.translationY = -2f * resources.displayMetrics.density
             btnActionBarRight.updateLayoutParams {
                 width = (26f*resources.displayMetrics.density).toInt()
                 height = (26f*resources.displayMetrics.density).toInt()
@@ -549,21 +553,22 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                 height = (26f*resources.displayMetrics.density).toInt()
             }
             btnActionBarRight.visible()
+            btnActionBarRight.translationY = 0f * resources.displayMetrics.density
             btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
             btnActionBarNextRight1.gone()
         }
-        // Show share/download bottom view for both tabs
-        binding.flBottomView.visible()
-        // Avatar tab: keep lnlBottom (whatsapp/telegram), move closer to flBottomView
-        // Design tab: hide lnlBottom (no whatsapp/telegram)
         if (viewModel.typeStatus.value == ValueKey.PACKAGE_TYPE) {
+            binding.flBottomView.gone()
             binding.lnlBottom.gone()
             return
         }
 
-        if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
+        // Show share/download bottom view for avatar/design selection mode.
+        binding.flBottomView.visible()
+        // Avatar and Design both keep lnlBottom available while selection mode is active.
+        if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE || viewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
             binding.lnlBottom.visible()
-            binding.lnlBottom.translationY = (15f * resources.displayMetrics.density)
+            binding.lnlBottom.translationY = (0f * resources.displayMetrics.density)
         } else {
             binding.lnlBottom.gone()
         }
@@ -587,7 +592,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
                 binding.lnlBottom.visible()
             } else if (viewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
-                binding.lnlBottom.invisible()
+                binding.lnlBottom.visible()
             } else {
                 binding.lnlBottom.gone()
             }
@@ -596,6 +601,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     private fun updateBottomButtonsVisibility() {
+        if (viewModel.typeStatus.value == ValueKey.PACKAGE_TYPE) {
+            binding.lnlBottom.gone()
+            return
+        }
+
+        binding.lnlBottom.visible()
         val layoutBottom = binding.lnlBottom.getChildAt(0)
         val btnRight = layoutBottom.findViewById<View>(R.id.btnRight)
         val btnLeft = layoutBottom.findViewById<View>(R.id.btnLeft)
@@ -608,19 +619,10 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         btnLeft?.visible()
         btnRight?.visible()
 
-        if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
-            imgBgBtnLeft?.setImageResource(R.drawable.bg_btn_telegram)
-            imgBgBtnRight?.setImageResource(R.drawable.bg_btn_whatsapp)
-            tvLeft?.setText(R.string.add_to_telegram)
-            tvRight?.setText(R.string.add_to_whatsapp)
-
-        } else {
-            imgBgBtnLeft?.setImageResource(R.drawable.bg_btn_layout_bottom)
-            imgBgBtnRight?.setImageResource(R.drawable.bg_btn_layout_bottom)
-            tvLeft?.setText(R.string.share)
-            tvRight?.setText(R.string.download)
-
-        }
+        imgBgBtnLeft?.setImageResource(R.drawable.bg_btn_telegram)
+        imgBgBtnRight?.setImageResource(R.drawable.bg_btn_whatsapp)
+        tvLeft?.setText(R.string.add_to_telegram)
+        tvRight?.setText(R.string.add_to_whatsapp)
 
         // ActionBar download/share buttons: only in selection mode (avatar tab only)
         binding.actionBar.apply {
@@ -640,13 +642,23 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
     private fun setupSelectedTab(textView: DoubleStrokeTextView) {
         textView.setTextColor(Color.parseColor("#FFFFFF"))
-      //  textView.setShadowLayer(2f, 0f, 2f, Color.WHITE)
-       // textView.setupSelectedTab()
+        (textView.parent as? View)?.setBackgroundResource(R.drawable.bg_creation_tab_selected)
+        getTabOverlay(textView)?.gone()
     }
 
     private fun setupUnselectedTab(textView: com.create.lalala.core.custom.text.DoubleStrokeTextView) {
-        textView.setTextColor(Color.parseColor("#333333"))
-       // textView.setupUnselectedTab()
+        textView.setTextColor(Color.parseColor("#FF8600"))
+        (textView.parent as? View)?.setBackgroundResource(R.drawable.bg_creation_tab_unselected)
+        getTabOverlay(textView)?.visible()
+    }
+
+    private fun getTabOverlay(textView: DoubleStrokeTextView): View? {
+        return when (textView.id) {
+            R.id.tvMyPride -> binding.overlayMyPride
+            R.id.tvMyDesign -> binding.overlayMyDesign
+            R.id.tvPackage -> binding.overlayPackage
+            else -> null
+        }
     }
 
     // Public method to update select all icon based on selection state

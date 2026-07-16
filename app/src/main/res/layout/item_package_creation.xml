@@ -2,21 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="16dp"
+    android:foreground="@drawable/bg_item_package_creation"
+    android:background="@drawable/bg_item_package_creation_bg"
+    android:layout_height="94dp">
 
 
-    
-    
+
+
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_weight="1"
         app:strokeColor="#CC212121"
-        app:strokeWidth="2dp"
         app:cardCornerRadius="6dp"
+        android:layout_marginVertical="12dp"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/it2"
         android:layout_marginStart="12dp"
         android:id="@+id/it1"
         >
@@ -29,12 +37,17 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:cardBackgroundColor="@color/white"
         app:strokeColor="#CC212121"
+        app:cardCornerRadius="6dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/it1"
+        app:layout_constraintEnd_toStartOf="@id/it3"
         android:layout_marginStart="8dp"
         android:id="@+id/it2"
         >
@@ -45,53 +58,13 @@
             android:scaleType="centerCrop" />
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:strokeColor="#CC212121"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toEndOf="@id/it2"
-        android:layout_marginStart="8dp"
-        android:id="@+id/it3"
-        >
-        <ImageView
-            android:id="@+id/ivIt3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:strokeColor="#CC212121"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/it3"
-        android:layout_marginStart="8dp"
-        android:id="@+id/it4"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
-        <ImageView
-            android:id="@+id/ivIt4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
-    </com.google.android.material.card.MaterialCardView>
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        android:layout_height="94dp"
+        android:layout_height="match_parent"
         android:clipToOutline="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/bg_item_package_creation_bg"
-        android:foreground="@drawable/bg_item_package_creation"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -109,6 +82,82 @@
             tools:text="Package 1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:strokeColor="#CC212121"
+        app:cardCornerRadius="6dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@id/it2"
+        app:layout_constraintEnd_toStartOf="@id/it4"
+        android:layout_marginStart="8dp"
+        android:id="@+id/it3"
+        >
+        <ImageView
+            android:id="@+id/ivIt3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:strokeColor="#CC212121"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/it3"
+        android:layout_marginStart="8dp"
+        android:id="@+id/it4"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="12dp"
+        >
+        <ImageView
+            android:id="@+id/ivIt4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/ivNoItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/img_no_item_package"/>
+
+    <View
+        android:id="@+id/viewCover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_item_package_creation_cover"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+<ImageView
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:src="@drawable/ic_selected"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_margin="4dp"
+    android:id="@+id/btnSelect"
+    />
 
 
 

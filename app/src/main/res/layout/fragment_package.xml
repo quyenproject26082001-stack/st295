@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    tools:background="@drawable/bg_list_creation"
+    android:background="#FF8600"
     android:layout_height="match_parent"
     android:paddingTop="28dp"
     android:clipToPadding="true"
@@ -16,6 +16,7 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="4dp"
         android:clipChildren="false"
+        android:layout_gravity="center"
         android:layout_marginTop="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:spanCount="1"
@@ -39,7 +40,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="152dp"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:adjustViewBounds="true"
             android:src="@drawable/img_no_item" />
 
@@ -53,7 +54,7 @@
             android:gravity="center"
             android:paddingHorizontal="33dp"
             android:text="@string/no_item_here"
-            android:textColor="@color/app"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:translationY="0dp" />
     </LinearLayout>
