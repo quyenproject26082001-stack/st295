@@ -78,8 +78,11 @@
     <color name="yellow_F6">#F6CD46</color>
     <string name="add_image">Add Image</string>
     <string name="add_to_package">Add To Package</string>
-    <string name="add_to_telegram">Add to Telegram</string>
-    <string name="add_to_whatsapp">Add to Whatsapp</string>
+    <string name="add_to_package_">ADD TO PACKAGE</string>
+    <string name="add_to_package_2">Add To Package</string>
+    <string name="add_to_telegram">Add To Telegram</string>
+    <string name="add_to_whatsapp">Add To Whatsapp</string>
+    <string name="added_to_package_successfully">Added to package successfully!</string>
     <string name="advertisement_not_ready">The advertisement is not ready... Please try again!</string>
     <string name="all_items_unlocked">All items are unlocked!</string>
     <string name="allow">Allow</string>
@@ -104,6 +107,7 @@
     <string name="color_text">Color</string>
     <string name="congratulations_on_completing_the_challenge">Congratulations on completing the challenge!</string>
     <string name="continue_per">Continue</string>
+    <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="cosplay">COSPLAY</string>
     <string name="cosplay_cat">cosplay cat</string>
     <string name="create_package_name">Create Package Name</string>
@@ -163,11 +167,11 @@
     <string name="loser">loser...</string>
     <string name="lucky_gift">LUCKY GIFT</string>
     <string name="my_album">My album</string>
-    <string name="my_avatar">My Avatar</string>
+    <string name="my_avatar">Avatar</string>
     <string name="my_cat">my cat</string>
     <string name="my_character">My Pixel</string>
     <string name="my_creation">My Creation</string>
-    <string name="my_design">MY DESIGN</string>
+    <string name="my_design">Design</string>
     <string name="my_work">My Work</string>
     <string name="native_all" translatable="false"/>
     <string name="native_category" translatable="false"/>
@@ -186,6 +190,8 @@
     <string name="native_myWork" translatable="false"/>
     <string name="native_per" translatable="false"/>
     <string name="native_splash" translatable="false"/>
+    <string name="new_package">New Package</string>
+    <string name="new_package_">NEW PACKAGE</string>
     <string name="next">NEXT</string>
     <string name="next_intro">\u00A0Next\u00A0</string>
     <string name="no">No</string>
@@ -199,6 +205,8 @@
     <string name="one_star">Please give us some feedback</string>
     <string name="one_star_title">Oh, no!</string>
     <string name="open_resume" translatable="false"/>
+    <string name="package_">Package</string>
+    <string name="package_created_successfully">Package created successfully!</string>
     <string name="permission">\u00A0Permission\u00A0</string>
     <string name="play">Create Emoji</string>
     <string name="playcos">\u00A0COSPLAY\u00A0</string>
@@ -216,7 +224,7 @@
     <string name="save">SAVE</string>
     <string name="save_failed_please_try_again">Save failed, please try again!</string>
     <string name="settings">Settings</string>
-    <string name="share">SHARE</string>
+    <string name="share">Share</string>
     <string name="share_app">\u00A0\u00A0Share App\u00A0\u00A0</string>
     <string name="speech_bubbles">Speech Bubbles</string>
     <string name="spin">spin</string>

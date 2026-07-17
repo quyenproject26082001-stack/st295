@@ -2,6 +2,8 @@
 <resources>
     <string name="add_image">BILD HINZUFÜGEN</string>
     <string name="add_to_package">Add To Package</string>
+    <string name="add_to_package_">ADD TO PACKAGE</string>
+    <string name="add_to_package_2">Add To Package</string>
     <string name="add_to_telegram">Zu Telegram hinzufügen</string>
     <string name="add_to_whatsapp">Zu WhatsApp hinzufügen</string>
     <string name="advertisement_not_ready">Die Anzeige ist nicht bereit... Bitte versuchen Sie es erneut!</string>
@@ -82,6 +84,8 @@
     <string name="my_creation">MEINE KREATION</string>
     <string name="my_design">MEIN DESIGN</string>
     <string name="my_work">Meine Arbeit</string>
+    <string name="new_package">New Package</string>
+    <string name="new_package_">NEW PACKAGE</string>
     <string name="next">WEITER</string>
     <string name="next_intro">\u00A0Weiter\u00A0</string>
     <string name="no">NEIN</string>

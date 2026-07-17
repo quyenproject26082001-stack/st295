@@ -1,145 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lnlShareButtons"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:paddingBottom="22dp">
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/lnlShareButtons"
+    <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        android:id="@+id/glCenter"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnShare"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/white"
+        app:strokeColor="@color/app"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="2dp"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toStartOf="@id/glCenter"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
 
-        <!--            btnWhatsapp-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnWhatsapp"
+        <TextView
+            android:id="@+id/tvShare"
+            style="@style/single_marquee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            >
+            android:fontFamily="@font/howli_layers_base"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/share"
+            android:textColor="@color/app"
+            android:textSize="20sp" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="44dp"
-                android:scaleType="fitXY"
-                app:cardBackgroundColor="@color/transparent"
-                app:cardCornerRadius="0dp"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toBottomOf="@+id/lnlInLeft"
+    </com.google.android.material.card.MaterialCardView>
 
-                app:layout_constraintEnd_toEndOf="@+id/lnlInLeft"
-                app:layout_constraintStart_toStartOf="@+id/lnlInLeft"
-                app:layout_constraintTop_toTopOf="@+id/lnlInLeft"
-                app:strokeColor="@color/transparent">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnDownload"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/app"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="2dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/glCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
 
-                <ImageView
-                    android:id="@+id/imgBgBtnWhatsapp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/bg_btn_layout_bottom" />
-            </com.google.android.material.card.MaterialCardView>
-
-            <!--                        lnlInLeft-->
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/lnlInLeft"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <!--                        tvDelete-->
-                <TextView
-                    android:id="@+id/tvShare"
-                    style="@style/single_marquee"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="6dp"
-                    android:fontFamily="@font/howli_layers_base"
-                    android:text="@string/share"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--            btnTelegram-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btnTelegram"
+        <TextView
+            android:id="@+id/tvDownload"
+            style="@style/single_marquee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-           >
+            android:fontFamily="@font/howli_layers_base"
+            android:gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/download"
+            android:textColor="@color/app"
+            android:textSize="20sp" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="44dp"
-                android:scaleType="fitXY"
-                app:cardBackgroundColor="@color/transparent"
-                app:cardCornerRadius="0dp"
-                app:cardElevation="0dp"
+    </com.google.android.material.card.MaterialCardView>
 
-                app:layout_constraintBottom_toBottomOf="@+id/lnlInRight"
-                app:layout_constraintEnd_toEndOf="@+id/lnlInRight"
-                app:layout_constraintStart_toStartOf="@+id/lnlInRight"
-                app:layout_constraintTop_toTopOf="@+id/lnlInRight"
-                app:strokeColor="@color/transparent">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnAddPackage"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:strokeColor="@color/app"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="2dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/btnShare"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/bg_btn_layout_bottom" />
-            </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:id="@+id/tvPackage"
+            style="@style/single_marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/howli_layers_base"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:includeFontPadding="false"
+            android:text="@string/add_to_package"
+            android:textColor="@color/app"
+            android:textSize="20sp" />
 
-            <!--                        lnlInRight-->
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/lnlInRight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <!--                        tvDownload-->
-                <TextView
-                    android:id="@+id/tvDownload"
-                    style="@style/single_marquee"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="6dp"
-                    android:fontFamily="@font/howli_layers_base"
-                    android:includeFontPadding="false"
-
-                    android:text="@string/download"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-              />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

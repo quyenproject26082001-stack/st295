@@ -6,13 +6,13 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingBottom="22dp">
-<androidx.constraintlayout.widget.Guideline
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.5"
-    android:id="@+id/glCenter"
-    />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        android:id="@+id/glCenter"
+        />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnMyCreation"
@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/howli_layers_base"
             android:gravity="center"
+            android:layout_marginHorizontal="10dp"
             android:layout_gravity="center"
             android:includeFontPadding="false"
             android:text="@string/my_creation"
@@ -70,6 +71,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/howli_layers_base"
             android:gravity="center"
+            android:layout_marginHorizontal="10dp"
             android:layout_gravity="center"
             android:includeFontPadding="false"
             android:text="@string/download"
@@ -104,6 +106,7 @@
             android:fontFamily="@font/howli_layers_base"
             android:gravity="center"
             android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
             android:includeFontPadding="false"
             android:text="@string/add_to_package"
             android:textColor="@color/app"

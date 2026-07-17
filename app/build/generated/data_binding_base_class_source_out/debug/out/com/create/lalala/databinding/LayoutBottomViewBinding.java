@@ -4,15 +4,15 @@ package com.create.lalala.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.create.lalala.R;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,42 +22,42 @@ public final class LayoutBottomViewBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ConstraintLayout btnTelegram;
+  public final MaterialCardView btnAddPackage;
 
   @NonNull
-  public final ConstraintLayout btnWhatsapp;
+  public final MaterialCardView btnDownload;
 
   @NonNull
-  public final ImageView imgBgBtnWhatsapp;
+  public final MaterialCardView btnShare;
 
   @NonNull
-  public final LinearLayoutCompat lnlInLeft;
+  public final Guideline glCenter;
 
   @NonNull
-  public final LinearLayoutCompat lnlInRight;
-
-  @NonNull
-  public final LinearLayoutCompat lnlShareButtons;
+  public final ConstraintLayout lnlShareButtons;
 
   @NonNull
   public final TextView tvDownload;
 
   @NonNull
+  public final TextView tvPackage;
+
+  @NonNull
   public final TextView tvShare;
 
   private LayoutBottomViewBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout btnTelegram, @NonNull ConstraintLayout btnWhatsapp,
-      @NonNull ImageView imgBgBtnWhatsapp, @NonNull LinearLayoutCompat lnlInLeft,
-      @NonNull LinearLayoutCompat lnlInRight, @NonNull LinearLayoutCompat lnlShareButtons,
-      @NonNull TextView tvDownload, @NonNull TextView tvShare) {
+      @NonNull MaterialCardView btnAddPackage, @NonNull MaterialCardView btnDownload,
+      @NonNull MaterialCardView btnShare, @NonNull Guideline glCenter,
+      @NonNull ConstraintLayout lnlShareButtons, @NonNull TextView tvDownload,
+      @NonNull TextView tvPackage, @NonNull TextView tvShare) {
     this.rootView = rootView;
-    this.btnTelegram = btnTelegram;
-    this.btnWhatsapp = btnWhatsapp;
-    this.imgBgBtnWhatsapp = imgBgBtnWhatsapp;
-    this.lnlInLeft = lnlInLeft;
-    this.lnlInRight = lnlInRight;
+    this.btnAddPackage = btnAddPackage;
+    this.btnDownload = btnDownload;
+    this.btnShare = btnShare;
+    this.glCenter = glCenter;
     this.lnlShareButtons = lnlShareButtons;
     this.tvDownload = tvDownload;
+    this.tvPackage = tvPackage;
     this.tvShare = tvShare;
   }
 
@@ -88,45 +88,41 @@ public final class LayoutBottomViewBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnTelegram;
-      ConstraintLayout btnTelegram = ViewBindings.findChildViewById(rootView, id);
-      if (btnTelegram == null) {
+      id = R.id.btnAddPackage;
+      MaterialCardView btnAddPackage = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddPackage == null) {
         break missingId;
       }
 
-      id = R.id.btnWhatsapp;
-      ConstraintLayout btnWhatsapp = ViewBindings.findChildViewById(rootView, id);
-      if (btnWhatsapp == null) {
+      id = R.id.btnDownload;
+      MaterialCardView btnDownload = ViewBindings.findChildViewById(rootView, id);
+      if (btnDownload == null) {
         break missingId;
       }
 
-      id = R.id.imgBgBtnWhatsapp;
-      ImageView imgBgBtnWhatsapp = ViewBindings.findChildViewById(rootView, id);
-      if (imgBgBtnWhatsapp == null) {
+      id = R.id.btnShare;
+      MaterialCardView btnShare = ViewBindings.findChildViewById(rootView, id);
+      if (btnShare == null) {
         break missingId;
       }
 
-      id = R.id.lnlInLeft;
-      LinearLayoutCompat lnlInLeft = ViewBindings.findChildViewById(rootView, id);
-      if (lnlInLeft == null) {
+      id = R.id.glCenter;
+      Guideline glCenter = ViewBindings.findChildViewById(rootView, id);
+      if (glCenter == null) {
         break missingId;
       }
 
-      id = R.id.lnlInRight;
-      LinearLayoutCompat lnlInRight = ViewBindings.findChildViewById(rootView, id);
-      if (lnlInRight == null) {
-        break missingId;
-      }
-
-      id = R.id.lnlShareButtons;
-      LinearLayoutCompat lnlShareButtons = ViewBindings.findChildViewById(rootView, id);
-      if (lnlShareButtons == null) {
-        break missingId;
-      }
+      ConstraintLayout lnlShareButtons = (ConstraintLayout) rootView;
 
       id = R.id.tvDownload;
       TextView tvDownload = ViewBindings.findChildViewById(rootView, id);
       if (tvDownload == null) {
+        break missingId;
+      }
+
+      id = R.id.tvPackage;
+      TextView tvPackage = ViewBindings.findChildViewById(rootView, id);
+      if (tvPackage == null) {
         break missingId;
       }
 
@@ -136,8 +132,8 @@ public final class LayoutBottomViewBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LayoutBottomViewBinding((ConstraintLayout) rootView, btnTelegram, btnWhatsapp,
-          imgBgBtnWhatsapp, lnlInLeft, lnlInRight, lnlShareButtons, tvDownload, tvShare);
+      return new LayoutBottomViewBinding((ConstraintLayout) rootView, btnAddPackage, btnDownload,
+          btnShare, glCenter, lnlShareButtons, tvDownload, tvPackage, tvShare);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

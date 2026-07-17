@@ -23,10 +23,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/app"
-            app:strokeWidth="4dp"
-            app:cardCornerRadius="28dp"
-            app:strokeColor="@color/app"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/transparent"
+            app:cardCornerRadius="24dp"
             >
 
             <com.create.lalala.core.custom.imageview.ShapeClipImageView
@@ -44,7 +43,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="end|top"
-            android:layout_margin="10dp"
+            android:layout_margin="8dp"
             android:src="@drawable/ic_delete_item" />
 
         <!--btnEdit-->
@@ -53,7 +52,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="start|top"
-            android:layout_margin="10dp"
+            android:layout_margin="8dp"
             android:visibility="visible"
             android:src="@drawable/ic_edit_item" />
 
@@ -63,7 +62,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="end|top"
-            android:layout_margin="10dp"
+            android:layout_margin="8dp"
             android:src="@drawable/ic_not_select"
             android:visibility="gone" />
 

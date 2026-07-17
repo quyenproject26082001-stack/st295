@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -26,13 +25,16 @@ public final class ActivityAlbumBinding implements ViewBinding {
   public final LayoutActionbarBinding actionBar;
 
   @NonNull
-  public final LayoutBottomViewBinding bottomView;
+  public final LayoutBottomCreationBinding bottomView;
 
   @NonNull
   public final FrameLayout btnMyDesign;
 
   @NonNull
   public final FrameLayout btnMyPixel;
+
+  @NonNull
+  public final FrameLayout btnPackage;
 
   @NonNull
   public final FrameLayout cvType;
@@ -44,13 +46,19 @@ public final class ActivityAlbumBinding implements ViewBinding {
   public final FragmentContainerView frmList;
 
   @NonNull
-  public final ImageView imvTabBackground;
-
-  @NonNull
   public final FrameLayout layoutActionBar;
 
   @NonNull
   public final FrameLayout lnlBottom;
+
+  @NonNull
+  public final View overlayMyDesign;
+
+  @NonNull
+  public final View overlayMyPride;
+
+  @NonNull
+  public final View overlayPackage;
 
   @NonNull
   public final DoubleStrokeTextView tvMyDesign;
@@ -58,26 +66,35 @@ public final class ActivityAlbumBinding implements ViewBinding {
   @NonNull
   public final DoubleStrokeTextView tvMyPride;
 
+  @NonNull
+  public final DoubleStrokeTextView tvPackage;
+
   private ActivityAlbumBinding(@NonNull ConstraintLayout rootView,
-      @NonNull LayoutActionbarBinding actionBar, @NonNull LayoutBottomViewBinding bottomView,
+      @NonNull LayoutActionbarBinding actionBar, @NonNull LayoutBottomCreationBinding bottomView,
       @NonNull FrameLayout btnMyDesign, @NonNull FrameLayout btnMyPixel,
-      @NonNull FrameLayout cvType, @NonNull FrameLayout flBottomView,
-      @NonNull FragmentContainerView frmList, @NonNull ImageView imvTabBackground,
+      @NonNull FrameLayout btnPackage, @NonNull FrameLayout cvType,
+      @NonNull FrameLayout flBottomView, @NonNull FragmentContainerView frmList,
       @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout lnlBottom,
-      @NonNull DoubleStrokeTextView tvMyDesign, @NonNull DoubleStrokeTextView tvMyPride) {
+      @NonNull View overlayMyDesign, @NonNull View overlayMyPride, @NonNull View overlayPackage,
+      @NonNull DoubleStrokeTextView tvMyDesign, @NonNull DoubleStrokeTextView tvMyPride,
+      @NonNull DoubleStrokeTextView tvPackage) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.bottomView = bottomView;
     this.btnMyDesign = btnMyDesign;
     this.btnMyPixel = btnMyPixel;
+    this.btnPackage = btnPackage;
     this.cvType = cvType;
     this.flBottomView = flBottomView;
     this.frmList = frmList;
-    this.imvTabBackground = imvTabBackground;
     this.layoutActionBar = layoutActionBar;
     this.lnlBottom = lnlBottom;
+    this.overlayMyDesign = overlayMyDesign;
+    this.overlayMyPride = overlayMyPride;
+    this.overlayPackage = overlayPackage;
     this.tvMyDesign = tvMyDesign;
     this.tvMyPride = tvMyPride;
+    this.tvPackage = tvPackage;
   }
 
   @Override
@@ -119,7 +136,7 @@ public final class ActivityAlbumBinding implements ViewBinding {
       if (bottomView == null) {
         break missingId;
       }
-      LayoutBottomViewBinding binding_bottomView = LayoutBottomViewBinding.bind(bottomView);
+      LayoutBottomCreationBinding binding_bottomView = LayoutBottomCreationBinding.bind(bottomView);
 
       id = R.id.btnMyDesign;
       FrameLayout btnMyDesign = ViewBindings.findChildViewById(rootView, id);
@@ -130,6 +147,12 @@ public final class ActivityAlbumBinding implements ViewBinding {
       id = R.id.btnMyPixel;
       FrameLayout btnMyPixel = ViewBindings.findChildViewById(rootView, id);
       if (btnMyPixel == null) {
+        break missingId;
+      }
+
+      id = R.id.btnPackage;
+      FrameLayout btnPackage = ViewBindings.findChildViewById(rootView, id);
+      if (btnPackage == null) {
         break missingId;
       }
 
@@ -151,12 +174,6 @@ public final class ActivityAlbumBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imvTabBackground;
-      ImageView imvTabBackground = ViewBindings.findChildViewById(rootView, id);
-      if (imvTabBackground == null) {
-        break missingId;
-      }
-
       id = R.id.layoutActionBar;
       FrameLayout layoutActionBar = ViewBindings.findChildViewById(rootView, id);
       if (layoutActionBar == null) {
@@ -166,6 +183,24 @@ public final class ActivityAlbumBinding implements ViewBinding {
       id = R.id.lnlBottom;
       FrameLayout lnlBottom = ViewBindings.findChildViewById(rootView, id);
       if (lnlBottom == null) {
+        break missingId;
+      }
+
+      id = R.id.overlayMyDesign;
+      View overlayMyDesign = ViewBindings.findChildViewById(rootView, id);
+      if (overlayMyDesign == null) {
+        break missingId;
+      }
+
+      id = R.id.overlayMyPride;
+      View overlayMyPride = ViewBindings.findChildViewById(rootView, id);
+      if (overlayMyPride == null) {
+        break missingId;
+      }
+
+      id = R.id.overlayPackage;
+      View overlayPackage = ViewBindings.findChildViewById(rootView, id);
+      if (overlayPackage == null) {
         break missingId;
       }
 
@@ -181,9 +216,16 @@ public final class ActivityAlbumBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvPackage;
+      DoubleStrokeTextView tvPackage = ViewBindings.findChildViewById(rootView, id);
+      if (tvPackage == null) {
+        break missingId;
+      }
+
       return new ActivityAlbumBinding((ConstraintLayout) rootView, binding_actionBar,
-          binding_bottomView, btnMyDesign, btnMyPixel, cvType, flBottomView, frmList,
-          imvTabBackground, layoutActionBar, lnlBottom, tvMyDesign, tvMyPride);
+          binding_bottomView, btnMyDesign, btnMyPixel, btnPackage, cvType, flBottomView, frmList,
+          layoutActionBar, lnlBottom, overlayMyDesign, overlayMyPride, overlayPackage, tvMyDesign,
+          tvMyPride, tvPackage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

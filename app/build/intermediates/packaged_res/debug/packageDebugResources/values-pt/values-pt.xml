@@ -2,6 +2,8 @@
 <resources>
     <string name="add_image">ADICIONAR IMAGEM</string>
     <string name="add_to_package">Add To Package</string>
+    <string name="add_to_package_">ADD TO PACKAGE</string>
+    <string name="add_to_package_2">Add To Package</string>
     <string name="add_to_telegram">Adicionar ao Telegram</string>
     <string name="add_to_whatsapp">Adicionar ao Whatsapp</string>
     <string name="advertisement_not_ready">O anúncio não está pronto... Por favor, tente novamente!</string>
@@ -82,6 +84,8 @@
     <string name="my_creation">MINHA CRIAÇÃO</string>
     <string name="my_design">MEU DESIGN</string>
     <string name="my_work">Meu Trabalho</string>
+    <string name="new_package">New Package</string>
+    <string name="new_package_">NEW PACKAGE</string>
     <string name="next">PRÓXIMO</string>
     <string name="next_intro">\u00A0Próximo\u00A0</string>
     <string name="no">NÃO</string>

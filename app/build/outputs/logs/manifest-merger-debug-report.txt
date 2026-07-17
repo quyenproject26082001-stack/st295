@@ -1,34 +1,34 @@
 -- Merging decision tree log ---
 provider#com.google.android.gms.ads.MobileAdsInitProvider
-INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:40:9-45:35
+INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:39:9-44:35
 REJECTED from [com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:81:9-86:43
 	tools:node
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:45:13-32
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:44:13-32
 	android:enabled
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:43:13-36
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:42:13-36
 	android:authorities
 		INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:42:13-73
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:41:13-73
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:44:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:41:13-76
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:40:13-76
 provider#androidx.core.content.FileProvider
-INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:116:9-124:20
+INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:127:9-135:20
 	android:grantUriPermissions
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:120:13-47
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:131:13-47
 	android:authorities
 		INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:118:13-60
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:129:13-60
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:119:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:130:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:117:13-62
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:128:13-62
 manifest
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-145:12
-INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-145:12
-INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-145:12
-INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-145:12
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-156:12
+INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-156:12
+INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-156:12
+INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:2:1-156:12
 MERGED from [androidx.databinding:databinding-adapters:8.12.0] /home/lequyen/.gradle/caches/8.13/transforms/49a4113376f0e538d5002242de058ac9/transformed/databinding-adapters-8.12.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-ktx:8.12.0] /home/lequyen/.gradle/caches/8.13/transforms/6261b71b732986a58904cbe1adb2a820/transformed/databinding-ktx-8.12.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:8.12.0] /home/lequyen/.gradle/caches/8.13/transforms/891c8833d334d801af461aa3b12cca1c/transformed/databinding-runtime-8.12.0/AndroidManifest.xml:2:1-7:12
@@ -312,21 +312,17 @@ MERGED from [com.pangle.global:tiktok-business-android-sdk-comp:1.5.1] /home/leq
 MERGED from [com.pangle.global:tiktok-business-android-sdk-comp:1.5.1] /home/lequyen/.gradle/caches/8.13/transforms/f0730e2e2f2b9c4719d97e1f38665c6f/transformed/tiktok-business-android-sdk-comp-1.5.1/AndroidManifest.xml:17:5-79
 	android:name
 		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:7:22-76
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:8:5-80
-	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:8:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:9:5-12:40
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:8:5-11:40
 	android:maxSdkVersion
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:10:9-35
 	tools:ignore
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:12:9-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:11:9-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:10:9-65
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:9:9-65
 application
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:14:5-143:19
-INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:14:5-143:19
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:13:5-154:19
+INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:13:5-154:19
 MERGED from [com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:20:5-68:19
 MERGED from [com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:20:5-68:19
 MERGED from [com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:7:5-25:19
@@ -460,229 +456,253 @@ MERGED from [com.pangle.global:pag-apm:2.0.0.8] /home/lequyen/.gradle/caches/8.1
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:22:9-35
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:20:9-41
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:19:9-41
 	android:fullBackupContent
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:18:9-54
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:17:9-54
 	android:roundIcon
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:21:9-54
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:20:9-54
 	android:icon
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:19:9-43
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:16:9-35
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:23:9-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:22:9-49
 	android:networkSecurityConfig
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:24:9-69
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:23:9-69
 	android:dataExtractionRules
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:17:9-65
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:16:9-65
 	tools:replace
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:25:9-50
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:24:9-50
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:15:9-39
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:14:9-39
 activity#com.create.lalala.ui.cosplay.CosplayRandomActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:26:9-29:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:25:9-28:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:29:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:28:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:28:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:27:13-61
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:26:13-61
 activity#com.create.lalala.ui.cosplay.CosplayCustomizeActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:30:9-34:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:29:9-33:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:34:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:33:13-49
 	android:hardwareAccelerated
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:33:13-47
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:32:13-47
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:32:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:31:13-64
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:30:13-64
 activity#com.create.lalala.ui.cosplay.CosplaySuccessfulActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:35:9-38:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:34:9-37:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:38:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:37:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:37:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:36:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:36:13-65
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:35:13-65
 activity#com.create.lalala.ui.add_character.AddCharacterActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:47:9-51:58
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:46:9-50:58
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:50:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:49:13-49
 	android:windowSoftInputMode
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:51:13-55
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:50:13-55
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:49:13-36
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:48:13-36
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:48:13-66
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:47:13-66
 activity#com.create.lalala.ui.random_character.RandomCharacterActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:52:9-55:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:51:9-54:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:55:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:54:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:54:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:53:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:53:13-72
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:52:13-72
 activity#com.create.lalala.ui.trending.TrendingActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:56:9-59:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:55:9-58:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:59:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:58:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:58:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:57:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:57:13-57
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:56:13-57
 activity#com.create.lalala.ui.choose_character.ChooseCharacterActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:60:9-63:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:59:9-62:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:63:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:62:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:62:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:61:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:61:13-72
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:60:13-72
 activity#com.create.lalala.ui.customize.CustomizeCharacterActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:64:9-68:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:63:9-67:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:68:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:67:13-49
 	android:hardwareAccelerated
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:67:13-47
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:66:13-47
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:66:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:65:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:65:13-68
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:64:13-68
 activity#com.create.lalala.ui.view.ViewActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:69:9-72:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:68:9-71:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:72:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:71:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:71:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:70:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:70:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:69:13-49
+activity#com.create.lalala.ui.package_view.ViewAllPackageActivity
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:72:9-75:52
+	android:screenOrientation
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:75:13-49
+	android:exported
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:74:13-37
+	android:name
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:73:13-67
+activity#com.create.lalala.ui.package_view.ViewPackageActivity
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:76:9-79:52
+	android:screenOrientation
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:79:13-49
+	android:exported
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:78:13-37
+	android:name
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:77:13-64
 activity#com.create.lalala.ui.success.SuccessActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:73:9-76:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:80:9-83:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:76:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:83:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:75:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:82:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:74:13-55
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:81:13-55
 activity#com.create.lalala.ui.my_creation.MyCreationActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:77:9-80:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:84:9-87:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:80:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:87:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:79:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:86:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:78:13-62
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:85:13-62
+activity#com.create.lalala.ui.emoji_copy.EmojiCopyActivity
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:88:9-91:52
+	android:screenOrientation
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:91:13-49
+	android:exported
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:90:13-37
+	android:name
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:89:13-60
 activity#com.create.lalala.ui.splash.SplashActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:81:9-90:20
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:92:9-101:20
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:84:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:95:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:83:13-36
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:94:13-36
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:82:13-53
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:93:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:85:13-89:29
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:96:13-100:29
 action#android.intent.action.MAIN
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:86:17-69
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:97:17-69
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:86:25-66
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:97:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:88:17-77
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:99:17-77
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:88:27-74
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:99:27-74
 activity#com.create.lalala.ui.permission.PermissionActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:91:9-94:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:102:9-105:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:94:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:105:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:93:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:104:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:92:13-61
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:103:13-61
 activity#com.create.lalala.ui.intro.IntroActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:95:9-98:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:106:9-109:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:98:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:109:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:97:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:108:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:96:13-51
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:107:13-51
 activity#com.create.lalala.ui.language.LanguageActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:99:9-102:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:110:9-113:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:102:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:113:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:101:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:112:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:100:13-57
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:111:13-57
 activity#com.create.lalala.ui.home.HomeActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:103:9-106:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:114:9-117:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:106:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:117:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:105:13-36
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:116:13-36
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:104:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:115:13-49
 activity#com.create.lalala.ui.SettingsActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:107:9-110:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:118:9-121:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:110:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:121:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:109:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:120:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:108:13-48
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:119:13-48
 activity#com.create.lalala.ui.pride.PrideActivity
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:111:9-114:52
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:122:9-125:52
 	android:screenOrientation
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:114:13-49
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:125:13-49
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:113:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:124:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:112:13-51
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:123:13-51
 provider#com.create.lalala.core.utils.share.whatsapp.StickerContentProvider
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:125:9-130:66
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:136:9-141:66
 	android:readPermission
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:130:13-63
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:141:13-63
 	android:enabled
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:128:13-35
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:139:13-35
 	android:authorities
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:127:13-101
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:138:13-101
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:129:13-36
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:140:13-36
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:126:13-77
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:137:13-77
 service#com.create.lalala.core.service.MyFirebaseMessagingService
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:132:9-142:19
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:143:9-153:19
 	android:exported
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:134:13-37
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:145:13-37
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:133:13-68
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:144:13-68
 intent-filter#action:name:android.intent.action.PICK+action:name:com.google.firebase.MESSAGING_EVENT+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.OPENABLE
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:135:13-141:29
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:146:13-152:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:136:17-78
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:147:17-78
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:136:25-75
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:147:25-75
 action#android.intent.action.PICK
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:137:17-69
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:148:17-69
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:137:25-66
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:148:25-66
 category#android.intent.category.DEFAULT
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:139:17-76
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:150:17-76
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:139:27-73
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:150:27-73
 category#android.intent.category.OPENABLE
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:140:17-77
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:151:17-77
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:140:27-74
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:151:27-74
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:121:13-123:54
+ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:132:13-134:54
 	android:resource
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:123:17-51
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:134:17-51
 	android:name
-		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:122:17-67
+		ADDED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:133:17-67
 uses-sdk
 INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml

@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -133,11 +132,23 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.create.lalala.ui.package_view.ViewAllPackageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.create.lalala.ui.package_view.ViewPackageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.create.lalala.ui.success.SuccessActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.create.lalala.ui.my_creation.MyCreationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.create.lalala.ui.emoji_copy.EmojiCopyActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

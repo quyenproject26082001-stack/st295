@@ -36,7 +36,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
-                android:layout_height="46dp"
+                android:layout_height="44dp"
                 android:scaleType="fitXY"
                 app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/transparent"
@@ -71,6 +71,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:visibility="visible"
+                    android:layout_marginEnd="5dp"
                     android:src="@drawable/ic_whatsapp" />
 
                 <!--                        tvWhatsapp-->
@@ -83,7 +84,7 @@
                     android:fontFamily="@font/howli_layers_base"
                     android:text="@string/add_to_whatsapp"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -101,7 +102,7 @@
 
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_height="46dp"
+                android:layout_height="44dp"
                 android:scaleType="fitXY"
                 app:strokeColor="@color/transparent"
                 app:cardElevation="0dp"
@@ -135,6 +136,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:visibility="visible"
+                    android:layout_marginEnd="5dp"
                     android:src="@drawable/ic_telegram" />
 
                 <!--                        tvTelegram-->
@@ -147,7 +149,7 @@
                     android:fontFamily="@font/howli_layers_base"
                     android:text="@string/add_to_telegram"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

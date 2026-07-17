@@ -12,6 +12,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/layout_actionbar.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/layout_bottom_creation.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/layout_bottom_creation.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/ads_native_big_btn_bottom_shimmer.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/ads_native_big_btn_bottom_shimmer.xml"
     },
@@ -26,6 +30,10 @@
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/fragment_my_design.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/fragment_my_design.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/layout_bottom_view_one_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/layout_bottom_view_one_package.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_random_character.xml",
@@ -44,12 +52,12 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_my_design.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_gif_reward_slot.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_gif_reward_slot.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/dialog_color_picker.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/dialog_color_picker.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_gif_reward_slot.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_gif_reward_slot.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_color.xml",
@@ -76,6 +84,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/layout_custom_input.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_view_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_view_package.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_intro.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/activity_intro.xml"
     },
@@ -88,6 +100,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_bottom_navigation.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/fragment_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/fragment_package.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_permission.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/activity_permission.xml"
     },
@@ -98,6 +114,14 @@
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_text_color.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_text_color.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_emoji_copy_tab.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_emoji_copy_tab.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_view_all_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/activity_view_all_package.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_add_character.xml",
@@ -136,10 +160,6 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/ads_native_big_btn_top_shimmer.xml"
     },
     {
-        "merged": "com.create.lalala.app-mergeDebugResources-108:/layout/activity_success.xml",
-        "source": "com.create.lalala.app-main-111:/layout/activity_success.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_sticker.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_sticker.xml"
     },
@@ -156,6 +176,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/dialog_speech.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_add_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_add_package.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/dialog_rate.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/dialog_rate.xml"
     },
@@ -166,6 +190,10 @@
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/fragment_my_avatar.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/fragment_my_avatar.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/layout_bottom_view_all_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/layout_bottom_view_all_package.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_home.xml",
@@ -204,6 +232,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_background_color.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_view_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/activity_view_package.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/ads_native_medium_btn_bottom_shimmer.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/ads_native_medium_btn_bottom_shimmer.xml"
     },
@@ -218,6 +250,10 @@
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/popup_my_album.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/popup_my_album.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/dialog_add_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/dialog_add_package.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_speech.xml",
@@ -240,12 +276,12 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/activity_cosplay_customize.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/ads_native_big_btn_bottom.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/ads_native_big_btn_bottom.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/layout_bottom.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/layout_bottom.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/ads_native_big_btn_bottom.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/ads_native_big_btn_bottom.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_customize.xml",
@@ -272,6 +308,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/dialog_confirm.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/dialog_add_new_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/dialog_add_new_package.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/ads_native_medium_btn_bottom_2_dialog.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/ads_native_medium_btn_bottom_2_dialog.xml"
     },
@@ -280,12 +320,24 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_choose_avatar.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_emoji_copy.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_emoji_copy.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/item_package_creation.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/item_package_creation.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/activity_emoji_copy.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/activity_emoji_copy.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/ads_native_small_btn_bottom.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-main-111:/layout/ads_native_small_btn_bottom.xml"
     },
     {
-        "merged": "com.create.lalala.app-mergeDebugResources-108:/layout/layout_bottom_ss.xml",
-        "source": "com.create.lalala.app-main-111:/layout/layout_bottom_ss.xml"
+        "merged": "com.create.lalala.app-mergeDebugResources-108:/layout/activity_customize_emoji.xml",
+        "source": "com.create.lalala.app-main-111:/layout/activity_customize_emoji.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.create.lalala.app-mergeDebugResources-108:/layout/ads_native_collap_banner_shimmer.xml",
