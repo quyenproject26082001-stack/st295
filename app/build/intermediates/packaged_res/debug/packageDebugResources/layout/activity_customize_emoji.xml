@@ -5,6 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToOutline="false"
+    android:clipChildren="false"
     android:background="@drawable/bg_app"
     tools:context=".ui.customize.CustomizeCharacterActivity">
 
@@ -28,6 +30,8 @@
     </FrameLayout>
 
     <!-- Layout Image Layer -->
+
+    <!-- Layout Image Layer -->
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -47,7 +51,46 @@
         <FrameLayout
             android:id="@+id/layoutCustomLayer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+            <com.create.lalala.core.custom.drawview.DrawView
+                android:id="@+id/drawView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.create.lalala.core.custom.paintview.PaintDrawView
+                android:id="@+id/paintDrawView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtEmojiText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:hint=""
+                android:includeFontPadding="false"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvEmojiTextPreview"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:visibility="invisible" />
+        </FrameLayout>
 
     </FrameLayout>
 
@@ -73,37 +116,6 @@
         app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
 
 
-    <TextView
-        android:id="@+id/btnMan"
-        android:layout_width="64dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="6dp"
-        android:background="@drawable/selector_btn_man"
-        android:elevation="1dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toTopOf="@id/layoutActionBar"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        />
-
-
-
-
-
-    <TextView
-        android:id="@+id/btnWooman"
-        android:layout_width="64dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:background="@drawable/selector_btn_woman"
-        android:elevation="1dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@id/bg_cus"
-        app:layout_constraintTop_toTopOf="@id/bg_cus"
-
-        />
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_btn"
@@ -113,30 +125,201 @@
         app:layout_constraintGuide_percent="0.5" />
 
 
-
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bottomContent"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <FrameLayout
+        android:id="@+id/btnLayer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_layer"
+        tools:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/glHorizontal">
+        app:layout_constraintBottom_toTopOf="@id/flBottomNav"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toStartOf="@id/btnLayer"
+        android:background="@drawable/ic_text_layer"
+        app:layout_constraintTop_toTopOf="@id/btnLayer"
+        android:layout_marginEnd="10dp"
+        tools:visibility="invisible"
+        android:id="@+id/btnTextLayer"/>
+
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toStartOf="@id/btnTextLayer"
+        android:background="@drawable/ic_draw_layer"
+        android:layout_marginEnd="10dp"
+        tools:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/btnTextLayer"
+        android:id="@+id/btnDrawLayer"
+        />
+
+
+
 
     <TextView
         android:id="@+id/bg_cus"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="61dp"
-        android:background="#FF8600"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
+        android:background="#FF8600"
+        android:layout_marginTop="61dp"/>
+
+
+
+
+
 
     <!--    rcvLayer-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layerType="hardware"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:clipToPadding="false"
+
+        android:paddingBottom="80dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bg_cus"
+        app:spanCount="5"
+        android:visibility="visible"
+        tools:visibility="invisible"
+        tools:itemCount="50"
+        tools:listitem="@layout/item_customize" />
+
+    <!--    flBottomNav-->
+    <LinearLayout
+        android:id="@+id/flNavDrawAndEraser"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginBottom="0dp"
+        android:clipChildren="false"
+        tools:visibility="visible"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bg_cus"
+        >
+        <ImageView
+            android:id="@+id/tabDraw"
+            android:layout_width="156dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:paddingVertical="8dp"
+            android:background="@drawable/ic_tab_emoji_uslt"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_draw_tab_uslt"/>
+        <ImageView
+            android:id="@+id/tabEraser"
+            android:layout_width="156dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:paddingVertical="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_tab_emoji_slt"
+            android:layout_marginStart="8dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_tab_eraser_slt"/>
+    </LinearLayout>
+
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bg_cus"
+        android:layout_height="wrap_content"
+        android:clipToOutline="false"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
+        android:clipChildren="false"
+        android:id="@+id/containerSeekbar"
+        >
+        
+        <TextView
+            android:id="@+id/tvSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/howli_layers_base"
+            android:includeFontPadding="false"
+            android:text="Size"
+            app:layout_constraintTop_toTopOf="@id/seekbarSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/seekbarSize"
+            android:textColor="@color/white"/>
+        
+        <SeekBar
+            android:id="@+id/seekbarSize"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="16dp"
+            android:maxHeight="14dp"
+            android:minHeight="14dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:splitTrack="false"
+            android:thumb="@drawable/ic_customize_emoji_seekbar_thumb"
+            android:thumbOffset="17dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    rcvLayer-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLayerLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layerType="hardware"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        android:background="@color/app"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/flNavDrawAndEraser"
+        app:spanCount="5"
+        android:visibility="visible"
+        tools:visibility="invisible"
+        tools:itemCount="50"
+        tools:listitem="@layout/item_layer_draw" />
+
+    <TextView
+        android:id="@+id/tvNoLayerItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/howli_layers_base"
+        android:text="@string/no_item_here"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/rcvLayerLayer"
+        app:layout_constraintEnd_toEndOf="@id/rcvLayerLayer"
+        app:layout_constraintStart_toStartOf="@id/rcvLayerLayer"
+        app:layout_constraintTop_toTopOf="@id/rcvLayerLayer"
+        tools:visibility="visible" />
+
+    <!--    rcvLayer-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLayerColor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
@@ -146,49 +329,40 @@
         android:paddingBottom="80dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/bg_cus"
+        app:layout_constraintTop_toBottomOf="@id/containerSeekbar"
         app:spanCount="5"
         android:visibility="visible"
-        tools:visibility="gone"
+        tools:visibility="invisible"
         android:layout_marginBottom="10dp"
         tools:itemCount="50"
-        tools:listitem="@layout/item_customize" />
+        tools:listitem="@layout/item_color_circle" />
 
-    <FrameLayout
-        android:id="@+id/btnLayer"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        tools:visibility="gone"
-        android:background="@drawable/ic_layer"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/flBottomNav"
-        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvTextColor"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_color_text_emoji" />
 
-    <FrameLayout
-        android:id="@+id/btnTextLayer"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        tools:visibility="gone"
-        android:background="@drawable/ic_text_layer"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintEnd_toStartOf="@id/btnLayer"
-        app:layout_constraintBottom_toTopOf="@id/flBottomNav"
-        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvTextFont"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_font" />
 
-    <FrameLayout
-        android:id="@+id/btnDraw"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_draw_layer"
-        android:layout_marginEnd="10dp"
-        tools:visibility="gone"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintEnd_toStartOf="@id/btnTextLayer"
-        app:layout_constraintBottom_toTopOf="@id/flBottomNav"
-        />
 
     <!--    flBottomNav-->
     <FrameLayout
@@ -198,7 +372,7 @@
         android:layout_marginHorizontal="0dp"
         android:layout_marginBottom="0dp"
         android:clipChildren="false"
-        tools:visibility="gone"
+        tools:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bg_cus"
@@ -217,7 +391,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_bottom_navigation" />
     </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
     <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
     <!--    <FrameLayout-->
     <!--        android:id="@+id/flNativeCollab"-->

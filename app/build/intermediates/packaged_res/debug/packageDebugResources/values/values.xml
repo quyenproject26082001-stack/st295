@@ -116,7 +116,7 @@
     <string name="delete_failed_please_try_again">Delete failed, please try again!</string>
     <string name="delete_your_customize">Delete your customize</string>
     <string name="do_you_want_to_exit">HAVEN\'T SAVE IT YET, DO YOU WANT TO EXIT?</string>
-    <string name="done">Save</string>
+    <string name="done">Done</string>
     <string name="download">Download</string>
     <string name="download_failed_please_try_again_later">Download failed, please try again later!</string>
     <string name="download_success">Download successful to the ST295_Horror_Emoji_Maker album</string>
@@ -172,6 +172,7 @@
     <string name="my_character">My Pixel</string>
     <string name="my_creation">My Creation</string>
     <string name="my_design">Design</string>
+    <string name="my_emoji">Emoji</string>
     <string name="my_work">My Work</string>
     <string name="native_all" translatable="false"/>
     <string name="native_category" translatable="false"/>
@@ -199,7 +200,7 @@
     <string name="no_internet">No Internet</string>
     <string name="no_item_here">No Item Here</string>
     <string name="not_select_lang">Please select a language</string>
-    <string name="notification">\u00A0\u00A0NOTIFICATION\u00A0\u00A0</string>
+    <string name="notification">\u00A0\u00A0Notification\u00A0\u00A0</string>
     <string name="null_edt">Please enter text</string>
     <string name="ok">Ok</string>
     <string name="one_star">Please give us some feedback</string>
@@ -211,6 +212,7 @@
     <string name="play">Create Emoji</string>
     <string name="playcos">\u00A0COSPLAY\u00A0</string>
     <string name="please_check_your_internet">Please check your internet</string>
+    <string name="please_draw_something">Please draw something</string>
     <string name="please_enter_your_package_name">Please enter your package name!</string>
     <string name="please_select_an_image">Please select an image</string>
     <string name="privacy_policy"><![CDATA[\u00A0\u00A0Privacy & Policy\u00A0\u00A0]]></string>
@@ -230,7 +232,7 @@
     <string name="spin">spin</string>
     <string name="sticker">Sticker</string>
     <string name="stop">STOP</string>
-    <string name="storage">\u00A0\u00A0STORAGE\u00A0\u00A0</string>
+    <string name="storage">\u00A0\u00A0Storage\u00A0\u00A0</string>
     <string name="successfully">SUCCESSFULL</string>
     <string name="text">Text</string>
     <string name="this_action_can_contain_ads">This action can contain ads</string>

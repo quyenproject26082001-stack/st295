@@ -113,6 +113,7 @@ color red_BA
 color transparent
 color white
 color yellow_F6
+drawable add_color_emoji
 drawable arrow
 drawable arrow_spin
 drawable bg_100_solid_green
@@ -151,6 +152,7 @@ drawable bg_countdown2
 drawable bg_creation_tab_selected
 drawable bg_creation_tab_unselected
 drawable bg_cus
+drawable bg_customize_emoji_seekbar
 drawable bg_delete_exit
 drawable bg_design_slt
 drawable bg_dialog
@@ -158,6 +160,7 @@ drawable bg_dialog_delete_exit
 drawable bg_dialog_internet
 drawable bg_dialog_loading
 drawable bg_dialog_reset
+drawable bg_done_customize_emoji
 drawable bg_done_picker
 drawable bg_done_pickercolor
 drawable bg_drawview
@@ -218,6 +221,7 @@ drawable bg_stroke_img_uslt
 drawable bg_stroke_speech
 drawable bg_stroke_sticker
 drawable bg_text_lang
+drawable bg_text_tool_selected_emoji
 drawable bg_title_tv_guide
 drawable bg_uslt_navi
 drawable bg_uslt_navi_shape
@@ -237,14 +241,18 @@ drawable ic_back
 drawable ic_back_setting
 drawable ic_background
 drawable ic_background_selected
+drawable ic_choose_color_text_emoji
+drawable ic_choose_text_font_emoji
 drawable ic_close_1
 drawable ic_close_color
 drawable ic_close_color_pick
 drawable ic_close_image
 drawable ic_color
+drawable ic_customize_emoji_seekbar_thumb
 drawable ic_delete
 drawable ic_delete_creation
 drawable ic_delete_item
+drawable ic_delete_layer_item
 drawable ic_delete_purple
 drawable ic_delete_view
 drawable ic_done
@@ -252,11 +260,17 @@ drawable ic_done_background
 drawable ic_done_lang_settings
 drawable ic_download_actionbar
 drawable ic_download_purple
+drawable ic_draw
 drawable ic_draw_layer
+drawable ic_draw_slt
+drawable ic_draw_tab_slt
+drawable ic_draw_tab_uslt
 drawable ic_edit
 drawable ic_edit_item
 drawable ic_edit_trending
 drawable ic_edit_view
+drawable ic_eraser
+drawable ic_eraser_slt
 drawable ic_flag_english
 drawable ic_flag_french
 drawable ic_flag_germani
@@ -280,6 +294,7 @@ drawable ic_man_slt
 drawable ic_man_uslt
 drawable ic_minus
 drawable ic_move
+drawable ic_move_layer_item
 drawable ic_move_slt
 drawable ic_move_uslt
 drawable ic_next
@@ -303,6 +318,8 @@ drawable ic_rate_set
 drawable ic_rate_three
 drawable ic_rate_two
 drawable ic_rate_zero
+drawable ic_redo
+drawable ic_redo_disable
 drawable ic_reset
 drawable ic_rotate_to_left
 drawable ic_rotate_to_right
@@ -319,6 +336,7 @@ drawable ic_share_purple
 drawable ic_share_set
 drawable ic_share_ss
 drawable ic_show
+drawable ic_show_emoji
 drawable ic_speech
 drawable ic_speech_selected
 drawable ic_sticker
@@ -326,6 +344,10 @@ drawable ic_sticker_selected
 drawable ic_sw_off
 drawable ic_sw_off_ms
 drawable ic_sw_on
+drawable ic_tab_emoji_slt
+drawable ic_tab_emoji_uslt
+drawable ic_tab_eraser_slt
+drawable ic_tab_eraser_uslt
 drawable ic_telegram
 drawable ic_text
 drawable ic_text_layer
@@ -334,6 +356,9 @@ drawable ic_thumb
 drawable ic_thumb_ss
 drawable ic_tick_lang
 drawable ic_timing_shadow
+drawable ic_undo
+drawable ic_undo_disable
+drawable ic_unshow_emoji
 drawable ic_whatsapp
 drawable ic_woman_slt
 drawable ic_woman_uslt
@@ -364,6 +389,7 @@ drawable layer_uslt
 drawable mask_hexagon
 drawable mask_item_navi
 drawable one_star_ss
+drawable seekbar_forexample
 drawable selected
 drawable selected_tab
 drawable selector_btn_man
@@ -412,7 +438,6 @@ id bg_cus
 id bg_frame
 id bg_frame1
 id bg_other
-id bottomContent
 id bottomView
 id btnA
 id btnActionBarCenter
@@ -450,7 +475,7 @@ id btnDoneLangSetting
 id btnDoneText
 id btnDownLoad
 id btnDownload
-id btnDraw
+id btnDrawLayer
 id btnE
 id btnEdit
 id btnEditTrending
@@ -481,6 +506,7 @@ id btnMoveRight
 id btnMoveUp
 id btnMyCreation
 id btnMyDesign
+id btnMyEmoji
 id btnMyPixel
 id btnN
 id btnNext
@@ -509,6 +535,7 @@ id btnSelect
 id btnSettings
 id btnShare
 id btnShareApp
+id btnShowLayer
 id btnSpace
 id btnSpeech
 id btnSticker
@@ -531,11 +558,13 @@ id btnYes
 id btnZ
 id cardBackgroundColor
 id cardBackgroundImage
+id cardColorDraw
 id cardLayerItem
 id cardSave
 id cardSpeech
 id cardSticker
 id cardTextColor
+id cardTextColorEmoji
 id center
 id centerCrop
 id centerInside
@@ -546,6 +575,7 @@ id containerBtnSamplePhoto
 id containerBtnSamplePhotoShow
 id containerDialog
 id containerGuide
+id containerSeekbar
 id containerVS
 id customInputView
 id cvContent
@@ -557,6 +587,7 @@ id diagonal
 id dotsIndicator
 id drawView
 id edPackage
+id edtEmojiText
 id edtName
 id edtSpeech
 id edtText
@@ -570,6 +601,7 @@ id flFunction
 id flGetText
 id flMain
 id flNativeCollab
+id flNavDrawAndEraser
 id flOutSide
 id flSave
 id frmList
@@ -604,12 +636,14 @@ id imvBgColor
 id imvBgImage
 id imvBubble
 id imvColor
+id imvColorDraw
 id imvFlag
 id imvFocus
 id imvFocusColor
 id imvFocusImage
 id imvImage
 id imvImageBG
+id imvLayer
 id imvSpeech
 id imvSticker
 id includeLayoutBottom
@@ -659,8 +693,10 @@ id on
 id onTouch
 id oval
 id overlayMyDesign
+id overlayMyEmoji
 id overlayMyPride
 id overlayPackage
+id paintDrawView
 id progressBar
 id progressContainer
 id progress_bar
@@ -672,8 +708,11 @@ id rcvColor
 id rcvEmoji
 id rcvFont
 id rcvLayer
+id rcvLayerColor
+id rcvLayerLayer
 id rcvMyAvatar
 id rcvMyDesign
+id rcvMyEmoji
 id rcvNavigation
 id rcvPackage
 id rcvPackageItem
@@ -682,6 +721,7 @@ id rcvSpeech
 id rcvSticker
 id rcvTabs
 id rcvTextColor
+id rcvTextFont
 id rectangle
 id rectangleHorizontalOnly
 id rectangleVerticalOnly
@@ -696,6 +736,7 @@ id round
 id scvMain
 id scvText
 id sectionTab
+id seekbarSize
 id sflShimmer
 id spaceTextBottom
 id spin
@@ -704,6 +745,8 @@ id subTabColor
 id subTabImage
 id swNotification
 id swPermission
+id tabDraw
+id tabEraser
 id titleGuide
 id top
 id topToBottom
@@ -730,6 +773,7 @@ id tvDes
 id tvDescription
 id tvDownload
 id tvEmoji
+id tvEmojiTextPreview
 id tvFont
 id tvGenerate
 id tvGetText
@@ -739,9 +783,12 @@ id tvLayoutDesc
 id tvLayoutTitle
 id tvLeftText
 id tvMyDesign
+id tvMyEmoji
 id tvMyPride
 id tvName
 id tvNo
+id tvNoItemHere
+id tvNoLayerItem
 id tvNoitem
 id tvPackage
 id tvPackageName
@@ -751,6 +798,7 @@ id tvProgress
 id tvRandom
 id tvRightText
 id tvShare
+id tvSize
 id tvStart
 id tvSuccess
 id tvTelegram
@@ -822,6 +870,7 @@ layout dialog_speech
 layout dialog_state_cosplay
 layout fragment_my_avatar
 layout fragment_my_design
+layout fragment_my_emoji
 layout fragment_package
 layout item_add_package
 layout item_background_color
@@ -829,6 +878,8 @@ layout item_background_image
 layout item_bottom_navigation
 layout item_choose_avatar
 layout item_color
+layout item_color_circle
+layout item_color_text_emoji
 layout item_custom_color
 layout item_customize
 layout item_emoji_copy
@@ -836,8 +887,10 @@ layout item_emoji_copy_tab
 layout item_font
 layout item_intro
 layout item_language
+layout item_layer_draw
 layout item_my_album
 layout item_my_design
+layout item_my_emoji
 layout item_package_creation
 layout item_pride_layout_option
 layout item_random_character
@@ -957,6 +1010,7 @@ string my_cat
 string my_character
 string my_creation
 string my_design
+string my_emoji
 string my_work
 string native_all
 string native_category
@@ -996,6 +1050,7 @@ string permission
 string play
 string playcos
 string please_check_your_internet
+string please_draw_something
 string please_enter_your_package_name
 string please_select_an_image
 string privacy_policy

@@ -4,8 +4,11 @@ package com.create.lalala.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.create.lalala.R;
+import com.create.lalala.core.custom.drawview.DrawView;
+import com.create.lalala.core.custom.paintview.PaintDrawView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -30,10 +35,7 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
   public final TextView bgCus;
 
   @NonNull
-  public final ConstraintLayout bottomContent;
-
-  @NonNull
-  public final FrameLayout btnDraw;
+  public final FrameLayout btnDrawLayer;
 
   @NonNull
   public final ImageView btnHide;
@@ -42,16 +44,22 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
   public final FrameLayout btnLayer;
 
   @NonNull
-  public final TextView btnMan;
-
-  @NonNull
   public final FrameLayout btnTextLayer;
 
   @NonNull
-  public final TextView btnWooman;
+  public final ConstraintLayout containerSeekbar;
+
+  @NonNull
+  public final DrawView drawView;
+
+  @NonNull
+  public final EditText edtEmojiText;
 
   @NonNull
   public final FrameLayout flBottomNav;
+
+  @NonNull
+  public final LinearLayout flNavDrawAndEraser;
 
   @NonNull
   public final Guideline glBtn;
@@ -69,38 +77,88 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
   public final ConstraintLayout main;
 
   @NonNull
+  public final PaintDrawView paintDrawView;
+
+  @NonNull
   public final RecyclerView rcvLayer;
+
+  @NonNull
+  public final RecyclerView rcvLayerColor;
+
+  @NonNull
+  public final RecyclerView rcvLayerLayer;
 
   @NonNull
   public final RecyclerView rcvNavigation;
 
+  @NonNull
+  public final RecyclerView rcvTextColor;
+
+  @NonNull
+  public final RecyclerView rcvTextFont;
+
+  @NonNull
+  public final SeekBar seekbarSize;
+
+  @NonNull
+  public final ImageView tabDraw;
+
+  @NonNull
+  public final ImageView tabEraser;
+
+  @NonNull
+  public final TextView tvEmojiTextPreview;
+
+  @NonNull
+  public final TextView tvNoLayerItem;
+
+  @NonNull
+  public final TextView tvSize;
+
   private ActivityCustomizeEmojiBinding(@NonNull ConstraintLayout rootView,
       @NonNull LayoutActionbarBinding actionBar, @NonNull TextView bgCus,
-      @NonNull ConstraintLayout bottomContent, @NonNull FrameLayout btnDraw,
-      @NonNull ImageView btnHide, @NonNull FrameLayout btnLayer, @NonNull TextView btnMan,
-      @NonNull FrameLayout btnTextLayer, @NonNull TextView btnWooman,
-      @NonNull FrameLayout flBottomNav, @NonNull Guideline glBtn, @NonNull Guideline glHorizontal,
-      @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout layoutCustomLayer,
-      @NonNull ConstraintLayout main, @NonNull RecyclerView rcvLayer,
-      @NonNull RecyclerView rcvNavigation) {
+      @NonNull FrameLayout btnDrawLayer, @NonNull ImageView btnHide, @NonNull FrameLayout btnLayer,
+      @NonNull FrameLayout btnTextLayer, @NonNull ConstraintLayout containerSeekbar,
+      @NonNull DrawView drawView, @NonNull EditText edtEmojiText, @NonNull FrameLayout flBottomNav,
+      @NonNull LinearLayout flNavDrawAndEraser, @NonNull Guideline glBtn,
+      @NonNull Guideline glHorizontal, @NonNull FrameLayout layoutActionBar,
+      @NonNull FrameLayout layoutCustomLayer, @NonNull ConstraintLayout main,
+      @NonNull PaintDrawView paintDrawView, @NonNull RecyclerView rcvLayer,
+      @NonNull RecyclerView rcvLayerColor, @NonNull RecyclerView rcvLayerLayer,
+      @NonNull RecyclerView rcvNavigation, @NonNull RecyclerView rcvTextColor,
+      @NonNull RecyclerView rcvTextFont, @NonNull SeekBar seekbarSize, @NonNull ImageView tabDraw,
+      @NonNull ImageView tabEraser, @NonNull TextView tvEmojiTextPreview,
+      @NonNull TextView tvNoLayerItem, @NonNull TextView tvSize) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.bgCus = bgCus;
-    this.bottomContent = bottomContent;
-    this.btnDraw = btnDraw;
+    this.btnDrawLayer = btnDrawLayer;
     this.btnHide = btnHide;
     this.btnLayer = btnLayer;
-    this.btnMan = btnMan;
     this.btnTextLayer = btnTextLayer;
-    this.btnWooman = btnWooman;
+    this.containerSeekbar = containerSeekbar;
+    this.drawView = drawView;
+    this.edtEmojiText = edtEmojiText;
     this.flBottomNav = flBottomNav;
+    this.flNavDrawAndEraser = flNavDrawAndEraser;
     this.glBtn = glBtn;
     this.glHorizontal = glHorizontal;
     this.layoutActionBar = layoutActionBar;
     this.layoutCustomLayer = layoutCustomLayer;
     this.main = main;
+    this.paintDrawView = paintDrawView;
     this.rcvLayer = rcvLayer;
+    this.rcvLayerColor = rcvLayerColor;
+    this.rcvLayerLayer = rcvLayerLayer;
     this.rcvNavigation = rcvNavigation;
+    this.rcvTextColor = rcvTextColor;
+    this.rcvTextFont = rcvTextFont;
+    this.seekbarSize = seekbarSize;
+    this.tabDraw = tabDraw;
+    this.tabEraser = tabEraser;
+    this.tvEmojiTextPreview = tvEmojiTextPreview;
+    this.tvNoLayerItem = tvNoLayerItem;
+    this.tvSize = tvSize;
   }
 
   @Override
@@ -143,15 +201,9 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.bottomContent;
-      ConstraintLayout bottomContent = ViewBindings.findChildViewById(rootView, id);
-      if (bottomContent == null) {
-        break missingId;
-      }
-
-      id = R.id.btnDraw;
-      FrameLayout btnDraw = ViewBindings.findChildViewById(rootView, id);
-      if (btnDraw == null) {
+      id = R.id.btnDrawLayer;
+      FrameLayout btnDrawLayer = ViewBindings.findChildViewById(rootView, id);
+      if (btnDrawLayer == null) {
         break missingId;
       }
 
@@ -167,27 +219,39 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnMan;
-      TextView btnMan = ViewBindings.findChildViewById(rootView, id);
-      if (btnMan == null) {
-        break missingId;
-      }
-
       id = R.id.btnTextLayer;
       FrameLayout btnTextLayer = ViewBindings.findChildViewById(rootView, id);
       if (btnTextLayer == null) {
         break missingId;
       }
 
-      id = R.id.btnWooman;
-      TextView btnWooman = ViewBindings.findChildViewById(rootView, id);
-      if (btnWooman == null) {
+      id = R.id.containerSeekbar;
+      ConstraintLayout containerSeekbar = ViewBindings.findChildViewById(rootView, id);
+      if (containerSeekbar == null) {
+        break missingId;
+      }
+
+      id = R.id.drawView;
+      DrawView drawView = ViewBindings.findChildViewById(rootView, id);
+      if (drawView == null) {
+        break missingId;
+      }
+
+      id = R.id.edtEmojiText;
+      EditText edtEmojiText = ViewBindings.findChildViewById(rootView, id);
+      if (edtEmojiText == null) {
         break missingId;
       }
 
       id = R.id.flBottomNav;
       FrameLayout flBottomNav = ViewBindings.findChildViewById(rootView, id);
       if (flBottomNav == null) {
+        break missingId;
+      }
+
+      id = R.id.flNavDrawAndEraser;
+      LinearLayout flNavDrawAndEraser = ViewBindings.findChildViewById(rootView, id);
+      if (flNavDrawAndEraser == null) {
         break missingId;
       }
 
@@ -217,9 +281,27 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
+      id = R.id.paintDrawView;
+      PaintDrawView paintDrawView = ViewBindings.findChildViewById(rootView, id);
+      if (paintDrawView == null) {
+        break missingId;
+      }
+
       id = R.id.rcvLayer;
       RecyclerView rcvLayer = ViewBindings.findChildViewById(rootView, id);
       if (rcvLayer == null) {
+        break missingId;
+      }
+
+      id = R.id.rcvLayerColor;
+      RecyclerView rcvLayerColor = ViewBindings.findChildViewById(rootView, id);
+      if (rcvLayerColor == null) {
+        break missingId;
+      }
+
+      id = R.id.rcvLayerLayer;
+      RecyclerView rcvLayerLayer = ViewBindings.findChildViewById(rootView, id);
+      if (rcvLayerLayer == null) {
         break missingId;
       }
 
@@ -229,10 +311,60 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.rcvTextColor;
+      RecyclerView rcvTextColor = ViewBindings.findChildViewById(rootView, id);
+      if (rcvTextColor == null) {
+        break missingId;
+      }
+
+      id = R.id.rcvTextFont;
+      RecyclerView rcvTextFont = ViewBindings.findChildViewById(rootView, id);
+      if (rcvTextFont == null) {
+        break missingId;
+      }
+
+      id = R.id.seekbarSize;
+      SeekBar seekbarSize = ViewBindings.findChildViewById(rootView, id);
+      if (seekbarSize == null) {
+        break missingId;
+      }
+
+      id = R.id.tabDraw;
+      ImageView tabDraw = ViewBindings.findChildViewById(rootView, id);
+      if (tabDraw == null) {
+        break missingId;
+      }
+
+      id = R.id.tabEraser;
+      ImageView tabEraser = ViewBindings.findChildViewById(rootView, id);
+      if (tabEraser == null) {
+        break missingId;
+      }
+
+      id = R.id.tvEmojiTextPreview;
+      TextView tvEmojiTextPreview = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmojiTextPreview == null) {
+        break missingId;
+      }
+
+      id = R.id.tvNoLayerItem;
+      TextView tvNoLayerItem = ViewBindings.findChildViewById(rootView, id);
+      if (tvNoLayerItem == null) {
+        break missingId;
+      }
+
+      id = R.id.tvSize;
+      TextView tvSize = ViewBindings.findChildViewById(rootView, id);
+      if (tvSize == null) {
+        break missingId;
+      }
+
       return new ActivityCustomizeEmojiBinding((ConstraintLayout) rootView, binding_actionBar,
-          bgCus, bottomContent, btnDraw, btnHide, btnLayer, btnMan, btnTextLayer, btnWooman,
-          flBottomNav, glBtn, glHorizontal, layoutActionBar, layoutCustomLayer, main, rcvLayer,
-          rcvNavigation);
+          bgCus, btnDrawLayer, btnHide, btnLayer, btnTextLayer, containerSeekbar, drawView,
+          edtEmojiText, flBottomNav, flNavDrawAndEraser, glBtn, glHorizontal, layoutActionBar,
+          layoutCustomLayer, main, paintDrawView, rcvLayer, rcvLayerColor, rcvLayerLayer,
+          rcvNavigation, rcvTextColor, rcvTextFont, seekbarSize, tabDraw, tabEraser,
+          tvEmojiTextPreview, tvNoLayerItem, tvSize);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -66,13 +66,10 @@ class ViewPackageActivity : BaseActivity<ActivityViewPackageBinding>() {
         binding.actionBar.apply {
             btnActionBarLeft.visible()
             btnActionBarRight.visible()
-            btnActionBarNextRight.visible()
-            btnActionBarNextRight1.visible()
-            tvCenter.visible()
-            tvCenter.setText(R.string.package_)
+            btnActionBarNextRight.gone()
+            btnActionBarNextRight1.gone()
+            tvCenter.gone()
             setImageActionBar(btnActionBarRight, R.drawable.ic_delete_view)
-            setImageActionBar(btnActionBarNextRight, R.drawable.ic_download_actionbar)
-            setImageActionBar(btnActionBarNextRight1, R.drawable.ic_share_actionbar)
             btnActionBarRightText.gone()
         }
     }

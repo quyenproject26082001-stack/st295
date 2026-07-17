@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -35,16 +36,21 @@ public final class ActivityViewAllPackageBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rcvPackageItem;
 
+  @NonNull
+  public final TextView tvNoItemHere;
+
   private ActivityViewAllPackageBinding(@NonNull ConstraintLayout rootView,
       @NonNull LayoutActionbarBinding actionBar,
       @NonNull LayoutBottomViewAllPackageBinding bottomView, @NonNull FrameLayout flBottom,
-      @NonNull FrameLayout layoutActionBar, @NonNull RecyclerView rcvPackageItem) {
+      @NonNull FrameLayout layoutActionBar, @NonNull RecyclerView rcvPackageItem,
+      @NonNull TextView tvNoItemHere) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.bottomView = bottomView;
     this.flBottom = flBottom;
     this.layoutActionBar = layoutActionBar;
     this.rcvPackageItem = rcvPackageItem;
+    this.tvNoItemHere = tvNoItemHere;
   }
 
   @Override
@@ -106,8 +112,14 @@ public final class ActivityViewAllPackageBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvNoItemHere;
+      TextView tvNoItemHere = ViewBindings.findChildViewById(rootView, id);
+      if (tvNoItemHere == null) {
+        break missingId;
+      }
+
       return new ActivityViewAllPackageBinding((ConstraintLayout) rootView, binding_actionBar,
-          binding_bottomView, flBottom, layoutActionBar, rcvPackageItem);
+          binding_bottomView, flBottom, layoutActionBar, rcvPackageItem, tvNoItemHere);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

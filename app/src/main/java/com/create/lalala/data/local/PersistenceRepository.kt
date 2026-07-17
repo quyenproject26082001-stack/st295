@@ -152,6 +152,7 @@ object PersistenceRepository {
         migrateJsonCache(context, ValueKey.SUGGESTION_FILE_INTERNAL)
         migrateSavedAvatars(context)
         syncAlbumFromFiles(context, ValueKey.DOWNLOAD_ALBUM)
+        syncAlbumFromFiles(context, ValueKey.EMOJI_ALBUM)
         syncAlbumFromFiles(context, ValueKey.DOWNLOAD_ALBUM_BACKGROUND)
         syncAlbumFromFiles(context, ValueKey.PRIDE_ALBUM)
         syncAlbumFromFiles(context, ValueKey.RANDOM_TEMP_ALBUM)

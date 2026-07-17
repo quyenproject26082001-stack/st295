@@ -1,4 +1,4 @@
-#Fri Jul 17 08:48:11 ICT 2026
+#Fri Jul 17 18:06:31 ICT 2026
 base.0=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.10=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
@@ -13,6 +13,7 @@ base.18=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/d
 base.19=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeExtDexDebug/classes6.dex
 base.2=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
 base.20=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeExtDexDebug/classes7.dex
+base.21=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex
 base.3=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
 base.4=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
 base.5=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
@@ -34,6 +35,7 @@ path.18=classes5.dex
 path.19=classes6.dex
 path.2=1/classes.dex
 path.20=classes7.dex
+path.21=5/classes.dex
 path.3=10/classes.dex
 path.4=11/classes.dex
 path.5=12/classes.dex
@@ -55,6 +57,7 @@ renamed.18=classes19.dex
 renamed.19=classes20.dex
 renamed.2=classes3.dex
 renamed.20=classes21.dex
+renamed.21=classes22.dex
 renamed.3=classes4.dex
 renamed.4=classes5.dex
 renamed.5=classes6.dex

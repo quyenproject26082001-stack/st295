@@ -15,9 +15,9 @@
     <string name="title_3">Make New Fun Emoji Packs</string>
 
     <string name="permission">\u00A0Permission\u00A0</string>
-    <string name="storage">\u00A0\u00A0STORAGE\u00A0\u00A0</string>
+    <string name="storage">\u00A0\u00A0Storage\u00A0\u00A0</string>
     <string name="continue_per">Continue</string>
-    <string name="notification">\u00A0\u00A0NOTIFICATION\u00A0\u00A0</string>
+    <string name="notification">\u00A0\u00A0Notification\u00A0\u00A0</string>
     <string name="no_internet">No Internet</string>
     <string name="granted_notification">Notification permission granted</string>
     <string name="granted_storage">Storage permission granted</string>
@@ -73,6 +73,7 @@
     <string name="save_failed_please_try_again">Save failed, please try again!</string>
     <string name="delete_failed_please_try_again">Delete failed, please try again!</string>
     <string name="my_creation">My Creation</string>
+    <string name="my_emoji">Emoji</string>
     <string name="delete_your_customize">Delete your customize</string>
     <string name="are_you_sure_you_want_to_delete_the_image">Are you sure you want to delete the image?</string>
     <string name="haven_t_saved_it_yet_do_you_want_to_exit">Haven’t saved it yet, are you sure to exit?</string>

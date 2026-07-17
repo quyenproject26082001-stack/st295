@@ -11,7 +11,7 @@ public final class DomainKey {
     @org.jetbrains.annotations.NotNull()
     public static final java.lang.String HTTP = "https://";
     @org.jetbrains.annotations.NotNull()
-    private static final java.lang.String SUB_DOMAIN_BG = "/public/app/ST261_CatMakerKittyLab";
+    private static final java.lang.String SUB_DOMAIN_BG = "/public/app/ST295_HorrorEmojiMaker";
     @org.jetbrains.annotations.NotNull()
     public static final java.lang.String AVATAR_CHARACTER_API = "avatar.png";
     @org.jetbrains.annotations.NotNull()

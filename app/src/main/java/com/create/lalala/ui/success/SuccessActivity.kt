@@ -57,6 +57,7 @@ import kotlinx.coroutines.launch
 class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
     private val viewModel: SuccessViewModel by viewModels()
     private val permissionViewModel: PermissionViewModel by viewModels()
+    private var statusFrom: Int = ValueKey.MY_DESIGN_TYPE
 
     override fun setViewBinding(): ActivitySuccessBinding {
         return ActivitySuccessBinding.inflate(LayoutInflater.from(this))
@@ -64,6 +65,7 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
 
     override fun initView() {
         viewModel.setPath(intent.getStringExtra(IntentKey.INTENT_KEY) ?: "")
+        statusFrom = intent.getIntExtra(IntentKey.STATUS_KEY, ValueKey.MY_DESIGN_TYPE)
         setButtonBackgrounds()
     }
 
@@ -111,7 +113,7 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
             // My Album button
             includeLayoutBottom.btnMyCreation.tap(2590) {
                 showInterAll {
-                    startIntentRightToLeft(MyCreationActivity::class.java, IntentKey.TAB_KEY, ValueKey.MY_DESIGN_TYPE)
+                    startIntentRightToLeft(MyCreationActivity::class.java, IntentKey.TAB_KEY, statusFrom)
                 }
             }
 

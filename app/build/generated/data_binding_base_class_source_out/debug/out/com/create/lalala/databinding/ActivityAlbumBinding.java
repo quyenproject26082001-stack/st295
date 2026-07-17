@@ -31,6 +31,9 @@ public final class ActivityAlbumBinding implements ViewBinding {
   public final FrameLayout btnMyDesign;
 
   @NonNull
+  public final FrameLayout btnMyEmoji;
+
+  @NonNull
   public final FrameLayout btnMyPixel;
 
   @NonNull
@@ -55,6 +58,9 @@ public final class ActivityAlbumBinding implements ViewBinding {
   public final View overlayMyDesign;
 
   @NonNull
+  public final View overlayMyEmoji;
+
+  @NonNull
   public final View overlayMyPride;
 
   @NonNull
@@ -64,6 +70,9 @@ public final class ActivityAlbumBinding implements ViewBinding {
   public final DoubleStrokeTextView tvMyDesign;
 
   @NonNull
+  public final DoubleStrokeTextView tvMyEmoji;
+
+  @NonNull
   public final DoubleStrokeTextView tvMyPride;
 
   @NonNull
@@ -71,17 +80,19 @@ public final class ActivityAlbumBinding implements ViewBinding {
 
   private ActivityAlbumBinding(@NonNull ConstraintLayout rootView,
       @NonNull LayoutActionbarBinding actionBar, @NonNull LayoutBottomCreationBinding bottomView,
-      @NonNull FrameLayout btnMyDesign, @NonNull FrameLayout btnMyPixel,
-      @NonNull FrameLayout btnPackage, @NonNull FrameLayout cvType,
+      @NonNull FrameLayout btnMyDesign, @NonNull FrameLayout btnMyEmoji,
+      @NonNull FrameLayout btnMyPixel, @NonNull FrameLayout btnPackage, @NonNull FrameLayout cvType,
       @NonNull FrameLayout flBottomView, @NonNull FragmentContainerView frmList,
       @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout lnlBottom,
-      @NonNull View overlayMyDesign, @NonNull View overlayMyPride, @NonNull View overlayPackage,
-      @NonNull DoubleStrokeTextView tvMyDesign, @NonNull DoubleStrokeTextView tvMyPride,
+      @NonNull View overlayMyDesign, @NonNull View overlayMyEmoji, @NonNull View overlayMyPride,
+      @NonNull View overlayPackage, @NonNull DoubleStrokeTextView tvMyDesign,
+      @NonNull DoubleStrokeTextView tvMyEmoji, @NonNull DoubleStrokeTextView tvMyPride,
       @NonNull DoubleStrokeTextView tvPackage) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.bottomView = bottomView;
     this.btnMyDesign = btnMyDesign;
+    this.btnMyEmoji = btnMyEmoji;
     this.btnMyPixel = btnMyPixel;
     this.btnPackage = btnPackage;
     this.cvType = cvType;
@@ -90,9 +101,11 @@ public final class ActivityAlbumBinding implements ViewBinding {
     this.layoutActionBar = layoutActionBar;
     this.lnlBottom = lnlBottom;
     this.overlayMyDesign = overlayMyDesign;
+    this.overlayMyEmoji = overlayMyEmoji;
     this.overlayMyPride = overlayMyPride;
     this.overlayPackage = overlayPackage;
     this.tvMyDesign = tvMyDesign;
+    this.tvMyEmoji = tvMyEmoji;
     this.tvMyPride = tvMyPride;
     this.tvPackage = tvPackage;
   }
@@ -144,6 +157,12 @@ public final class ActivityAlbumBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnMyEmoji;
+      FrameLayout btnMyEmoji = ViewBindings.findChildViewById(rootView, id);
+      if (btnMyEmoji == null) {
+        break missingId;
+      }
+
       id = R.id.btnMyPixel;
       FrameLayout btnMyPixel = ViewBindings.findChildViewById(rootView, id);
       if (btnMyPixel == null) {
@@ -192,6 +211,12 @@ public final class ActivityAlbumBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.overlayMyEmoji;
+      View overlayMyEmoji = ViewBindings.findChildViewById(rootView, id);
+      if (overlayMyEmoji == null) {
+        break missingId;
+      }
+
       id = R.id.overlayMyPride;
       View overlayMyPride = ViewBindings.findChildViewById(rootView, id);
       if (overlayMyPride == null) {
@@ -210,6 +235,12 @@ public final class ActivityAlbumBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvMyEmoji;
+      DoubleStrokeTextView tvMyEmoji = ViewBindings.findChildViewById(rootView, id);
+      if (tvMyEmoji == null) {
+        break missingId;
+      }
+
       id = R.id.tvMyPride;
       DoubleStrokeTextView tvMyPride = ViewBindings.findChildViewById(rootView, id);
       if (tvMyPride == null) {
@@ -223,9 +254,9 @@ public final class ActivityAlbumBinding implements ViewBinding {
       }
 
       return new ActivityAlbumBinding((ConstraintLayout) rootView, binding_actionBar,
-          binding_bottomView, btnMyDesign, btnMyPixel, btnPackage, cvType, flBottomView, frmList,
-          layoutActionBar, lnlBottom, overlayMyDesign, overlayMyPride, overlayPackage, tvMyDesign,
-          tvMyPride, tvPackage);
+          binding_bottomView, btnMyDesign, btnMyEmoji, btnMyPixel, btnPackage, cvType, flBottomView,
+          frmList, layoutActionBar, lnlBottom, overlayMyDesign, overlayMyEmoji, overlayMyPride,
+          overlayPackage, tvMyDesign, tvMyEmoji, tvMyPride, tvPackage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

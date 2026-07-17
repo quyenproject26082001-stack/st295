@@ -46,7 +46,7 @@ class AddPackageAdapter : BaseAdapter<PackageModel, ItemAddPackageBinding>(ItemA
             tvPackageName.text = item.name
             tvAddPackage.select()
             tvPackageName.select()
-            val firstItemPath = item.items.firstOrNull().orEmpty()
+            val firstItemPath = item.items.firstOrNull().orEmpty().ifEmpty { item.previewPath }
             val file = File(firstItemPath)
             if (firstItemPath.isNotEmpty() && file.exists()) {
                 Glide.with(root.context)

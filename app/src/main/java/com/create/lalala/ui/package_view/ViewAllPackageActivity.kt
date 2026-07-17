@@ -3,6 +3,7 @@ package com.create.lalala.ui.package_view
 import android.content.Intent
 import android.view.LayoutInflater
 import androidx.activity.viewModels
+import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -47,6 +48,11 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.itemList.collect { list ->
                     packageItemAdapter.submitList(list)
+                    if (list.isEmpty()) {
+                        binding.tvNoItemHere.visible()
+                    } else {
+                        binding.tvNoItemHere.gone()
+                    }
                 }
             }
         }
@@ -114,13 +120,26 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
         binding.flBottom.gone()
     }
 
+
     private fun enterSelectionMode() {
         isInSelectionMode = true
         isAllSelected = false
         binding.actionBar.btnActionBarNextRight.visible()
-        binding.actionBar.btnActionBarNextRight.setImageResource(R.drawable.ic_delete_creation)
+        binding.actionBar.btnActionBarNextRight.apply {
+            setImageResource(R.drawable.ic_delete_creation)
+            updateLayoutParams {
+                width = (30f * resources.displayMetrics.density).toInt()
+                height = (30f * resources.displayMetrics.density).toInt()
+            }
+        }
         binding.actionBar.btnActionBarRight.visible()
-        binding.actionBar.btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
+        binding.actionBar.btnActionBarRight.apply {
+            setImageResource(R.drawable.ic_not_select_all)
+            updateLayoutParams {
+                width = (30f * resources.displayMetrics.density).toInt()
+                height = (30f * resources.displayMetrics.density).toInt()
+            }
+        }
         binding.flBottom.visible()
     }
 

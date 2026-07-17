@@ -39,6 +39,7 @@ import com.create.lalala.ui.home.HomeActivity
 import com.create.lalala.dialog.CreateNameDialog
 import com.create.lalala.ui.my_creation.fragment.MyAvatarFragment
 import com.create.lalala.ui.my_creation.fragment.MyDesignFragment
+import com.create.lalala.ui.my_creation.fragment.MyEmojiFragment
 import com.create.lalala.ui.my_creation.fragment.PackageFragment
 import com.create.lalala.ui.my_creation.view_model.MyCreationViewModel
 import com.create.lalala.ui.permission.PermissionViewModel
@@ -51,10 +52,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     private val viewActivityLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { _ ->
+        val emojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment")
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
         val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
         when {
+            emojiFragment is MyEmojiFragment && emojiFragment.isVisible -> emojiFragment.resetSelectionMode()
             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.resetSelectionMode()
             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.resetSelectionMode()
             packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.resetSelectionMode()
@@ -66,6 +69,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         viewActivityLauncher.launch(intent, options)
     }
 
+    private var myEmojiFragment: MyEmojiFragment? = null
     private var myAvatarFragment: MyAvatarFragment? = null
     private var myDesignFragment: MyDesignFragment? = null
     private var packageFragment: PackageFragment? = null
@@ -78,7 +82,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     override fun initView() {
-        val initialTab = intent.getIntExtra(IntentKey.TAB_KEY, ValueKey.AVATAR_TYPE)
+        val initialTab = intent.getIntExtra(IntentKey.TAB_KEY, ValueKey.EMOJI_TYPE)
         viewModel.setTypeStatus(initialTab)
         viewModel.setStatusFrom(intent.getBooleanExtra(IntentKey.FROM_SAVE, false))
 
@@ -102,19 +106,29 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                         viewModel.typeStatus.collect { type ->
                             if (type != -1) {
                                 when (type) {
+                                    ValueKey.EMOJI_TYPE -> {
+                                        setupSelectedTab(tvMyEmoji)
+                                        setupUnselectedTab(tvMyPride)
+                                        setupUnselectedTab(tvMyDesign)
+                                        setupUnselectedTab(tvPackage)
+                                        showFragment(ValueKey.EMOJI_TYPE)
+                                    }
                                     ValueKey.AVATAR_TYPE -> {
+                                        setupUnselectedTab(tvMyEmoji)
                                         setupSelectedTab(tvMyPride)
                                         setupUnselectedTab(tvMyDesign)
                                         setupUnselectedTab(tvPackage)
                                         showFragment(ValueKey.AVATAR_TYPE)
                                     }
                                     ValueKey.MY_DESIGN_TYPE -> {
+                                        setupUnselectedTab(tvMyEmoji)
                                         setupUnselectedTab(tvMyPride)
                                         setupSelectedTab(tvMyDesign)
                                         setupUnselectedTab(tvPackage)
                                         showFragment(ValueKey.MY_DESIGN_TYPE)
                                     }
                                     ValueKey.PACKAGE_TYPE -> {
+                                        setupUnselectedTab(tvMyEmoji)
                                         setupUnselectedTab(tvMyPride)
                                         setupUnselectedTab(tvMyDesign)
                                         setupSelectedTab(tvPackage)
@@ -159,10 +173,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             actionBar.apply {
                 btnActionBarLeft.tap {
                     if (isInSelectionMode) {
+                        val emojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment")
                         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
                         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
                         val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
                         when {
+                            emojiFragment is MyEmojiFragment && emojiFragment.isVisible -> emojiFragment.resetSelectionMode()
                             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.resetSelectionMode()
                             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.resetSelectionMode()
                             packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.resetSelectionMode()
@@ -183,6 +199,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                 }
             }
 
+            btnMyEmoji.tap { viewModel.setTypeStatus(ValueKey.EMOJI_TYPE) }
             btnMyPixel.tap { viewModel.setTypeStatus(ValueKey.AVATAR_TYPE) }
             btnMyDesign.tap { viewModel.setTypeStatus(ValueKey.MY_DESIGN_TYPE) }
             btnPackage.tap { viewModel.setTypeStatus(ValueKey.PACKAGE_TYPE) }
@@ -192,6 +209,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             layoutBottom.findViewById<View>(R.id.btnRight)?.tap(800) {
                 val paths = getAllPathsFromCurrentFragment()
                 when (viewModel.typeStatus.value) {
+                    ValueKey.EMOJI_TYPE -> handleAddToWhatsApp(paths)
                     ValueKey.AVATAR_TYPE -> handleAddToWhatsApp(paths)
                     ValueKey.MY_DESIGN_TYPE -> handleAddToWhatsApp(paths)
                 }
@@ -199,6 +217,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             layoutBottom.findViewById<View>(R.id.btnLeft)?.tap(800) {
                 val paths = getAllPathsFromCurrentFragment()
                 when (viewModel.typeStatus.value) {
+                    ValueKey.EMOJI_TYPE -> handleAddToTelegram(paths)
                     ValueKey.AVATAR_TYPE -> handleAddToTelegram(paths)
                     ValueKey.MY_DESIGN_TYPE -> handleAddToTelegram(paths)
                 }
@@ -251,6 +270,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     private fun handleSelectAllFromCurrentFragment() {
+        val emojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment")
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
         val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
@@ -259,6 +279,10 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         val doDeselect: (() -> Unit)
 
         when {
+            emojiFragment is MyEmojiFragment && emojiFragment.isVisible -> {
+                doSelect = { emojiFragment.selectAllItems() }
+                doDeselect = { emojiFragment.deselectAllItems() }
+            }
             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> {
                 doSelect = { avatarFragment.selectAllItems() }
                 doDeselect = { avatarFragment.deselectAllItems() }
@@ -286,11 +310,13 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     private fun handleDeleteSelectedFromCurrentFragment() {
+        val emojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment")
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
         val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
 
         when {
+            emojiFragment is MyEmojiFragment && emojiFragment.isVisible -> emojiFragment.deleteSelectedItems()
             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.deleteSelectedItems()
             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.deleteSelectedItems()
             packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.deleteSelectedItems()
@@ -298,9 +324,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     private fun getAllPathsFromCurrentFragment(): ArrayList<String> {
+        val emojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment")
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
         return when {
+            emojiFragment is MyEmojiFragment && emojiFragment.isVisible -> emojiFragment.getAllPaths()
             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.getAllPaths()
             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.getAllPaths()
             else -> arrayListOf()
@@ -308,10 +336,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     private fun getSelectedPathsFromCurrentFragment(): ArrayList<String> {
+        val emojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment")
         val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
         val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
 
         return when {
+            emojiFragment is MyEmojiFragment && emojiFragment.isVisible -> emojiFragment.getSelectedPaths()
             avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.getSelectedPaths()
             designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.getSelectedPaths()
             else -> arrayListOf()
@@ -337,6 +367,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
     override fun initText() {
         binding.apply {
+            tvMyEmoji.select()
             tvMyPride.select()
             tvMyDesign.select()
             tvPackage.select()
@@ -430,6 +461,10 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     private fun showFragment(type: Int) {
         val transaction = supportFragmentManager.beginTransaction()
 
+        if (myEmojiFragment == null) {
+            myEmojiFragment = MyEmojiFragment()
+            transaction.add(R.id.frmList, myEmojiFragment!!, "MyEmojiFragment")
+        }
         if (myAvatarFragment == null) {
             myAvatarFragment = MyAvatarFragment()
             transaction.add(R.id.frmList, myAvatarFragment!!, "MyAvatarFragment")
@@ -443,17 +478,26 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             transaction.add(R.id.frmList, packageFragment!!, "PackageFragment")
         }
         when (type) {
+            ValueKey.EMOJI_TYPE -> {
+                myEmojiFragment?.let { transaction.show(it) }
+                myAvatarFragment?.let { transaction.hide(it) }
+                myDesignFragment?.let { transaction.hide(it) }
+                packageFragment?.let { transaction.hide(it) }
+            }
             ValueKey.AVATAR_TYPE -> {
+                myEmojiFragment?.let { transaction.hide(it) }
                 myAvatarFragment?.let { transaction.show(it) }
                 myDesignFragment?.let { transaction.hide(it) }
                 packageFragment?.let { transaction.hide(it) }
             }
             ValueKey.MY_DESIGN_TYPE -> {
+                myEmojiFragment?.let { transaction.hide(it) }
                 myAvatarFragment?.let { transaction.hide(it) }
                 myDesignFragment?.let { transaction.show(it) }
                 packageFragment?.let { transaction.hide(it) }
             }
             ValueKey.PACKAGE_TYPE -> {
+                myEmojiFragment?.let { transaction.hide(it) }
                 myAvatarFragment?.let { transaction.hide(it) }
                 myDesignFragment?.let { transaction.hide(it) }
                 packageFragment?.let { transaction.show(it) }
@@ -489,7 +533,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         )
         android.util.Log.w(
             "MyCreationActivity",
-            "Current tab: ${when (viewModel.typeStatus.value) { ValueKey.AVATAR_TYPE -> "MyAvatar"; else -> "MyDesign" }}"
+            "Current tab: ${when (viewModel.typeStatus.value) { ValueKey.EMOJI_TYPE -> "MyEmoji"; ValueKey.AVATAR_TYPE -> "MyAvatar"; else -> "MyDesign" }}"
         )
         android.util.Log.w("MyCreationActivity", "Selection mode: $isInSelectionMode")
 
@@ -500,11 +544,13 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
         // Exit selection mode when returning from another activity
         if (isInSelectionMode) {
+            val emojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment")
             val avatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment")
             val designFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment")
             val packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment")
 
             when {
+                emojiFragment is MyEmojiFragment && emojiFragment.isVisible -> emojiFragment.resetSelectionMode()
                 avatarFragment is MyAvatarFragment && avatarFragment.isVisible -> avatarFragment.resetSelectionMode()
                 designFragment is MyDesignFragment && designFragment.isVisible -> designFragment.resetSelectionMode()
                 packageFragment is PackageFragment && packageFragment.isVisible -> packageFragment.resetSelectionMode()
@@ -566,7 +612,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         // Show share/download bottom view for avatar/design selection mode.
         binding.flBottomView.visible()
         // Avatar and Design both keep lnlBottom available while selection mode is active.
-        if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE || viewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
+        if (viewModel.typeStatus.value == ValueKey.EMOJI_TYPE || viewModel.typeStatus.value == ValueKey.AVATAR_TYPE || viewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
             binding.lnlBottom.visible()
             binding.lnlBottom.translationY = (0f * resources.displayMetrics.density)
         } else {
@@ -583,13 +629,16 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         }
         binding.flBottomView.gone()
         val currentlyEmpty = when (viewModel.typeStatus.value) {
+            ValueKey.EMOJI_TYPE -> myEmojiFragment?.getAllPaths()?.isEmpty() ?: true
             ValueKey.AVATAR_TYPE -> myAvatarFragment?.getAllPaths()?.isEmpty() ?: true
             ValueKey.MY_DESIGN_TYPE -> myDesignFragment?.getAllPaths()?.isEmpty() ?: true
             ValueKey.PACKAGE_TYPE -> packageFragment?.getAllPackageIds()?.isEmpty() ?: true
             else -> true
         }
         if (!currentlyEmpty) {
-            if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
+            if (viewModel.typeStatus.value == ValueKey.EMOJI_TYPE) {
+                binding.lnlBottom.visible()
+            } else if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
                 binding.lnlBottom.visible()
             } else if (viewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
                 binding.lnlBottom.visible()
@@ -654,6 +703,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
     private fun getTabOverlay(textView: DoubleStrokeTextView): View? {
         return when (textView.id) {
+            R.id.tvMyEmoji -> binding.overlayMyEmoji
             R.id.tvMyPride -> binding.overlayMyPride
             R.id.tvMyDesign -> binding.overlayMyDesign
             R.id.tvPackage -> binding.overlayPackage
