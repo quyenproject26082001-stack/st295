@@ -27,6 +27,7 @@ import com.create.lalala.core.helper.InternetHelper
 import com.create.lalala.core.utils.state.HandleState
 import com.create.lalala.dialog.YesNoDialog
 import com.create.lalala.ui.cosplay.CosplayRandomActivity
+import com.create.lalala.ui.customize.CustomizeEmojiActivity
 import com.create.lalala.ui.emoji_copy.EmojiCopyActivity
 import com.create.lalala.ui.trending.TrendingActivity
 import kotlinx.coroutines.Dispatchers
@@ -60,6 +61,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             actionBar.btnActionBarRight.tap(800) { startIntentRightToLeft(SettingsActivity::class.java) }
             btnMyCreation.tap(800) { showInterAll { startIntentRightToLeft(MyCreationActivity::class.java) } }
             btnMaker.tap(800) { checkDataInternet(this@HomeActivity) {startIntentRightToLeft(com.create.lalala.ui.choose_character.ChooseCharacterActivity::class.java) }}
+            btnEmoji.tap(800) { checkDataInternet(this@HomeActivity) { startIntentRightToLeft(CustomizeEmojiActivity::class.java, CustomizeEmojiActivity.MODE_NORMAL) } }
+            btnHorror.tap(800) { checkDataInternet(this@HomeActivity) { startIntentRightToLeft(CustomizeEmojiActivity::class.java, CustomizeEmojiActivity.MODE_HORROR) } }
             btnEmojiCopy.tap(800) { showInterAll { startIntentRightToLeft(EmojiCopyActivity::class.java) } }
 
         }

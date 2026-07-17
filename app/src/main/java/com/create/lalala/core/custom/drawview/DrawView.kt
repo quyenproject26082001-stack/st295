@@ -393,94 +393,31 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
 
     public val redoList = ArrayList<List<DrawableDraw>>()
 
-//    fun undo() {
-//        if (undoList.size > 1) {
-//            undoTempList.clear()
-//            undoTempList.addAll(undoList[undoList.size - 1])
-//            redoList.add(undoList.removeAt(undoList.size - 1))
-//            val previousDraw = undoList[undoList.size - 1]
-//            removeAllDraw()
-//            for (draw in previousDraw) {
-//                when (draw) {
-//                    is DrawableDraw -> {
-//                        val drawableStickerNew = configDrawableDraw(draw, false)
-//                        drawList.add(drawableStickerNew)
-//                    }
-//
-//                    is TextDraw -> {
-//                        val textStickerNew = configTextDraw(draw, false)
-//                        drawList.add(textStickerNew)
-//                    }
-//
-//                    is DrawDraw -> {
-//                        val drawStickerNew = configDrawDraw(draw, false)
-//                        drawList.add(drawStickerNew)
-//                    }
-//                }
-//                invalidate()
-//            }
-//        } else {
-//            removeAllDraw()
-//            redoList.add(undoList.removeAt(undoList.size - 1))
-//            undoList.clear()
-//            if (OnDrawListener != null) {
-//                OnDrawListener!!.onUndoDeleteAll()
-//            }
-//        }
-//    }
-//
-//    fun redo() {
-//        if (redoList.size > 1) {
-//            removeAllDraw()
-//            val redoTempList = redoList[redoList.size - 1]
-//            undoList.add(redoTempList)
-//            redoList.removeAt(redoList.size - 1)
-//            for (draw in redoTempList) {
-//                when (draw) {
-//                    is DrawableDraw -> {
-//                        val drawableStickerNew = configDrawableDraw(draw, false)
-//                        drawList.add(drawableStickerNew)
-//                    }
-//
-//                    is TextDraw -> {
-//                        val textStickerNew = configTextDraw(draw, false)
-//                        drawList.add(textStickerNew)
-//                    }
-//
-//                    is DrawDraw -> {
-//                        val drawStickerNew = configDrawDraw(draw, false)
-//                        drawList.add(drawStickerNew)
-//                    }
-//                }
-//                invalidate()
-//            }
-//        } else {
-//            removeAllDraw()
-//            val redoTempList = redoList[redoList.size - 1]
-//            undoList.add(redoTempList)
-//            redoList.removeAt(redoList.size - 1)
-//            for (draw in redoTempList) {
-//                when (draw) {
-//                    is DrawableDraw -> {
-//                        val drawableStickerNew = configDrawableDraw(draw, false)
-//                        drawList.add(drawableStickerNew)
-//                    }
-//
-//                    is TextDraw -> {
-//                        val textStickerNew = configTextDraw(draw, false)
-//                        drawList.add(textStickerNew)
-//                    }
-//
-//                    is DrawDraw -> {
-//                        val drawStickerNew = configDrawDraw(draw, false)
-//                        drawList.add(drawStickerNew)
-//                    }
-//                }
-//                invalidate()
-//            }
-//            OnDrawListener!!.onRedoAll()
-//        }
-//    }
+    fun canUndo(): Boolean = undoList.isNotEmpty()
+
+    fun canRedo(): Boolean = redoList.isNotEmpty()
+
+    fun undo(): Boolean {
+        if (!canUndo()) return false
+        redoList.add(captureDrawState())
+        undoList.removeAt(undoList.size - 1)
+        restoreDrawState(undoList.lastOrNull().orEmpty())
+        if (drawList.isEmpty()) {
+            OnDrawListener?.onUndoDeleteAll()
+        } else {
+            OnDrawListener?.onUndoUpdateDraw(drawList)
+        }
+        return true
+    }
+
+    fun redo(): Boolean {
+        if (!canRedo()) return false
+        val nextDrawState = redoList.removeAt(redoList.size - 1)
+        undoList.add(nextDrawState)
+        restoreDrawState(nextDrawState)
+        OnDrawListener?.onRedoAll()
+        return true
+    }
 
     fun removeAllDraw() {
         drawList.clear()
@@ -491,26 +428,30 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     }
 
     private fun saveDrawState() {
+        undoList.add(captureDrawState())
+        redoList.clear()
+        OnDrawListener?.onUndoUpdateDraw(drawList)
+    }
+
+    private fun captureDrawState(): ArrayList<DrawableDraw> {
         val drawCopy = ArrayList<DrawableDraw>()
         for (draw in drawList) {
-            when (draw) {
-                is DrawableDraw -> {
-                    val drawableStickerNew = configDrawableDraw(draw, false)
-                    drawCopy.add(drawableStickerNew)
-                }
-
-//                is TextDraw -> {
-//                    val textStickerNew = configTextDraw(draw, false)
-//                    drawCopy.add(textStickerNew)
-//                }
-//
-//                is DrawDraw -> {
-//                    val drawStickerNew = configDrawDraw(draw, false)
-//                    drawCopy.add(drawStickerNew)
-//                }
-            }
+            drawCopy.add(configDrawableDraw(draw, false))
         }
-        undoList.add(drawCopy)
+        return drawCopy
+    }
+
+    private fun restoreDrawState(drawState: List<DrawableDraw>) {
+        drawList.clear()
+        initialScaleMap.clear()
+        handlingDraw?.release()
+        handlingDraw = null
+        for (draw in drawState) {
+            val drawableDraw = configDrawableDraw(draw, false)
+            drawList.add(drawableDraw)
+            initialScaleMap[drawableDraw] = drawableDraw.currentScale
+        }
+        invalidate()
     }
 
     private fun findDrawNotInList2(list1: List<DrawableDraw>, list2: List<DrawableDraw>): List<DrawableDraw> {
@@ -957,6 +898,7 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         drawableDrawNew.setLock(drawableDraw.isLock)
         drawableDrawNew.setFlippedH(drawableDraw.isFlippedH)
         drawableDrawNew.setFlippedV(drawableDraw.isFlippedV)
+        drawableDrawNew.isText = drawableDraw.isText
         return drawableDrawNew
     }
 
@@ -1108,4 +1050,3 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         handler?.removeCallbacksAndMessages(null)
     }
 }
-

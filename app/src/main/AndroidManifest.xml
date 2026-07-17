@@ -66,6 +66,12 @@
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.customize.CustomizeEmojiActivity"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".ui.view.ViewActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
