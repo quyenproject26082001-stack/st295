@@ -60,7 +60,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
                 finishAffinity()
             }
         }
-        dataViewModel.ensureData(this)
+        dataViewModel.saveAndReadData(this)
 
         lifecycleScope.launch {
             delay(MIN_SPLASH_MS)

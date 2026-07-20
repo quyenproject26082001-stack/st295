@@ -22,6 +22,7 @@ import com.create.lalala.core.extensions.handleBackLeftToRight
 import com.create.lalala.core.extensions.hideNavigation
 import com.create.lalala.core.extensions.setImageActionBar
 import com.create.lalala.core.extensions.setTextActionBar
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.showInterAll
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
@@ -94,6 +95,7 @@ class TrendingActivity : BaseActivity<ActivityTrendingBinding>() {
             btnActionBarLeft.visible()
             btnActionBarRight.visible()
             tvCenter.setText(R.string.random)
+            tvCenter.select()
         }
     }
 

@@ -12,6 +12,7 @@ import com.create.lalala.core.base.BaseActivity
 import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.handleBackLeftToRight
 import com.create.lalala.core.extensions.hideNavigation
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.core.helper.LanguageHelper
@@ -41,6 +42,7 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
         binding.rcvPackageItem.adapter = packageItemAdapter
         binding.rcvPackageItem.itemAnimator = null
         binding.actionBar.tvCenter.text = intent.getStringExtra(IntentKey.PACKAGE_NAME_KEY).orEmpty()
+        binding.actionBar.tvCenter.select()
     }
 
     override fun dataObservable() {

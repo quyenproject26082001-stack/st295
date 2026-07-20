@@ -166,6 +166,7 @@ fun TextView.setFont(@FontRes resId: Int) {
 
 fun TextView.setTextContent(context: Context, resId: Int) {
     text = context.getString(resId)
+    select()
 }
 
 fun Context.strings(resId: Int) : String {
@@ -181,6 +182,7 @@ fun setImageActionBar(imageView: ImageView, res: Int) {
 
 fun setTextActionBar(textView: TextView, text: String) {
     textView.text = text
+    textView.select()
     textView.visible()
     textView.visible()
 }

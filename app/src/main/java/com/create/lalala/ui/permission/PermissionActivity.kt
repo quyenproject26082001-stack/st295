@@ -68,6 +68,7 @@ class PermissionActivity : BaseActivity<ActivityPermissionBinding>() {
             " ",
             createColoredText(textRes, R.color.app)
         )
+        binding.txtPer.select()
     }
 
     override fun viewListener() {

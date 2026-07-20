@@ -62,6 +62,7 @@ class CosplayRandomActivity : BaseActivity<ActivityCosplayRandomBinding>() {
         setCosPlayButtonEnabled(false)
         binding.bgFrame.text =
             Html.fromHtml(getString(R.string.guide_cosplay), Html.FROM_HTML_MODE_COMPACT)
+        binding.bgFrame.select()
     }
 
     override fun dataObservable() {
@@ -96,6 +97,7 @@ class CosplayRandomActivity : BaseActivity<ActivityCosplayRandomBinding>() {
             btnActionBarRight.setImageResource(R.drawable.ic_guide)
             btnActionBarRight.visible()
             tvCenter.setText(R.string.cosplay)
+            tvCenter.select()
             tvCenter.visible()
         }
     }

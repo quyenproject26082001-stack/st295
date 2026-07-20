@@ -13,6 +13,7 @@ import com.create.lalala.R
 import com.create.lalala.core.base.BaseDialog
 import com.create.lalala.core.extensions.invisible
 import com.create.lalala.core.extensions.loadImage
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.databinding.DialogSpeechBinding
@@ -59,6 +60,7 @@ class DialogSpeech(val context: Activity, val path: String) : BaseDialog<DialogS
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     binding.tvGetText.text = p0.toString()
+                    binding.tvGetText.select()
                 }
 
                 override fun afterTextChanged(p0: Editable?) {}

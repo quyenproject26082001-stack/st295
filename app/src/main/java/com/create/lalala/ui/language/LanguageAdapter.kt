@@ -1,13 +1,10 @@
 package com.create.lalala.ui.language
 
-import android.annotation.SuppressLint
 import android.content.Context
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseAdapter
-import com.create.lalala.core.extensions.gone
-import com.create.lalala.core.extensions.loadImage
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
-import com.create.lalala.core.extensions.visible
 import com.create.lalala.data.model.LanguageModel
 import com.create.lalala.databinding.ItemLanguageBinding
 
@@ -17,36 +14,21 @@ class LanguageAdapter(val context: Context) : BaseAdapter<LanguageModel, ItemLan
     var onItemClick: ((code: String) -> Unit) = {}
     var isFirstLanguage: Boolean = false
 
-    override fun submitList(list: List<LanguageModel>) {
-        if (items.isEmpty()) {
-            items.addAll(list)
-            notifyDataSetChanged()
-        } else {
-            val oldList = items.toList()
-            items.clear()
-            items.addAll(list)
+    override fun areItemsTheSame(oldItem: LanguageModel, newItem: LanguageModel): Boolean {
+        return oldItem.code == newItem.code
+    }
 
-            // Find changed items
-            val changedPositions = mutableListOf<Int>()
-            for (i in list.indices) {
-                if (i < oldList.size && oldList[i].activate != list[i].activate) {
-                    changedPositions.add(i)
-                }
-            }
-
-            // Only notify changed items
-            if (changedPositions.isNotEmpty()) {
-                changedPositions.forEach { notifyItemChanged(it) }
-            }
-        }
+    override fun areContentsTheSame(oldItem: LanguageModel, newItem: LanguageModel): Boolean {
+        return oldItem == newItem
     }
 
     override fun onBind(
         binding: ItemLanguageBinding, item: LanguageModel, position: Int
     ) {
         binding.apply {
-            loadImage(root, item.flag, imvFlag, false)
             tvLang.text = "\u00A0${item.name}\u00A0"
+            tvLang.select()
+            imvFlag.setImageResource(item.flag)
 
             // Set text color based on selection state
             val textColor = if (item.activate) {
@@ -64,7 +46,7 @@ class LanguageAdapter(val context: Context) : BaseAdapter<LanguageModel, ItemLan
             } else {
                 R.drawable.ic_not_tick_lang
             }
-            loadImage(root, ratio, btnRadio, false)
+            btnRadio.setImageResource(ratio)
 
             // Apply color tint when activated and not first language
 //            if (item.activate && !isFirstLanguage) {

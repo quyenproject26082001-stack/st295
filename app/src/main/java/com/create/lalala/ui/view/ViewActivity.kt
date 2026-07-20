@@ -186,9 +186,7 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
         dialogBinding.rcvPackage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         dialogBinding.rcvPackage.adapter = adapter
         adapter.onAddClick = {
-            showAddNewPackageDialog {
-                reloadPackages()
-            }
+            showAddNewPackageDialog(dialog)
         }
         adapter.onPackageClick = { packageModel ->
             selectedPackageId = packageModel.id
@@ -211,7 +209,7 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
         dialog.show()
     }
 
-    private fun showAddNewPackageDialog(onCreated: () -> Unit) {
+    private fun showAddNewPackageDialog(addPackageDialog: Dialog) {
         val dialogBinding = DialogAddNewPackageBinding.inflate(layoutInflater)
         val dialog = createCenterDialog(dialogBinding.root)
         dialogBinding.btnAddPackageInput.tap {
@@ -220,10 +218,14 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
                 showToast(R.string.please_enter_your_package_name)
                 return@tap
             }
-            PackageRepository.createPackage(this, packageName, viewModel.pathInternal.value)
-            showToast(R.string.package_created_successfully)
-            dialog.dismiss()
-            onCreated.invoke()
+            val success = PackageRepository.createPackageWithImage(this, packageName, viewModel.pathInternal.value)
+            if (success) {
+                showToast(R.string.package_created_successfully)
+                dialog.dismiss()
+                addPackageDialog.dismiss()
+            } else {
+                showToast(R.string.save_failed_please_try_again)
+            }
         }
         dialog.show()
     }

@@ -17,6 +17,7 @@ import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.handleBackLeftToRight
 import com.create.lalala.core.extensions.loadImage
 import com.create.lalala.core.extensions.requestPermission
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.showInterAll
 import com.create.lalala.core.extensions.startIntentWithClearTop
 import com.create.lalala.core.extensions.tap
@@ -119,6 +120,7 @@ class CosplaySuccessfulActivity : BaseActivity<ActivityCosplaySuccessfulBinding>
                 binding.icThumb.translationX = (finalProgress / 100f) * maxX - offsetPx
             }
             binding.tvProgress.text = "$finalProgress/100"
+            binding.tvProgress.select()
         }
         val starRes = when {
             finalProgress == 0 -> R.drawable.zeo_star_ss

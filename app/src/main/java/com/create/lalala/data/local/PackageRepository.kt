@@ -32,6 +32,23 @@ object PackageRepository {
         return packageModel
     }
 
+    fun createPackageWithImage(context: Context, name: String, sourcePath: String): Boolean {
+        val sourceFile = File(sourcePath)
+        if (!sourceFile.exists()) return false
+
+        val copiedPath = copyImageToPackageFolder(context, sourceFile) ?: return false
+        val list = getPackages(context)
+        val packageModel = PackageModel(
+            id = UUID.randomUUID().toString(),
+            name = name,
+            previewPath = copiedPath,
+            items = arrayListOf(copiedPath)
+        )
+        list.add(0, packageModel)
+        savePackages(context, list)
+        return true
+    }
+
     fun addImageToPackage(context: Context, packageId: String, sourcePath: String): Boolean {
         val sourceFile = File(sourcePath)
         if (!sourceFile.exists()) return false

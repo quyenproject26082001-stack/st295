@@ -1,0 +1,10 @@
+package com.create.lalala.core.extensions;
+
+@kotlin.Metadata(mv = {2, 2, 0}, k = 2, xi = 48, d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004\u00a8\u0006\u0005"}, d2 = {"deleteTempDataFolder", "", "Landroidx/appcompat/app/AppCompatActivity;", "folder", "", "ST295_Horror_Emoji_Maker_v1.0.0_07.20.2026_release"})
+public final class MediaExtensionKt {
+    
+    public static final void deleteTempDataFolder(@org.jetbrains.annotations.NotNull()
+    androidx.appcompat.app.AppCompatActivity $this$deleteTempDataFolder, @org.jetbrains.annotations.NotNull()
+    java.lang.String folder) {
+    }
+}

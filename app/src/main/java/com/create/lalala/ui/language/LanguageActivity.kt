@@ -52,6 +52,7 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
                         if (isFirst) {
                             binding.actionBar.apply { tvStart.visible()
                             tvStart.setText(R.string.language)
+                            tvStart.select()
                             }
 
                             binding.actionBar.btnActionBarLeft.invisible()
@@ -60,6 +61,7 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
 
                             binding.actionBar.apply { tvCenter.visible()
                                 tvCenter.setText(R.string.language)
+                                tvCenter.select()
                             }
                             binding.actionBar.btnActionBarLeft.visible()
                             binding.actionBar.btnActionBarRightLang.visible()

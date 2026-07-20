@@ -142,9 +142,6 @@
             android:src="@drawable/ic_sw_on" />
     </RelativeLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
 
 
     <!-- tvPermission badge — đặt sau cardContainer để render đè lên top card -->

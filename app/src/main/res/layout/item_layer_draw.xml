@@ -53,8 +53,8 @@
         android:layout_width="0dp"
         app:layout_constraintDimensionRatio="1:1"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_delete_layer_item"
-        android:visibility="gone"
+        android:src="@drawable/ic_delete_layer"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         tools:visibility="visible"
         />

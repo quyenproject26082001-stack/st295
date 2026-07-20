@@ -7,6 +7,7 @@ import com.create.lalala.R
 import com.create.lalala.core.base.BaseAdapter
 import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.invisible
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.data.model.PackageModel
@@ -29,6 +30,7 @@ class PackageCreationAdapter : BaseAdapter<PackageModel, ItemPackageCreationBind
     override fun onBind(binding: ItemPackageCreationBinding, item: PackageModel, position: Int) {
         binding.apply {
             tvPackageNameMycreation.text = item.name
+            tvPackageNameMycreation.select()
             val imageViews = listOf(ivIt1, ivIt2, ivIt3, ivIt4)
             val itemViews = listOf(it1, it2, it3, it4)
             if (item.items.isEmpty()) ivNoItem.visible() else ivNoItem.gone()

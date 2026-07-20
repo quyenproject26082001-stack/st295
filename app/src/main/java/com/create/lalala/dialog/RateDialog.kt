@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseDialog
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.strings
 import com.create.lalala.databinding.DialogRateBinding
 
@@ -79,6 +80,8 @@ class RateDialog(context: Activity) : BaseDialog<DialogRateBinding>(context, Gra
     fun setView(tv1: Int, tv2: Int, img: Int) {
         binding.tv1.text = context.strings(tv1)
         binding.tv2.text = context.strings(tv2)
+        binding.tv1.select()
+        binding.tv2.select()
         binding.imvAvtRate.setImageResource(img)
     }
 }

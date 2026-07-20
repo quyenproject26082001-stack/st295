@@ -2,6 +2,7 @@ package com.create.lalala.ui.customize
 
 import android.graphics.Color
 import com.create.lalala.core.base.BaseAdapter
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.data.model.SelectedModel
 import com.create.lalala.databinding.ItemColorTextEmojiBinding
@@ -15,6 +16,7 @@ class TextColorEmojiAdapter : BaseAdapter<SelectedModel, ItemColorTextEmojiBindi
             cardTextColorEmoji.strokeColor = Color.parseColor("#FF8600")
             cardTextColorEmoji.setCardBackgroundColor(item.color)
             tvColor.text = ""
+            tvColor.select()
             root.tap { onTextColorClick.invoke(item.color, position) }
         }
     }

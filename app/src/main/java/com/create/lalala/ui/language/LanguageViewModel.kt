@@ -22,12 +22,12 @@ class LanguageViewModel : ViewModel() {
 
     fun loadLanguages(currentLang: String) {
         viewModelScope.launch {
-            val list = DataLocal.getLanguageList().toMutableList()
-
-            val index = list.indexOfFirst { it.code == currentLang }
-            if (index != -1) {
-                val selected = list.removeAt(index)
-                list.add(0, selected.apply { if (!isFirstLanguage.value) activate = true })
+            val list = DataLocal.getLanguageList().map {
+                it.copy(activate = !isFirstLanguage.value && it.code == currentLang)
+            }.toMutableList()
+            val selectedIndex = list.indexOfFirst { it.code == currentLang }
+            if (selectedIndex != -1) {
+                list.add(0, list.removeAt(selectedIndex))
             }
             _codeLang.value = currentLang
             _languageList.value = list

@@ -81,7 +81,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         initRcv()
         lifecycleScope.launch { showLoading() }
         dataViewModel.ensureData(this)
-
+        binding.btnResetMove.select()
 
     }
 

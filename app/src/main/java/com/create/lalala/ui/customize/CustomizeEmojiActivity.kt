@@ -29,11 +29,13 @@ import com.bumptech.glide.Glide
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseActivity
 import com.create.lalala.core.custom.seekbar.TaperedSeekBarDrawable
+import com.create.lalala.core.extensions.checkDataInternet
 import com.create.lalala.core.extensions.invisible
 import com.create.lalala.core.extensions.handleBackLeftToRight
 import com.create.lalala.core.extensions.hideNavigation
 import com.create.lalala.core.extensions.setImageActionBar
 import com.create.lalala.core.extensions.setFont
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.core.helper.BitmapHelper
@@ -104,7 +106,8 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     override fun initView() {
-        binding.seekbarSize.progressDrawable = TaperedSeekBarDrawable(resources.displayMetrics.density)
+        binding.seekbarSize.progressDrawable =
+            TaperedSeekBarDrawable(resources.displayMetrics.density)
         initDrawView()
         initRecyclerViews()
         setupKeyboardAwareTextPanels()
@@ -128,7 +131,13 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             setCenterActionButtonSpacing()
             setupTextToolSelectionCards()
             tvRightText.text = getString(R.string.done)
-            tvRightText.setTextColor(ContextCompat.getColor(this@CustomizeEmojiActivity, R.color.app))
+            tvRightText.select()
+            tvRightText.setTextColor(
+                ContextCompat.getColor(
+                    this@CustomizeEmojiActivity,
+                    R.color.app
+                )
+            )
             btnActionBarRightText.setBackgroundResource(R.drawable.bg_done_customize_emoji)
             btnActionBarRightText.layoutParams =
                 (btnActionBarRightText.layoutParams as ConstraintLayout.LayoutParams).apply {
@@ -182,7 +191,11 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         }
     }
 
-    private fun createTextToolSelectionCard(target: View, iconRes: Int, onClick: () -> Unit): MaterialCardView {
+    private fun createTextToolSelectionCard(
+        target: View,
+        iconRes: Int,
+        onClick: () -> Unit
+    ): MaterialCardView {
         val size = (36 * resources.displayMetrics.density).toInt()
         val card = MaterialCardView(this).apply {
             id = View.generateViewId()
@@ -228,17 +241,21 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             handleBackAction()
         }
         binding.actionBar.btnActionBarCenterLeft.tap {
-            if (currentState == EditorState.TEXT) {
-                selectTextTool(isColor = true)
-            } else {
-                if (binding.drawView.undo()) updateUndoRedoButtons()
+            checkDataInternet(this@CustomizeEmojiActivity) {
+                if (currentState == EditorState.TEXT) {
+                    selectTextTool(isColor = true)
+                } else {
+                    if (binding.drawView.undo()) updateUndoRedoButtons()
+                }
             }
         }
         binding.actionBar.btnActionBarCenterRight.tap {
-            if (currentState == EditorState.TEXT) {
-                selectTextTool(isColor = false)
-            } else {
-                if (binding.drawView.redo()) updateUndoRedoButtons()
+            checkDataInternet(this@CustomizeEmojiActivity) {
+                if (currentState == EditorState.TEXT) {
+                    selectTextTool(isColor = false)
+                } else {
+                    if (binding.drawView.redo()) updateUndoRedoButtons()
+                }
             }
         }
         binding.actionBar.btnActionBarRightText.tap {
@@ -275,14 +292,18 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
         layerAdapter.onItemClick = { item, position ->
-            selectItem(position)
-            addEmojiToDrawView(item.path)
+            checkDataInternet(this@CustomizeEmojiActivity) {
+                selectItem(position)
+                addEmojiToDrawView(item.path)
+            }
         }
         navigationAdapter.onItemClick = { position ->
-            if (position in categories.indices) {
-                selectedCategoryIndex = position
-                submitNavigation()
-                submitItems(categories[position])
+            checkDataInternet(this@CustomizeEmojiActivity) {
+                if (position in categories.indices) {
+                    selectedCategoryIndex = position
+                    submitNavigation()
+                    submitItems(categories[position])
+                }
             }
         }
     }
@@ -293,12 +314,22 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private fun handleBackAction() {
-        if (currentState == EditorState.DRAW) {
-            binding.paintDrawView.clearAll()
-            showItemsState()
-        } else {
-            handleBackLeftToRight()
+        when (currentState) {
+            EditorState.ITEMS -> handleBackLeftToRight()
+            EditorState.DRAW -> {
+                binding.paintDrawView.clearAll()
+                showItemsState()
+            }
+            EditorState.TEXT,
+            EditorState.LAYER -> showItemsState()
         }
+    }
+
+    private fun updateLeftActionIcon() {
+        setImageActionBar(
+            binding.actionBar.btnActionBarLeft,
+            if (currentState == EditorState.ITEMS) R.drawable.ic_back else R.drawable.ic_close_1
+        )
     }
 
     private fun initDrawView() {
@@ -311,30 +342,38 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
                 override fun onDeletedDraw(draw: Draw) {
                     updateUndoRedoButtons()
                 }
+
                 override fun onDragFinishedDraw(draw: Draw) {
                     updateUndoRedoButtons()
                 }
+
                 override fun onTouchedDownDraw(draw: Draw) {}
                 override fun onZoomFinishedDraw(draw: Draw) {
                     updateUndoRedoButtons()
                 }
+
                 override fun onFlippedDraw(draw: Draw) {
                     updateUndoRedoButtons()
                 }
+
                 override fun onDoubleTappedDraw(draw: Draw) {}
                 override fun onHideOptionIconDraw() {}
                 override fun onUndoDeleteDraw(draw: List<Draw?>) {
                     updateUndoRedoButtons()
                 }
+
                 override fun onUndoUpdateDraw(draw: List<Draw?>) {
                     updateUndoRedoButtons()
                 }
+
                 override fun onUndoDeleteAll() {
                     updateUndoRedoButtons()
                 }
+
                 override fun onRedoAll() {
                     updateUndoRedoButtons()
                 }
+
                 override fun onReplaceDraw(draw: Draw) {}
                 override fun onEditText(draw: DrawableDraw) {}
                 override fun onReplace(draw: Draw) {}
@@ -409,6 +448,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             actionBar.btnActionBarRightText.invisible()
             resetActionBarCenterButtonsForUndoRedo()
         }
+        updateLeftActionIcon()
         updateTextPanelBottomMargin(0)
         hideKeyboard()
     }
@@ -439,6 +479,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             paintDrawView.setStrokeWidthEraser(20)
             resetActionBarCenterButtonsForUndoRedo()
         }
+        updateLeftActionIcon()
         updateTextPanelBottomMargin(0)
         hideKeyboard()
         setPaintMode()
@@ -477,6 +518,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             actionBar.btnActionBarCenterLeft.isEnabled = true
             actionBar.btnActionBarCenterRight.isEnabled = true
         }
+        updateLeftActionIcon()
         textColorAdapter.submitItem(1, textColorList)
         textFontAdapter.submitItem(0, textFontList)
         selectTextTool(isColor = true)
@@ -506,6 +548,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             actionBar.btnActionBarRightText.invisible()
             resetActionBarCenterButtonsForUndoRedo()
         }
+        updateLeftActionIcon()
         updateTextPanelBottomMargin(0)
         hideKeyboard()
         refreshLayerList()
@@ -553,7 +596,10 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             return
         }
 
-        val draw = DrawableDraw(BitmapDrawable(resources, bitmap), "freehand_${System.currentTimeMillis()}.png")
+        val draw = DrawableDraw(
+            BitmapDrawable(resources, bitmap),
+            "freehand_${System.currentTimeMillis()}.png"
+        )
         binding.drawView.addDraw(draw)
         binding.paintDrawView.clearAll()
         showItemsState()
@@ -575,7 +621,10 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         binding.tvEmojiTextPreview.post {
             val bitmap = BitmapHelper.getBitmapFromEditText(binding.tvEmojiTextPreview)
             binding.tvEmojiTextPreview.visibility = View.INVISIBLE
-            val draw = DrawableDraw(BitmapDrawable(resources, bitmap), "text_${System.currentTimeMillis()}.png").apply {
+            val draw = DrawableDraw(
+                BitmapDrawable(resources, bitmap),
+                "text_${System.currentTimeMillis()}.png"
+            ).apply {
                 isText = true
             }
             binding.drawView.addDraw(draw)
@@ -607,12 +656,14 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
                         dismissLoading()
                         showToast(R.string.save_failed_please_try_again)
                     }
+
                     is SaveState.Success -> {
                         dismissLoading()
-                        val intent = Intent(this@CustomizeEmojiActivity, SuccessActivity::class.java).apply {
-                            putExtra(IntentKey.INTENT_KEY, state.path)
-                            putExtra(IntentKey.STATUS_KEY, ValueKey.EMOJI_TYPE)
-                        }
+                        val intent =
+                            Intent(this@CustomizeEmojiActivity, SuccessActivity::class.java).apply {
+                                putExtra(IntentKey.INTENT_KEY, state.path)
+                                putExtra(IntentKey.STATUS_KEY, ValueKey.EMOJI_TYPE)
+                            }
                         startActivity(intent)
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     }
@@ -798,12 +849,21 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     private fun setupLayerDragAndSwipe() {
         emojiLayerAdapter.onStartDrag = { holder -> layerTouchHelper.startDrag(holder) }
         val deletePaint = Paint().apply { color = Color.parseColor("#FF3434") }
+        val deleteIcon = ContextCompat.getDrawable(this, R.drawable.ic_delete_layer)
+        val deleteIconSize = (24 * resources.displayMetrics.density).toInt()
         layerTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.LEFT
         ) {
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
-                return emojiLayerAdapter.onItemMove(viewHolder.bindingAdapterPosition, target.bindingAdapterPosition)
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return emojiLayerAdapter.onItemMove(
+                    viewHolder.bindingAdapterPosition,
+                    target.bindingAdapterPosition
+                )
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -828,8 +888,29 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
                         itemView.bottom.toFloat(),
                         deletePaint
                     )
+                    deleteIcon?.let { icon ->
+                        val revealWidth = -dX
+                        val iconLeft =
+                            itemView.right - ((revealWidth + deleteIconSize) / 2f).toInt()
+                        val iconTop = itemView.top + (itemView.height - deleteIconSize) / 2
+                        icon.setBounds(
+                            iconLeft,
+                            iconTop,
+                            iconLeft + deleteIconSize,
+                            iconTop + deleteIconSize
+                        )
+                        icon.draw(c)
+                    }
                 }
-                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                super.onChildDraw(
+                    c,
+                    recyclerView,
+                    viewHolder,
+                    dX,
+                    dY,
+                    actionState,
+                    isCurrentlyActive
+                )
             }
         })
         layerTouchHelper.attachToRecyclerView(binding.rcvLayerLayer)

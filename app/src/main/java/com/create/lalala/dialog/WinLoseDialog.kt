@@ -10,6 +10,7 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import com.create.lalala.R
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.helper.LanguageHelper
 import com.create.lalala.databinding.DialogStateCosplayBinding
@@ -45,6 +46,8 @@ class WinLoseDialog(
 
         binding.tvTitle.setText(title)
         binding.tvDescription.setText(description)
+        binding.tvTitle.select()
+        binding.tvDescription.select()
         if(!isWin) {
             binding.win1.visibility = View.GONE
             binding.win2.visibility = View.GONE

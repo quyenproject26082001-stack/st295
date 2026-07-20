@@ -1,6 +1,7 @@
 package com.create.lalala.ui.choose_character
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
@@ -34,6 +35,7 @@ class ChooseCharacterActivity : BaseActivity<ActivityChooseCharacterBinding>() {
     private val dataViewModel: DataViewModel by viewModels()
     private val chooseCharacterAdapter by lazy { ChooseCharacterAdapter() }
     private var hasCheckedInternet = false  // Flag to check internet only once
+
     override fun setViewBinding(): ActivityChooseCharacterBinding {
         return ActivityChooseCharacterBinding.inflate(LayoutInflater.from(this))
     }
@@ -51,6 +53,7 @@ class ChooseCharacterActivity : BaseActivity<ActivityChooseCharacterBinding>() {
         lifecycleScope.launch {
             dataViewModel.allData.collect { data ->
                 if (data.isNotEmpty()) {
+                    logChooseCharacterAvatarData(data)
                     chooseCharacterAdapter.submitList(data)
 
                     // Dismiss loading when data is loaded
@@ -61,6 +64,21 @@ class ChooseCharacterActivity : BaseActivity<ActivityChooseCharacterBinding>() {
                 }
             }
         }
+    }
+
+    private fun logChooseCharacterAvatarData(data: ArrayList<com.create.lalala.data.model.custom.CustomizeModel>) {
+        Log.d("ChooseCharacterAvatar", "===== submitList data=${data.size} =====")
+        Log.d(
+            "ChooseCharacterAvatar",
+            "api=${data.count { it.isFromAPI }} local=${data.count { !it.isFromAPI }} emptyAvatar=${data.count { it.avatar.isBlank() }}"
+        )
+        data.forEachIndexed { index, item ->
+            Log.d(
+                "ChooseCharacterAvatar",
+                "submit[$index] name='${item.dataName}' level=${item.level} isFromAPI=${item.isFromAPI} layers=${item.layerList.size} avatar='${item.avatar}'"
+            )
+        }
+        Log.d("ChooseCharacterAvatar", "===== submitList end =====")
     }
 
     private fun checkInternetForAPICharacters(data: ArrayList<com.create.lalala.data.model.custom.CustomizeModel>) {

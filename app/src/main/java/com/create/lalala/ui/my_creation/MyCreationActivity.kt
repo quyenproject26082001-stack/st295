@@ -92,6 +92,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             btnActionBarRight.gone()
             tvCenter.visible()
             tvCenter.setText(R.string.my_creation)
+            tvCenter.select()
         }
         binding.lnlBottom.visible()
         binding.lnlBottom.isSelected = true
@@ -355,10 +356,12 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
 
             btnActionBarNextRight.gone()
 
+            tvCenter.select()
             // Delete All button - hidden initially, only shown in selection mode
             btnActionBarRight.setImageResource(R.drawable.ic_delete_creation)
             tvCenter.visible()
             tvCenter.setText(R.string.my_creation)
+            tvCenter.select()
             btnActionBarRight.translationX = -5 * resources.displayMetrics.density
             btnActionBarNextRight.translationX = -1 * resources.displayMetrics.density
             btnActionBarRight.invisible()
@@ -672,6 +675,8 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         imgBgBtnRight?.setImageResource(R.drawable.bg_btn_whatsapp)
         tvLeft?.setText(R.string.add_to_telegram)
         tvRight?.setText(R.string.add_to_whatsapp)
+        tvLeft?.select()
+        tvRight?.select()
 
         // ActionBar download/share buttons: only in selection mode (avatar tab only)
         binding.actionBar.apply {

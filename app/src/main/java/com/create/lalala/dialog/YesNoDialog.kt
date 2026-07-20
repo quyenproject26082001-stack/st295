@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.view.View
 import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.hideNavigation
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseDialog
@@ -63,8 +64,11 @@ class YesNoDialog(
         binding.apply {
             tvTitle.text = context.strings(title)
             tvDescription.text = context.strings(description)
+            tvTitle.select()
+            tvDescription.select()
             if (isError) {
                 btnYes.text = context.strings(R.string.ok)
+                btnYes.select()
             }
         }
     }

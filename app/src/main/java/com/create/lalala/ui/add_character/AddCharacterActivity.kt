@@ -359,6 +359,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     binding.tvGetText.text = p0.toString()
+                    binding.tvGetText.select()
                 }
 
                 override fun afterTextChanged(p0: Editable?) {}
@@ -1080,6 +1081,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 showToast(getString(R.string.null_edt))
             } else {
                 tvGetText.text = edtText.text.toString().trim()
+                tvGetText.select()
                 val bitmap = BitmapHelper.getBitmapFromEditText(tvGetText)
                 val drawableEmoji =
                     viewModel.loadDrawableEmoji(this@AddCharacterActivity, bitmap, isText = true)
@@ -1100,6 +1102,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 textColorAdapter.submitListReset(viewModel.textColorList)
 
                 tvGetText.text = ""
+                tvGetText.select()
                 tvGetText.setFont(font)
                 tvGetText.setTextColor(color)
             }

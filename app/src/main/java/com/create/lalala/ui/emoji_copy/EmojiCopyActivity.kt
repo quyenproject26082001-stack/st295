@@ -10,6 +10,7 @@ import com.create.lalala.R
 import com.create.lalala.core.base.BaseActivity
 import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.handleBackLeftToRight
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.databinding.ActivityEmojiCopyBinding
@@ -18,7 +19,7 @@ class EmojiCopyActivity : BaseActivity<ActivityEmojiCopyBinding>() {
 
     private val tabAdapter by lazy { EmojiCopyTabAdapter() }
     private val itemAdapter by lazy { EmojiCopyItemAdapter() }
-    private val emojiCategories = createEmojiCategories()
+    private val emojiCategories by lazy { createEmojiCategories() }
 
     override fun setViewBinding(): ActivityEmojiCopyBinding {
         return ActivityEmojiCopyBinding.inflate(LayoutInflater.from(this))
@@ -54,6 +55,7 @@ class EmojiCopyActivity : BaseActivity<ActivityEmojiCopyBinding>() {
             btnActionBarLeft.visible()
             tvCenter.visible()
             tvCenter.text = getString(R.string.emoji_copy)
+            tvCenter.select()
             imgCenter.gone()
             btnActionBarRight.gone()
             btnActionBarNextRight.gone()
@@ -79,32 +81,45 @@ class EmojiCopyActivity : BaseActivity<ActivityEmojiCopyBinding>() {
     private fun createEmojiCategories(): List<EmojiCopyCategory> {
         return listOf(
             EmojiCopyCategory(
-                "Emoji Fashion",
-                listOf("👕", "👖", "👗", "👘", "🥻", "👙", "👚", "🧥", "🥼", "🦺", "👔", "👞", "👟", "🥾", "🥿", "👠", "👡", "🩰", "🧦", "🧤", "🧣", "🎩", "🧢", "👒", "👑", "💍", "💄", "👛", "👜", "🎒", "🕶️")
+                getString(R.string.emoji_smileys),
+                listOf("😀", "😃", "😄", "😁", "😆", "😂", "🤣", "🙂", "🙃", "😉", "😊", "😇", "😍", "🥰", "😘", "😗", "😚", "😙", "😋", "😛", "😜", "🤪", "😝", "🤑", "🤗", "🤭", "🫢", "🫣", "🤫", "🤔", "🫡", "🤐", "🤨", "😐", "😑", "😶", "🫥", "😏", "😒", "🙄", "😬", "😮‍💨", "🤥", "😌", "😔", "😪", "🤤", "😴", "😭", "😡", "😱", "🥳", "🤩", "😎", "🤓", "🧐", "😈", "👻", "💀", "🎃", "👽", "🤖")
             ),
             EmojiCopyCategory(
-                "Emoji Food",
-                listOf("🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🍍", "🥭", "🥝", "🍅", "🥑", "🍆", "🥕", "🌽", "🍔", "🍟", "🍕", "🌭", "🌮", "🍣", "🍰", "🍩", "🍪", "☕")
+                getString(R.string.emoji_fashion),
+                listOf("👕", "👖", "👗", "👘", "🥻", "👙", "👚", "🧥", "🥼", "🦺", "👔", "👞", "👟", "🥾", "🥿", "👠", "👡", "🩰", "🧦", "🧤", "🧣", "🎩", "🧢", "👒", "🎓", "⛑️", "🪖", "👑", "💍", "💄", "💋", "👛", "👜", "👝", "🛍️", "🎒", "🕶️", "🥽", "🌂", "💎")
             ),
             EmojiCopyCategory(
-                "Emoji Smileys",
-                listOf("😀", "😃", "😄", "😁", "😆", "😂", "🤣", "🙂", "😉", "😊", "😍", "😘", "😎", "🤔", "😴", "😭", "😡", "😱", "🥳", "🤩", "😇", "😋", "😜", "🤪", "😈", "👻", "💀", "🎃", "👽", "🤖")
+                getString(R.string.emoji_food),
+                listOf("🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🫐", "🍈", "🍒", "🍑", "🍍", "🥭", "🥝", "🍅", "🥑", "🍆", "🥕", "🌽", "🥔", "🍠", "🥐", "🥯", "🍞", "🥖", "🧀", "🥚", "🍳", "🥞", "🧇", "🥓", "🍗", "🍖", "🍔", "🍟", "🍕", "🌭", "🥪", "🌮", "🌯", "🫔", "🥙", "🧆", "🍣", "🍱", "🍜", "🍰", "🧁", "🍩", "🍪", "🍫", "🍬", "🍭", "☕", "🧋", "🥤")
+            ),
+
+            EmojiCopyCategory(
+                getString(R.string.emoji_animals),
+                listOf("🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐵", "🐔", "🐧", "🐦", "🐤", "🦆", "🦅", "🦉", "🦇", "🐺", "🐗", "🐴", "🦄", "🐝", "🪲", "🦋", "🐛", "🐌", "🐞", "🐜", "🕷️", "🦂", "🐢", "🐍", "🦎", "🐙", "🦑", "🦀", "🐠", "🐟", "🐬", "🦈", "🐳", "🦖", "🦕", "🦩")
             ),
             EmojiCopyCategory(
-                "Emoji Animals",
-                listOf("🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐵", "🐔", "🐧", "🐦", "🦄", "🐝", "🦋", "🐢", "🐙", "🐠", "🐬", "🦖", "🦕", "🦩", "🦉", "🦇")
+                getString(R.string.emoji_travel),
+                listOf("🚗", "🚕", "🚙", "🚌", "🚎", "🏎️", "🚓", "🚑", "🚒", "🚚", "🚛", "🚜", "🛺", "🚲", "🛵", "🏍️", "🛴", "🚂", "🚆", "🚇", "🚊", "🚝", "🚄", "✈️", "🛫", "🛬", "🚀", "🛸", "🚁", "🚢", "⛵", "🛥️", "🛳️", "🗽", "🗼", "🏰", "🏯", "🏟️", "🎡", "🎢", "🎠", "🏝️", "🏖️", "⛰️", "🏔️", "🏕️", "🌋", "🌉", "🛣️", "🛤️")
             ),
             EmojiCopyCategory(
-                "Emoji Travel",
-                listOf("🚗", "🚕", "🚌", "🚎", "🏎️", "🚓", "🚑", "🚒", "🚚", "🚲", "🛵", "🏍️", "✈️", "🚀", "🚁", "🚢", "⛵", "🗽", "🗼", "🏰", "🏝️", "⛰️", "🏕️", "🌋", "🌉", "🎡", "🎢", "🏟️", "🏖️", "🛣️")
+                getString(R.string.emoji_objects),
+                listOf("⌚", "📱", "📲", "💻", "⌨️", "🖥️", "🖨️", "🖱️", "💾", "💿", "📷", "📸", "📹", "📺", "📻", "🎙️", "🎧", "🎮", "🕹️", "💡", "🔦", "🕯️", "🧸", "🎁", "📦", "📚", "📖", "✏️", "🖊️", "🖌️", "✂️", "📌", "📎", "🔒", "🔓", "🔑", "🧲", "🧪", "🧬", "🔬", "🔭", "🧰", "🪛", "🔧", "🔨", "🪄", "🧿", "🪩", "🎈", "🎀")
             ),
             EmojiCopyCategory(
-                "Emoji Objects",
-                listOf("⌚", "📱", "💻", "⌨️", "🖥️", "🖨️", "📷", "📺", "📻", "🎙️", "💡", "🔦", "🕯️", "🧸", "🎁", "📚", "✏️", "✂️", "🔒", "🔑", "🧲", "🧪", "🧬", "🔭", "🧰", "🪄", "🧿", "🪩", "🎈", "🎀")
+                getString(R.string.emoji_symbols),
+                listOf("❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "🤎", "💔", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "💟", "💯", "✅", "☑️", "✔️", "❌", "❎", "➕", "➖", "➗", "✖️", "⭐", "🌟", "🔥", "✨", "⚡", "💥", "☀️", "☁️", "☔", "❄️", "♻️", "⚠️", "🚫", "🔔", "🔕", "🔱", "💠", "🔶", "🔷", "🔴", "🟠", "🟡", "🟢", "🔵", "🟣")
             ),
             EmojiCopyCategory(
-                "Emoji Symbols",
-                listOf("❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "🤎", "💯", "✅", "❌", "⭐", "🔥", "✨", "⚡", "☀️", "☁️", "☔", "♻️", "⚠️", "🚫", "🔔", "🔕", "🔱", "💠", "🔶", "🔷", "🔴", "🟢")
+                getString(R.string.emoji_horror),
+                listOf("😨", "😰", "😱", "😵", "😵‍💫", "🥶", "😈", "👿", "👹", "👺", "🤡", "💀", "☠️", "👻", "🎃", "🧛", "🧟", "🧙", "🕷️", "🕸️", "🦇", "🩸", "🪦", "⚰️", "🪓", "🔪", "⛓️", "🕯️", "🌕", "🌑", "🌫️", "⚡", "🔥", "🧪", "🧿", "🚪", "🗝️", "🏚️", "🌲", "🪞")
+            ),
+            EmojiCopyCategory(
+                getString(R.string.emoji_nature),
+                listOf("🌱", "🌿", "☘️", "🍀", "🎍", "🪴", "🌵", "🌴", "🌳", "🌲", "🍁", "🍂", "🍃", "🌾", "💐", "🌷", "🌹", "🥀", "🌺", "🌸", "🌼", "🌻", "🌞", "🌝", "🌛", "🌜", "🌚", "🌕", "🌖", "🌗", "🌘", "🌑", "🌒", "🌓", "🌔", "🌙", "🌎", "🌍", "🌏", "🪐", "💫", "⭐", "🌟", "☄️", "🌈", "☁️", "⛅", "⛈️", "🌧️", "❄️")
+            ),
+            EmojiCopyCategory(
+                getString(R.string.emoji_activities),
+                listOf("⚽", "🏀", "🏈", "⚾", "🥎", "🎾", "🏐", "🏉", "🥏", "🎱", "🪀", "🏓", "🏸", "🏒", "🏑", "🥍", "🏏", "🪃", "🥅", "⛳", "🪁", "🏹", "🎣", "🤿", "🥊", "🥋", "🎽", "🛹", "🛼", "🛷", "⛸️", "🥌", "🎿", "⛷️", "🏂", "🎤", "🎧", "🎼", "🎹", "🥁", "🎷", "🎺", "🎸", "🪕", "🎻", "🎲", "♟️", "🎯", "🎳", "🎮")
             )
         )
     }

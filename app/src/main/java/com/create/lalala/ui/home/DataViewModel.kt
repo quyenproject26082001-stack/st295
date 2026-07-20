@@ -87,9 +87,17 @@ class DataViewModel() : ViewModel() {
                 var dataApi = MediaHelper.readListFromFile<CustomizeModel>(context, ValueKey.DATA_FILE_API_INTERNAL)
                     ?: arrayListOf()
                 Log.d("TIMING_TRENDING", "  [Local] đọc DATA_FILE_API_INTERNAL (cache): ${System.currentTimeMillis() - apiCacheStart}ms | items=${dataApi.size}")
+                if (hasStaleApiAssetDomain(dataApi)) {
+                    Log.w(
+                        "TIMING_TRENDING",
+                        "  [API] cache domain cũ, clear DATA_FILE_API_INTERNAL để rebuild bằng ${DomainKey.SUB_DOMAIN}"
+                    )
+                    PersistenceRepository.clearInternalData(context, ValueKey.DATA_FILE_API_INTERNAL)
+                    dataApi = arrayListOf()
+                }
 
-                if (dataApi.isEmpty() && InternetHelper.checkInternet(context)) {
-                    Log.d("TIMING_TRENDING", "  [API] cache rỗng + có mạng → gọi API...")
+                if (InternetHelper.checkInternet(context)) {
+                    Log.d("TIMING_TRENDING", "  [API] có mạng → gọi API để sync data mới nhất...")
                     val apiCallStart = System.currentTimeMillis()
                     getAllParts(context).collect { state ->
                         when (state) {
@@ -105,7 +113,7 @@ class DataViewModel() : ViewModel() {
                         }
                     }
                 } else {
-                    Log.d("TIMING_TRENDING", "  [API] bỏ qua (cache có data hoặc không có mạng)")
+                    Log.d("TIMING_TRENDING", "  [API] bỏ qua vì không có mạng, dùng cache hiện tại")
                 }
 
                 totalData.addAll(dataApi)
@@ -118,6 +126,24 @@ class DataViewModel() : ViewModel() {
             val timeEnd = System.currentTimeMillis()
             Log.d("TIMING_TRENDING", "saveAndReadData() DONE | tổng: ${timeEnd - timeStart}ms | allData.size=${list.size}")
             Log.d("nbhieu", "time load data: ${timeEnd - timeStart}")
+        }
+    }
+
+    private fun hasStaleApiAssetDomain(dataApi: List<CustomizeModel>): Boolean {
+        if (dataApi.isEmpty()) return false
+
+        fun String.hasWrongRemoteDomain(): Boolean {
+            return startsWith(DomainKey.BASE_URL) && !contains(DomainKey.SUB_DOMAIN)
+        }
+
+        return dataApi.any { item ->
+            item.avatar.hasWrongRemoteDomain() ||
+                item.layerList.any { layerList ->
+                    layerList.imageNavigation.hasWrongRemoteDomain() ||
+                        layerList.layer.any { layer ->
+                            layer.image.hasWrongRemoteDomain() || layer.thumb.hasWrongRemoteDomain()
+                        }
+                }
         }
     }
 
@@ -170,7 +196,7 @@ class DataViewModel() : ViewModel() {
             }
             emit(HandleState.SUCCESS)
         } else {
-            PersistenceRepository.clearInternalData(context, ValueKey.DATA_FILE_API_INTERNAL)
+            Log.w("TIMING_TRENDING", "  [API] request fail, giữ cache API cũ để app vẫn có data")
             emit(HandleState.FAIL)
         }
     }

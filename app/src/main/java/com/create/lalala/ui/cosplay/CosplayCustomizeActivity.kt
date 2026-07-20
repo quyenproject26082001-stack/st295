@@ -18,6 +18,7 @@ import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.handleBackLeftToRight
 import com.create.lalala.core.extensions.hideNavigation
 import com.create.lalala.core.extensions.invisible
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.showInterAll
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
@@ -68,6 +69,7 @@ class CosplayCustomizeActivity : BaseActivity<ActivityCosplayCustomizeBinding>()
     override fun initView() {
         initRcv()
         binding.tvCountDown.text = "10:00"
+        binding.tvCountDown.select()
         binding.progressContainer.post {
             val containerH = binding.progressContainer.height.toFloat()
             val thumbH = binding.icThumb.height.toFloat()
@@ -416,6 +418,7 @@ class CosplayCustomizeActivity : BaseActivity<ActivityCosplayCustomizeBinding>()
             val completedOffset = if (progress == 100) 15f * resources.displayMetrics.density else 0f
             binding.icThumb.translationY = thumbCenter - containerH / 2f - completedOffset
             binding.tvThumbProgress.text = "$progress%"
+            binding.tvThumbProgress.select()
             if (progress == 100) {
                 binding.progressContainer.postDelayed(
                     {
@@ -464,6 +467,7 @@ class CosplayCustomizeActivity : BaseActivity<ActivityCosplayCustomizeBinding>()
                 val m = countdownSecondsLeft / 60
                 val s = countdownSecondsLeft % 60
                 binding.tvCountDown.text = String.format("%02d:%02d", m, s)
+                binding.tvCountDown.select()
                 if (countdownSecondsLeft == 0) {
                     isCountdownActive = false
                     val isWin = currentProgress ==100

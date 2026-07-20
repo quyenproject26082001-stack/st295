@@ -9,6 +9,7 @@ import com.lvt.ads.util.Admob
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseActivity
 import com.create.lalala.core.extensions.rateApp
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.setImageActionBar
 import com.create.lalala.core.extensions.showInterAll
 import com.create.lalala.core.extensions.startIntentRightToLeft
@@ -140,6 +141,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             tv3.text = strings(R.string.emoji_maker)
             tv4.text = strings(R.string.emoji_copy)
             tv5.text = strings(R.string.my_creation)
+            tv1.select()
+            tv2.select()
+            tv3.select()
+            tv4.select()
+            tv5.select()
         }
     }
 

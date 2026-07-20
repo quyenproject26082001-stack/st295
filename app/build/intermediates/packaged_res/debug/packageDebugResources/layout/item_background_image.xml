@@ -69,6 +69,7 @@
                         android:text="@string/add_image"
                         android:textColor="#212121"
                         android:gravity="center"
+                        style="@style/single_marquee"
                         android:visibility="visible"
                         android:includeFontPadding="false"
                         android:fontFamily="@font/howli_layers_base"

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:clipToOutline="false"
     android:clipChildren="false"
-    android:background="@drawable/bg_app"
+    android:background="#212121"
     tools:context=".ui.customize.CustomizeCharacterActivity">
 
     <ImageView

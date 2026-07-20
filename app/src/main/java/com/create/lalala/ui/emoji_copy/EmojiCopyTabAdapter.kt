@@ -4,6 +4,7 @@ import android.graphics.Color
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseAdapter
 import com.create.lalala.core.extensions.gone
+import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.databinding.ItemEmojiCopyTabBinding
@@ -26,6 +27,7 @@ class EmojiCopyTabAdapter :
             if (isSelected) R.drawable.bg_creation_tab_selected else R.drawable.bg_creation_tab_unselected
         )
         binding.tvName.text = item.name
+        binding.tvName.select()
         binding.tvName.setTextColor(if (isSelected) Color.WHITE else Color.parseColor("#FF8600"))
         if (isSelected) binding.viewOverlay.gone() else binding.viewOverlay.visible()
         binding.root.tap(800) {

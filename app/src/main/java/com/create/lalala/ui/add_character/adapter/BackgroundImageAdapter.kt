@@ -28,6 +28,7 @@ class BackgroundImageAdapter :
 
     override fun onBind(binding: ItemBackgroundImageBinding, item: SelectedModel, position: Int) {
         binding.apply {
+            tvAddImg.select()
             cardBackgroundImage.strokeWidth = if (item.isSelected) dp(2) else 0
             cardBackgroundImage.strokeColor = if (item.isSelected) Color.parseColor("#333333") else Color.TRANSPARENT
             if (position == 0) {

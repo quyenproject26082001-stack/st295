@@ -49,7 +49,7 @@
 
     <string name="rate_us_0">You have not rated it yet!</string>
     <string name="rate">Rate</string>
-    <string name="exit">Exit</string>
+    <string name="exit">EXIT</string>
     <string name="have_rated">Thank you for rate our app</string>
     <string name="share">Share</string>
     <string name="delete">DELETE</string>
@@ -58,7 +58,7 @@
     <string name="no">No</string>
     <string name="ok">Ok</string>
     <string name="wait_a_minute">PLEASE WAIT A MOMENT</string>
-    <string name="reset">Reset</string>
+    <string name="reset">RESET</string>
     <string name="download_success">Download successful to the ST295_Horror_Emoji_Maker album</string>
     <string name="please_check_your_internet">Please check your internet</string>
     <string name="please_select_an_image">Please select an image</string>
@@ -77,7 +77,7 @@
     <string name="delete_your_customize">Delete your customize</string>
     <string name="are_you_sure_you_want_to_delete_the_image">Are you sure you want to delete the image?</string>
     <string name="haven_t_saved_it_yet_do_you_want_to_exit">Haven’t saved it yet, are you sure to exit?</string>
-    <string name="change_your_whole_design_are_you_sure">DO YOU WANT TO RESET ALL?</string>
+    <string name="change_your_whole_design_are_you_sure">Do you want to reset all?</string>
     <string name="character_maker">Pixel Maker</string>
     <string name="no_item_here">No Item Here</string>
     <string name="quick_maker">Quick Maker</string>
@@ -114,7 +114,7 @@
     <string name="loading">LOADING...</string>
     <string name="internet_required_for_more_characters">Internet required for more characters</string>
     <string name="my_work">My Work</string>
-    <string name="do_you_want_to_exit">HAVEN\'T SAVE IT YET, DO YOU WANT TO EXIT?</string>
+    <string name="do_you_want_to_exit">Haven’t saved it yet, do you want to exit?</string>
     <string name="generate">RANDOM</string>
     <string name="play">Create Emoji</string>
     <string name="tv_cosplay">\u00A0\u00A0COSPLAY AVATAR\u00A0</string>
@@ -164,5 +164,15 @@
     <string name="added_to_package_successfully">Added to package successfully!</string>
     <string name="copied_to_clipboard">Copied to clipboard!</string>
     <string name="please_draw_something">Please draw something</string>
+    <string name="emoji_smileys">Emoji Smileys</string>
+    <string name="emoji_fashion">Emoji Fashion</string>
+    <string name="emoji_food">Emoji Food</string>
+    <string name="emoji_animals">Emoji Animals</string>
+    <string name="emoji_travel">Emoji Travel</string>
+    <string name="emoji_objects">Emoji Objects</string>
+    <string name="emoji_symbols">Emoji Symbols</string>
+    <string name="emoji_horror">Emoji Horror</string>
+    <string name="emoji_nature">Emoji Nature</string>
+    <string name="emoji_activities">Emoji Activities</string>
 
 </resources>
