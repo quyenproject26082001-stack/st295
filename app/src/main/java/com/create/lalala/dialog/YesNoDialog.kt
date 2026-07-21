@@ -3,12 +3,16 @@ package com.create.lalala.dialog
 import android.app.Activity
 import android.graphics.Color
 import android.view.View
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.view.updateLayoutParams
 import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.hideNavigation
 import com.create.lalala.core.extensions.select
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseDialog
+import com.create.lalala.core.extensions.dp
+import com.create.lalala.core.extensions.setMargins
 import com.create.lalala.core.extensions.strings
 import com.create.lalala.databinding.DialogConfirmBinding
 
@@ -27,11 +31,14 @@ class YesNoDialog(
     var onYesClick: (() -> Unit) = {}
     var onDismissClick: (() -> Unit) = {}
 
+
     override fun initView() {
         initText()
         initBackground()
-        if (isError) {
+        if (isError && isInternetDialog()) {
             binding.btnNo.gone()
+            binding.llButtons.setMargins(left = 70.dp(context), right = 70.dp(context))
+            binding.btnYes.setMargins(left = 0, right = 0)
         }
         context.hideNavigation()
         binding.tvTitle.isSelected = true
@@ -66,10 +73,16 @@ class YesNoDialog(
             tvDescription.text = context.strings(description)
             tvTitle.select()
             tvDescription.select()
-            if (isError) {
+            if (isError && isInternetDialog()) {
                 btnYes.text = context.strings(R.string.ok)
                 btnYes.select()
             }
         }
+    }
+
+    private fun isInternetDialog(): Boolean {
+        return title == R.string.no_internet ||
+                description == R.string.please_check_your_internet ||
+                description == R.string.internet_required_for_more_characters
     }
 }

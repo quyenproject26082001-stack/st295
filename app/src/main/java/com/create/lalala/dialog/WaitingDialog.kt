@@ -5,6 +5,7 @@ import android.app.Activity
 import android.view.animation.LinearInterpolator
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseDialog
+import com.create.lalala.core.extensions.hideNavigation
 import com.create.lalala.databinding.DialogLoadingBinding
 
 class WaitingDialog(val context: Activity) :
@@ -15,7 +16,9 @@ class WaitingDialog(val context: Activity) :
 
     private var spinnerAnim: ObjectAnimator? = null
 
-    override fun initView() {}
+    override fun initView() {
+        context.hideNavigation(isBlack = false)
+    }
 
     override fun onStart() {
         super.onStart()
@@ -25,6 +28,7 @@ class WaitingDialog(val context: Activity) :
             interpolator = LinearInterpolator()
             start()
         }
+        context.hideNavigation(isBlack = false)   // 👈 sửa lại đây
     }
 
     override fun initAction() {}

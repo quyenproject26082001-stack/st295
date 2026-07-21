@@ -38,6 +38,7 @@ object PackageRepository {
 
         val copiedPath = copyImageToPackageFolder(context, sourceFile) ?: return false
         val list = getPackages(context)
+        if (list.any { it.name.trim().equals(name.trim(), ignoreCase = true) }) return false
         val packageModel = PackageModel(
             id = UUID.randomUUID().toString(),
             name = name,
@@ -47,6 +48,13 @@ object PackageRepository {
         list.add(0, packageModel)
         savePackages(context, list)
         return true
+    }
+
+    fun hasPackageName(context: Context, name: String): Boolean {
+        val normalizedName = name.trim()
+        return getPackages(context).any {
+            it.name.trim().equals(normalizedName, ignoreCase = true)
+        }
     }
 
     fun addImageToPackage(context: Context, packageId: String, sourcePath: String): Boolean {

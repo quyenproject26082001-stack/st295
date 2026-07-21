@@ -274,12 +274,24 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     }
 
     private fun updateResetBtn() {
+        if (isCurrentNavigationNone()) {
+            binding.btnResetMove.alpha = 0.4f
+            binding.btnResetMove.isEnabled = false
+            return
+        }
         val changed = isTransformChanged()
         binding.btnResetMove.alpha = if (changed) 1f else 0.4f
         binding.btnResetMove.isEnabled = changed
     }
 
     private fun updateScaleButtons() {
+        if (isCurrentNavigationNone()) {
+            binding.btnMinus.alpha = 0.4f
+            binding.btnMinus.isEnabled = false
+            binding.btnPlus.alpha = 0.4f
+            binding.btnPlus.isEnabled = false
+            return
+        }
         if (viewModel.positionCustom !in viewModel.imageViewList.indices) return
         val scale = viewModel.imageViewList[viewModel.positionCustom].scaleX
         binding.btnMinus.apply {
@@ -295,6 +307,17 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     }
 
     private fun updateMoveButtons() {
+        if (isCurrentNavigationNone()) {
+            binding.btnMoveLeft.alpha = 0.4f
+            binding.btnMoveLeft.isEnabled = false
+            binding.btnMoveRight.alpha = 0.4f
+            binding.btnMoveRight.isEnabled = false
+            binding.btnMoveUp.alpha = 0.4f
+            binding.btnMoveUp.isEnabled = false
+            binding.btnMoveDown.alpha = 0.4f
+            binding.btnMoveDown.isEnabled = false
+            return
+        }
         if (viewModel.positionCustom !in viewModel.imageViewList.indices) return
         val iv = viewModel.imageViewList[viewModel.positionCustom]
         val maxX = binding.layoutCustomLayer.width / 2f
@@ -380,6 +403,11 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             }
         }
     }
+
+    private fun isCurrentNavigationNone(): Boolean =
+        viewModel.keySelectedItemList
+            .getOrNull(viewModel.positionNavSelected)
+            .isNullOrEmpty()
 
     private fun handleRcv() {
             layerCustomizeAdapter.onItemClick =
@@ -770,11 +798,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         val layerIndex = viewModel.bottomNavigationList.value.getOrNull(positionBottomNavigation)?.layerIndex
             ?: positionBottomNavigation
         if (layerIndex == viewModel.positionNavSelected) return
-        if (binding.layoutMove.isVisible) {
-            binding.layoutMove.invisible()
-            binding.rcvLayer.visible()
-            binding.flBottomNav.visible()
-        }
+        val keepMoveState = binding.layoutMove.isVisible
         lifecycleScope.launch(Dispatchers.IO) {
             viewModel.setPositionNavSelected(layerIndex)
             viewModel.setPositionCustom(viewModel.dataCustomize.value!!.layerList[layerIndex].positionCustom)
@@ -795,6 +819,12 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                     )
                 }
                 checkStatusColor()
+                if (keepMoveState) {
+                    binding.layoutMove.visible()
+                    binding.rcvLayer.invisible()
+                    binding.flBottomNav.visible()
+                    if (isCurrentNavigationNone()) showToast(R.string.no_item_here)
+                }
                 updateResetBtn()
                 updateMoveButtons()
                 updateScaleButtons()

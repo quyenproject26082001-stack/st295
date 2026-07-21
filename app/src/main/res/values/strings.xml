@@ -97,6 +97,7 @@
     <string name="create_package_name">Create Package Name</string>
     <string name="enter_your_package_name">Enter your package name</string>
     <string name="please_enter_your_package_name">Please enter your package name!</string>
+    <string name="package_name_already_exists">Package name already exists!</string>
     <string name="background">Background</string>
     <string name="image">IMAGE</string>
     <string name="color">COLOR</string>

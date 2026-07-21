@@ -112,7 +112,8 @@ object DataLocal {
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_5)),
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_6)),
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_7)),
-            SelectedModel(color = ContextCompat.getColor(context, R.color.color_8))
+            SelectedModel(color = ContextCompat.getColor(context, R.color.color_8)),
+
         )
     }
 }

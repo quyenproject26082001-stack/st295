@@ -13,7 +13,29 @@ class DrawColorAdapter : RecyclerView.Adapter<DrawColorAdapter.ColorViewHolder>(
 
     var onAddColorClick: (() -> Unit) = {}
     var onColorClick: ((Int) -> Unit) = {}
-    private val colors = arrayListOf<Int?>(null, Color.BLACK, Color.WHITE, Color.RED, Color.BLUE, Color.YELLOW)
+    private val colors = arrayListOf<Int?>(
+        null,
+        Color.BLACK,
+        Color.WHITE,
+        Color.RED,
+        Color.parseColor("#FF6B00"),
+        Color.YELLOW,
+        Color.parseColor("#34C759"),
+        Color.parseColor("#00C2FF"),
+        Color.BLUE,
+        Color.parseColor("#003CFF"),
+        Color.parseColor("#4B0082"),
+        Color.parseColor("#8E44AD"),
+        Color.parseColor("#D500F9"),
+        Color.parseColor("#FF4FA3"),
+        Color.parseColor("#FF1744"),
+        Color.parseColor("#B71C1C"),
+        Color.parseColor("#795548"),
+        Color.parseColor("#8B5A2B"),
+        Color.parseColor("#FFD180"),
+        Color.parseColor("#607D8B"),
+        Color.parseColor("#808080")
+    )
     private var selectedPosition = 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorViewHolder {

@@ -6,6 +6,8 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.create.lalala.databinding.DialogAddNewPackageBindingImpl;
+import com.create.lalala.databinding.DialogAddPackageBindingImpl;
 import com.create.lalala.databinding.DialogColorPickerBindingImpl;
 import com.create.lalala.databinding.DialogConfirmBindingImpl;
 import com.create.lalala.databinding.DialogCreateNameBindingImpl;
@@ -23,21 +25,27 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_DIALOGCOLORPICKER = 1;
+  private static final int LAYOUT_DIALOGADDNEWPACKAGE = 1;
 
-  private static final int LAYOUT_DIALOGCONFIRM = 2;
+  private static final int LAYOUT_DIALOGADDPACKAGE = 2;
 
-  private static final int LAYOUT_DIALOGCREATENAME = 3;
+  private static final int LAYOUT_DIALOGCOLORPICKER = 3;
 
-  private static final int LAYOUT_DIALOGLOADING = 4;
+  private static final int LAYOUT_DIALOGCONFIRM = 4;
 
-  private static final int LAYOUT_DIALOGRATE = 5;
+  private static final int LAYOUT_DIALOGCREATENAME = 5;
 
-  private static final int LAYOUT_DIALOGSPEECH = 6;
+  private static final int LAYOUT_DIALOGLOADING = 6;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
+  private static final int LAYOUT_DIALOGRATE = 7;
+
+  private static final int LAYOUT_DIALOGSPEECH = 8;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
 
   static {
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.create.lalala.R.layout.dialog_add_new_package, LAYOUT_DIALOGADDNEWPACKAGE);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.create.lalala.R.layout.dialog_add_package, LAYOUT_DIALOGADDPACKAGE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.create.lalala.R.layout.dialog_color_picker, LAYOUT_DIALOGCOLORPICKER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.create.lalala.R.layout.dialog_confirm, LAYOUT_DIALOGCONFIRM);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.create.lalala.R.layout.dialog_create_name, LAYOUT_DIALOGCREATENAME);
@@ -55,6 +63,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
+        case  LAYOUT_DIALOGADDNEWPACKAGE: {
+          if ("layout/dialog_add_new_package_0".equals(tag)) {
+            return new DialogAddNewPackageBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for dialog_add_new_package is invalid. Received: " + tag);
+        }
+        case  LAYOUT_DIALOGADDPACKAGE: {
+          if ("layout/dialog_add_package_0".equals(tag)) {
+            return new DialogAddPackageBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for dialog_add_package is invalid. Received: " + tag);
+        }
         case  LAYOUT_DIALOGCOLORPICKER: {
           if ("layout/dialog_color_picker_0".equals(tag)) {
             return new DialogColorPickerBindingImpl(component, view);
@@ -144,9 +164,11 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
 
     static {
+      sKeys.put("layout/dialog_add_new_package_0", com.create.lalala.R.layout.dialog_add_new_package);
+      sKeys.put("layout/dialog_add_package_0", com.create.lalala.R.layout.dialog_add_package);
       sKeys.put("layout/dialog_color_picker_0", com.create.lalala.R.layout.dialog_color_picker);
       sKeys.put("layout/dialog_confirm_0", com.create.lalala.R.layout.dialog_confirm);
       sKeys.put("layout/dialog_create_name_0", com.create.lalala.R.layout.dialog_create_name);

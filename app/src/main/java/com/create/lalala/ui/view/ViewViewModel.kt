@@ -31,7 +31,11 @@ class ViewViewModel : ViewModel() {
     }
 
     fun deleteFile(context: Context, path: String): Flow<HandleState> = flow {
-        if (statusFrom == ValueKey.MY_DESIGN_TYPE || statusFrom == ValueKey.PRIDE_OVERLAY_TYPE) {
+        if (
+            statusFrom == ValueKey.MY_DESIGN_TYPE ||
+            statusFrom == ValueKey.PRIDE_OVERLAY_TYPE ||
+            statusFrom == ValueKey.EMOJI_TYPE
+        ) {
             MediaHelper.deleteFileByPath(arrayListOf(path)).collect { state ->
                 if (state == HandleState.SUCCESS) {
                     PersistenceRepository.deleteMediaItems(context, listOf(path))

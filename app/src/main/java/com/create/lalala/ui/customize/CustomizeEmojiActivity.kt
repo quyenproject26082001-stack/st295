@@ -81,6 +81,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             if (!draw.isHide) binding.drawView.selectCurrentDraw(draw)
         }
     }
+
     private var categories: List<EmojiCategoryModel> = emptyList()
     private var selectedCategoryIndex = 0
     private var currentState = EditorState.ITEMS
@@ -293,7 +294,6 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         })
         layerAdapter.onItemClick = { item, position ->
             checkDataInternet(this@CustomizeEmojiActivity) {
-                selectItem(position)
                 addEmojiToDrawView(item.path)
             }
         }
@@ -502,8 +502,8 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             rcvLayerColor.invisible()
             rcvLayerLayer.invisible()
             tvNoLayerItem.invisible()
-            rcvTextColor.visible()
-            rcvTextFont.invisible()
+            rcvTextColor.invisible()
+            rcvTextFont.visible()
             actionBar.btnActionBarRight.invisible()
             actionBar.btnActionBarRightText.visible()
             edtEmojiText.visible()
@@ -521,7 +521,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         updateLeftActionIcon()
         textColorAdapter.submitItem(1, textColorList)
         textFontAdapter.submitItem(0, textFontList)
-        selectTextTool(isColor = true)
+        selectTextTool(isColor = false)
         ViewCompat.requestApplyInsets(binding.root)
         showKeyboard()
     }
@@ -689,7 +689,8 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             }
             val body = response.body()
             if (response.isSuccessful && body != null) {
-                categories = if (mode == MODE_HORROR) body.emoji_horror else body.emoji_normal
+                categories = (if (mode == MODE_HORROR) body.emoji_horror else body.emoji_normal)
+                    .sortedBy { it.level }
                 selectedCategoryIndex = 0
                 submitNavigation()
                 categories.firstOrNull()?.let { submitItems(it) }
@@ -728,13 +729,6 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             )
         }
         layerAdapter.submitList(items)
-    }
-
-    private fun selectItem(position: Int) {
-        val selectedItems = layerAdapter.currentList.mapIndexed { index, item ->
-            item.copy(isSelected = index == position)
-        }
-        layerAdapter.submitList(selectedItems)
     }
 
     private fun addEmojiToDrawView(path: String) {

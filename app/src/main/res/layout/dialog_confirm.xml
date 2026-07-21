@@ -86,6 +86,7 @@
                         android:fontFamily="@font/howli_layers_base"
                         android:gravity="center"
                         android:text="@string/no"
+                        android:visibility="visible"
                         android:includeFontPadding="false"
                         android:textColor="@color/app"
                         android:textSize="18sp"

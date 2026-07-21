@@ -96,6 +96,7 @@
     <string name="create_package_name">पैकेज नाम बनाएं</string>
     <string name="enter_your_package_name">अपना पैकेज नाम दर्ज करें</string>
     <string name="please_enter_your_package_name">कृपया अपना पैकेज नाम दर्ज करें!</string>
+    <string name="package_name_already_exists">पैकेज नाम पहले से मौजूद है!</string>
     <string name="background">बैकग्राउंड</string>
     <string name="image">इमेज</string>
     <string name="color">रंग</string>

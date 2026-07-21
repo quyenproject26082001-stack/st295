@@ -96,6 +96,7 @@
     <string name="create_package_name">Buat Nama Paket</string>
     <string name="enter_your_package_name">Masukkan nama paket kamu</string>
     <string name="please_enter_your_package_name">Silakan masukkan nama paket kamu!</string>
+    <string name="package_name_already_exists">Nama paket sudah ada!</string>
     <string name="background">Latar Belakang</string>
     <string name="image">GAMBAR</string>
     <string name="color">WARNA</string>

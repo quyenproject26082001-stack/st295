@@ -96,6 +96,7 @@
     <string name="create_package_name">Paketnamen erstellen</string>
     <string name="enter_your_package_name">Gib deinen Paketnamen ein</string>
     <string name="please_enter_your_package_name">Bitte gib deinen Paketnamen ein!</string>
+    <string name="package_name_already_exists">Der Paketname existiert bereits!</string>
     <string name="background">Hintergrund</string>
     <string name="image">BILD</string>
     <string name="color">FARBE</string>

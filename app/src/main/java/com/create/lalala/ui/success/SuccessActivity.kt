@@ -1,23 +1,16 @@
 package com.create.lalala.ui.success
 
 import android.app.Activity
-import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.view.Window
-import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.lvt.ads.util.Admob
 import com.create.lalala.R
 import com.create.lalala.core.base.BaseActivity
@@ -44,13 +37,11 @@ import com.create.lalala.core.utils.key.RequestKey
 import com.create.lalala.core.utils.key.ValueKey
 import com.create.lalala.core.utils.state.HandleState
 import com.create.lalala.data.local.PackageRepository
-import com.create.lalala.data.model.PackageModel
 import com.create.lalala.databinding.ActivitySuccessBinding
-import com.create.lalala.databinding.DialogAddNewPackageBinding
-import com.create.lalala.databinding.DialogAddPackageBinding
+import com.create.lalala.dialog.AddNewPackageDialog
+import com.create.lalala.dialog.AddPackageDialog
 import com.create.lalala.ui.home.HomeActivity
 import com.create.lalala.ui.my_creation.MyCreationActivity
-import com.create.lalala.ui.my_creation.adapter.AddPackageAdapter
 import com.create.lalala.ui.permission.PermissionViewModel
 import kotlinx.coroutines.launch
 
@@ -130,41 +121,11 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
     }
 
     private fun showAddPackageDialog() {
-        val dialogBinding = DialogAddPackageBinding.inflate(layoutInflater)
-        val dialog = createCenterDialog(dialogBinding.root)
-        val adapter = AddPackageAdapter()
-        var selectedPackageId = ""
-
-        fun packageListWithAdd(): ArrayList<PackageModel> {
-            val list = PackageRepository.getPackages(this)
-            list.add(0, PackageModel(AddPackageAdapter.ADD_ID, ""))
-            return list
-        }
-
-        fun updateAddButton() {
-            val enabled = selectedPackageId.isNotEmpty()
-            dialogBinding.btnAddPackage.isEnabled = enabled
-            dialogBinding.btnAddPackage.alpha = if (enabled) 1f else 0.45f
-        }
-
-        fun reloadPackages() {
-            adapter.submitList(packageListWithAdd())
-            updateAddButton()
-        }
-
-        dialogBinding.rcvPackage.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        dialogBinding.rcvPackage.adapter = adapter
-        adapter.onAddClick = {
+        val dialog = AddPackageDialog(this)
+        dialog.onCreateNewPackageClick = {
             showAddNewPackageDialog(dialog)
         }
-        adapter.onPackageClick = { packageModel ->
-            selectedPackageId = packageModel.id
-            adapter.selectedPackageId = packageModel.id
-            adapter.notifyItemRangeChanged(0, adapter.itemCount)
-            updateAddButton()
-        }
-        dialogBinding.btnAddPackage.tap {
-            if (selectedPackageId.isEmpty()) return@tap
+        dialog.onAddToPackageClick = { selectedPackageId ->
             val success = PackageRepository.addImageToPackage(this, selectedPackageId, viewModel.pathInternal.value)
             if (success) {
                 showToast(R.string.added_to_package_successfully)
@@ -173,47 +134,29 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
                 showToast(R.string.save_failed_please_try_again)
             }
         }
-
-        reloadPackages()
         dialog.show()
     }
 
-    private fun showAddNewPackageDialog(addPackageDialog: Dialog) {
-        val dialogBinding = DialogAddNewPackageBinding.inflate(layoutInflater)
-        val dialog = createCenterDialog(dialogBinding.root)
-        dialogBinding.btnAddPackageInput.tap {
-            val packageName = dialogBinding.edPackage.text.toString().trim()
+    private fun showAddNewPackageDialog(addPackageDialog: AddPackageDialog) {
+        val dialog = AddNewPackageDialog(this)
+        dialog.onAddPackageClick = { packageName ->
             if (packageName.isEmpty()) {
                 showToast(R.string.please_enter_your_package_name)
-                return@tap
-            }
-            val success = PackageRepository.createPackageWithImage(this, packageName, viewModel.pathInternal.value)
-            if (success) {
-                showToast(R.string.package_created_successfully)
-                dialog.dismiss()
-                addPackageDialog.dismiss()
+            } else if (PackageRepository.hasPackageName(this, packageName)) {
+                showToast(R.string.package_name_already_exists)
             } else {
-                showToast(R.string.save_failed_please_try_again)
+                val success = PackageRepository.createPackageWithImage(this, packageName, viewModel.pathInternal.value)
+                if (success) {
+                    showToast(R.string.package_created_successfully)
+                    dialog.dismiss()
+                    addPackageDialog.dismiss()
+                } else {
+                    showToast(R.string.save_failed_please_try_again)
+                }
             }
         }
         dialog.show()
     }
-
-    private fun createCenterDialog(view: android.view.View): Dialog {
-        return Dialog(this).apply {
-            requestWindowFeature(Window.FEATURE_NO_TITLE)
-            setCancelable(true)
-            setCanceledOnTouchOutside(true)
-            setContentView(view)
-            view.setOnClickListener { dismiss() }
-            (view as? ViewGroup)?.getChildAt(0)?.setOnClickListener { }
-            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            setOnShowListener {
-                window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
-            }
-        }
-    }
-
     override fun initActionBar() {
         binding.actionBar.apply {
 

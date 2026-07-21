@@ -96,6 +96,7 @@
     <string name="create_package_name">Criar Nome do Pacote</string>
     <string name="enter_your_package_name">Digite o nome do seu pacote</string>
     <string name="please_enter_your_package_name">Digite o nome do seu pacote!</string>
+    <string name="package_name_already_exists">O nome do pacote já existe!</string>
     <string name="background">Fundo</string>
     <string name="image">IMAGEM</string>
     <string name="color">COR</string>
