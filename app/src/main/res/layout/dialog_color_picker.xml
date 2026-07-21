@@ -14,7 +14,7 @@
             android:background="@drawable/bg_16_solid_white_stroke_brownn"
             >
 
-            <com.create.lalala.core.custom.text.DoubleStrokeTextView
+            <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                 android:id="@+id/tvTitle"
                 style="@style/single_marquee"
                 android:layout_width="match_parent"

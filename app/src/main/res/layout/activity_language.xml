@@ -55,7 +55,7 @@
 
 
     <!-- LANGUAGE title (overlapping card top) -->
-    <com.create.lalala.core.custom.text.DoubleStrokeTextView
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
         android:id="@+id/tvLang"
         style="@style/single_marquee"
         android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- LANGUAGE title (overlapping card top) -->
-    <com.create.lalala.core.custom.text.DoubleStrokeTextView
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
         android:id="@+id/tvLangSetting"
         android:visibility="gone"
         style="@style/single_marquee"

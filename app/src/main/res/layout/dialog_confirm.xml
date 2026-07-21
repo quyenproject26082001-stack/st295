@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_dialog_delete_exit">
 
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:id="@+id/tvTitle"
                     style="@style/single_marquee"
                     android:layout_width="0dp"
@@ -45,7 +45,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <!--            tvDescription-->
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:id="@+id/tvDescription"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

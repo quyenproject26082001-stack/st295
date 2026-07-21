@@ -313,7 +313,7 @@
         app:layout_constraintTop_toTopOf="@id/glHorizontal"
         android:visibility="invisible">
 
-        <com.create.lalala.core.custom.text.DoubleStrokeTextView
+        <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
             android:id="@+id/btnResetMove"
             android:layout_width="120dp"
             android:layout_height="38dp"

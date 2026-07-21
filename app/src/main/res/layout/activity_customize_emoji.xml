@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.create.lalala.core.custom.drawview.DrawView
+            <com.emojimaker.horor.emoji.core.custom.drawview.DrawView
                 android:id="@+id/drawView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -66,7 +66,7 @@
                 android:visibility="gone"
                 tools:visibility="visible" />
 
-            <com.create.lalala.core.custom.paintview.PaintDrawView
+            <com.emojimaker.horor.emoji.core.custom.paintview.PaintDrawView
                 android:id="@+id/paintDrawView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -305,8 +305,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/flBottomNav"
         android:visibility="visible"
-        tools:visibility="invisible"
-        tools:itemCount="50"
+        tools:visibility="visible"
+        tools:itemCount="0"
         tools:listitem="@layout/item_layer_draw" />
 
     <TextView

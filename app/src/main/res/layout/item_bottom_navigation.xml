@@ -43,7 +43,7 @@
                 android:clipToOutline="true"
                 android:scaleType="centerCrop" />
 
-            <com.create.lalala.core.custom.imageview.ShapeClipImageView
+            <com.emojimaker.horor.emoji.core.custom.imageview.ShapeClipImageView
                 android:id="@+id/imvImageBG"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

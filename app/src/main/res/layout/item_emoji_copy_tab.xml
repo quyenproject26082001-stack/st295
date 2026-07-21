@@ -5,7 +5,7 @@
     android:layout_marginEnd="6dp"
     android:background="@drawable/bg_creation_tab_unselected">
 
-    <com.create.lalala.core.custom.text.DoubleStrokeTextView
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
         android:id="@+id/tvName"
         style="@style/single_marquee"
         android:layout_width="match_parent"

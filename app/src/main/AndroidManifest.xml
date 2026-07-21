@@ -141,7 +141,7 @@
         </provider>
         <provider
             android:name=".core.utils.share.whatsapp.StickerContentProvider"
-            android:authorities="com.create.lalala.core.utils.share.whatsapp.StickerContentProvider"
+            android:authorities="com.emojimaker.horor.emoji.core.utils.share.whatsapp.StickerContentProvider"
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.whatsapp.sticker.READ" />

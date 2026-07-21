@@ -89,7 +89,7 @@
                 android:scaleType="centerCrop" />
 
             <!--        drawView-->
-            <com.create.lalala.core.custom.drawview.DrawView
+            <com.emojimaker.horor.emoji.core.custom.drawview.DrawView
                 android:id="@+id/drawView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -163,7 +163,7 @@
                     android:visibility="visible" />
 
                 <!--                tvBackgroundImage-->
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:id="@+id/tvBackgroundImage"
                     style="@style/single_marquee"
                     android:layout_width="match_parent"
@@ -219,7 +219,7 @@
                     tools:visibility="visible" />
 
                 <!--                tvBackgroundColor-->
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:id="@+id/tvBackgroundColor"
                     style="@style/single_marquee"
                     android:layout_width="match_parent"

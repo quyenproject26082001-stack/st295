@@ -21,7 +21,7 @@
         android:layout_marginHorizontal="16dp"
         app:strokeWidth="3dp">
 
-        <com.create.lalala.core.custom.text.DoubleStrokeTextView
+        <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/howli_layers_base"
