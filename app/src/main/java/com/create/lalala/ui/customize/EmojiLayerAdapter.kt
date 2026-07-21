@@ -54,11 +54,11 @@ class EmojiLayerAdapter(
 
     fun onItemDismiss(position: Int) {
         val draw = items.getOrNull(position) ?: return
-        drawView.remove(draw)
         items.removeAt(position)
         deleteVisiblePosition = RecyclerView.NO_POSITION
         notifyItemRemoved(position)
         onItemCountChanged.invoke(items.size)
+        drawView.remove(draw)
     }
 
     fun revealDelete(position: Int) {

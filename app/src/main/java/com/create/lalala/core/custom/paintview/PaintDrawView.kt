@@ -37,6 +37,8 @@ class PaintDrawView @JvmOverloads constructor(
     private var currentX = 0f
     private var currentY = 0f
     private val pathList = Stack<DrawModel>()
+    private val redoList = Stack<DrawModel>()
+    var onHistoryChanged: (() -> Unit)? = null
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -79,6 +81,8 @@ class PaintDrawView @JvmOverloads constructor(
                 }
                 val strokeWidth = if (isEraser) currentStrokeWidthEraser else currentStrokeWidth
                 pathList.push(DrawModel(currentPath, currentColor, strokeWidth, isEraser))
+                redoList.clear()
+                onHistoryChanged?.invoke()
                 currentX = targetX
                 currentY = targetY
             }
@@ -91,7 +95,10 @@ class PaintDrawView @JvmOverloads constructor(
                 }
             }
 
-            MotionEvent.ACTION_UP -> currentPath.lineTo(currentX, currentY)
+            MotionEvent.ACTION_UP -> {
+                currentPath.lineTo(currentX, currentY)
+                onHistoryChanged?.invoke()
+            }
             else -> return false
         }
 
@@ -121,10 +128,32 @@ class PaintDrawView @JvmOverloads constructor(
         return source.copy(Bitmap.Config.ARGB_8888, false)
     }
 
+    fun canUndo(): Boolean = pathList.isNotEmpty()
+
+    fun canRedo(): Boolean = redoList.isNotEmpty()
+
+    fun undo(): Boolean {
+        if (!canUndo()) return false
+        redoList.push(pathList.pop())
+        invalidate()
+        onHistoryChanged?.invoke()
+        return true
+    }
+
+    fun redo(): Boolean {
+        if (!canRedo()) return false
+        pathList.push(redoList.pop())
+        invalidate()
+        onHistoryChanged?.invoke()
+        return true
+    }
+
     fun clearAll() {
         pathList.clear()
+        redoList.clear()
         bitmap?.eraseColor(Color.TRANSPARENT)
         invalidate()
+        onHistoryChanged?.invoke()
     }
 
     companion object {

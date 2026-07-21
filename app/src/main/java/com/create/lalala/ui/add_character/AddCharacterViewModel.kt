@@ -34,6 +34,8 @@ import kotlinx.coroutines.flow.flowOn
 import java.text.SimpleDateFormat
 import java.util.Date
 
+const val ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION = 3
+
 class AddCharacterViewModel : ViewModel() {
     private data class RemoteAssetConfig(
         val localAssetFolder: String,
@@ -117,7 +119,7 @@ class AddCharacterViewModel : ViewModel() {
 
         textColorList.clear()
         textColorList.addAll(DataLocal.getTextColorDefault(context))
-        textColorList[1].isSelected = true
+        textColorList[ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION].isSelected = true
     }
 
     private suspend fun loadAssetOptions(context: Context, config: RemoteAssetConfig): ArrayList<SelectedModel> {

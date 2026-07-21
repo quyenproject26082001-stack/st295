@@ -76,6 +76,7 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
 
     }
 
+
     private fun setupUI() {
         binding.apply {
             actionBar.apply {

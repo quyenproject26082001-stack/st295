@@ -8,11 +8,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.create.lalala.R
-import com.create.lalala.core.base.BaseActivity
 import com.create.lalala.core.extensions.gone
 import com.create.lalala.core.extensions.handleBackLeftToRight
 import com.create.lalala.core.extensions.hideNavigation
 import com.create.lalala.core.extensions.select
+import com.create.lalala.core.extensions.dp
+import com.create.lalala.core.extensions.setMargins
 import com.create.lalala.core.extensions.tap
 import com.create.lalala.core.extensions.visible
 import com.create.lalala.core.helper.LanguageHelper
@@ -23,9 +24,10 @@ import com.create.lalala.dialog.YesNoDialog
 import com.create.lalala.ui.my_creation.adapter.PackageItemAdapter
 import com.create.lalala.ui.my_creation.view_model.MyCreationViewModel
 import com.create.lalala.ui.my_creation.view_model.ViewAllPackageViewModel
+import com.create.lalala.core.utils.share.whatsapp.WhatsappSharingActivity
 import kotlinx.coroutines.launch
 
-class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
+class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBinding>() {
     private val viewModel: ViewAllPackageViewModel by viewModels()
     private val shareViewModel: MyCreationViewModel by viewModels()
     private val packageItemAdapter by lazy { PackageItemAdapter() }
@@ -43,6 +45,7 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
         binding.rcvPackageItem.itemAnimator = null
         binding.actionBar.tvCenter.text = intent.getStringExtra(IntentKey.PACKAGE_NAME_KEY).orEmpty()
         binding.actionBar.tvCenter.select()
+        binding.actionBar.tvCenter.setMargins(left = 100.dp(this), right = 100.dp(this))
     }
 
     override fun dataObservable() {
@@ -83,7 +86,8 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
         }
         binding.actionBar.btnActionBarNextRight.tap { handleDeleteSelected() }
         binding.actionBar.btnActionBarRight.tap { handleSelectAll() }
-        binding.bottomView.btnRight.tap { shareViewModel.shareImages(this, viewModel.getSelectedPaths()) }
+        binding.bottomView.btnRight.tap { handleAddToWhatsApp(getTargetPackagePaths()) }
+        binding.bottomView.btnLeft.tap { handleAddToTelegram(getTargetPackagePaths()) }
         binding.bottomView.btnDownLoad.tap {
             val paths = viewModel.getSelectedPaths()
             if (paths.isEmpty()) {
@@ -112,6 +116,39 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
         }
     }
 
+    private fun getTargetPackagePaths(): ArrayList<String> {
+        return if (isInSelectionMode) viewModel.getSelectedPaths() else viewModel.getAllPaths()
+    }
+
+    private fun handleAddToTelegram(paths: ArrayList<String>) {
+        if (paths.isEmpty()) {
+            showToast(R.string.please_select_an_image)
+            return
+        }
+        shareViewModel.addToTelegram(this, paths)
+        if (isInSelectionMode) resetSelectionMode()
+    }
+
+    private fun handleAddToWhatsApp(paths: ArrayList<String>) {
+        if (paths.size < 3) {
+            showToast(R.string.limit_3_items)
+            return
+        }
+        if (paths.size > 30) {
+            showToast(R.string.limit_30_items)
+            return
+        }
+        val packageName = viewModel.packageName.ifBlank {
+            intent.getStringExtra(IntentKey.PACKAGE_NAME_KEY).orEmpty()
+        }
+        shareViewModel.addToWhatsapp(this, packageName, paths) { stickerPack ->
+            if (stickerPack != null) {
+                addToWhatsapp(stickerPack)
+                if (isInSelectionMode) resetSelectionMode()
+            }
+        }
+    }
+
     override fun initActionBar() {
         binding.actionBar.apply {
             btnActionBarLeft.visible()
@@ -119,7 +156,7 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
             btnActionBarNextRight.gone()
             btnActionBarRight.gone()
         }
-        binding.flBottom.gone()
+        binding.flBottom.visible()
     }
 
 
@@ -151,7 +188,7 @@ class ViewAllPackageActivity : BaseActivity<ActivityViewAllPackageBinding>() {
         viewModel.clearSelection()
         binding.actionBar.btnActionBarNextRight.gone()
         binding.actionBar.btnActionBarRight.gone()
-        binding.flBottom.gone()
+        binding.flBottom.visible()
     }
 
     private fun handleSelectAll() {

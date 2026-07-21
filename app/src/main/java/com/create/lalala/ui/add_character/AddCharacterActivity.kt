@@ -541,9 +541,9 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 textColorAdapter.submitListReset(viewModel.textColorList)
                 // Set initial text color and font to match selected items
                 binding.edtText.setFont(viewModel.textFontList.first().color)
-                binding.edtText.setTextColor(viewModel.textColorList[1].color)
+                binding.edtText.setTextColor(viewModel.textColorList[ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION].color)
                 binding.tvGetText.setFont(viewModel.textFontList.first().color)
-                binding.tvGetText.setTextColor(viewModel.textColorList[1].color)
+                binding.tvGetText.setTextColor(viewModel.textColorList[ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION].color)
 
 
                 //clearFocus()
@@ -902,9 +902,9 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                     binding.imvBackground.setBackgroundColor(getColor(R.color.transparent))
                     binding.edtText.setText("")
                     binding.edtText.setFont(viewModel.textFontList.first().color)
-                    binding.edtText.setTextColor(viewModel.textColorList[1].color)
+                    binding.edtText.setTextColor(viewModel.textColorList[ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION].color)
                     binding.tvGetText.setFont(viewModel.textFontList.first().color)
-                    binding.tvGetText.setTextColor(viewModel.textColorList[1].color)
+                    binding.tvGetText.setTextColor(viewModel.textColorList[ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION].color)
                     addDrawable(viewModel.pathDefault, true)
                     backgroundImageAdapter.submitList(viewModel.backgroundImageList)
                     backgroundColorAdapter.submitList(viewModel.backgroundColorList)
@@ -1089,14 +1089,14 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
                 // Reset
                 val font = viewModel.textFontList.first().color
-                val color = viewModel.textColorList[1].color
+                val color = viewModel.textColorList[ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION].color
 
                 edtText.text = null
                 edtText.setFont(font)
                 edtText.setTextColor(color)
 
                 viewModel.updateTextFontSelected(0)
-                viewModel.updateTextColorSelected(1)
+                viewModel.updateTextColorSelected(ADD_CHARACTER_DEFAULT_TEXT_COLOR_POSITION)
 
                 textFontAdapter.submitListReset(viewModel.textFontList)
                 textColorAdapter.submitListReset(viewModel.textColorList)

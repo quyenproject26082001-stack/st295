@@ -27,8 +27,8 @@ open class BaseRetrofitHelper() {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val builder =
             OkHttpClient.Builder()
-                .writeTimeout(6 * 1000.toLong(), TimeUnit.MILLISECONDS)
-                .readTimeout(6 * 1000.toLong(), TimeUnit.MILLISECONDS)
+                .writeTimeout(30 * 1000.toLong(), TimeUnit.MILLISECONDS)
+                .readTimeout(30 * 1000.toLong(), TimeUnit.MILLISECONDS)
                 .addInterceptor(interceptor)
         okHttpClient = builder.build()
     }

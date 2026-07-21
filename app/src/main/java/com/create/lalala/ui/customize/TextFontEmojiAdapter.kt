@@ -15,7 +15,7 @@ class TextFontEmojiAdapter : BaseAdapter<SelectedModel, ItemFontBinding>(ItemFon
         binding.apply {
             tvFont.setFont(item.color)
             tvFont.setTextColor(Color.parseColor("#FF8600"))
-            cvMain.setBackgroundResource(if (item.isSelected) R.drawable.bg_stroke_gradient_circle_color_text else R.drawable.bg_circle_white)
+            cvMain.setBackgroundResource(if (item.isSelected) R.drawable.bg_slt_emoji_text else R.drawable.bg_circle_white)
             root.tap { onTextFontClick.invoke(item.color, position) }
         }
     }

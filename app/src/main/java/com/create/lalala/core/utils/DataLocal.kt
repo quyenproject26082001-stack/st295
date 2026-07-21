@@ -103,11 +103,12 @@ object DataLocal {
     fun getTextColorDefault(context: Context): ArrayList<SelectedModel> {
         return arrayListOf(
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_9)),
+            SelectedModel(color = ContextCompat.getColor(context, R.color.white)),
+            SelectedModel(color = ContextCompat.getColor(context, R.color.color_3)),
+
             SelectedModel(color = ContextCompat.getColor(context, R.color.black)),
-//            SelectedModel(color = ContextCompat.getColor(context, R.color.white)),
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_19)),
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_2)),
-            SelectedModel(color = ContextCompat.getColor(context, R.color.color_3)),
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_4)),
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_5)),
             SelectedModel(color = ContextCompat.getColor(context, R.color.color_6)),

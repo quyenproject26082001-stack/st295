@@ -84,7 +84,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
 
     private var categories: List<EmojiCategoryModel> = emptyList()
     private var selectedCategoryIndex = 0
-    private var currentState = EditorState.ITEMS
+    private var currentState = EditorState.STATE_1
     private val textColorList by lazy {
         DataLocal.getTextColorDefault(this).apply {
             forEachIndexed { index, item -> item.isSelected = index == 1 }
@@ -95,10 +95,12 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             forEachIndexed { index, item -> item.isSelected = index == 0 }
         }
     }
-    private var selectedTextColor = Color.BLACK
+    private var selectedTextColor = Color.WHITE
     private var selectedTextFont = R.font.roboto_regular
     private var isTextColorToolSelected = true
     private lateinit var layerTouchHelper: ItemTouchHelper
+    private var isLayerDragging = false
+    private var pendingLayerSync = false
     private var textColorToolCard: MaterialCardView? = null
     private var textFontToolCard: MaterialCardView? = null
 
@@ -238,31 +240,48 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     override fun viewListener() {
+        binding.main.tap {
+            binding.drawView.hideSelect()
+        }
         binding.actionBar.btnActionBarLeft.setOnClickListener {
             handleBackAction()
         }
         binding.actionBar.btnActionBarCenterLeft.tap {
             checkDataInternet(this@CustomizeEmojiActivity) {
-                if (currentState == EditorState.TEXT) {
-                    selectTextTool(isColor = true)
-                } else {
-                    if (binding.drawView.undo()) updateUndoRedoButtons()
+                when (currentState) {
+                    EditorState.STATE_3 -> selectTextTool(isColor = true)
+                    EditorState.STATE_2 -> {
+                        if (binding.paintDrawView.undo()) updateUndoRedoButtons()
+                    }
+                    else -> {
+                    if (binding.drawView.undo()) {
+                        updateUndoRedoButtons()
+                        refreshLayerListIfNeeded()
+                    }
+                    }
                 }
             }
         }
         binding.actionBar.btnActionBarCenterRight.tap {
             checkDataInternet(this@CustomizeEmojiActivity) {
-                if (currentState == EditorState.TEXT) {
-                    selectTextTool(isColor = false)
-                } else {
-                    if (binding.drawView.redo()) updateUndoRedoButtons()
+                when (currentState) {
+                    EditorState.STATE_3 -> selectTextTool(isColor = false)
+                    EditorState.STATE_2 -> {
+                        if (binding.paintDrawView.redo()) updateUndoRedoButtons()
+                    }
+                    else -> {
+                    if (binding.drawView.redo()) {
+                        updateUndoRedoButtons()
+                        refreshLayerListIfNeeded()
+                    }
+                    }
                 }
             }
         }
         binding.actionBar.btnActionBarRightText.tap {
             when (currentState) {
-                EditorState.DRAW -> saveDrawMode()
-                EditorState.TEXT -> saveTextMode()
+                EditorState.STATE_2 -> saveDrawMode()
+                EditorState.STATE_3 -> saveTextMode()
                 else -> Unit
             }
         }
@@ -272,7 +291,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         binding.btnDrawLayer.tap { showDrawState() }
         binding.btnTextLayer.tap { showTextState() }
         binding.btnLayer.tap {
-            if (currentState == EditorState.LAYER) {
+            if (currentState == EditorState.STATE_4) {
                 showItemsState()
             } else if (binding.drawView.getDraws().isEmpty()) {
                 showToast(R.string.no_item_here)
@@ -292,6 +311,9 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+        binding.paintDrawView.onHistoryChanged = {
+            if (currentState == EditorState.STATE_2) updateUndoRedoButtons()
+        }
         layerAdapter.onItemClick = { item, position ->
             checkDataInternet(this@CustomizeEmojiActivity) {
                 addEmojiToDrawView(item.path)
@@ -315,20 +337,20 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
 
     private fun handleBackAction() {
         when (currentState) {
-            EditorState.ITEMS -> handleBackLeftToRight()
-            EditorState.DRAW -> {
+            EditorState.STATE_1 -> handleBackLeftToRight()
+            EditorState.STATE_2 -> {
                 binding.paintDrawView.clearAll()
                 showItemsState()
             }
-            EditorState.TEXT,
-            EditorState.LAYER -> showItemsState()
+            EditorState.STATE_3,
+            EditorState.STATE_4 -> showItemsState()
         }
     }
 
     private fun updateLeftActionIcon() {
         setImageActionBar(
             binding.actionBar.btnActionBarLeft,
-            if (currentState == EditorState.ITEMS) R.drawable.ic_back else R.drawable.ic_close_1
+            if (currentState == EditorState.STATE_1) R.drawable.ic_back else R.drawable.ic_close_1
         )
     }
 
@@ -341,6 +363,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
                 override fun onClickedDraw(draw: Draw) {}
                 override fun onDeletedDraw(draw: Draw) {
                     updateUndoRedoButtons()
+                    refreshLayerListIfNeeded()
                 }
 
                 override fun onDragFinishedDraw(draw: Draw) {
@@ -360,18 +383,22 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
                 override fun onHideOptionIconDraw() {}
                 override fun onUndoDeleteDraw(draw: List<Draw?>) {
                     updateUndoRedoButtons()
+                    refreshLayerListIfNeeded()
                 }
 
                 override fun onUndoUpdateDraw(draw: List<Draw?>) {
                     updateUndoRedoButtons()
+                    refreshLayerListIfNeeded()
                 }
 
                 override fun onUndoDeleteAll() {
                     updateUndoRedoButtons()
+                    refreshLayerListIfNeeded()
                 }
 
                 override fun onRedoAll() {
                     updateUndoRedoButtons()
+                    refreshLayerListIfNeeded()
                 }
 
                 override fun onReplaceDraw(draw: Draw) {}
@@ -427,9 +454,12 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private fun showItemsState() {
-        currentState = EditorState.ITEMS
+        currentState = EditorState.STATE_1
         binding.apply {
             drawView.setLocked(false)
+            layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
+            stateBlackCover.invisible()
+            paintDrawView.setBackgroundColor(Color.TRANSPARENT)
             paintDrawView.invisible()
             edtEmojiText.invisible()
             rcvTextColor.invisible()
@@ -454,9 +484,12 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private fun showDrawState() {
-        currentState = EditorState.DRAW
+        currentState = EditorState.STATE_2
         binding.apply {
             drawView.setLocked(true)
+            layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
+            stateBlackCover.visible()
+            paintDrawView.setBackgroundColor(Color.TRANSPARENT)
             paintDrawView.visible()
             rcvLayer.invisible()
             flBottomNav.invisible()
@@ -486,16 +519,19 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private fun showTextState() {
-        currentState = EditorState.TEXT
+        currentState = EditorState.STATE_3
         window.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING)
         binding.apply {
             drawView.setLocked(true)
+            layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
+            stateBlackCover.visible()
+            paintDrawView.setBackgroundColor(Color.TRANSPARENT)
             paintDrawView.invisible()
             rcvLayer.invisible()
             flBottomNav.invisible()
             btnLayer.invisible()
-            btnTextLayer.visible()
+            btnTextLayer.invisible()
             btnDrawLayer.invisible()
             flNavDrawAndEraser.invisible()
             containerSeekbar.invisible()
@@ -527,9 +563,12 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private fun showLayerState() {
-        currentState = EditorState.LAYER
+        currentState = EditorState.STATE_4
         binding.apply {
             drawView.setLocked(false)
+            layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
+            stateBlackCover.invisible()
+            paintDrawView.setBackgroundColor(Color.TRANSPARENT)
             paintDrawView.invisible()
             edtEmojiText.invisible()
             rcvLayer.invisible()
@@ -635,7 +674,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private fun saveEmojiProject() {
-        if (currentState != EditorState.ITEMS && currentState != EditorState.LAYER) return
+        if (currentState != EditorState.STATE_1 && currentState != EditorState.STATE_4) return
         if (binding.drawView.getDraws().isEmpty()) {
             showToast(R.string.no_item_here)
             return
@@ -689,21 +728,77 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             }
             val body = response.body()
             if (response.isSuccessful && body != null) {
-                categories = (if (mode == MODE_HORROR) body.emoji_horror else body.emoji_normal)
-                    .sortedBy { it.level }
-                selectedCategoryIndex = 0
-                submitNavigation()
-                categories.firstOrNull()?.let { submitItems(it) }
+                applyEmojiCategories(if (mode == MODE_HORROR) body.emoji_horror else body.emoji_normal)
             } else {
-                showToast(R.string.an_error_occurred)
+                applyFallbackEmojiCategories()
             }
         } catch (e: Exception) {
             Log.e("CustomizeEmoji", "loadEmojiData failed: ${e.message}", e)
-            showToast(R.string.an_error_occurred)
+            applyFallbackEmojiCategories()
         } finally {
             dismissLoading()
             hideNavigation()
         }
+    }
+
+    private fun applyEmojiCategories(items: List<EmojiCategoryModel>) {
+        categories = items.sortedBy { it.level }
+        selectedCategoryIndex = 0
+        submitNavigation()
+        categories.firstOrNull()?.let { submitItems(it) }
+    }
+
+    private fun applyFallbackEmojiCategories() {
+        val fallbackCategories = if (mode == MODE_HORROR) {
+            fallbackHorrorEmojiCategories()
+        } else {
+            fallbackNormalEmojiCategories()
+        }
+        applyEmojiCategories(fallbackCategories)
+    }
+
+    private fun fallbackNormalEmojiCategories(): List<EmojiCategoryModel> {
+        return listOf(
+            EmojiCategoryModel("Beard", 45, 12),
+            EmojiCategoryModel("Eyebrows", 47, 6),
+            EmojiCategoryModel("Eyes", 161, 4),
+            EmojiCategoryModel("Eyes_Big", 293, 5),
+            EmojiCategoryModel("Glasses", 188, 11),
+            EmojiCategoryModel("Hair", 140, 10),
+            EmojiCategoryModel("Hands", 169, 10),
+            EmojiCategoryModel("Happy_Mouth", 193, 8),
+            EmojiCategoryModel("Hats", 291, 12),
+            EmojiCategoryModel("Mask", 98, 99),
+            EmojiCategoryModel("Misc", 118, 100),
+            EmojiCategoryModel("More_Shape", 48, 2),
+            EmojiCategoryModel("Nose", 24, 7),
+            EmojiCategoryModel("Pattern_Shape", 7, 3),
+            EmojiCategoryModel("Sad_Mouth", 203, 9),
+            EmojiCategoryModel("Shape", 68, 1),
+            EmojiCategoryModel("Stache", 42, 11)
+        )
+    }
+
+    private fun fallbackHorrorEmojiCategories(): List<EmojiCategoryModel> {
+        return listOf(
+            EmojiCategoryModel("Eye Shadows", 88, 3),
+            EmojiCategoryModel("Eyes", 50, 2),
+            EmojiCategoryModel("Hairs", 40, 6),
+            EmojiCategoryModel("Mask", 58, 1),
+            EmojiCategoryModel("More", 20, 7),
+            EmojiCategoryModel("Mouth", 55, 4),
+            EmojiCategoryModel("Nose", 20, 5),
+            EmojiCategoryModel("Scars", 40, 8),
+            EmojiCategoryModel("Teeth", 48, 6),
+            EmojiCategoryModel("Badge", 11, 99),
+            EmojiCategoryModel("Candy", 50, 99),
+            EmojiCategoryModel("Ghost", 50, 99),
+            EmojiCategoryModel("Halloween", 50, 99),
+            EmojiCategoryModel("Monster", 50, 99),
+            EmojiCategoryModel("Pumpkin", 50, 99),
+            EmojiCategoryModel("Scary", 50, 99),
+            EmojiCategoryModel("Zombie", 52, 99)
+        )
     }
 
     private fun submitNavigation() {
@@ -761,12 +856,22 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private fun updateUndoRedoButtons() {
+        val canUndo = if (currentState == EditorState.STATE_2) {
+            binding.paintDrawView.canUndo()
+        } else {
+            binding.drawView.canUndo()
+        }
+        val canRedo = if (currentState == EditorState.STATE_2) {
+            binding.paintDrawView.canRedo()
+        } else {
+            binding.drawView.canRedo()
+        }
         binding.actionBar.btnActionBarCenterLeft.apply {
-            isEnabled = binding.drawView.canUndo()
+            isEnabled = canUndo
             setImageResource(if (isEnabled) R.drawable.ic_undo else R.drawable.ic_undo_disable)
         }
         binding.actionBar.btnActionBarCenterRight.apply {
-            isEnabled = binding.drawView.canRedo()
+            isEnabled = canRedo
             setImageResource(if (isEnabled) R.drawable.ic_redo else R.drawable.ic_redo_disable)
         }
     }
@@ -798,7 +903,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     private fun setupKeyboardAwareTextPanels() {
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
             val imeBottom = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom
-            updateTextPanelBottomMargin(if (currentState == EditorState.TEXT) imeBottom else 0)
+            updateTextPanelBottomMargin(if (currentState == EditorState.STATE_3) imeBottom else 0)
             insets
         }
     }
@@ -829,8 +934,17 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         emojiLayerAdapter.submitDraws(binding.drawView.getDraws())
     }
 
+    private fun refreshLayerListIfNeeded() {
+        if (currentState != EditorState.STATE_4) return
+        if (isLayerDragging) {
+            pendingLayerSync = true
+            return
+        }
+        refreshLayerList()
+    }
+
     private fun updateLayerEmptyState(itemCount: Int) {
-        if (currentState != EditorState.LAYER) return
+        if (currentState != EditorState.STATE_4) return
         if (itemCount == 0) {
             binding.rcvLayerLayer.invisible()
             binding.tvNoLayerItem.visible()
@@ -860,8 +974,30 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
                 )
             }
 
+            override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
+                super.onSelectedChanged(viewHolder, actionState)
+                if (actionState == ItemTouchHelper.ACTION_STATE_DRAG) {
+                    isLayerDragging = true
+                    pendingLayerSync = false
+                }
+            }
+
+            override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+                super.clearView(recyclerView, viewHolder)
+                if (isLayerDragging) {
+                    isLayerDragging = false
+                    if (pendingLayerSync) {
+                        pendingLayerSync = false
+                        refreshLayerListIfNeeded()
+                    }
+                }
+            }
+
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                emojiLayerAdapter.onItemDismiss(viewHolder.bindingAdapterPosition)
+                val position = viewHolder.bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    emojiLayerAdapter.onItemDismiss(position)
+                }
             }
 
             override fun onChildDraw(
@@ -911,9 +1047,9 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     }
 
     private enum class EditorState {
-        ITEMS,
-        DRAW,
-        TEXT,
-        LAYER
+        STATE_1,
+        STATE_2,
+        STATE_3,
+        STATE_4
     }
 }

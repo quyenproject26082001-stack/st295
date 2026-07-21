@@ -15,8 +15,8 @@ class DrawColorAdapter : RecyclerView.Adapter<DrawColorAdapter.ColorViewHolder>(
     var onColorClick: ((Int) -> Unit) = {}
     private val colors = arrayListOf<Int?>(
         null,
-        Color.BLACK,
         Color.WHITE,
+        Color.BLACK,
         Color.RED,
         Color.parseColor("#FF6B00"),
         Color.YELLOW,
