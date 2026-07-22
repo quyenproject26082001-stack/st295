@@ -85,7 +85,7 @@
     </androidx.cardview.widget.CardView>
 
     <!--    tvStart-->
-    <com.create.lalala.core.custom.text.DoubleStrokeTextView
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
         android:id="@+id/tvStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
         app:layout_constraintTop_toTopOf="@+id/btnActionBarLeft" />
 
     <!--    tvCenter-->
-    <com.create.lalala.core.custom.text.DoubleStrokeTextView
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
     android:id="@+id/tvCenter"
         style="@style/single_marquee"
         android:layout_width="match_parent"

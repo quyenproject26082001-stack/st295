@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "246183030208",
-    "project_id": "st266-school-girl-creator-2",
-    "storage_bucket": "st266-school-girl-creator-2.firebasestorage.app"
+    "project_number": "216533881226",
+    "project_id": "st295-horror-emoji-maker",
+    "storage_bucket": "st295-horror-emoji-maker.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:246183030208:android:bc08daa390d7d28cd6ac25",
+        "mobilesdk_app_id": "1:216533881226:android:f48eee34661399a9667873",
         "android_client_info": {
-          "package_name": "com.create.lalala"
+          "package_name": "com.emojimaker.horor.emoji"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBOWw42yzGZ8vtM3q19aZAEgeW11WhJh24"
+          "current_key": "AIzaSyBbdc-WzyvxLHUtMlLr8qFn_-SoflJDFLs"
         }
       ],
       "services": {

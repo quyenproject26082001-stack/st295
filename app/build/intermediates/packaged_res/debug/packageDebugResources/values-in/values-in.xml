@@ -41,7 +41,7 @@
     <string name="done">Selesai</string>
     <string name="download">Unduh</string>
     <string name="download_failed_please_try_again_later">Unduhan gagal, silakan coba lagi nanti!</string>
-    <string name="download_success">Unduhan berhasil ke album ST295_Horror_Emoji_Maker</string>
+    <string name="download_success">Unduhan berhasil ke album Horror Emoji Maker</string>
     <string name="downloading">Mengunduh...</string>
     <string name="edit">EDIT</string>
     <string name="emoji_activities">Emoji Aktivitas</string>
@@ -114,6 +114,7 @@
     <string name="one_star_title">Oh, tidak!</string>
     <string name="package_">Paket</string>
     <string name="package_created_successfully">Paket berhasil dibuat!</string>
+    <string name="package_name_already_exists">Nama paket sudah ada!</string>
     <string name="permission">\u00A0Izin\u00A0</string>
     <string name="play">Buat Emoji</string>
     <string name="playcos">\u00A0COSPLAY\u00A0</string>

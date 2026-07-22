@@ -82,5 +82,38 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnAddPackage"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:strokeColor="@color/app"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="2dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/btnShare"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
+
+        <TextView
+            android:id="@+id/tvPackage"
+            style="@style/single_marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/howli_layers_base"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:includeFontPadding="false"
+            android:text="@string/add_to_package"
+            android:textColor="@color/app"
+            android:textSize="20sp" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

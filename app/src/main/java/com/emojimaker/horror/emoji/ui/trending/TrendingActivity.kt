@@ -375,7 +375,7 @@ class TrendingActivity : BaseActivity<ActivityTrendingBinding>() {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) {
             applyUiCustomize()
-            hideNavigation(true)
+            hideNavigation()
             window.decorView.removeCallbacks(reHideRunnable)
             window.decorView.postDelayed(reHideRunnable, 2000)
         } else {
@@ -385,7 +385,7 @@ class TrendingActivity : BaseActivity<ActivityTrendingBinding>() {
 
     private val reHideRunnable = Runnable {
         applyUiCustomize()
-        hideNavigation(true)
+        hideNavigation()
     }
 
     @Suppress("DEPRECATION")

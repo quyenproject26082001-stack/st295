@@ -1,0 +1,17 @@
+
+·
+;
+android*http://schemas.android.com/apk/res/android+set*Í
+Ä	translate"L
+*http://schemas.android.com/apk/res/androidduration1000"	(˜ƒ„2:0è"J
+*http://schemas.android.com/apk/res/androidtoYDelta0%p"	(Éƒ„2:p"L
+*http://schemas.android.com/apk/res/android	fillAftertrue"	(½ƒ„2:@"O
+*http://schemas.android.com/apk/res/android
+fromYDelta100%p"	(Èƒ„2:p	"*¢
+™	translate"L
+*http://schemas.android.com/apk/res/android
+fromXDelta0%p"(Æƒ„2:p"L
+*http://schemas.android.com/apk/res/androidduration2000"(˜ƒ„2:0Ğ"O
+*http://schemas.android.com/apk/res/androidstartOffset1000"(¾ƒ„2:0è"Q
+*http://schemas.android.com/apk/res/androidtoXDelta-100%p"(Çƒ„2:pşÿÿ"L
+*http://schemas.android.com/apk/res/android	fillAftertrue"(½ƒ„2:@%+

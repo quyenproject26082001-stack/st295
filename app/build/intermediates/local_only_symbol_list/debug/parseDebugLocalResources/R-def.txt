@@ -167,6 +167,7 @@ drawable bg_rate
 drawable bg_rcv_color
 drawable bg_rounded_8_gray
 drawable bg_select_navi_shape
+drawable bg_slt_emoji_text
 drawable bg_string_color
 drawable bg_stroke_gradient_circle_color_text
 drawable bg_uslt_navi_shape
@@ -657,6 +658,7 @@ id sflShimmer
 id spaceTextBottom
 id spin
 id starSS
+id stateBlackCover
 id subTabColor
 id subTabImage
 id swNotification
@@ -972,6 +974,7 @@ string one_star_title
 string open_resume
 string package_
 string package_created_successfully
+string package_name_already_exists
 string permission
 string play
 string playcos

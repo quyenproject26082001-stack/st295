@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.create.lalala.app-mergeDebugResources-107:/values-b+sr+Latn/values-b+sr+Latn.xml",
+            "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-b+sr+Latn/values-b+sr+Latn.xml",
             "map": [
                 {
                     "source": "/home/lequyen/.gradle/caches/8.13/transforms/0ac99f30ec72449edb1c78365e9ed276/transformed/foundation-release/res/values-b+sr+Latn/values-b+sr+Latn.xml",

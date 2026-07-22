@@ -1,0 +1,6 @@
+com.emojimaker.horor.emoji.test.app-tracing-1.2.0-0 /home/lequyen/.gradle/caches/8.13/transforms/5c3cd7300d8c498b45cd2032053dfd4d/transformed/tracing-1.2.0/res
+com.emojimaker.horor.emoji.test.app-core-1.7.0-1 /home/lequyen/.gradle/caches/8.13/transforms/64d9b7a6c136b59423cddcab29d2f71d/transformed/core-1.7.0/res
+com.emojimaker.horor.emoji.test.app-androidTest-2 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/generated/res/resValues/androidTest/debug
+com.emojimaker.horor.emoji.test.app-mergeDebugAndroidTestResources-3 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.emojimaker.horor.emoji.test.app-mergeDebugAndroidTestResources-4 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.emojimaker.horor.emoji.test.app-debugAndroidTest-5 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

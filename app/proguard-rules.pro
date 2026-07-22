@@ -81,6 +81,6 @@
 -keep class com.yalantis.ucrop** { *; }
 -keep interface com.yalantis.ucrop** { *; }
 
--keep class com.create.lalala.ui.splash.SplashActivity.** {*; }
--keep class com.create.lalala.data.** {*; }
+-keep class com.emojimaker.horor.emoji.ui.splash.SplashActivity.** {*; }
+-keep class com.emojimaker.horor.emoji.data.** {*; }
 -keep public class com.google.android.gms.** { public protected *; }

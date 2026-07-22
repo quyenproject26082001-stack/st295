@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.create.lalala",
+  "applicationId": "com.emojimaker.horor.emoji",
   "variantName": "debug",
   "elements": [
     {
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 1,
       "versionName": "1.0.0",
-      "outputFile": "ST295_Horror_Emoji_Maker_v1.0.0_07.20.2026-debug.apk"
+      "outputFile": "ST295_Horror_Emoji_Maker_V1.0.0_07.22.2026-debug.apk"
     }
   ],
   "elementType": "File",

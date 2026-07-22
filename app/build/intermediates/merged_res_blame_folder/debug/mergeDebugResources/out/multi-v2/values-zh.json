@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.create.lalala.app-mergeDebugResources-107:/values-zh/values-zh.xml",
+            "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-zh/values-zh.xml",
             "map": [
                 {
                     "source": "/home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/res/values-zh/values-zh.xml",

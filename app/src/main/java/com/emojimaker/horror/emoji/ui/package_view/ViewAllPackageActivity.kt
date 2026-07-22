@@ -89,7 +89,7 @@ class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBin
         binding.bottomView.btnRight.tap { handleAddToWhatsApp(getTargetPackagePaths()) }
         binding.bottomView.btnLeft.tap { handleAddToTelegram(getTargetPackagePaths()) }
         binding.bottomView.btnDownLoad.tap {
-            val paths = viewModel.getSelectedPaths()
+            val paths = getTargetPackagePaths()
             if (paths.isEmpty()) {
                 showToast(R.string.please_select_an_image)
             } else {
@@ -130,6 +130,10 @@ class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBin
     }
 
     private fun handleAddToWhatsApp(paths: ArrayList<String>) {
+        if (paths.isEmpty()) {
+            showToast(R.string.please_select_an_image)
+            return
+        }
         if (paths.size < 3) {
             showToast(R.string.limit_3_items)
             return

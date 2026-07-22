@@ -39,6 +39,7 @@ import com.emojimaker.horor.emoji.core.extensions.select
 import com.emojimaker.horor.emoji.core.extensions.tap
 import com.emojimaker.horor.emoji.core.extensions.visible
 import com.emojimaker.horor.emoji.core.helper.BitmapHelper
+import com.emojimaker.horor.emoji.core.helper.LanguageHelper
 import com.emojimaker.horor.emoji.core.helper.MediaHelper
 import com.emojimaker.horor.emoji.core.service.RetrofitClient
 import com.emojimaker.horor.emoji.core.utils.DataLocal
@@ -53,6 +54,7 @@ import com.emojimaker.horor.emoji.data.model.draw.DrawableDraw
 import com.emojimaker.horor.emoji.data.model.emoji.EmojiCategoryModel
 import com.emojimaker.horor.emoji.databinding.ActivityCustomizeEmojiBinding
 import com.emojimaker.horor.emoji.dialog.ChooseColorDialog
+import com.emojimaker.horor.emoji.dialog.YesNoDialog
 import com.emojimaker.horor.emoji.listener.listenerdraw.OnDrawListener
 import com.emojimaker.horor.emoji.ui.success.SuccessActivity
 import com.google.android.material.card.MaterialCardView
@@ -334,10 +336,24 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
     override fun onBackPressed() {
         handleBackAction()
     }
+    private fun confirmExit() {
+        val dialog =
+            YesNoDialog(this, R.string.exit, R.string.do_you_want_to_exit)
+        LanguageHelper.setLocale(this)
+        dialog.show()
+        dialog.onYesClick = {
+            dialog.dismiss()
+           finish()
+        }
+        dialog.onNoClick = {
+            dialog.dismiss()
+            hideNavigation()
+        }
+    }
 
     private fun handleBackAction() {
         when (currentState) {
-            EditorState.STATE_1 -> handleBackLeftToRight()
+            EditorState.STATE_1 -> confirmExit()
             EditorState.STATE_2 -> {
                 binding.paintDrawView.clearAll()
                 showItemsState()
@@ -620,7 +636,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
 
         fun dismissDialog() {
             dialog.dismiss()
-            hideNavigation(true)
+            hideNavigation()
         }
 
         dialog.onCloseEvent = { dismissDialog() }

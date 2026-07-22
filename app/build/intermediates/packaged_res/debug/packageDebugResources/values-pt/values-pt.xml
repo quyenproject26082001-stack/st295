@@ -41,7 +41,7 @@
     <string name="done">Concluído</string>
     <string name="download">Baixar</string>
     <string name="download_failed_please_try_again_later">Falha no download, tente novamente mais tarde!</string>
-    <string name="download_success">Download concluído com sucesso no álbum ST295_Horror_Emoji_Maker</string>
+    <string name="download_success">Download concluído com sucesso no álbum Horror Emoji Maker</string>
     <string name="downloading">Baixando...</string>
     <string name="edit">EDITAR</string>
     <string name="emoji_activities">Emoji Atividades</string>
@@ -114,6 +114,7 @@
     <string name="one_star_title">Ah, não!</string>
     <string name="package_">Pacote</string>
     <string name="package_created_successfully">Pacote criado com sucesso!</string>
+    <string name="package_name_already_exists">O nome do pacote já existe!</string>
     <string name="permission">\u00A0Permissão\u00A0</string>
     <string name="play">Criar Emoji</string>
     <string name="playcos">\u00A0COSPLAY\u00A0</string>

@@ -98,25 +98,25 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
                 }
                 btnActionBarLeft.tap {  handleBack()  }
 
-                btnActionBarRight.tap(2000){
+                btnActionBarRight.tap(1000){
                     startIntentWithClearTop(HomeActivity::class.java)
 
                 }
             }
 
             // My Album button
-            includeLayoutBottom.btnMyCreation.tap(2590) {
+            includeLayoutBottom.btnMyCreation.tap(1000) {
                 showInterAll {
                     startIntentRightToLeft(MyCreationActivity::class.java, IntentKey.TAB_KEY, statusFrom)
                 }
             }
 
             // Download button
-            includeLayoutBottom.btnDownload.tap(2000) {
+            includeLayoutBottom.btnDownload.tap(1000) {
                 checkStoragePermission()
             }
 
-            includeLayoutBottom.btnAddPackage.tap(800) {
+            includeLayoutBottom.btnAddPackage.tap(1000) {
                 showAddPackageDialog()
             }
 

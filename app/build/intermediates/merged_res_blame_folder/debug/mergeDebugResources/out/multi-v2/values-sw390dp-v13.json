@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.create.lalala.app-mergeDebugResources-107:/values-sw390dp-v13/values-sw390dp-v13.xml",
+            "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-sw390dp-v13/values-sw390dp-v13.xml",
             "map": [
                 {
                     "source": "/home/lequyen/.gradle/caches/8.13/transforms/47144a931fa0ee17af0a841d2b117113/transformed/ssp-android-1.1.1/res/values-sw390dp-v13/values-sw390dp-v13.xml",

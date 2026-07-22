@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.create.lalala"
+3    package="com.emojimaker.horor.emoji"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -141,18 +141,18 @@
 73
 74    <permission
 74-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
-75        android:name="com.create.lalala.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+75        android:name="com.emojimaker.horor.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 75-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
 76        android:protectionLevel="signature" />
 76-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
 77
-78    <uses-permission android:name="com.create.lalala.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+78    <uses-permission android:name="com.emojimaker.horor.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 78-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
 78-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
 79
 80    <application
 80-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:13:5-160:19
-81        android:name="com.create.lalala.core.utils.App"
+81        android:name="com.emojimaker.horor.emoji.core.utils.App"
 81-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:14:9-39
 82        android:allowBackup="true"
 82-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:15:9-35
@@ -178,7 +178,7 @@
 93-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:22:9-49
 94        <activity
 94-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:25:9-28:52
-95            android:name="com.create.lalala.ui.cosplay.CosplayRandomActivity"
+95            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplayRandomActivity"
 95-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:26:13-61
 96            android:exported="false"
 96-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:27:13-37
@@ -186,7 +186,7 @@
 97-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:28:13-49
 98        <activity
 98-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:29:9-33:52
-99            android:name="com.create.lalala.ui.cosplay.CosplayCustomizeActivity"
+99            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplayCustomizeActivity"
 99-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:30:13-64
 100            android:exported="false"
 100-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:31:13-37
@@ -196,7 +196,7 @@
 102-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:33:13-49
 103        <activity
 103-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:34:9-37:52
-104            android:name="com.create.lalala.ui.cosplay.CosplaySuccessfulActivity"
+104            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplaySuccessfulActivity"
 104-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:35:13-65
 105            android:exported="false"
 105-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:36:13-37
@@ -204,7 +204,7 @@
 106-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:37:13-49
 107        <activity
 107-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:46:9-50:58
-108            android:name="com.create.lalala.ui.add_character.AddCharacterActivity"
+108            android:name="com.emojimaker.horor.emoji.ui.add_character.AddCharacterActivity"
 108-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:47:13-66
 109            android:exported="true"
 109-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:48:13-36
@@ -214,7 +214,7 @@
 111-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:50:13-55
 112        <activity
 112-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:51:9-54:52
-113            android:name="com.create.lalala.ui.random_character.RandomCharacterActivity"
+113            android:name="com.emojimaker.horor.emoji.ui.random_character.RandomCharacterActivity"
 113-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:52:13-72
 114            android:exported="false"
 114-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:53:13-37
@@ -222,7 +222,7 @@
 115-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:54:13-49
 116        <activity
 116-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:55:9-58:52
-117            android:name="com.create.lalala.ui.trending.TrendingActivity"
+117            android:name="com.emojimaker.horor.emoji.ui.trending.TrendingActivity"
 117-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:56:13-57
 118            android:exported="false"
 118-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:57:13-37
@@ -230,7 +230,7 @@
 119-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:58:13-49
 120        <activity
 120-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:59:9-62:52
-121            android:name="com.create.lalala.ui.choose_character.ChooseCharacterActivity"
+121            android:name="com.emojimaker.horor.emoji.ui.choose_character.ChooseCharacterActivity"
 121-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:60:13-72
 122            android:exported="false"
 122-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:61:13-37
@@ -238,7 +238,7 @@
 123-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:62:13-49
 124        <activity
 124-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:63:9-67:52
-125            android:name="com.create.lalala.ui.customize.CustomizeCharacterActivity"
+125            android:name="com.emojimaker.horor.emoji.ui.customize.CustomizeCharacterActivity"
 125-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:64:13-68
 126            android:exported="false"
 126-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:65:13-37
@@ -248,7 +248,7 @@
 128-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:67:13-49
 129        <activity
 129-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:68:9-73:58
-130            android:name="com.create.lalala.ui.customize.CustomizeEmojiActivity"
+130            android:name="com.emojimaker.horor.emoji.ui.customize.CustomizeEmojiActivity"
 130-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:69:13-64
 131            android:exported="false"
 131-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:70:13-37
@@ -260,7 +260,7 @@
 134-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:73:13-55
 135        <activity
 135-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:74:9-77:52
-136            android:name="com.create.lalala.ui.view.ViewActivity"
+136            android:name="com.emojimaker.horor.emoji.ui.view.ViewActivity"
 136-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:75:13-49
 137            android:exported="false"
 137-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:76:13-37
@@ -268,7 +268,7 @@
 138-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:77:13-49
 139        <activity
 139-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:78:9-81:52
-140            android:name="com.create.lalala.ui.package_view.ViewAllPackageActivity"
+140            android:name="com.emojimaker.horor.emoji.ui.package_view.ViewAllPackageActivity"
 140-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:79:13-67
 141            android:exported="false"
 141-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:80:13-37
@@ -276,7 +276,7 @@
 142-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:81:13-49
 143        <activity
 143-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:82:9-85:52
-144            android:name="com.create.lalala.ui.package_view.ViewPackageActivity"
+144            android:name="com.emojimaker.horor.emoji.ui.package_view.ViewPackageActivity"
 144-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:83:13-64
 145            android:exported="false"
 145-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:84:13-37
@@ -284,7 +284,7 @@
 146-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:85:13-49
 147        <activity
 147-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:86:9-89:52
-148            android:name="com.create.lalala.ui.success.SuccessActivity"
+148            android:name="com.emojimaker.horor.emoji.ui.success.SuccessActivity"
 148-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:87:13-55
 149            android:exported="false"
 149-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:88:13-37
@@ -292,7 +292,7 @@
 150-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:89:13-49
 151        <activity
 151-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:90:9-93:52
-152            android:name="com.create.lalala.ui.my_creation.MyCreationActivity"
+152            android:name="com.emojimaker.horor.emoji.ui.my_creation.MyCreationActivity"
 152-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:91:13-62
 153            android:exported="false"
 153-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:92:13-37
@@ -300,7 +300,7 @@
 154-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:93:13-49
 155        <activity
 155-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:94:9-97:52
-156            android:name="com.create.lalala.ui.emoji_copy.EmojiCopyActivity"
+156            android:name="com.emojimaker.horor.emoji.ui.emoji_copy.EmojiCopyActivity"
 156-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:95:13-60
 157            android:exported="false"
 157-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:96:13-37
@@ -308,7 +308,7 @@
 158-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:97:13-49
 159        <activity
 159-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:98:9-107:20
-160            android:name="com.create.lalala.ui.splash.SplashActivity"
+160            android:name="com.emojimaker.horor.emoji.ui.splash.SplashActivity"
 160-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:99:13-53
 161            android:exported="true"
 161-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:100:13-36
@@ -327,7 +327,7 @@
 168        </activity>
 169        <activity
 169-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:108:9-111:52
-170            android:name="com.create.lalala.ui.permission.PermissionActivity"
+170            android:name="com.emojimaker.horor.emoji.ui.permission.PermissionActivity"
 170-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:109:13-61
 171            android:exported="false"
 171-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:110:13-37
@@ -335,7 +335,7 @@
 172-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:111:13-49
 173        <activity
 173-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:112:9-115:52
-174            android:name="com.create.lalala.ui.intro.IntroActivity"
+174            android:name="com.emojimaker.horor.emoji.ui.intro.IntroActivity"
 174-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:113:13-51
 175            android:exported="false"
 175-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:114:13-37
@@ -343,7 +343,7 @@
 176-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:115:13-49
 177        <activity
 177-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:116:9-119:52
-178            android:name="com.create.lalala.ui.language.LanguageActivity"
+178            android:name="com.emojimaker.horor.emoji.ui.language.LanguageActivity"
 178-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:117:13-57
 179            android:exported="false"
 179-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:118:13-37
@@ -351,7 +351,7 @@
 180-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:119:13-49
 181        <activity
 181-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:120:9-123:52
-182            android:name="com.create.lalala.ui.home.HomeActivity"
+182            android:name="com.emojimaker.horor.emoji.ui.home.HomeActivity"
 182-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:121:13-49
 183            android:exported="true"
 183-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:122:13-36
@@ -359,7 +359,7 @@
 184-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:123:13-49
 185        <activity
 185-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:124:9-127:52
-186            android:name="com.create.lalala.ui.SettingsActivity"
+186            android:name="com.emojimaker.horor.emoji.ui.SettingsActivity"
 186-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:125:13-48
 187            android:exported="false"
 187-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:126:13-37
@@ -367,7 +367,7 @@
 188-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:127:13-49
 189        <activity
 189-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:128:9-131:52
-190            android:name="com.create.lalala.ui.pride.PrideActivity"
+190            android:name="com.emojimaker.horor.emoji.ui.pride.PrideActivity"
 190-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:129:13-51
 191            android:exported="false"
 191-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:130:13-37
@@ -377,7 +377,7 @@
 194        <provider
 195            android:name="androidx.core.content.FileProvider"
 195-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:134:13-62
-196            android:authorities="com.create.lalala.provider"
+196            android:authorities="com.emojimaker.horor.emoji.provider"
 196-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:135:13-60
 197            android:exported="false"
 197-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:136:13-37
@@ -392,10 +392,10 @@
 202        </provider>
 203        <provider
 203-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:142:9-147:66
-204            android:name="com.create.lalala.core.utils.share.whatsapp.StickerContentProvider"
+204            android:name="com.emojimaker.horor.emoji.core.utils.share.whatsapp.StickerContentProvider"
 204-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:143:13-77
-205            android:authorities="com.create.lalala.core.utils.share.whatsapp.StickerContentProvider"
-205-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:144:13-101
+205            android:authorities="com.emojimaker.horor.emoji.core.utils.share.whatsapp.StickerContentProvider"
+205-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:144:13-110
 206            android:enabled="true"
 206-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:145:13-35
 207            android:exported="true"
@@ -405,7 +405,7 @@
 209
 210        <service
 210-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:149:9-159:19
-211            android:name="com.create.lalala.core.service.MyFirebaseMessagingService"
+211            android:name="com.emojimaker.horor.emoji.core.service.MyFirebaseMessagingService"
 211-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:150:13-68
 212            android:exported="false" >
 212-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:151:13-37
@@ -502,7 +502,7 @@
 258-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:57:9-67:20
 259            android:name="androidx.startup.InitializationProvider"
 259-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:58:13-67
-260            android:authorities="com.create.lalala.androidx-startup"
+260            android:authorities="com.emojimaker.horor.emoji.androidx-startup"
 260-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:59:13-68
 261            android:exported="false" >
 261-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:32:13-37
@@ -743,7 +743,7 @@
 383
 384                <data
 384-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:13-44
-385                    android:host="cct.com.create.lalala"
+385                    android:host="cct.com.emojimaker.horor.emoji"
 386                    android:scheme="fbconnect" />
 386-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:19-41
 387            </intent-filter>
@@ -889,7 +889,7 @@
 462-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:23:9-27:39
 463            android:name="com.applovin.sdk.AppLovinInitProvider"
 463-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:24:13-65
-464            android:authorities="com.create.lalala.applovininitprovider"
+464            android:authorities="com.emojimaker.horor.emoji.applovininitprovider"
 464-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:25:13-72
 465            android:exported="false"
 465-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:26:13-37
@@ -1109,7 +1109,7 @@
 574-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
 575            android:name="com.google.firebase.provider.FirebaseInitProvider"
 575-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
-576            android:authorities="com.create.lalala.firebaseinitprovider"
+576            android:authorities="com.emojimaker.horor.emoji.firebaseinitprovider"
 576-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
 577            android:directBootAware="true"
 577-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
@@ -1385,7 +1385,7 @@
 725-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:32:9-35:40
 726            android:name="com.facebook.internal.FacebookInitProvider"
 726-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:33:13-70
-727            android:authorities="com.create.lalala.FacebookInitProvider"
+727            android:authorities="com.emojimaker.horor.emoji.FacebookInitProvider"
 727-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:34:13-72
 728            android:exported="false" />
 728-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:35:13-37
@@ -1439,7 +1439,7 @@
 755-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:26:9-29:40
 756            android:name="com.facebook.ads.AudienceNetworkContentProvider"
 756-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:27:13-75
-757            android:authorities="com.create.lalala.AudienceNetworkContentProvider"
+757            android:authorities="com.emojimaker.horor.emoji.AudienceNetworkContentProvider"
 757-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:28:13-82
 758            android:exported="false" />
 758-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:29:13-37
@@ -1485,7 +1485,7 @@
 780-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:43:9-46:40
 781            android:name="com.ironsource.lifecycle.IronsourceLifecycleProvider"
 781-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:44:13-80
-782            android:authorities="com.create.lalala.IronsourceLifecycleProvider"
+782            android:authorities="com.emojimaker.horor.emoji.IronsourceLifecycleProvider"
 782-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:45:13-79
 783            android:exported="false" />
 783-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:46:13-37
@@ -1493,7 +1493,7 @@
 784-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:47:9-50:40
 785            android:name="com.ironsource.lifecycle.LevelPlayActivityLifecycleProvider"
 785-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:48:13-87
-786            android:authorities="com.create.lalala.LevelPlayActivityLifecycleProvider"
+786            android:authorities="com.emojimaker.horor.emoji.LevelPlayActivityLifecycleProvider"
 786-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:49:13-86
 787            android:exported="false" />
 787-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:50:13-37
@@ -1571,7 +1571,7 @@
 827-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:21:9-24:40
 828            android:name="com.mbridge.msdk.config.component.status.MBComponentLifecycleProvider"
 828-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:22:13-97
-829            android:authorities="com.create.lalala.mbcomponentlifcycleprovider"
+829            android:authorities="com.emojimaker.horor.emoji.mbcomponentlifcycleprovider"
 829-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:23:13-79
 830            android:exported="false" />
 830-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:24:13-37

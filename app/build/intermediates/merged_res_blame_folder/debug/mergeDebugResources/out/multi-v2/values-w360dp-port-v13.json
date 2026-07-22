@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.create.lalala.app-mergeDebugResources-107:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
                     "source": "/home/lequyen/.gradle/caches/8.13/transforms/178f10206a8ceda4aa131a0757c9831a/transformed/material-1.13.0/res/values-w360dp-port-v13/values-w360dp-port-v13.xml",

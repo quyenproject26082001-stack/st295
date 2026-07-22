@@ -1,0 +1,80 @@
+
+Ï0
+;
+android*http://schemas.android.com/apk/res/android	HRelativeLayout"’
+*http://schemas.android.com/apk/res/android
+background!@drawable/mbridge_cm_alertview_bg"	(Ô„2,
+*È„ ø drawable/mbridge_cm_alertview_bg0"³
+*http://schemas.android.com/apk/res/androidlayout_margin0@dimen/mbridge_video_common_alertview_bg_padding"	(ö„2;
+9äŒœø/dimen/mbridge_video_common_alertview_bg_padding0@"­
+*http://schemas.android.com/apk/res/androidpadding0@dimen/mbridge_video_common_alertview_bg_padding"	(Õ„2;
+9äŒœø/dimen/mbridge_video_common_alertview_bg_padding0@"R
+*http://schemas.android.com/apk/res/androidlayout_width300dp"	(ô„2:hØ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"	(õ„2:0şÿÿÿÿÿÿÿÿ"S
+*http://schemas.android.com/apk/res/androidlayout_gravitycenter"	(³„2:8*ë
+âTextView"L
+*http://schemas.android.com/apk/res/androidgravitycenter"(¯„2:8"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0şÿÿÿÿÿÿÿÿ"®
+*http://schemas.android.com/apk/res/androidtextSize0@dimen/mbridge_video_common_alertview_title_size"(•„2;
+9îŒœø/dimen/mbridge_video_common_alertview_title_size0@"¹
+*http://schemas.android.com/apk/res/android	textColor5@color/mbridge_video_common_alertview_title_textcolor"(˜„2@
+>„ˆ˜ø4color/mbridge_video_common_alertview_title_textcolor0"‡
+*http://schemas.android.com/apk/res/androidid @+id/mbridge_alertview_titleview"(Ğ„2*
+(¾…¨øid/mbridge_alertview_titleview0"L
+*http://schemas.android.com/apk/res/android	textStylebold"(—„2:8$*¶
+­TextView"‘
+*http://schemas.android.com/apk/res/androidlayout_below @+id/mbridge_alertview_titleview"(…ƒ„2*
+(¾…¨øid/mbridge_alertview_titleview0"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0şÿÿÿÿÿÿÿÿ"²
+*http://schemas.android.com/apk/res/androidtextSize2@dimen/mbridge_video_common_alertview_content_size"(•„2=
+;ëŒœø1dimen/mbridge_video_common_alertview_content_size0@"½
+*http://schemas.android.com/apk/res/android	textColor7@color/mbridge_video_common_alertview_content_textcolor"(˜„2B
+@‚ˆ˜ø6color/mbridge_video_common_alertview_content_textcolor0"Ä
+*http://schemas.android.com/apk/res/androidlayout_marginTop7@dimen/mbridge_video_common_alertview_content_margintop"(ø„2B
+@êŒœø6dimen/mbridge_video_common_alertview_content_margintop0@"‹
+*http://schemas.android.com/apk/res/androidid"@+id/mbridge_alertview_contentview"(Ğ„2,
+*¼…¨ø id/mbridge_alertview_contentview0Q*Ë
+ÂButton"V
+*http://schemas.android.com/apk/res/androidlayout_marginBottom4dp"*(ú„2:h"•
+*http://schemas.android.com/apk/res/androidlayout_below"@+id/mbridge_alertview_contentview"*(…ƒ„2,
+*¼…¨ø id/mbridge_alertview_contentview0"¢
+*http://schemas.android.com/apk/res/android
+background)@drawable/mbridge_cm_alertview_confirm_bg"*(Ô„24
+2Ì„ ø(drawable/mbridge_cm_alertview_confirm_bg0"L
+*http://schemas.android.com/apk/res/androidgravitycenter"*(¯„2:8"¸
+*http://schemas.android.com/apk/res/androidlayout_width2@dimen/mbridge_video_common_alertview_button_width"*(ô„2?
+=éŒœø1dimen/mbridge_video_common_alertview_button_width0À€"»
+*http://schemas.android.com/apk/res/androidlayout_height3@dimen/mbridge_video_common_alertview_button_height"*(õ„2@
+>åŒœø2dimen/mbridge_video_common_alertview_button_height0À€"¸
+*http://schemas.android.com/apk/res/androidtextSize5@dimen/mbridge_video_common_alertview_button_textsize"*(•„2@
+>èŒœø4dimen/mbridge_video_common_alertview_button_textsize0@"Ë
+*http://schemas.android.com/apk/res/android	textColor>@color/mbridge_video_common_alertview_confirm_button_textcolor"*(˜„2I
+Gˆ˜ø=color/mbridge_video_common_alertview_confirm_button_textcolor0"Â
+*http://schemas.android.com/apk/res/androidlayout_marginTop6@dimen/mbridge_video_common_alertview_button_margintop"*(ø„2A
+?æŒœø5dimen/mbridge_video_common_alertview_button_margintop0@"
+*http://schemas.android.com/apk/res/androidid#@+id/mbridge_alertview_close_button"*(Ğ„2-
++»…¨ø!id/mbridge_alertview_close_button0*T*ƒ
+úButton"¸
+*http://schemas.android.com/apk/res/androidlayout_width2@dimen/mbridge_video_common_alertview_button_width"9(ô„2?
+=éŒœø1dimen/mbridge_video_common_alertview_button_width0À€"»
+*http://schemas.android.com/apk/res/androidlayout_height3@dimen/mbridge_video_common_alertview_button_height"9(õ„2@
+>åŒœø2dimen/mbridge_video_common_alertview_button_height0À€"X
+*http://schemas.android.com/apk/res/androidlayout_alignParentEndtrue"9(¼‡„2:@"¸
+*http://schemas.android.com/apk/res/androidtextSize5@dimen/mbridge_video_common_alertview_button_textsize"9(•„2@
+>èŒœø4dimen/mbridge_video_common_alertview_button_textsize0@"É
+*http://schemas.android.com/apk/res/android	textColor=@color/mbridge_video_common_alertview_cancel_button_textcolor"9(˜„2H
+Fş‡˜ø<color/mbridge_video_common_alertview_cancel_button_textcolor0"Â
+*http://schemas.android.com/apk/res/androidlayout_marginTop6@dimen/mbridge_video_common_alertview_button_margintop"9(ø„2A
+?æŒœø5dimen/mbridge_video_common_alertview_button_margintop0@"V
+*http://schemas.android.com/apk/res/androidlayout_marginBottom4dp"9(ú„2:h"•
+*http://schemas.android.com/apk/res/androidlayout_below"@+id/mbridge_alertview_contentview"9(…ƒ„2,
+*¼…¨ø id/mbridge_alertview_contentview0" 
+*http://schemas.android.com/apk/res/android
+background(@drawable/mbridge_cm_alertview_cancel_bg"9(Ô„23
+1É„ ø'drawable/mbridge_cm_alertview_cancel_bg0"L
+*http://schemas.android.com/apk/res/androidgravitycenter"9(¯„2:8"Z
+*http://schemas.android.com/apk/res/androidlayout_alignParentRighttrue"9(ƒ„2:@"“
+*http://schemas.android.com/apk/res/androidid&@+id/mbridge_alertview_continue_button"9(Ğ„20
+.½…¨ø$id/mbridge_alertview_continue_button09T	H

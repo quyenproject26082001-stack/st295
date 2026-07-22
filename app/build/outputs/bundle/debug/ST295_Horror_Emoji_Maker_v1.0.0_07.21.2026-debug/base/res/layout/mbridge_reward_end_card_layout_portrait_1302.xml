@@ -1,0 +1,171 @@
+
+½[
+;
+android*http://schemas.android.com/apk/res/android
+4
+app'http://schemas.android.com/apk/res-auto=com.mbridge.msdk.dycreator.baseview.cusview.MBridgeFramLayout"|
+*http://schemas.android.com/apk/res/android
+background@color/mbridge_ee_grey"(Ô„2!
+Ü‡˜øcolor/mbridge_ee_grey0"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"(õ„2:0ÿÿÿÿÿÿÿÿÿ*ĞT
+ÇTRelativeLayout"¤
+*http://schemas.android.com/apk/res/android
+background*@drawable/mbridge_reward_end_card_shape_bg"(Ô„25
+3”… ø)drawable/mbridge_reward_end_card_shape_bg0"Q
+*http://schemas.android.com/apk/res/androidlayout_margin15dp"(ö„2:h"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"(õ„2:0ÿÿÿÿÿÿÿÿÿ"
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_native_ec_layout"(Ğ„2'
+%†¨øid/mbridge_native_ec_layout0*Ü
+ÓTextView"R
+*http://schemas.android.com/apk/res/android	scaleType
+centerCrop"(‚„2:0"W
+*http://schemas.android.com/apk/res/androidgravitycenter_horizontal"(¯„2:8"K
+*http://schemas.android.com/apk/res/android	ellipsizeend"(«„2:0"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0şÿÿÿÿÿÿÿÿ"L
+*http://schemas.android.com/apk/res/androidtextSize22sp"(•„2:h‚,"Z
+*http://schemas.android.com/apk/res/androidlayout_centerHorizontaltrue"(ƒ„2:@"w
+*http://schemas.android.com/apk/res/android	textColor@color/mbridge_black"(˜„2
+Ê‡˜øcolor/mbridge_black0"T
+*http://schemas.android.com/apk/res/androidlayout_marginTop50dp"(ø„2:hd"H
+*http://schemas.android.com/apk/res/androidmaxLines1"(Ó‚„2:0"w
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_tv_apptitle"(Ğ„2"
+ Ğ†¨øid/mbridge_tv_apptitle0"L
+*http://schemas.android.com/apk/res/android	textStylebold"(—„2:8*º
+±<com.mbridge.msdk.video.dynview.widget.MBridgeLevelLayoutView"
+*http://schemas.android.com/apk/res/androidlayout_below@+id/mbridge_tv_apptitle"&(…ƒ„2"
+ Ğ†¨øid/mbridge_tv_apptitle0"W
+*http://schemas.android.com/apk/res/androidgravitycenter_horizontal"&(¯„2:8"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"&(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"&(õ„2:0şÿÿÿÿÿÿÿÿ"T
+*http://schemas.android.com/apk/res/androidlayout_marginTop10dp"&(ø„2:h"y
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_sv_starlevel"&(Ğ„2#
+!¿†¨øid/mbridge_sv_starlevel0&*Ç
+¾0com.mbridge.msdk.videocommon.view.RoundImageView"X
+*http://schemas.android.com/apk/res/androidlayout_centerInParenttrue"0(ƒ„2:@"y
+*http://schemas.android.com/apk/res/androidlayout_below@+id/mbridge_iv_icon"0(…ƒ„2
+ä…¨øid/mbridge_iv_icon0"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"0(ô„2:0ÿÿÿÿÿÿÿÿÿ"S
+*http://schemas.android.com/apk/res/androidlayout_height200dp"0(õ„2:h"U
+*http://schemas.android.com/apk/res/androidlayout_marginRight1dp"0(ù„2:h"T
+*http://schemas.android.com/apk/res/androidlayout_marginLeft1dp"0(÷„2:h"X
+*http://schemas.android.com/apk/res/androidlayout_marginTop-35dp"0(ø„2:hºÿÿ"w
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_iv_adbanner"0(Ğ„2"
+ ß…¨øid/mbridge_iv_adbanner00*„
+û	ImageView"R
+*http://schemas.android.com/apk/res/android	scaleType
+centerCrop":(‚„2:0"ƒ
+*http://schemas.android.com/apk/res/androidlayout_below@+id/mbridge_sv_starlevel":(…ƒ„2#
+!¿†¨øid/mbridge_sv_starlevel0"Q
+*http://schemas.android.com/apk/res/androidlayout_width70dp":(ô„2:hŒ"R
+*http://schemas.android.com/apk/res/androidlayout_height70dp":(õ„2:hŒ"Z
+*http://schemas.android.com/apk/res/androidlayout_centerHorizontaltrue":(ƒ„2:@"J
+*http://schemas.android.com/apk/res/androidradius10dp":(¨ƒ„2:h"T
+*http://schemas.android.com/apk/res/androidlayout_marginTop20dp":(ø„2:h("o
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_iv_icon":(Ğ„2
+ä…¨øid/mbridge_iv_icon0:*Ë
+ÂTextView"M
+*http://schemas.android.com/apk/res/android
+visibilitygone"G(Ü„2:0"L
+*http://schemas.android.com/apk/res/androidgravitycenter"G(¯„2:8"O
+*http://schemas.android.com/apk/res/androidpaddingRight3dp"G(Ø„2:h"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"G(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"G(õ„2:0şÿÿÿÿÿÿÿÿ"L
+*http://schemas.android.com/apk/res/androidtextSize11dp"G(•„2:h"N
+*http://schemas.android.com/apk/res/androidpaddingLeft3dp"G(Ö„2:h"Z
+*http://schemas.android.com/apk/res/androidlayout_alignParentRighttrue"G(ƒ„2:@"[
+*http://schemas.android.com/apk/res/androidlayout_alignParentBottomtrue"G(ƒ„2:@"o
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_tv_flag"G(Ğ„2
+Ô†¨øid/mbridge_tv_flag0";
+*http://schemas.android.com/apk/res/androidtextAD(Ï‚„G*¸
+¯>com.mbridge.msdk.dycreator.baseview.cusview.MBridgeDyImageView"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"N(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"N(õ„2:0şÿÿÿÿÿÿÿÿ"Z
+*http://schemas.android.com/apk/res/androidlayout_alignParentRighttrue"N(ƒ„2:@"[
+*http://schemas.android.com/apk/res/androidlayout_alignParentBottomtrue"N(ƒ„2:@"o
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_iv_flag"N(Ğ„2
+ã…¨øid/mbridge_iv_flag0N7*Ğ
+ÇTextView"
+*http://schemas.android.com/apk/res/androidlayout_below@+id/mbridge_iv_adbanner"X(…ƒ„2"
+ ß…¨øid/mbridge_iv_adbanner0"L
+*http://schemas.android.com/apk/res/androidgravitycenter"X(¯„2:8"Q
+*http://schemas.android.com/apk/res/androidlayout_margin15dp"X(ö„2:h"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"X(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"X(õ„2:0şÿÿÿÿÿÿÿÿ"Z
+*http://schemas.android.com/apk/res/androidlayout_centerHorizontaltrue"X(ƒ„2:@"u
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_tv_appdesc"X(Ğ„2!
+Ï†¨øid/mbridge_tv_appdesc0X*é
+àTextView"
+*http://schemas.android.com/apk/res/androidlayout_below@+id/mbridge_tv_appdesc"c(…ƒ„2!
+Ï†¨øid/mbridge_tv_appdesc0"L
+*http://schemas.android.com/apk/res/androidgravitycenter"c(¯„2:8"K
+*http://schemas.android.com/apk/res/android	ellipsizeend"c(«„2:0"S
+*http://schemas.android.com/apk/res/androidlayout_width270dip"c(ô„2:hœ"Q
+*http://schemas.android.com/apk/res/androidlayout_height50dp"c(õ„2:hd"Z
+*http://schemas.android.com/apk/res/androidlayout_centerHorizontaltrue"c(ƒ„2:@"E
+*http://schemas.android.com/apk/res/androidlines1"c(Ô‚„2:0"m
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_tv_cta"c(Ğ„2
+Ò†¨øid/mbridge_tv_cta0c*¡
+˜>com.mbridge.msdk.dycreator.baseview.cusview.MBridgeDyImageView"w
+*http://schemas.android.com/apk/res/androidlayout_below@+id/mbridge_tv_cta"k(…ƒ„2
+Ò†¨øid/mbridge_tv_cta0"—
+*http://schemas.android.com/apk/res/androidsrc'@drawable/mbridge_reward_end_pager_logo"k(™‚„22
+0—… ø&drawable/mbridge_reward_end_pager_logo0"Q
+*http://schemas.android.com/apk/res/androidlayout_margin10dp"k(ö„2:h"P
+*http://schemas.android.com/apk/res/androidlayout_width50dp"k(ô„2:hd"Q
+*http://schemas.android.com/apk/res/androidlayout_height18dp"k(õ„2:h$"Z
+*http://schemas.android.com/apk/res/androidlayout_centerHorizontaltrue"k(ƒ„2:@"o
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_iv_logo"k(Ğ„2
+ç…¨øid/mbridge_iv_logo0kE*ë
+â@com.mbridge.msdk.dycreator.baseview.cusview.MBridgeBaitClickView"M
+*http://schemas.android.com/apk/res/android
+visibilitygone"p(Ü„2:0"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"p(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"p(õ„2:0ÿÿÿÿÿÿÿÿÿ"‰
+*http://schemas.android.com/apk/res/androidid!@+id/mbridge_animation_click_view"p(Ğ„2+
+)¿…¨øid/mbridge_animation_click_view0p)*é
+à>com.mbridge.msdk.dycreator.baseview.cusview.MBridgeDyImageView"‡
+*http://schemas.android.com/apk/res/androidsrc@drawable/mbridge_reward_notice"v(™‚„2*
+(œ… ødrawable/mbridge_reward_notice0"P
+*http://schemas.android.com/apk/res/androidlayout_width25dp"v(ô„2:h2"Q
+*http://schemas.android.com/apk/res/androidlayout_height25dp"v(õ„2:h2"o
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_iv_link"v(Ğ„2
+æ…¨øid/mbridge_iv_link0v=*œ
+
+’
+&com.mbridge.msdk.widget.FeedBackButton"|
+*http://schemas.android.com/apk/res/androidlayout_toEndOf@+id/mbridge_iv_link"„(¸‡„2
+æ…¨øid/mbridge_iv_link0"N
+*http://schemas.android.com/apk/res/android
+visibilitygone"„(Ü„2:0"M
+*http://schemas.android.com/apk/res/androidgravitycenter"„(¯„2:8"Q
+*http://schemas.android.com/apk/res/androidpaddingRight10dp"„(Ø„2:h"a
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"„(ô„2:0şÿÿÿÿÿÿÿÿ"R
+*http://schemas.android.com/apk/res/androidlayout_height25dp"„(õ„2:h2"M
+*http://schemas.android.com/apk/res/androidtextSize11sp"„(•„2:h‚"P
+*http://schemas.android.com/apk/res/androidpaddingLeft10dp"„(Ö„2:h"x
+*http://schemas.android.com/apk/res/android	textColor@color/mbridge_white"„(˜„2
+…ˆ˜øcolor/mbridge_white0"}
+*http://schemas.android.com/apk/res/androidlayout_alignTop@+id/mbridge_iv_link"„(ˆƒ„2
+æ…¨øid/mbridge_iv_link0"
+*http://schemas.android.com/apk/res/androidid$@+id/mbridge_native_endcard_feed_btn"„(Ğ„2.
+,ƒ†¨ø"id/mbridge_native_endcard_feed_btn0"“
+*http://schemas.android.com/apk/res/androidtext$@string/mbridge_cm_feedback_btn_text"„(Ï‚„2/
+-“ƒÌø#string/mbridge_cm_feedback_btn_text0„)*Ÿ
+•>com.mbridge.msdk.dycreator.baseview.cusview.MBridgeDyImageView"R
+*http://schemas.android.com/apk/res/androidcontentDescriptioncloseButton(ó„„"†
+*http://schemas.android.com/apk/res/androidsrc@drawable/mbridge_reward_close"Œ(™‚„2)
+'’… ødrawable/mbridge_reward_close0"Q
+*http://schemas.android.com/apk/res/androidlayout_width25dp"Œ(ô„2:h2"R
+*http://schemas.android.com/apk/res/androidlayout_height25dp"Œ(õ„2:h2"[
+*http://schemas.android.com/apk/res/androidlayout_alignParentRighttrue"Œ(ƒ„2:@"r
+*http://schemas.android.com/apk/res/androidid@+id/mbridge_iv_close"Œ(Ğ„2
+â…¨øid/mbridge_iv_close0Œ<
+*ò
+èRelativeLayout"a
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"’(ô„2:0ÿÿÿÿÿÿÿÿÿ"b
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"’(õ„2:0ÿÿÿÿÿÿÿÿÿ"
+*http://schemas.android.com/apk/res/androidid#@+id/mbridge_native_ec_layer_layout"’(Ğ„2-
++€†¨ø!id/mbridge_native_ec_layer_layout0’0

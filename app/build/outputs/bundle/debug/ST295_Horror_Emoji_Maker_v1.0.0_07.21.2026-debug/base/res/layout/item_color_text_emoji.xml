@@ -1,0 +1,34 @@
+
+Ä
+;
+android*http://schemas.android.com/apk/res/android$
+4
+app'http://schemas.android.com/apk/res-auto$FrameLayout"S
+*http://schemas.android.com/apk/res/androidlayout_marginEnd8dp"(¶‡„2:h"P
+*http://schemas.android.com/apk/res/androidlayout_width40dp"(ô„2:hP"Q
+*http://schemas.android.com/apk/res/androidlayout_height40dp"(õ„2:hP*Ç
+¾1com.google.android.material.card.MaterialCardView"c
+'http://schemas.android.com/apk/res-autostrokeColor
+@color/app"(¸Šø2
+€˜ø	color/app0"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"(õ„2:0ÿÿÿÿÿÿÿÿÿ"M
+'http://schemas.android.com/apk/res-autocardElevation0dp"(²ø2:h"K
+'http://schemas.android.com/apk/res-autostrokeWidth0dp"(»Šø2:h"~
+'http://schemas.android.com/apk/res-autocardBackgroundColor@android:color/white"(°ø2
+‹€˜android:color/white0"S
+'http://schemas.android.com/apk/res-autocardCornerRadius99dp"(±ø2:hÆ"u
+*http://schemas.android.com/apk/res/androidid@+id/cardTextColorEmoji"(Ğ„2!
+¸‚¨øid/cardTextColorEmoji0*ö
+íTextView"L
+*http://schemas.android.com/apk/res/androidgravitycenter"(¯„2:8"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"(õ„2:0ÿÿÿÿÿÿÿÿÿ"L
+*http://schemas.android.com/apk/res/androidtextSize20sp"(•„2:h‚("c
+*http://schemas.android.com/apk/res/android	textColor
+@color/app"(˜„2
+€˜ø	color/app0"_
+*http://schemas.android.com/apk/res/androidid@+id/tvColor"(Ğ„2
+Ç‰¨ø
+id/tvColor0":
+*http://schemas.android.com/apk/res/androidtextA(Ï‚„'$

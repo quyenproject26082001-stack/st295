@@ -1,5 +1,0 @@
-package com.create.lalala;
-
-public class BR {
-  public static final int _all = 0;
-}

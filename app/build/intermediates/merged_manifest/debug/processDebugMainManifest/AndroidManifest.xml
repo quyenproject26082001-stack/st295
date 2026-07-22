@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.create.lalala"
+    package="com.emojimaker.horor.emoji"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -72,13 +72,13 @@
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_CUSTOM_AUDIENCE" />
 
     <permission
-        android:name="com.create.lalala.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.emojimaker.horor.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.create.lalala.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.emojimaker.horor.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="com.create.lalala.core.utils.App"
+        android:name="com.emojimaker.horor.emoji.core.utils.App"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -92,72 +92,72 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BaseProject" >
         <activity
-            android:name="com.create.lalala.ui.cosplay.CosplayRandomActivity"
+            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplayRandomActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.cosplay.CosplayCustomizeActivity"
+            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplayCustomizeActivity"
             android:exported="false"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.cosplay.CosplaySuccessfulActivity"
+            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplaySuccessfulActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.add_character.AddCharacterActivity"
+            android:name="com.emojimaker.horor.emoji.ui.add_character.AddCharacterActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.create.lalala.ui.random_character.RandomCharacterActivity"
+            android:name="com.emojimaker.horor.emoji.ui.random_character.RandomCharacterActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.trending.TrendingActivity"
+            android:name="com.emojimaker.horor.emoji.ui.trending.TrendingActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.choose_character.ChooseCharacterActivity"
+            android:name="com.emojimaker.horor.emoji.ui.choose_character.ChooseCharacterActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.customize.CustomizeCharacterActivity"
+            android:name="com.emojimaker.horor.emoji.ui.customize.CustomizeCharacterActivity"
             android:exported="false"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.customize.CustomizeEmojiActivity"
+            android:name="com.emojimaker.horor.emoji.ui.customize.CustomizeEmojiActivity"
             android:exported="false"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.create.lalala.ui.view.ViewActivity"
+            android:name="com.emojimaker.horor.emoji.ui.view.ViewActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.package_view.ViewAllPackageActivity"
+            android:name="com.emojimaker.horor.emoji.ui.package_view.ViewAllPackageActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.package_view.ViewPackageActivity"
+            android:name="com.emojimaker.horor.emoji.ui.package_view.ViewPackageActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.success.SuccessActivity"
+            android:name="com.emojimaker.horor.emoji.ui.success.SuccessActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.my_creation.MyCreationActivity"
+            android:name="com.emojimaker.horor.emoji.ui.my_creation.MyCreationActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.emoji_copy.EmojiCopyActivity"
+            android:name="com.emojimaker.horor.emoji.ui.emoji_copy.EmojiCopyActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.splash.SplashActivity"
+            android:name="com.emojimaker.horor.emoji.ui.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -167,33 +167,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.create.lalala.ui.permission.PermissionActivity"
+            android:name="com.emojimaker.horor.emoji.ui.permission.PermissionActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.intro.IntroActivity"
+            android:name="com.emojimaker.horor.emoji.ui.intro.IntroActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.language.LanguageActivity"
+            android:name="com.emojimaker.horor.emoji.ui.language.LanguageActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.home.HomeActivity"
+            android:name="com.emojimaker.horor.emoji.ui.home.HomeActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.SettingsActivity"
+            android:name="com.emojimaker.horor.emoji.ui.SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.create.lalala.ui.pride.PrideActivity"
+            android:name="com.emojimaker.horor.emoji.ui.pride.PrideActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.create.lalala.provider"
+            android:authorities="com.emojimaker.horor.emoji.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -201,14 +201,14 @@
                 android:resource="@xml/file_paths" />
         </provider>
         <provider
-            android:name="com.create.lalala.core.utils.share.whatsapp.StickerContentProvider"
-            android:authorities="com.create.lalala.core.utils.share.whatsapp.StickerContentProvider"
+            android:name="com.emojimaker.horor.emoji.core.utils.share.whatsapp.StickerContentProvider"
+            android:authorities="com.emojimaker.horor.emoji.core.utils.share.whatsapp.StickerContentProvider"
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.whatsapp.sticker.READ" />
 
         <service
-            android:name="com.create.lalala.core.service.MyFirebaseMessagingService"
+            android:name="com.emojimaker.horor.emoji.core.service.MyFirebaseMessagingService"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -257,7 +257,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.create.lalala.androidx-startup"
+            android:authorities="com.emojimaker.horor.emoji.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
@@ -382,7 +382,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cct.com.create.lalala"
+                    android:host="cct.com.emojimaker.horor.emoji"
                     android:scheme="fbconnect" />
             </intent-filter>
         </activity>
@@ -461,7 +461,7 @@
 
         <provider
             android:name="com.applovin.sdk.AppLovinInitProvider"
-            android:authorities="com.create.lalala.applovininitprovider"
+            android:authorities="com.emojimaker.horor.emoji.applovininitprovider"
             android:exported="false"
             android:initOrder="101" /> <!-- Init order is 101 so we're before Firebase/Google which uses 100 -->
         <activity
@@ -573,7 +573,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.create.lalala.firebaseinitprovider"
+            android:authorities="com.emojimaker.horor.emoji.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -724,7 +724,7 @@
         -->
         <provider
             android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.create.lalala.FacebookInitProvider"
+            android:authorities="com.emojimaker.horor.emoji.FacebookInitProvider"
             android:exported="false" />
 
         <receiver
@@ -754,7 +754,7 @@
 
         <provider
             android:name="com.facebook.ads.AudienceNetworkContentProvider"
-            android:authorities="com.create.lalala.AudienceNetworkContentProvider"
+            android:authorities="com.emojimaker.horor.emoji.AudienceNetworkContentProvider"
             android:exported="false" />
 
         <meta-data
@@ -779,11 +779,11 @@
 
         <provider
             android:name="com.ironsource.lifecycle.IronsourceLifecycleProvider"
-            android:authorities="com.create.lalala.IronsourceLifecycleProvider"
+            android:authorities="com.emojimaker.horor.emoji.IronsourceLifecycleProvider"
             android:exported="false" />
         <provider
             android:name="com.ironsource.lifecycle.LevelPlayActivityLifecycleProvider"
-            android:authorities="com.create.lalala.LevelPlayActivityLifecycleProvider"
+            android:authorities="com.emojimaker.horor.emoji.LevelPlayActivityLifecycleProvider"
             android:exported="false" />
 
         <service
@@ -826,7 +826,7 @@
 
         <provider
             android:name="com.mbridge.msdk.config.component.status.MBComponentLifecycleProvider"
-            android:authorities="com.create.lalala.mbcomponentlifcycleprovider"
+            android:authorities="com.emojimaker.horor.emoji.mbcomponentlifcycleprovider"
             android:exported="false" />
 
         <activity

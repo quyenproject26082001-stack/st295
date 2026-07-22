@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.create.lalala.app-mergeDebugResources-107:/values-ms/values-ms.xml",
+            "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "/home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/res/values-ms/values-ms.xml",

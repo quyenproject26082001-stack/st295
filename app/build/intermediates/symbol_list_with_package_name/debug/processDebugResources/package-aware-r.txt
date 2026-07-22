@@ -1,4 +1,4 @@
-com.create.lalala
+com.emojimaker.horor.emoji
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -4963,6 +4963,7 @@ drawable bg_rate
 drawable bg_rcv_color
 drawable bg_rounded_8_gray
 drawable bg_select_navi_shape
+drawable bg_slt_emoji_text
 drawable bg_string_color
 drawable bg_stroke_gradient_circle_color_text
 drawable bg_uslt_navi_shape
@@ -6775,6 +6776,7 @@ id startHorizontal
 id startToEnd
 id startVertical
 id start_center
+id stateBlackCover
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
@@ -7968,6 +7970,7 @@ string one_star_title
 string open_resume
 string package_
 string package_created_successfully
+string package_name_already_exists
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

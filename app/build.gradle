@@ -17,18 +17,18 @@ plugins {
 //def realAds = []
 
 android {
-    namespace 'com.create.lalala'
+    namespace 'com.emojimaker.horor.emoji'
     compileSdk 36
 
     defaultConfig {
-        applicationId "com.create.lalala"
+        applicationId "com.emojimaker.horor.emoji"
         minSdk 24
         targetSdk 36
         versionCode 1
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def formattedDate = new Date().format('MM.dd.yyyy')
-        archivesBaseName = "ST295_Horror_Emoji_Maker_v${versionName}_${formattedDate}"
+        archivesBaseName = "ST295_Horror_Emoji_Maker_V${versionName}_${formattedDate}"
 
     }
 

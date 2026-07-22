@@ -1,0 +1,3 @@
+com.emojimaker.horor.emoji.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

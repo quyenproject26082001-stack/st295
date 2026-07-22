@@ -319,7 +319,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                                 edtText.clearFocus()
 
                                 hideSoftKeyboard()
-                                hideNavigation(true)
+                                hideNavigation()
                                 delay(300)
                                 hideSoftKeyboard()
 
@@ -869,7 +869,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         }
         dialog.onNoClick = {
             dialog.dismiss()
-            hideNavigation(true)
+            hideNavigation()
         }
     }
 
@@ -880,7 +880,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
         fun dismissDialog() {
             dialog.dismiss()
-            hideNavigation(true)
+            hideNavigation()
         }
 
         dialog.onNoClick = {
@@ -947,7 +947,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
         fun dismissDialog() {
             dialog.dismiss()
-            hideNavigation(true)
+            hideNavigation()
         }
 
         dialog.onCloseEvent = {
@@ -980,7 +980,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         dialog.show()
         dialog.onDoneClick = { bitmap ->
             dialog.dismiss()
-            hideNavigation(true)
+            hideNavigation()
             if (bitmap != null) {
                 addDrawable("", false, bitmap)
             }
@@ -1260,7 +1260,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 //        super.onWindowFocusChanged(hasFocus)
 //        if (hasFocus) {
 //            applyUiCustomize()
-//            hideNavigation(true)
+//            hideNavigation()
 //
 //            window.decorView.removeCallbacks(reHideRunnable)
 //            window.decorView.postDelayed(reHideRunnable, 1500)
@@ -1271,7 +1271,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
     private val reHideRunnable = Runnable {
         applyUiCustomize()
-        hideNavigation(true)
+        hideNavigation()
     }
 
     @Suppress("DEPRECATION")

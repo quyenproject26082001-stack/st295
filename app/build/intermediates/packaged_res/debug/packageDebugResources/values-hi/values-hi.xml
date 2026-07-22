@@ -41,7 +41,7 @@
     <string name="done">हो गया</string>
     <string name="download">डाउनलोड करें</string>
     <string name="download_failed_please_try_again_later">डाउनलोड विफल हुआ, कृपया बाद में फिर से प्रयास करें!</string>
-    <string name="download_success">ST295_Horror_Emoji_Maker एल्बम में डाउनलोड सफल रहा</string>
+    <string name="download_success">Horror Emoji Maker एल्बम में डाउनलोड सफल रहा</string>
     <string name="downloading">डाउनलोड हो रहा है...</string>
     <string name="edit">एडिट करें</string>
     <string name="emoji_activities">इमोजी एक्टिविटीज़</string>
@@ -114,6 +114,7 @@
     <string name="one_star_title">ओह, नहीं!</string>
     <string name="package_">पैकेज</string>
     <string name="package_created_successfully">पैकेज सफलतापूर्वक बनाया गया!</string>
+    <string name="package_name_already_exists">पैकेज नाम पहले से मौजूद है!</string>
     <string name="permission">\u00A0अनुमति\u00A0</string>
     <string name="play">इमोजी बनाएं</string>
     <string name="playcos">\u00A0कॉस्प्ले\u00A0</string>

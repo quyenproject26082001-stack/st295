@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.create.lalala.app-mergeDebugResources-107:/values-ja/values-ja.xml",
+            "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "/home/lequyen/.gradle/caches/8.13/transforms/aded65c5b5405316b54b9738c6bbf239/transformed/facebook-login-18.0.3/res/values-ja/values-ja.xml",

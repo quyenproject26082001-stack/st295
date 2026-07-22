@@ -208,7 +208,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             // WhatsApp, Telegram buttons in lnlBottom
             val layoutBottom = lnlBottom.getChildAt(0)
             layoutBottom.findViewById<View>(R.id.btnRight)?.tap(800) {
-                val paths = getAllPathsFromCurrentFragment()
+                val paths = if (isInSelectionMode) {
+                    getSelectedPathsFromCurrentFragment()
+                } else {
+                    getAllPathsFromCurrentFragment()
+                }
                 when (viewModel.typeStatus.value) {
                     ValueKey.EMOJI_TYPE -> handleAddToWhatsApp(paths)
                     ValueKey.AVATAR_TYPE -> handleAddToWhatsApp(paths)
@@ -216,7 +220,11 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                 }
             }
             layoutBottom.findViewById<View>(R.id.btnLeft)?.tap(800) {
-                val paths = getAllPathsFromCurrentFragment()
+                val paths = if (isInSelectionMode) {
+                    getSelectedPathsFromCurrentFragment()
+                } else {
+                    getAllPathsFromCurrentFragment()
+                }
                 when (viewModel.typeStatus.value) {
                     ValueKey.EMOJI_TYPE -> handleAddToTelegram(paths)
                     ValueKey.AVATAR_TYPE -> handleAddToTelegram(paths)
@@ -420,6 +428,10 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     fun handleAddToWhatsApp(list: ArrayList<String>) {
+        if (list.isEmpty()) {
+            showToast(R.string.please_select_an_image)
+            return
+        }
         if (list.size < 3) {
             showToast(R.string.limit_3_items)
             return

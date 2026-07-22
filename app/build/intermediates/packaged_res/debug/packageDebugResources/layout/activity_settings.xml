@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.create.lalala.ui.SettingsActivity">
+    tools:context="com.emojimaker.horor.emoji.ui.SettingsActivity">
 
     <ImageView
         android:id="@+id/imgBackground"
@@ -40,7 +40,7 @@
 
 
     <!-- LANGUAGE title (overlapping card top) -->
-    <com.create.lalala.core.custom.text.DoubleStrokeTextView
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
         android:id="@+id/legacyTvSetting"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                         android:src="@drawable/ic_lang_set" />
                 </FrameLayout>
 
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -147,7 +147,7 @@
                         android:src="@drawable/ic_rate_set" />
                 </FrameLayout>
 
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
@@ -195,7 +195,7 @@
                         android:src="@drawable/ic_share_set" />
                 </FrameLayout>
 
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
@@ -243,7 +243,7 @@
                         android:src="@drawable/ic_policy_set" />
                 </FrameLayout>
 
-                <com.create.lalala.core.custom.text.DoubleStrokeTextView
+                <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
