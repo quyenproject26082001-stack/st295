@@ -43,6 +43,7 @@ import com.emojimaker.horor.emoji.ui.customize.CustomizeCharacterActivity
 import com.emojimaker.horor.emoji.ui.home.DataViewModel
 import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyAvatarViewModel
 import com.emojimaker.horor.emoji.ui.permission.PermissionViewModel
+import com.lvt.ads.util.Admob
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -128,7 +129,7 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
     override fun viewListener() {
         binding.apply {
             actionBar.apply {
-                btnActionBarLeft.tap { handleBack() }
+                btnActionBarLeft.tap { showInterAll {   handleBack() } }
                 btnActionBarRight.tap {
                     handleDelete()
                 }
@@ -308,8 +309,8 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
                             putExtra(IntentKey.STATUS_FROM_KEY, ValueKey.EDIT)
                         }
 
-                    showInterAll { editLauncher.launch(intent) }
-                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_in_right)
+                 showInterAll {   editLauncher.launch(intent)
+                    overridePendingTransition(R.anim.slide_out_left, R.anim.slide_in_right) }
                 }
             }
         }
@@ -332,16 +333,23 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
         }
     }
 
-//    override fun initAds() {
-//        initNativeCollab()
-//    }
-//
-//    fun initNativeCollab() {
-//
-//        loadNativeCollabAds(R.string.native_cl_detail, binding.flNativeCollab)
-//
-//
-//    }
+    override fun onRestart() {
+        super.onRestart()
+        initNativeCollab()
+    }
+
+    override fun initAds() {
+        initNativeCollab()
+    }
+
+    fun initNativeCollab() {
+
+
+        Admob.getInstance().loadNativeCollapNotBanner(this@ViewActivity,getString(R.string.native_collap_detail),binding.flNativeCollab)
+
+    }
+
+
 
     @android.annotation.SuppressLint("MissingSuperCall")
     override fun onBackPressed() {

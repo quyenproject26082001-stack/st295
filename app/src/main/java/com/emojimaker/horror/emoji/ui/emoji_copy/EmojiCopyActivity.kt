@@ -14,6 +14,7 @@ import com.emojimaker.horor.emoji.core.extensions.select
 import com.emojimaker.horor.emoji.core.extensions.tap
 import com.emojimaker.horor.emoji.core.extensions.visible
 import com.emojimaker.horor.emoji.databinding.ActivityEmojiCopyBinding
+import com.lvt.ads.util.Admob
 
 class EmojiCopyActivity : BaseActivity<ActivityEmojiCopyBinding>() {
 
@@ -48,6 +49,25 @@ class EmojiCopyActivity : BaseActivity<ActivityEmojiCopyBinding>() {
         binding.actionBar.btnActionBarLeft.tap(800) {
             handleBackLeftToRight()
         }
+    }
+
+    fun initNativeCollab() {
+        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_collap_category_emoji), binding.flNativeCollab)
+    }
+
+    override fun initAds() {
+        initNativeCollab()
+        Admob.getInstance().loadNativeAd(
+            this,
+            getString(R.string.native_emojiCoppy),
+            binding.nativeAds,
+            R.layout.ads_native_banner1
+        )
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        initNativeCollab()
     }
 
     override fun initActionBar() {

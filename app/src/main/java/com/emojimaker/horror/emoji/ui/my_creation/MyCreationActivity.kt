@@ -43,6 +43,7 @@ import com.emojimaker.horor.emoji.ui.my_creation.fragment.MyEmojiFragment
 import com.emojimaker.horor.emoji.ui.my_creation.fragment.PackageFragment
 import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyCreationViewModel
 import com.emojimaker.horor.emoji.ui.permission.PermissionViewModel
+import com.lvt.ads.util.Admob
 import kotlinx.coroutines.launch
 
 class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
@@ -527,18 +528,19 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         startIntentWithClearTop(HomeActivity::class.java)
     }
 
-//    fun initNativeCollab() {
-//        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_cl_myWork), binding.flNativeCollab)
-//    }
-//    override fun initAds() {
-//        initNativeCollab()
-//        Admob.getInstance().loadNativeAd(
-//            this,
-//            getString(R.string.native_myWork),
-//            binding.nativeAds,
-//            R.layout.ads_native_banner
-//        )
-//    }
+    fun initNativeCollab() {
+        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_collap_myCreation), binding.flNativeCollab)
+    }
+    override fun initAds() {
+        initNativeCollab()
+        Admob.getInstance().loadNativeAd(
+            this,
+            getString(R.string.native_myCreation),
+            binding.nativeAds,
+            R.layout.ads_native_banner
+        )
+    }
+
 
     override fun onRestart() {
         super.onRestart()
@@ -573,7 +575,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             exitSelectionMode()
         }
 
-        // initNativeCollab()
+        initNativeCollab()
         android.util.Log.w("MyCreationActivity", "🔄 onRestart() END")
     }
 

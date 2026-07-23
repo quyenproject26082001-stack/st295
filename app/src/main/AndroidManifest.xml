@@ -66,7 +66,13 @@
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.customize.CustomizeEmojiActivity"
+            android:name=".ui.customize.NormalEmojiActivity"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.customize.HorrorEmojiActivity"
             android:exported="false"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait"

@@ -36,6 +36,7 @@ import com.emojimaker.horor.emoji.core.extensions.hideNavigation
 import com.emojimaker.horor.emoji.core.extensions.setImageActionBar
 import com.emojimaker.horor.emoji.core.extensions.setFont
 import com.emojimaker.horor.emoji.core.extensions.select
+import com.emojimaker.horor.emoji.core.extensions.showInterAll
 import com.emojimaker.horor.emoji.core.extensions.tap
 import com.emojimaker.horor.emoji.core.extensions.visible
 import com.emojimaker.horor.emoji.core.helper.BitmapHelper
@@ -62,7 +63,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
+open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
 
     companion object {
         const val MODE_NORMAL = "emoji_normal"
@@ -70,8 +71,10 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         private const val ASSET_SUB_DOMAIN = "/public/app/ST295_HorrorEmojiMaker/emoji"
     }
 
+    protected open val defaultMode: String = MODE_NORMAL
+
     private val mode: String by lazy {
-        intent.getStringExtra(IntentKey.INTENT_KEY).takeUnless { it.isNullOrBlank() } ?: MODE_NORMAL
+        intent.getStringExtra(IntentKey.INTENT_KEY).takeUnless { it.isNullOrBlank() } ?: defaultMode
     }
     private val layerAdapter by lazy { LayerCustomizeAdapter(this) }
     private val navigationAdapter by lazy { BottomNavigationCustomizeAdapter(this) }
@@ -288,8 +291,8 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
             }
         }
         binding.actionBar.btnActionBarRight.tap {
-            saveEmojiProject()
-        }
+            saveEmojiProject() }
+
         binding.btnDrawLayer.tap { showDrawState() }
         binding.btnTextLayer.tap { showTextState() }
         binding.btnLayer.tap {
@@ -343,7 +346,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
         dialog.show()
         dialog.onYesClick = {
             dialog.dismiss()
-           finish()
+            showInterAll { finish() }
         }
         dialog.onNoClick = {
             dialog.dismiss()
@@ -722,7 +725,7 @@ class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>() {
                                 putExtra(IntentKey.INTENT_KEY, state.path)
                                 putExtra(IntentKey.STATUS_KEY, ValueKey.EMOJI_TYPE)
                             }
-                        startActivity(intent)
+                        showInterAll { startActivity(intent) }
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     }
                 }

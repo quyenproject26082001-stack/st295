@@ -79,6 +79,9 @@ public final class ActivityAddCharacterBinding implements ViewBinding {
   public final FrameLayout flGetText;
 
   @NonNull
+  public final FrameLayout flNativeCollab;
+
+  @NonNull
   public final FrameLayout flSave;
 
   @NonNull
@@ -181,16 +184,17 @@ public final class ActivityAddCharacterBinding implements ViewBinding {
       @NonNull ImageView btnDoneText, @NonNull ImageView btnSpeech, @NonNull ImageView btnSticker,
       @NonNull ImageView btnText, @NonNull FrameLayout cardSave, @NonNull DrawView drawView,
       @NonNull EditText edtText, @NonNull FrameLayout flActionBar, @NonNull FrameLayout flFunction,
-      @NonNull FrameLayout flGetText, @NonNull FrameLayout flSave, @NonNull Guideline gl,
-      @NonNull ImageView imvBackground, @NonNull ImageView imvBgColor,
-      @NonNull ImageView imvBgImage, @NonNull MaterialCardView imvFocusColor,
-      @NonNull MaterialCardView imvFocusImage, @NonNull LinearLayout lnlBackground,
-      @NonNull ConstraintLayout lnlBottom, @NonNull LinearLayout lnlSpeech,
-      @NonNull LinearLayout lnlSticker, @NonNull ConstraintLayout main,
-      @NonNull RecyclerView rcvBackgroundColor, @NonNull RecyclerView rcvBackgroundImage,
-      @NonNull RecyclerView rcvFont, @NonNull RecyclerView rcvSpeech,
-      @NonNull RecyclerView rcvSticker, @NonNull RecyclerView rcvTextColor,
-      @NonNull ScrollView scvText, @NonNull LinearLayout sectionTab, @NonNull Space spaceTextBottom,
+      @NonNull FrameLayout flGetText, @NonNull FrameLayout flNativeCollab,
+      @NonNull FrameLayout flSave, @NonNull Guideline gl, @NonNull ImageView imvBackground,
+      @NonNull ImageView imvBgColor, @NonNull ImageView imvBgImage,
+      @NonNull MaterialCardView imvFocusColor, @NonNull MaterialCardView imvFocusImage,
+      @NonNull LinearLayout lnlBackground, @NonNull ConstraintLayout lnlBottom,
+      @NonNull LinearLayout lnlSpeech, @NonNull LinearLayout lnlSticker,
+      @NonNull ConstraintLayout main, @NonNull RecyclerView rcvBackgroundColor,
+      @NonNull RecyclerView rcvBackgroundImage, @NonNull RecyclerView rcvFont,
+      @NonNull RecyclerView rcvSpeech, @NonNull RecyclerView rcvSticker,
+      @NonNull RecyclerView rcvTextColor, @NonNull ScrollView scvText,
+      @NonNull LinearLayout sectionTab, @NonNull Space spaceTextBottom,
       @NonNull MaterialCardView subTabColor, @NonNull MaterialCardView subTabImage,
       @NonNull DoubleStrokeTextView tvBackgroundColor,
       @NonNull DoubleStrokeTextView tvBackgroundImage, @NonNull TextView tvColor,
@@ -214,6 +218,7 @@ public final class ActivityAddCharacterBinding implements ViewBinding {
     this.flActionBar = flActionBar;
     this.flFunction = flFunction;
     this.flGetText = flGetText;
+    this.flNativeCollab = flNativeCollab;
     this.flSave = flSave;
     this.gl = gl;
     this.imvBackground = imvBackground;
@@ -369,6 +374,12 @@ public final class ActivityAddCharacterBinding implements ViewBinding {
       id = R.id.flGetText;
       FrameLayout flGetText = ViewBindings.findChildViewById(rootView, id);
       if (flGetText == null) {
+        break missingId;
+      }
+
+      id = R.id.flNativeCollab;
+      FrameLayout flNativeCollab = ViewBindings.findChildViewById(rootView, id);
+      if (flNativeCollab == null) {
         break missingId;
       }
 
@@ -563,8 +574,8 @@ public final class ActivityAddCharacterBinding implements ViewBinding {
       return new ActivityAddCharacterBinding((ConstraintLayout) rootView, binding_actionBar, bgBg,
           bgOther, btnBackground, btnBackgroundColor, btnBackgroundImage, btnDoneText, btnSpeech,
           btnSticker, btnText, cardSave, drawView, edtText, flActionBar, flFunction, flGetText,
-          flSave, gl, imvBackground, imvBgColor, imvBgImage, imvFocusColor, imvFocusImage,
-          lnlBackground, lnlBottom, lnlSpeech, lnlSticker, main, rcvBackgroundColor,
+          flNativeCollab, flSave, gl, imvBackground, imvBgColor, imvBgImage, imvFocusColor,
+          imvFocusImage, lnlBackground, lnlBottom, lnlSpeech, lnlSticker, main, rcvBackgroundColor,
           rcvBackgroundImage, rcvFont, rcvSpeech, rcvSticker, rcvTextColor, scvText, sectionTab,
           spaceTextBottom, subTabColor, subTabImage, tvBackgroundColor, tvBackgroundImage, tvColor,
           tvFont, tvGetText, tvText, tvTitleSpeech, tvTitleSticker, tvTitleText);

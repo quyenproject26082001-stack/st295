@@ -27,6 +27,9 @@ public final class ActivityViewBinding implements ViewBinding {
   public final FrameLayout cvImage;
 
   @NonNull
+  public final FrameLayout flNativeCollab;
+
+  @NonNull
   public final ImageView imvImage;
 
   @NonNull
@@ -43,12 +46,13 @@ public final class ActivityViewBinding implements ViewBinding {
 
   private ActivityViewBinding(@NonNull ConstraintLayout rootView,
       @NonNull LayoutActionbarBinding actionBar, @NonNull FrameLayout cvImage,
-      @NonNull ImageView imvImage, @NonNull LayoutBottomViewBinding includeLayoutBottom,
-      @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout lnlBottom,
-      @NonNull ConstraintLayout main) {
+      @NonNull FrameLayout flNativeCollab, @NonNull ImageView imvImage,
+      @NonNull LayoutBottomViewBinding includeLayoutBottom, @NonNull FrameLayout layoutActionBar,
+      @NonNull FrameLayout lnlBottom, @NonNull ConstraintLayout main) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.cvImage = cvImage;
+    this.flNativeCollab = flNativeCollab;
     this.imvImage = imvImage;
     this.includeLayoutBottom = includeLayoutBottom;
     this.layoutActionBar = layoutActionBar;
@@ -96,6 +100,12 @@ public final class ActivityViewBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.flNativeCollab;
+      FrameLayout flNativeCollab = ViewBindings.findChildViewById(rootView, id);
+      if (flNativeCollab == null) {
+        break missingId;
+      }
+
       id = R.id.imvImage;
       ImageView imvImage = ViewBindings.findChildViewById(rootView, id);
       if (imvImage == null) {
@@ -124,7 +134,7 @@ public final class ActivityViewBinding implements ViewBinding {
       ConstraintLayout main = (ConstraintLayout) rootView;
 
       return new ActivityViewBinding((ConstraintLayout) rootView, binding_actionBar, cvImage,
-          imvImage, binding_includeLayoutBottom, layoutActionBar, lnlBottom, main);
+          flNativeCollab, imvImage, binding_includeLayoutBottom, layoutActionBar, lnlBottom, main);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

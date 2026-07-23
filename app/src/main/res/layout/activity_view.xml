@@ -92,14 +92,13 @@
 <!--    </FrameLayout>-->
 
     <!--    flNativeCollab-->
-<!--    <FrameLayout-->
-<!--        android:id="@+id/flNativeCollab"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent">-->
-
-<!--        <include layout="@layout/ads_shimmer_collap_native" />-->
-<!--    </FrameLayout>-->
+    <FrameLayout
+        android:id="@+id/flNativeCollab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="100dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

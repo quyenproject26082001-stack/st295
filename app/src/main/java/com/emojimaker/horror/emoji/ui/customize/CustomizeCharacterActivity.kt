@@ -4,10 +4,12 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.lvt.ads.callback.RewardCallback
 import com.lvt.ads.util.Admob
 import com.emojimaker.horor.emoji.R
 import com.emojimaker.horor.emoji.core.base.BaseActivity
@@ -37,6 +39,7 @@ import com.emojimaker.horor.emoji.core.helper.MediaHelper
 import com.emojimaker.horor.emoji.data.model.custom.SuggestionModel
 import com.emojimaker.horor.emoji.ui.add_character.AddCharacterActivity
 import com.emojimaker.horor.emoji.ui.my_creation.MyCreationActivity
+import com.google.android.gms.ads.rewarded.RewardItem
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -151,6 +154,41 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         }
     }
 
+    fun showRewardAds(
+        onRewardSuccess: () -> Unit,
+        onAdClosed: () -> Unit = {}
+    ) {
+        var earned = false
+        Admob.getInstance().loadAndShowRewardAds(
+            this@CustomizeCharacterActivity,
+            getString(R.string.reward_random),
+            object : RewardCallback() {
+                override fun onEarnedReward(rewardItem: RewardItem?) {
+                    earned = true
+                }
+                override fun onAdClosed() {
+                    super.onAdClosed()
+                    if (earned) {
+                        onRewardSuccess()
+                    } else {
+                        Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.advertisement_not_ready), Toast.LENGTH_SHORT).show()
+                    }
+                    onAdClosed()
+                }
+                override fun onAdFailedToLoad() {
+                    super.onAdFailedToLoad()
+                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.advertisement_not_ready), Toast.LENGTH_SHORT).show()
+                    onAdClosed()
+                }
+                override fun onAdFailedToShow(codeError: Int) {
+                    super.onAdFailedToShow(codeError)
+                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.advertisement_not_ready), Toast.LENGTH_SHORT).show()
+                    onAdClosed()
+                }
+            }
+        )
+    }
+
     override fun viewListener() {
         binding.apply {
             actionBar.apply {
@@ -162,7 +200,13 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 }
                 btnActionBarCenterLeft.tap { viewModel.setIsFlip() }
             }
-            btnRandom.tap { viewModel.checkDataInternet(this@CustomizeCharacterActivity) { handleRandomAllLayer() } }
+            btnRandom.tap {
+                viewModel.checkDataInternet(this@CustomizeCharacterActivity) {
+                    showRewardAds(onRewardSuccess = {
+                        handleRandomAllLayer()
+                    })
+                }
+            }
             btnMove.tap(1000) {
                 if (layoutMove.isVisible) {
                     layoutMove.invisible()
@@ -1024,7 +1068,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                     updateMoveButtons()
                     updateScaleButtons()
                     updateMoveButtonState()
-                    showInterAll { hideNavigation() }
+                  hideNavigation()
                 }
             }
         }
@@ -1074,19 +1118,19 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
        // confirmExit()
     }
 
-//    fun initNativeCollab() {
-//        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_cl_custom),
-//            binding.flNativeCollab
-//        )
-//    }
-//
-//    override fun initAds() {
-//        initNativeCollab()
-//    }
+    fun initNativeCollab() {
+        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_collap_maker),
+            binding.flNativeCollab
+        )
+    }
+
+    override fun initAds() {
+        initNativeCollab()
+    }
 
     override fun onRestart() {
         super.onRestart()
-       // initNativeCollab()
+        initNativeCollab()
 
     }
 

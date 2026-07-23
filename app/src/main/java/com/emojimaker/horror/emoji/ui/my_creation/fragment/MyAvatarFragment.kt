@@ -55,7 +55,10 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
     private val myAlbumActivity: MyCreationActivity
         get() = requireActivity() as MyCreationActivity
 
-    override fun setViewBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentMyAvatarBinding {
+    override fun setViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentMyAvatarBinding {
         return FragmentMyAvatarBinding.inflate(inflater, container, false)
     }
 
@@ -92,7 +95,10 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                     myCreationViewModel.typeStatus
                         .drop(1) // Skip the first emission (initial value)
                         .collect { status ->
-                            android.util.Log.d("MyAvatarFragment", "Tab switched to MyAvatar - reloading data")
+                            android.util.Log.d(
+                                "MyAvatarFragment",
+                                "Tab switched to MyAvatar - reloading data"
+                            )
                             resetData()
                         }
                 }
@@ -108,12 +114,29 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                 ): Boolean {
                     if (motionEvent.action == MotionEvent.ACTION_DOWN) {
                         val child = recyclerView.findChildViewUnder(motionEvent.x, motionEvent.y)
-                        val touchPos = if (child != null) recyclerView.getChildAdapterPosition(child) else RecyclerView.NO_ID.toInt()
+                        val touchPos =
+                            if (child != null) recyclerView.getChildAdapterPosition(child) else RecyclerView.NO_ID.toInt()
                         android.util.Log.d("TouchDebug", "--- ACTION_DOWN ---")
-                        android.util.Log.d("TouchDebug", "  touch x=${motionEvent.x.toInt()} y=${motionEvent.y.toInt()}")
-                        android.util.Log.d("TouchDebug", "  child view under touch: ${if (child != null) "found" else "null"}")
-                        android.util.Log.d("TouchDebug", "  adapterPosition of touched child=$touchPos")
-                        android.util.Log.d("TouchDebug", "  item at touchPos: ${myAvatarAdapter.items.getOrNull(touchPos)?.path?.substringAfterLast("/")}")
+                        android.util.Log.d(
+                            "TouchDebug",
+                            "  touch x=${motionEvent.x.toInt()} y=${motionEvent.y.toInt()}"
+                        )
+                        android.util.Log.d(
+                            "TouchDebug",
+                            "  child view under touch: ${if (child != null) "found" else "null"}"
+                        )
+                        android.util.Log.d(
+                            "TouchDebug",
+                            "  adapterPosition of touched child=$touchPos"
+                        )
+                        android.util.Log.d(
+                            "TouchDebug",
+                            "  item at touchPos: ${
+                                myAvatarAdapter.items.getOrNull(touchPos)?.path?.substringAfterLast(
+                                    "/"
+                                )
+                            }"
+                        )
                     }
                     return when {
                         motionEvent.action != MotionEvent.ACTION_UP || recyclerView.findChildViewUnder(
@@ -144,7 +167,8 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                 myAlbumActivity.updateSelectAllIcon(allSelected)
             }
             myAvatarAdapter.onEditClick = { pathInternal -> handleEditClick(pathInternal) }
-            myAvatarAdapter.onDeleteClick = { pathInternal -> handleDelete(arrayListOf(pathInternal)) }
+            myAvatarAdapter.onDeleteClick =
+                { pathInternal -> handleDelete(arrayListOf(pathInternal)) }
             myAvatarAdapter.onLongClick = { position -> handleLongClick(position) }
         }
     }
@@ -167,7 +191,11 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
             myAlbumActivity.showToast(R.string.please_select_an_image)
             return
         }
-        val dialog = YesNoDialog(myAlbumActivity, R.string.delete, R.string.are_you_sure_want_to_delete_this_item)
+        val dialog = YesNoDialog(
+            myAlbumActivity,
+            R.string.delete,
+            R.string.are_you_sure_want_to_delete_this_item
+        )
         LanguageHelper.setLocale(myAlbumActivity)
         dialog.show()
         dialog.onDismissClick = {
@@ -208,7 +236,7 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                     val option = ActivityOptions.makeCustomAnimation(
                         myAlbumActivity, R.anim.slide_out_left, R.anim.slide_in_right
                     )
-                    myAlbumActivity.showInterAll { startActivity(intent, option.toBundle()) }
+                    myAlbumActivity.showInterAll {  startActivity(intent, option.toBundle()) }
                 }
             }
         }
@@ -219,7 +247,11 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
         intent.putExtra(IntentKey.INTENT_KEY, pathInternal)
         intent.putExtra(IntentKey.TYPE_KEY, ValueKey.TYPE_VIEW)
         intent.putExtra(IntentKey.STATUS_KEY, ValueKey.AVATAR_TYPE)
-        val options = ActivityOptionsCompat.makeCustomAnimation(myAlbumActivity, R.anim.slide_in_right, R.anim.slide_out_left)
+        val options = ActivityOptionsCompat.makeCustomAnimation(
+            myAlbumActivity,
+            R.anim.slide_in_right,
+            R.anim.slide_out_left
+        )
         myAlbumActivity.showInterAll { myAlbumActivity.launchViewActivity(intent, options) }
     }
 
@@ -235,9 +267,15 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
         myAlbumActivity.updateSelectAllIcon(allSelected)
 
         val list = viewModel.myAvatarList.value
-        android.util.Log.d("SelectState", "=== rcvAlbum (MyAvatar) longClick pos=$position | total=${list.size} ===")
+        android.util.Log.d(
+            "SelectState",
+            "=== rcvAlbum (MyAvatar) longClick pos=$position | total=${list.size} ==="
+        )
         list.forEachIndexed { i, item ->
-            android.util.Log.d("SelectState", "  [$i] isSelected=${item.isSelected} | isShowSelection=${item.isShowSelection} | path=${item.path}")
+            android.util.Log.d(
+                "SelectState",
+                "  [$i] isSelected=${item.isSelected} | isShowSelection=${item.isShowSelection} | path=${item.path}"
+            )
         }
     }
 
@@ -320,7 +358,10 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
     override fun onStop() {
         super.onStop()
         android.util.Log.w("MyAvatarFragment", "🔴 onStop() called - Fragment no longer visible")
-        android.util.Log.w("MyAvatarFragment", "Current image count: ${viewModel.myAvatarList.value.size}")
+        android.util.Log.w(
+            "MyAvatarFragment",
+            "Current image count: ${viewModel.myAvatarList.value.size}"
+        )
     }
 
     override fun onDestroyView() {

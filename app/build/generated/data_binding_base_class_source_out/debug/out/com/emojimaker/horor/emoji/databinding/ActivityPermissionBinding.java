@@ -41,6 +41,9 @@ public final class ActivityPermissionBinding implements ViewBinding {
   public final ConstraintLayout main;
 
   @NonNull
+  public final FrameLayout nativeAds;
+
+  @NonNull
   public final ImageView swNotification;
 
   @NonNull
@@ -62,9 +65,10 @@ public final class ActivityPermissionBinding implements ViewBinding {
       @NonNull LayoutActionbarBinding actionBar, @NonNull RelativeLayout btnNotification,
       @NonNull RelativeLayout btnStorage, @NonNull ImageView imgPermission,
       @NonNull FrameLayout layoutActionBar, @NonNull ConstraintLayout main,
-      @NonNull ImageView swNotification, @NonNull ImageView swPermission,
-      @NonNull DoubleStrokeTextView tvContinue, @NonNull DoubleStrokeTextView tvPermission,
-      @NonNull DoubleStrokeTextView txtPer, @NonNull ConstraintLayout txtPermission) {
+      @NonNull FrameLayout nativeAds, @NonNull ImageView swNotification,
+      @NonNull ImageView swPermission, @NonNull DoubleStrokeTextView tvContinue,
+      @NonNull DoubleStrokeTextView tvPermission, @NonNull DoubleStrokeTextView txtPer,
+      @NonNull ConstraintLayout txtPermission) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.btnNotification = btnNotification;
@@ -72,6 +76,7 @@ public final class ActivityPermissionBinding implements ViewBinding {
     this.imgPermission = imgPermission;
     this.layoutActionBar = layoutActionBar;
     this.main = main;
+    this.nativeAds = nativeAds;
     this.swNotification = swNotification;
     this.swPermission = swPermission;
     this.tvContinue = tvContinue;
@@ -140,6 +145,12 @@ public final class ActivityPermissionBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
+      id = R.id.native_ads;
+      FrameLayout nativeAds = ViewBindings.findChildViewById(rootView, id);
+      if (nativeAds == null) {
+        break missingId;
+      }
+
       id = R.id.swNotification;
       ImageView swNotification = ViewBindings.findChildViewById(rootView, id);
       if (swNotification == null) {
@@ -177,8 +188,8 @@ public final class ActivityPermissionBinding implements ViewBinding {
       }
 
       return new ActivityPermissionBinding((ConstraintLayout) rootView, binding_actionBar,
-          btnNotification, btnStorage, imgPermission, layoutActionBar, main, swNotification,
-          swPermission, tvContinue, tvPermission, txtPer, txtPermission);
+          btnNotification, btnStorage, imgPermission, layoutActionBar, main, nativeAds,
+          swNotification, swPermission, tvContinue, tvPermission, txtPer, txtPermission);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

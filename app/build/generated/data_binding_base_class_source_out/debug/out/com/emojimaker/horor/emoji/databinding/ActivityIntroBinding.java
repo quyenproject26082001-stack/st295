@@ -4,6 +4,7 @@ package com.emojimaker.horor.emoji.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -31,15 +32,20 @@ public final class ActivityIntroBinding implements ViewBinding {
   public final ConstraintLayout main;
 
   @NonNull
+  public final FrameLayout nativeAds;
+
+  @NonNull
   public final ViewPager2 vpgTutorial;
 
   private ActivityIntroBinding(@NonNull ConstraintLayout rootView,
       @NonNull DoubleStrokeTextView btnNext, @NonNull DotsIndicator dotsIndicator,
-      @NonNull ConstraintLayout main, @NonNull ViewPager2 vpgTutorial) {
+      @NonNull ConstraintLayout main, @NonNull FrameLayout nativeAds,
+      @NonNull ViewPager2 vpgTutorial) {
     this.rootView = rootView;
     this.btnNext = btnNext;
     this.dotsIndicator = dotsIndicator;
     this.main = main;
+    this.nativeAds = nativeAds;
     this.vpgTutorial = vpgTutorial;
   }
 
@@ -84,6 +90,12 @@ public final class ActivityIntroBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
+      id = R.id.native_ads;
+      FrameLayout nativeAds = ViewBindings.findChildViewById(rootView, id);
+      if (nativeAds == null) {
+        break missingId;
+      }
+
       id = R.id.vpgTutorial;
       ViewPager2 vpgTutorial = ViewBindings.findChildViewById(rootView, id);
       if (vpgTutorial == null) {
@@ -91,7 +103,7 @@ public final class ActivityIntroBinding implements ViewBinding {
       }
 
       return new ActivityIntroBinding((ConstraintLayout) rootView, btnNext, dotsIndicator, main,
-          vpgTutorial);
+          nativeAds, vpgTutorial);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

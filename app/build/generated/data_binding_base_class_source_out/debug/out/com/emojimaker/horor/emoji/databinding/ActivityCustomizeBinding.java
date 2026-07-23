@@ -90,6 +90,9 @@ public final class ActivityCustomizeBinding implements ViewBinding {
   public final ConstraintLayout flColor;
 
   @NonNull
+  public final FrameLayout flNativeCollab;
+
+  @NonNull
   public final Guideline glBtn;
 
   @NonNull
@@ -140,7 +143,8 @@ public final class ActivityCustomizeBinding implements ViewBinding {
       @NonNull DoubleStrokeTextView btnResetMove, @NonNull ImageView btnSamplePhoto,
       @NonNull ImageView btnSup, @NonNull TextView btnWooman, @NonNull ConstraintLayout color,
       @NonNull MaterialCardView containerBtnSamplePhoto, @NonNull FrameLayout flBottomNav,
-      @NonNull ConstraintLayout flColor, @NonNull Guideline glBtn, @NonNull Guideline glHorizontal,
+      @NonNull ConstraintLayout flColor, @NonNull FrameLayout flNativeCollab,
+      @NonNull Guideline glBtn, @NonNull Guideline glHorizontal,
       @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout layoutCustomLayer,
       @NonNull FrameLayout layoutCustomLayerBackground, @NonNull ConstraintLayout layoutMove,
       @NonNull ConstraintLayout main, @NonNull RecyclerView rcvColor,
@@ -169,6 +173,7 @@ public final class ActivityCustomizeBinding implements ViewBinding {
     this.containerBtnSamplePhoto = containerBtnSamplePhoto;
     this.flBottomNav = flBottomNav;
     this.flColor = flColor;
+    this.flNativeCollab = flNativeCollab;
     this.glBtn = glBtn;
     this.glHorizontal = glHorizontal;
     this.layoutActionBar = layoutActionBar;
@@ -339,6 +344,12 @@ public final class ActivityCustomizeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.flNativeCollab;
+      FrameLayout flNativeCollab = ViewBindings.findChildViewById(rootView, id);
+      if (flNativeCollab == null) {
+        break missingId;
+      }
+
       id = R.id.gl_btn;
       Guideline glBtn = ViewBindings.findChildViewById(rootView, id);
       if (glBtn == null) {
@@ -422,9 +433,9 @@ public final class ActivityCustomizeBinding implements ViewBinding {
       return new ActivityCustomizeBinding((ConstraintLayout) rootView, binding_actionBar, bgCus,
           btnColor, btnHide, btnMan, btnMinus, btnMove, btnMoveDown, btnMoveLeft, btnMoveRight,
           btnMoveUp, btnPlus, btnRandom, btnResetMove, btnSamplePhoto, btnSup, btnWooman, color,
-          containerBtnSamplePhoto, flBottomNav, flColor, glBtn, glHorizontal, layoutActionBar,
-          layoutCustomLayer, layoutCustomLayerBackground, layoutMove, main, rcvColor, rcvLayer,
-          rcvNavigation, relative, relativeLayout, rotateToLeft, rotateToRight);
+          containerBtnSamplePhoto, flBottomNav, flColor, flNativeCollab, glBtn, glHorizontal,
+          layoutActionBar, layoutCustomLayer, layoutCustomLayerBackground, layoutMove, main,
+          rcvColor, rcvLayer, rcvNavigation, relative, relativeLayout, rotateToLeft, rotateToRight);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

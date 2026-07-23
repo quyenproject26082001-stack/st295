@@ -24,7 +24,13 @@ public final class ActivityEmojiCopyBinding implements ViewBinding {
   public final LayoutActionbarBinding actionBar;
 
   @NonNull
+  public final FrameLayout flNativeCollab;
+
+  @NonNull
   public final FrameLayout layoutActionBar;
+
+  @NonNull
+  public final FrameLayout nativeAds;
 
   @NonNull
   public final RecyclerView rcvEmoji;
@@ -33,11 +39,14 @@ public final class ActivityEmojiCopyBinding implements ViewBinding {
   public final RecyclerView rcvTabs;
 
   private ActivityEmojiCopyBinding(@NonNull ConstraintLayout rootView,
-      @NonNull LayoutActionbarBinding actionBar, @NonNull FrameLayout layoutActionBar,
+      @NonNull LayoutActionbarBinding actionBar, @NonNull FrameLayout flNativeCollab,
+      @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout nativeAds,
       @NonNull RecyclerView rcvEmoji, @NonNull RecyclerView rcvTabs) {
     this.rootView = rootView;
     this.actionBar = actionBar;
+    this.flNativeCollab = flNativeCollab;
     this.layoutActionBar = layoutActionBar;
+    this.nativeAds = nativeAds;
     this.rcvEmoji = rcvEmoji;
     this.rcvTabs = rcvTabs;
   }
@@ -76,9 +85,21 @@ public final class ActivityEmojiCopyBinding implements ViewBinding {
       }
       LayoutActionbarBinding binding_actionBar = LayoutActionbarBinding.bind(actionBar);
 
+      id = R.id.flNativeCollab;
+      FrameLayout flNativeCollab = ViewBindings.findChildViewById(rootView, id);
+      if (flNativeCollab == null) {
+        break missingId;
+      }
+
       id = R.id.layoutActionBar;
       FrameLayout layoutActionBar = ViewBindings.findChildViewById(rootView, id);
       if (layoutActionBar == null) {
+        break missingId;
+      }
+
+      id = R.id.native_ads;
+      FrameLayout nativeAds = ViewBindings.findChildViewById(rootView, id);
+      if (nativeAds == null) {
         break missingId;
       }
 
@@ -95,7 +116,7 @@ public final class ActivityEmojiCopyBinding implements ViewBinding {
       }
 
       return new ActivityEmojiCopyBinding((ConstraintLayout) rootView, binding_actionBar,
-          layoutActionBar, rcvEmoji, rcvTabs);
+          flNativeCollab, layoutActionBar, nativeAds, rcvEmoji, rcvTabs);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

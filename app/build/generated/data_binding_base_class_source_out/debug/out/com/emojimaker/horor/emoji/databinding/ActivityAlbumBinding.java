@@ -46,6 +46,9 @@ public final class ActivityAlbumBinding implements ViewBinding {
   public final FrameLayout flBottomView;
 
   @NonNull
+  public final FrameLayout flNativeCollab;
+
+  @NonNull
   public final FragmentContainerView frmList;
 
   @NonNull
@@ -53,6 +56,9 @@ public final class ActivityAlbumBinding implements ViewBinding {
 
   @NonNull
   public final FrameLayout lnlBottom;
+
+  @NonNull
+  public final FrameLayout nativeAds;
 
   @NonNull
   public final View overlayMyDesign;
@@ -82,12 +88,12 @@ public final class ActivityAlbumBinding implements ViewBinding {
       @NonNull LayoutActionbarBinding actionBar, @NonNull LayoutBottomCreationBinding bottomView,
       @NonNull FrameLayout btnMyDesign, @NonNull FrameLayout btnMyEmoji,
       @NonNull FrameLayout btnMyPixel, @NonNull FrameLayout btnPackage, @NonNull FrameLayout cvType,
-      @NonNull FrameLayout flBottomView, @NonNull FragmentContainerView frmList,
-      @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout lnlBottom,
-      @NonNull View overlayMyDesign, @NonNull View overlayMyEmoji, @NonNull View overlayMyPride,
-      @NonNull View overlayPackage, @NonNull DoubleStrokeTextView tvMyDesign,
-      @NonNull DoubleStrokeTextView tvMyEmoji, @NonNull DoubleStrokeTextView tvMyPride,
-      @NonNull DoubleStrokeTextView tvPackage) {
+      @NonNull FrameLayout flBottomView, @NonNull FrameLayout flNativeCollab,
+      @NonNull FragmentContainerView frmList, @NonNull FrameLayout layoutActionBar,
+      @NonNull FrameLayout lnlBottom, @NonNull FrameLayout nativeAds, @NonNull View overlayMyDesign,
+      @NonNull View overlayMyEmoji, @NonNull View overlayMyPride, @NonNull View overlayPackage,
+      @NonNull DoubleStrokeTextView tvMyDesign, @NonNull DoubleStrokeTextView tvMyEmoji,
+      @NonNull DoubleStrokeTextView tvMyPride, @NonNull DoubleStrokeTextView tvPackage) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.bottomView = bottomView;
@@ -97,9 +103,11 @@ public final class ActivityAlbumBinding implements ViewBinding {
     this.btnPackage = btnPackage;
     this.cvType = cvType;
     this.flBottomView = flBottomView;
+    this.flNativeCollab = flNativeCollab;
     this.frmList = frmList;
     this.layoutActionBar = layoutActionBar;
     this.lnlBottom = lnlBottom;
+    this.nativeAds = nativeAds;
     this.overlayMyDesign = overlayMyDesign;
     this.overlayMyEmoji = overlayMyEmoji;
     this.overlayMyPride = overlayMyPride;
@@ -187,6 +195,12 @@ public final class ActivityAlbumBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.flNativeCollab;
+      FrameLayout flNativeCollab = ViewBindings.findChildViewById(rootView, id);
+      if (flNativeCollab == null) {
+        break missingId;
+      }
+
       id = R.id.frmList;
       FragmentContainerView frmList = ViewBindings.findChildViewById(rootView, id);
       if (frmList == null) {
@@ -202,6 +216,12 @@ public final class ActivityAlbumBinding implements ViewBinding {
       id = R.id.lnlBottom;
       FrameLayout lnlBottom = ViewBindings.findChildViewById(rootView, id);
       if (lnlBottom == null) {
+        break missingId;
+      }
+
+      id = R.id.native_ads;
+      FrameLayout nativeAds = ViewBindings.findChildViewById(rootView, id);
+      if (nativeAds == null) {
         break missingId;
       }
 
@@ -255,8 +275,9 @@ public final class ActivityAlbumBinding implements ViewBinding {
 
       return new ActivityAlbumBinding((ConstraintLayout) rootView, binding_actionBar,
           binding_bottomView, btnMyDesign, btnMyEmoji, btnMyPixel, btnPackage, cvType, flBottomView,
-          frmList, layoutActionBar, lnlBottom, overlayMyDesign, overlayMyEmoji, overlayMyPride,
-          overlayPackage, tvMyDesign, tvMyEmoji, tvMyPride, tvPackage);
+          flNativeCollab, frmList, layoutActionBar, lnlBottom, nativeAds, overlayMyDesign,
+          overlayMyEmoji, overlayMyPride, overlayPackage, tvMyDesign, tvMyEmoji, tvMyPride,
+          tvPackage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

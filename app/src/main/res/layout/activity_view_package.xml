@@ -71,14 +71,13 @@
 
 
     <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/flNativeCollab"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent">-->
+        <FrameLayout
+            android:id="@+id/flNativeCollab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-    <!--        <include layout="@layout/ads_shimmer_collap_native" />-->
-    <!--    </FrameLayout>-->
+        </FrameLayout>
 
 
     <!--    &lt;!&ndash;    native_ads&ndash;&gt;-->

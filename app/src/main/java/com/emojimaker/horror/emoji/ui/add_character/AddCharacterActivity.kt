@@ -865,7 +865,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         dialog.show()
         dialog.onYesClick = {
             dialog.dismiss()
-            finish()
+           showInterAll {   finish() }
         }
         dialog.onNoClick = {
             dialog.dismiss()
@@ -913,7 +913,6 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                     textFontAdapter.submitListReset(viewModel.textFontList)
                     textColorAdapter.submitListReset(viewModel.textColorList)
                     dismissLoading()
-                    showInterAll()
                 }
             }
         }
@@ -1165,17 +1164,17 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         // This method should not be called if the OnBackPressedCallback is working properly
     }
 
-//    fun initNativeCollab() {
-//        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_cl_bg), binding.flNativeCollab)
-//    }
-//
-//    override fun initAds() {
-//        initNativeCollab()
-//    }
+    fun initNativeCollab() {
+        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_collap_maker_bg), binding.flNativeCollab)
+    }
+
+    override fun initAds() {
+        initNativeCollab()
+    }
 
     override fun onRestart() {
         super.onRestart()
-        // initNativeCollab()
+        initNativeCollab()
     }
 
     // Custom Input View Functions

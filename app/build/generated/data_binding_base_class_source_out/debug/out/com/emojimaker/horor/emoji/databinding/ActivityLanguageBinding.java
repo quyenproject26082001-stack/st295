@@ -45,6 +45,9 @@ public final class ActivityLanguageBinding implements ViewBinding {
   public final ConstraintLayout main;
 
   @NonNull
+  public final FrameLayout nativeAds;
+
+  @NonNull
   public final RecyclerView rcv;
 
   @NonNull
@@ -57,7 +60,7 @@ public final class ActivityLanguageBinding implements ViewBinding {
       @NonNull LayoutActionbarBinding actionBar, @NonNull TextView btnBackLangSetting,
       @NonNull ImageView btnBackground, @NonNull ImageView btnDone,
       @NonNull ImageView btnDoneLangSetting, @NonNull FrameLayout layoutActionBar,
-      @NonNull ConstraintLayout main, @NonNull RecyclerView rcv,
+      @NonNull ConstraintLayout main, @NonNull FrameLayout nativeAds, @NonNull RecyclerView rcv,
       @NonNull DoubleStrokeTextView tvLang, @NonNull DoubleStrokeTextView tvLangSetting) {
     this.rootView = rootView;
     this.actionBar = actionBar;
@@ -67,6 +70,7 @@ public final class ActivityLanguageBinding implements ViewBinding {
     this.btnDoneLangSetting = btnDoneLangSetting;
     this.layoutActionBar = layoutActionBar;
     this.main = main;
+    this.nativeAds = nativeAds;
     this.rcv = rcv;
     this.tvLang = tvLang;
     this.tvLangSetting = tvLangSetting;
@@ -138,6 +142,12 @@ public final class ActivityLanguageBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
+      id = R.id.native_ads;
+      FrameLayout nativeAds = ViewBindings.findChildViewById(rootView, id);
+      if (nativeAds == null) {
+        break missingId;
+      }
+
       id = R.id.rcv;
       RecyclerView rcv = ViewBindings.findChildViewById(rootView, id);
       if (rcv == null) {
@@ -158,7 +168,7 @@ public final class ActivityLanguageBinding implements ViewBinding {
 
       return new ActivityLanguageBinding((ConstraintLayout) rootView, binding_actionBar,
           btnBackLangSetting, btnBackground, btnDone, btnDoneLangSetting, layoutActionBar, main,
-          rcv, tvLang, tvLangSetting);
+          nativeAds, rcv, tvLang, tvLangSetting);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

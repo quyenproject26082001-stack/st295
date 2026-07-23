@@ -28,7 +28,8 @@ import com.emojimaker.horor.emoji.core.helper.InternetHelper
 import com.emojimaker.horor.emoji.core.utils.state.HandleState
 import com.emojimaker.horor.emoji.dialog.YesNoDialog
 import com.emojimaker.horor.emoji.ui.cosplay.CosplayRandomActivity
-import com.emojimaker.horor.emoji.ui.customize.CustomizeEmojiActivity
+import com.emojimaker.horor.emoji.ui.customize.HorrorEmojiActivity
+import com.emojimaker.horor.emoji.ui.customize.NormalEmojiActivity
 import com.emojimaker.horor.emoji.ui.emoji_copy.EmojiCopyActivity
 import com.emojimaker.horor.emoji.ui.trending.TrendingActivity
 import kotlinx.coroutines.Dispatchers
@@ -62,8 +63,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             actionBar.btnActionBarRight.tap(800) { startIntentRightToLeft(SettingsActivity::class.java) }
             btnMyCreation.tap(800) { showInterAll { startIntentRightToLeft(MyCreationActivity::class.java) } }
             btnMaker.tap(800) { checkDataInternet(this@HomeActivity) {startIntentRightToLeft(com.emojimaker.horor.emoji.ui.choose_character.ChooseCharacterActivity::class.java) }}
-            btnEmoji.tap(800) { checkDataInternet(this@HomeActivity) { startIntentRightToLeft(CustomizeEmojiActivity::class.java, CustomizeEmojiActivity.MODE_NORMAL) } }
-            btnHorror.tap(800) { checkDataInternet(this@HomeActivity) { startIntentRightToLeft(CustomizeEmojiActivity::class.java, CustomizeEmojiActivity.MODE_HORROR) } }
+            btnEmoji.tap(800) { checkDataInternet(this@HomeActivity) { startIntentRightToLeft(NormalEmojiActivity::class.java) } }
+            btnHorror.tap(800) { checkDataInternet(this@HomeActivity) { startIntentRightToLeft(HorrorEmojiActivity::class.java) } }
             btnEmojiCopy.tap(800) { showInterAll { startIntentRightToLeft(EmojiCopyActivity::class.java) } }
 
         }
@@ -154,7 +155,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         deleteTempFolder()
         LanguageHelper.setLocale(this)
         updateText()
-        //initNativeCollab()
+      initNativeCollab()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -188,7 +189,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 //    }
 
     fun initNativeCollab() {
-        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_cl_home), binding.flNativeCollab)
+        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_collap_home), binding.flNativeCollab)
     }
 
     override fun initAds() {

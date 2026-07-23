@@ -92,23 +92,23 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
         binding.apply {
             actionBar.apply {
                 btnActionBarNextRight.tap(2000) {
-                    showInterAll {
+
                         viewModel.shareFiles(this@SuccessActivity)
-                    }
+
                 }
-                btnActionBarLeft.tap {  handleBack()  }
+                btnActionBarLeft.tap {  showInterAll {  handleBack()  } }
 
                 btnActionBarRight.tap(1000){
-                    startIntentWithClearTop(HomeActivity::class.java)
+                    showInterAll {  startIntentWithClearTop(HomeActivity::class.java)}
 
                 }
             }
 
             // My Album button
             includeLayoutBottom.btnMyCreation.tap(1000) {
-                showInterAll {
+
                     startIntentRightToLeft(MyCreationActivity::class.java, IntentKey.TAB_KEY, statusFrom)
-                }
+
             }
 
             // Download button
@@ -229,16 +229,21 @@ class SuccessActivity : BaseActivity<ActivitySuccessBinding>() {
         }
     }
 
-//    override fun initAds() {
-//        initNativeCollab()
-//    }
-//
-//    fun initNativeCollab() {
-//
-//        loadNativeCollabAds(R.string.native_cl_success, binding.flNativeCollab)
-//
-//
-//    }
+    override fun onRestart() {
+        super.onRestart()
+        initAds()
+    }
+
+    override fun initAds() {
+        initNativeCollab()
+    }
+
+    fun initNativeCollab() {
+
+        loadNativeCollabAds(R.string.native_collap_success, binding.flNativeCollab)
+
+
+    }
 
     @android.annotation.SuppressLint("MissingSuperCall")
     override fun onBackPressed() {

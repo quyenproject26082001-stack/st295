@@ -14,6 +14,7 @@ import com.emojimaker.horor.emoji.core.extensions.hideNavigation
 import com.emojimaker.horor.emoji.core.extensions.select
 import com.emojimaker.horor.emoji.core.extensions.dp
 import com.emojimaker.horor.emoji.core.extensions.setMargins
+import com.emojimaker.horor.emoji.core.extensions.showInterAll
 import com.emojimaker.horor.emoji.core.extensions.tap
 import com.emojimaker.horor.emoji.core.extensions.visible
 import com.emojimaker.horor.emoji.core.helper.LanguageHelper
@@ -25,6 +26,7 @@ import com.emojimaker.horor.emoji.ui.my_creation.adapter.PackageItemAdapter
 import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyCreationViewModel
 import com.emojimaker.horor.emoji.ui.my_creation.view_model.ViewAllPackageViewModel
 import com.emojimaker.horor.emoji.core.utils.share.whatsapp.WhatsappSharingActivity
+import com.lvt.ads.util.Admob
 import kotlinx.coroutines.launch
 
 class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBinding>() {
@@ -82,7 +84,7 @@ class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBin
 
     override fun viewListener() {
         binding.actionBar.btnActionBarLeft.tap {
-            if (isInSelectionMode) resetSelectionMode() else handleBackLeftToRight()
+            if (isInSelectionMode) resetSelectionMode() else showInterAll {  handleBackLeftToRight() }
         }
         binding.actionBar.btnActionBarNextRight.tap { handleDeleteSelected() }
         binding.actionBar.btnActionBarRight.tap { handleSelectAll() }
@@ -161,6 +163,16 @@ class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBin
             btnActionBarRight.gone()
         }
         binding.flBottom.visible()
+    }
+
+    override fun initAds() {
+        super.initAds()
+        Admob.getInstance().loadNativeCollapNotBanner(this@ViewAllPackageActivity,getString(R.string.native_collap_detail),binding.flNativeCollab)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        initAds()
     }
 
 

@@ -20,6 +20,7 @@ import com.emojimaker.horor.emoji.core.extensions.loadImage
 import com.emojimaker.horor.emoji.core.extensions.requestPermission
 import com.emojimaker.horor.emoji.core.extensions.select
 import com.emojimaker.horor.emoji.core.extensions.setImageActionBar
+import com.emojimaker.horor.emoji.core.extensions.showInterAll
 import com.emojimaker.horor.emoji.core.extensions.tap
 import com.emojimaker.horor.emoji.core.extensions.visible
 import com.emojimaker.horor.emoji.core.helper.LanguageHelper
@@ -33,6 +34,7 @@ import com.emojimaker.horor.emoji.dialog.AddPackageDialog
 import com.emojimaker.horor.emoji.dialog.YesNoDialog
 import com.emojimaker.horor.emoji.ui.permission.PermissionViewModel
 import com.emojimaker.horor.emoji.ui.view.ViewViewModel
+import com.lvt.ads.util.Admob
 import kotlinx.coroutines.launch
 
 class ViewPackageActivity : BaseActivity<ActivityViewPackageBinding>() {
@@ -59,7 +61,7 @@ class ViewPackageActivity : BaseActivity<ActivityViewPackageBinding>() {
     }
 
     override fun viewListener() {
-        binding.actionBar.btnActionBarLeft.tap { handleBackLeftToRight() }
+        binding.actionBar.btnActionBarLeft.tap { showInterAll {  handleBackLeftToRight() } }
         binding.actionBar.btnActionBarRight.tap(2000) { handleDelete() }
         binding.actionBar.btnActionBarNextRight.tap(2000) { checkStoragePermission() }
         binding.actionBar.btnActionBarNextRight1.tap(2000) { viewModel.shareFiles(this) }
@@ -125,7 +127,15 @@ class ViewPackageActivity : BaseActivity<ActivityViewPackageBinding>() {
             btnActionBarRightText.gone()
         }
     }
+    override fun initAds() {
+        super.initAds()
+        Admob.getInstance().loadNativeCollapNotBanner(this@ViewPackageActivity,getString(R.string.native_collap_detail),binding.flNativeCollab)
+    }
 
+    override fun onRestart() {
+        super.onRestart()
+        initAds()
+    }
     private fun checkStoragePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             handleDownload()

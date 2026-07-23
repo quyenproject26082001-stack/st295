@@ -59,6 +59,9 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
   public final FrameLayout flBottomNav;
 
   @NonNull
+  public final FrameLayout flNativeCollab;
+
+  @NonNull
   public final LinearLayout flNavDrawAndEraser;
 
   @NonNull
@@ -123,16 +126,16 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
       @NonNull FrameLayout btnDrawLayer, @NonNull ImageView btnHide, @NonNull FrameLayout btnLayer,
       @NonNull FrameLayout btnTextLayer, @NonNull ConstraintLayout containerSeekbar,
       @NonNull DrawView drawView, @NonNull EditText edtEmojiText, @NonNull FrameLayout flBottomNav,
-      @NonNull LinearLayout flNavDrawAndEraser, @NonNull Guideline glBtn,
-      @NonNull Guideline glHorizontal, @NonNull FrameLayout layoutActionBar,
-      @NonNull FrameLayout layoutCustomLayer, @NonNull ConstraintLayout main,
-      @NonNull PaintDrawView paintDrawView, @NonNull RecyclerView rcvLayer,
-      @NonNull RecyclerView rcvLayerColor, @NonNull RecyclerView rcvLayerLayer,
-      @NonNull RecyclerView rcvNavigation, @NonNull RecyclerView rcvTextColor,
-      @NonNull RecyclerView rcvTextFont, @NonNull SeekBar seekbarSize,
-      @NonNull View stateBlackCover, @NonNull ImageView tabDraw, @NonNull ImageView tabEraser,
-      @NonNull TextView tvEmojiTextPreview, @NonNull TextView tvNoLayerItem,
-      @NonNull TextView tvSize) {
+      @NonNull FrameLayout flNativeCollab, @NonNull LinearLayout flNavDrawAndEraser,
+      @NonNull Guideline glBtn, @NonNull Guideline glHorizontal,
+      @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout layoutCustomLayer,
+      @NonNull ConstraintLayout main, @NonNull PaintDrawView paintDrawView,
+      @NonNull RecyclerView rcvLayer, @NonNull RecyclerView rcvLayerColor,
+      @NonNull RecyclerView rcvLayerLayer, @NonNull RecyclerView rcvNavigation,
+      @NonNull RecyclerView rcvTextColor, @NonNull RecyclerView rcvTextFont,
+      @NonNull SeekBar seekbarSize, @NonNull View stateBlackCover, @NonNull ImageView tabDraw,
+      @NonNull ImageView tabEraser, @NonNull TextView tvEmojiTextPreview,
+      @NonNull TextView tvNoLayerItem, @NonNull TextView tvSize) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.bgCus = bgCus;
@@ -144,6 +147,7 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
     this.drawView = drawView;
     this.edtEmojiText = edtEmojiText;
     this.flBottomNav = flBottomNav;
+    this.flNativeCollab = flNativeCollab;
     this.flNavDrawAndEraser = flNavDrawAndEraser;
     this.glBtn = glBtn;
     this.glHorizontal = glHorizontal;
@@ -251,6 +255,12 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
       id = R.id.flBottomNav;
       FrameLayout flBottomNav = ViewBindings.findChildViewById(rootView, id);
       if (flBottomNav == null) {
+        break missingId;
+      }
+
+      id = R.id.flNativeCollab;
+      FrameLayout flNativeCollab = ViewBindings.findChildViewById(rootView, id);
+      if (flNativeCollab == null) {
         break missingId;
       }
 
@@ -372,10 +382,10 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
 
       return new ActivityCustomizeEmojiBinding((ConstraintLayout) rootView, binding_actionBar,
           bgCus, btnDrawLayer, btnHide, btnLayer, btnTextLayer, containerSeekbar, drawView,
-          edtEmojiText, flBottomNav, flNavDrawAndEraser, glBtn, glHorizontal, layoutActionBar,
-          layoutCustomLayer, main, paintDrawView, rcvLayer, rcvLayerColor, rcvLayerLayer,
-          rcvNavigation, rcvTextColor, rcvTextFont, seekbarSize, stateBlackCover, tabDraw,
-          tabEraser, tvEmojiTextPreview, tvNoLayerItem, tvSize);
+          edtEmojiText, flBottomNav, flNativeCollab, flNavDrawAndEraser, glBtn, glHorizontal,
+          layoutActionBar, layoutCustomLayer, main, paintDrawView, rcvLayer, rcvLayerColor,
+          rcvLayerLayer, rcvNavigation, rcvTextColor, rcvTextFont, seekbarSize, stateBlackCover,
+          tabDraw, tabEraser, tvEmojiTextPreview, tvNoLayerItem, tvSize);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

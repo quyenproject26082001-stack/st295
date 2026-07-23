@@ -485,12 +485,13 @@ app:layout_constraintBottom_toTopOf="@id/layoutMove"
     </FrameLayout>
 
     <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/flNativeCollab"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent">-->
+        <FrameLayout
+            android:id="@+id/flNativeCollab"
+            android:layout_width="match_parent"
+            android:elevation="100dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-    <!--    </FrameLayout>-->
+        </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

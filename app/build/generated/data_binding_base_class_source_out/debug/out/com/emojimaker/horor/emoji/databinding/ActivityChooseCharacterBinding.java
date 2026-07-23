@@ -24,21 +24,30 @@ public final class ActivityChooseCharacterBinding implements ViewBinding {
   public final LayoutActionbarBinding actionBar;
 
   @NonNull
+  public final FrameLayout flNativeCollab;
+
+  @NonNull
   public final FrameLayout layoutActionBar;
 
   @NonNull
   public final ConstraintLayout main;
 
   @NonNull
+  public final FrameLayout nativeAds;
+
+  @NonNull
   public final RecyclerView rcvCharacter;
 
   private ActivityChooseCharacterBinding(@NonNull ConstraintLayout rootView,
-      @NonNull LayoutActionbarBinding actionBar, @NonNull FrameLayout layoutActionBar,
-      @NonNull ConstraintLayout main, @NonNull RecyclerView rcvCharacter) {
+      @NonNull LayoutActionbarBinding actionBar, @NonNull FrameLayout flNativeCollab,
+      @NonNull FrameLayout layoutActionBar, @NonNull ConstraintLayout main,
+      @NonNull FrameLayout nativeAds, @NonNull RecyclerView rcvCharacter) {
     this.rootView = rootView;
     this.actionBar = actionBar;
+    this.flNativeCollab = flNativeCollab;
     this.layoutActionBar = layoutActionBar;
     this.main = main;
+    this.nativeAds = nativeAds;
     this.rcvCharacter = rcvCharacter;
   }
 
@@ -76,6 +85,12 @@ public final class ActivityChooseCharacterBinding implements ViewBinding {
       }
       LayoutActionbarBinding binding_actionBar = LayoutActionbarBinding.bind(actionBar);
 
+      id = R.id.flNativeCollab;
+      FrameLayout flNativeCollab = ViewBindings.findChildViewById(rootView, id);
+      if (flNativeCollab == null) {
+        break missingId;
+      }
+
       id = R.id.layoutActionBar;
       FrameLayout layoutActionBar = ViewBindings.findChildViewById(rootView, id);
       if (layoutActionBar == null) {
@@ -84,6 +99,12 @@ public final class ActivityChooseCharacterBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
+      id = R.id.native_ads;
+      FrameLayout nativeAds = ViewBindings.findChildViewById(rootView, id);
+      if (nativeAds == null) {
+        break missingId;
+      }
+
       id = R.id.rcvCharacter;
       RecyclerView rcvCharacter = ViewBindings.findChildViewById(rootView, id);
       if (rcvCharacter == null) {
@@ -91,7 +112,7 @@ public final class ActivityChooseCharacterBinding implements ViewBinding {
       }
 
       return new ActivityChooseCharacterBinding((ConstraintLayout) rootView, binding_actionBar,
-          layoutActionBar, main, rcvCharacter);
+          flNativeCollab, layoutActionBar, main, nativeAds, rcvCharacter);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

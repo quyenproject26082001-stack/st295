@@ -16,12 +16,12 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/dialog_create_name.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_bottom_view.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/layout_bottom_view.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_intro.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_intro.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_bottom_view.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/layout_bottom_view.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_big_btn_bottom_shimmer.xml",
@@ -48,16 +48,16 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/activity_cosplay_customize.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_color.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_color.xml"
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_collap_banner_shimmer.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_collap_banner_shimmer.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/activity_success.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/activity_success.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_collap_banner_shimmer.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_collap_banner_shimmer.xml"
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_color.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_color.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/dialog_state_cosplay.xml",
@@ -80,12 +80,12 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_bottom_navigation.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/dialog_add_package.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/dialog_add_package.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/activity_add_character.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/activity_add_character.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/dialog_add_package.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/dialog_add_package.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_color_circle.xml",
@@ -112,6 +112,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/activity_settings.xml"
     },
     {
+        "merged": "com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/activity_view_package.xml",
+        "source": "com.emojimaker.horor.emoji.app-main-111:/layout/activity_view_package.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_pride_layout_option.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_pride_layout_option.xml"
     },
@@ -124,12 +128,12 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_view_package.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_layer_draw.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_layer_draw.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_background_image.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_background_image.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_layer_draw.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_layer_draw.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/activity_cosplay_random.xml",
@@ -180,16 +184,16 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/activity_language.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_medium_btn_bottom_2_dialog.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_medium_btn_bottom_2_dialog.xml"
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_medium_btn_bottom_2_shimmer.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_medium_btn_bottom_2_shimmer.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_actionbar.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/layout_actionbar.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_medium_btn_bottom_2_shimmer.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_medium_btn_bottom_2_shimmer.xml"
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_medium_btn_bottom_2_dialog.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_medium_btn_bottom_2_dialog.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_bottom_view_one_package.xml",
@@ -228,6 +232,10 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/dialog_add_new_package.xml"
     },
     {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_banner1.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_banner1.xml"
+    },
+    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/activity_view_all_package.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/activity_view_all_package.xml"
     },
@@ -264,12 +272,12 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/item_color_text_emoji.xml"
     },
     {
-        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_bottom_cosplay.xml",
-        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/layout_bottom_cosplay.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/activity_view.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/activity_view.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_bottom_cosplay.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/layout_bottom_cosplay.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_bottom.xml",
@@ -320,10 +328,6 @@
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_medium_btn_bottom_shimmer.xml"
     },
     {
-        "merged": "com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/activity_success.xml",
-        "source": "com.emojimaker.horor.emoji.app-main-111:/layout/activity_success.xml"
-    },
-    {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_banner.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_banner.xml"
     },
@@ -342,6 +346,10 @@
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/layout_custom_input.xml",
         "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/layout_custom_input.xml"
+    },
+    {
+        "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/ads_native_collap_banner_shimmer1.xml",
+        "source": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-main-111:/layout/ads_native_collap_banner_shimmer1.xml"
     },
     {
         "merged": "/home/lequyen/.gradle/daemon/8.13/com.emojimaker.horor.emoji.app-mergeDebugResources-108:/layout/item_font.xml",
