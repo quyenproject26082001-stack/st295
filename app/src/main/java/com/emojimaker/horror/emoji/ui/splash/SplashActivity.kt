@@ -91,7 +91,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
         Admob.getInstance().loadSplashInterAds(this@SplashActivity,
             getString(R.string.inter_splash),
-            3000,
+            6000,
             2000,
             interCallBack)
     }
