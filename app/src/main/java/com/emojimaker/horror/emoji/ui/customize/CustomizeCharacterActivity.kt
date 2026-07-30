@@ -177,12 +177,12 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 }
                 override fun onAdFailedToLoad() {
                     super.onAdFailedToLoad()
-                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.advertisement_not_ready), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.ads_fail_to_load), Toast.LENGTH_SHORT).show()
                     onAdClosed()
                 }
                 override fun onAdFailedToShow(codeError: Int) {
                     super.onAdFailedToShow(codeError)
-                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.advertisement_not_ready), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.ads_fail_to_show), Toast.LENGTH_SHORT).show()
                     onAdClosed()
                 }
             }
@@ -202,9 +202,26 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             }
             btnRandom.tap {
                 viewModel.checkDataInternet(this@CustomizeCharacterActivity) {
-                    showRewardAds(onRewardSuccess = {
-                        handleRandomAllLayer()
-                    })
+                    val dialogReward =
+                        YesNoDialog(
+                            this@CustomizeCharacterActivity,
+                            R.string.reward_title,
+                            R.string.do_you_want_to_receive
+                        )
+                    dialogReward.show()
+                    dialogReward.onNoClick = {
+                        dialogReward.dismiss()
+                        hideNavigation()
+                    }
+                    dialogReward.onYesClick = {
+                        dialogReward.dismiss()
+                        hideNavigation()
+
+                        showRewardAds(onRewardSuccess = {
+                            handleRandomAllLayer()
+                        })
+                    }
+
                 }
             }
             btnMove.tap(1000) {

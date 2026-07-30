@@ -23,7 +23,8 @@
     <string name="allow">Autoriser</string>
     <string name="to_access">pour accéder aux photos de votre appareil</string>
     <string name="to_access_13">pour accéder aux notifications de votre appareil</string>
-
+    <string name="ads_fail_to_load">Échec du chargement de la publicité... Veuillez réessayer !</string>
+    <string name="ads_fail_to_show">Échec de l\'affichage de la publicité... Veuillez réessayer !</string>
     <string name="rate_us">\u00A0\u00A0Évaluez-nous\u00A0\u00A0</string>
     <string name="share_app">\u00A0\u00A0Partager l\'app\u00A0\u00A0</string>
     <string name="privacy_policy"><![CDATA[\u00A0\u00A0Confidentialité et politique\u00A0\u00A0]]></string>
@@ -174,5 +175,7 @@
     <string name="emoji_horror">Emoji Horreur</string>
     <string name="emoji_nature">Emoji Nature</string>
     <string name="emoji_activities">Emoji Activités</string>
+    <string name="reward_title">Récompense !</string>
+    <string name="do_you_want_to_receive">Voulez-vous recevoir une récompense en regardant une publicité ?</string>
 
 </resources>

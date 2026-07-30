@@ -23,7 +23,8 @@
     <string name="allow">Permitir</string>
     <string name="to_access">para acceder a las fotos de tu dispositivo</string>
     <string name="to_access_13">para acceder a las notificaciones de tu dispositivo</string>
-
+    <string name="ads_fail_to_load">Error al cargar el anuncio... ¡Inténtalo de nuevo!</string>
+    <string name="ads_fail_to_show">Error al mostrar el anuncio... ¡Inténtalo de nuevo!</string>
     <string name="rate_us">\u00A0\u00A0Califícanos\u00A0\u00A0</string>
     <string name="share_app">\u00A0\u00A0Compartir App\u00A0\u00A0</string>
     <string name="privacy_policy"><![CDATA[\u00A0\u00A0Privacidad y Política\u00A0\u00A0]]></string>
@@ -174,5 +175,7 @@
     <string name="emoji_horror">Emoji Terror</string>
     <string name="emoji_nature">Emoji Naturaleza</string>
     <string name="emoji_activities">Emoji Actividades</string>
+    <string name="reward_title">¡Recompensa!</string>
+    <string name="do_you_want_to_receive">¿Quieres recibir una recompensa viendo un anuncio?</string>
 
 </resources>

@@ -18,6 +18,8 @@
     <string name="continue_per">Weiter</string>
     <string name="notification">\u00A0\u00A0Benachrichtigung\u00A0\u00A0</string>
     <string name="no_internet">Kein Internet</string>
+    <string name="ads_fail_to_load">Die Anzeige konnte nicht geladen werden... Bitte versuchen Sie es erneut!</string>
+    <string name="ads_fail_to_show">Die Anzeige konnte nicht angezeigt werden... Bitte versuchen Sie es erneut!</string>
     <string name="granted_notification">Benachrichtigungsberechtigung erteilt</string>
     <string name="granted_storage">Speicherberechtigung erteilt</string>
     <string name="allow">Erlauben</string>
@@ -174,5 +176,7 @@
     <string name="emoji_horror">Emoji Horror</string>
     <string name="emoji_nature">Emoji Natur</string>
     <string name="emoji_activities">Emoji Aktivitäten</string>
+    <string name="reward_title">Belohnung!</string>
+    <string name="do_you_want_to_receive">Möchtest du eine Belohnung erhalten, indem du eine Werbung ansiehst?</string>
 
 </resources>

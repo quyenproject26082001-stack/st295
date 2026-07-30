@@ -65,6 +65,8 @@
     <string name="an_error_occurred">एक त्रुटि हुई, कृपया बाद में फिर से प्रयास करें।</string>
     <string name="image_has_been_saved_successfully">प्रोजेक्ट सफलतापूर्वक सेव हो गया है!</string>
     <string name="save">सेव करें</string>
+    <string name="ads_fail_to_load">विज्ञापन लोड करने में विफल रहा... कृपया पुनः प्रयास करें!</string>
+    <string name="ads_fail_to_show">विज्ञापन दिखाने में विफल रहा... कृपया पुनः प्रयास करें!</string>
     <string name="are_you_sure_want_to_delete_this_item">क्या आप वाकई इस आइटम को हटाना चाहते हैं?</string>
     <string name="downloading">डाउनलोड हो रहा है...</string>
     <string name="successfully">सफल</string>
@@ -174,5 +176,7 @@
     <string name="emoji_horror">इमोजी हॉरर</string>
     <string name="emoji_nature">इमोजी नेचर</string>
     <string name="emoji_activities">इमोजी एक्टिविटीज़</string>
+    <string name="reward_title">इनाम!</string>
+    <string name="do_you_want_to_receive">क्या आप विज्ञापन देखकर इनाम पाना चाहते हैं?</string>
 
 </resources>

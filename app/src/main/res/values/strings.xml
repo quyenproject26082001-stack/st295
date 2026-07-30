@@ -149,6 +149,8 @@
     <string name="you_ve_unlocked_more_accessories_collect_them_and_create_your_own_character">You\'ve unlocked more accessories collect them and create your own character!</string>
     <string name="spin">spin</string>
     <string name="advertisement_not_ready">The advertisement is not ready... Please try again!</string>
+    <string name="ads_fail_to_load">The advertisement failed to load... Please try again!</string>
+    <string name="ads_fail_to_show">The advertisement failed to show... Please try again!</string>
     <string name="all_items_unlocked">All items are unlocked!</string>
     <string name="cosplay_cat">cosplay cat</string>
     <string name="horror_emoji">Horror Emoji</string>
@@ -174,5 +176,7 @@
     <string name="emoji_horror">Emoji Horror</string>
     <string name="emoji_nature">Emoji Nature</string>
     <string name="emoji_activities">Emoji Activities</string>
+    <string name="reward_title">Reward!</string>
+    <string name="do_you_want_to_receive">Do you want to receive a reward by watching an ad?</string>
 
 </resources>

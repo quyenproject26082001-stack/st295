@@ -24,6 +24,8 @@
     <string name="to_access">untuk mengakses foto di perangkat kamu</string>
     <string name="to_access_13">untuk mengakses notifikasi di perangkat kamu</string>
 
+    <string name="ads_fail_to_load">Iklan gagal dimuat... Silakan coba lagi!</string>
+    <string name="ads_fail_to_show">Iklan gagal ditampilkan... Silakan coba lagi!</string>
     <string name="rate_us">\u00A0\u00A0Beri Nilai\u00A0\u00A0</string>
     <string name="share_app">\u00A0\u00A0Bagikan Aplikasi\u00A0\u00A0</string>
     <string name="privacy_policy"><![CDATA[\u00A0\u00A0Privasi & Kebijakan\u00A0\u00A0]]></string>
@@ -174,5 +176,7 @@
     <string name="emoji_horror">Emoji Horor</string>
     <string name="emoji_nature">Emoji Alam</string>
     <string name="emoji_activities">Emoji Aktivitas</string>
+    <string name="reward_title">Hadiah!</string>
+    <string name="do_you_want_to_receive">Apakah kamu ingin mendapatkan hadiah dengan menonton iklan?</string>
 
 </resources>
