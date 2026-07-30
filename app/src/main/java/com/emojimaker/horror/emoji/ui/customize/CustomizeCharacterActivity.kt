@@ -1,6 +1,8 @@
 package com.emojimaker.horor.emoji.ui.customize
 
 import android.annotation.SuppressLint
+import android.os.SystemClock
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
@@ -9,8 +11,10 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
-import com.lvt.ads.callback.RewardCallback
+import com.lvt.ads.event.AdType
+import com.lvt.ads.event.FirebaseUtil
 import com.lvt.ads.util.Admob
+import com.lvt.ads.util.AppOpenManager
 import com.emojimaker.horor.emoji.R
 import com.emojimaker.horor.emoji.core.base.BaseActivity
 import com.emojimaker.horor.emoji.core.extensions.dLog
@@ -39,7 +43,14 @@ import com.emojimaker.horor.emoji.core.helper.MediaHelper
 import com.emojimaker.horor.emoji.data.model.custom.SuggestionModel
 import com.emojimaker.horor.emoji.ui.add_character.AddCharacterActivity
 import com.emojimaker.horor.emoji.ui.my_creation.MyCreationActivity
-import com.google.android.gms.ads.rewarded.RewardItem
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdValue
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.OnPaidEventListener
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -56,9 +67,14 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         const val MIN_SCALE = 0.5f
         const val MAX_SCALE = 1.5f
         const val SCALE_STEP = 0.05f
+        private const val RANDOM_REWARD_AD_TAG = "RandomRewardAd"
+        private const val RANDOM_REWARD_AD_MAX_AGE_MS = 55 * 60 * 1000L
     }
 
     private val viewModel: CustomizeCharacterViewModel by viewModels()
+    private var randomRewardedAd: RewardedAd? = null
+    private var randomRewardedAdLoadedAt = 0L
+    private var isRandomRewardedAdLoading = false
     private var lastClickedLayerPosition: Int =
         -1 // Track last clicked layer position for scrolling
     private val dataViewModel: DataViewModel by viewModels()
@@ -154,39 +170,140 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         }
     }
 
-    fun showRewardAds(
-        onRewardSuccess: () -> Unit,
-        onAdClosed: () -> Unit = {}
-    ) {
-        var earned = false
-        Admob.getInstance().loadAndShowRewardAds(
-            this@CustomizeCharacterActivity,
+    private fun hasReadyRandomRewardedAd(): Boolean {
+        if (!Admob.isShowAllAds) {
+            randomRewardedAd = null
+            randomRewardedAdLoadedAt = 0L
+            return false
+        }
+
+        val isFresh =
+            SystemClock.elapsedRealtime() - randomRewardedAdLoadedAt <
+                RANDOM_REWARD_AD_MAX_AGE_MS
+        if (!isFresh) {
+            randomRewardedAd = null
+            randomRewardedAdLoadedAt = 0L
+        }
+        return randomRewardedAd != null
+    }
+
+    private fun preloadRandomRewardedAd() {
+        if (!Admob.isShowAllAds ||
+            isFinishing ||
+            isDestroyed ||
+            isRandomRewardedAdLoading ||
+            hasReadyRandomRewardedAd()
+        ) {
+            return
+        }
+
+        isRandomRewardedAdLoading = true
+        RewardedAd.load(
+            this,
             getString(R.string.reward_random),
-            object : RewardCallback() {
-                override fun onEarnedReward(rewardItem: RewardItem?) {
-                    earned = true
-                }
-                override fun onAdClosed() {
-                    super.onAdClosed()
-                    if (earned) {
-                        onRewardSuccess()
-                    } else {
-                        Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.advertisement_not_ready), Toast.LENGTH_SHORT).show()
+            AdRequest.Builder().build(),
+            object : RewardedAdLoadCallback() {
+                override fun onAdLoaded(ad: RewardedAd) {
+                    isRandomRewardedAdLoading = false
+                    if (isFinishing || isDestroyed) return
+
+                    randomRewardedAd = ad
+                    randomRewardedAdLoadedAt = SystemClock.elapsedRealtime()
+                    ad.onPaidEventListener = OnPaidEventListener { adValue: AdValue ->
+                        FirebaseUtil.logPaidAdImpression(
+                            this@CustomizeCharacterActivity,
+                            adValue,
+                            ad.adUnitId,
+                            AdType.REWARDED
+                        )
                     }
-                    onAdClosed()
+                    Log.d(RANDOM_REWARD_AD_TAG, "Rewarded ad preloaded")
                 }
-                override fun onAdFailedToLoad() {
-                    super.onAdFailedToLoad()
-                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.ads_fail_to_load), Toast.LENGTH_SHORT).show()
-                    onAdClosed()
-                }
-                override fun onAdFailedToShow(codeError: Int) {
-                    super.onAdFailedToShow(codeError)
-                    Toast.makeText(this@CustomizeCharacterActivity, getString(R.string.ads_fail_to_show), Toast.LENGTH_SHORT).show()
-                    onAdClosed()
+
+                override fun onAdFailedToLoad(error: LoadAdError) {
+                    isRandomRewardedAdLoading = false
+                    randomRewardedAd = null
+                    randomRewardedAdLoadedAt = 0L
+                    Log.e(RANDOM_REWARD_AD_TAG, "Rewarded ad failed to preload: $error")
                 }
             }
         )
+    }
+
+    private fun showRewardAds(
+        onRewardSuccess: () -> Unit,
+        onAdClosed: () -> Unit = {}
+    ) {
+        val rewardedAd = randomRewardedAd
+        if (rewardedAd == null || !hasReadyRandomRewardedAd()) {
+            Toast.makeText(
+                this,
+                getString(R.string.advertisement_not_ready),
+                Toast.LENGTH_SHORT
+            ).show()
+            preloadRandomRewardedAd()
+            onAdClosed()
+            return
+        }
+
+        randomRewardedAd = null
+        randomRewardedAdLoadedAt = 0L
+        var earned = false
+        rewardedAd.fullScreenContentCallback =
+            object : FullScreenContentCallback() {
+                override fun onAdShowedFullScreenContent() {
+                    if (AppOpenManager.getInstance().isInitialized) {
+                        AppOpenManager.getInstance().disableAppResume()
+                    }
+                }
+
+                override fun onAdDismissedFullScreenContent() {
+                    if (AppOpenManager.getInstance().isInitialized) {
+                        AppOpenManager.getInstance().enableAppResume()
+                    }
+                    hideNavigation()
+                    if (earned) {
+                        onRewardSuccess()
+                    } else {
+                        Toast.makeText(
+                            this@CustomizeCharacterActivity,
+                            getString(R.string.advertisement_not_ready),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    onAdClosed()
+                    preloadRandomRewardedAd()
+                }
+
+                override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                    if (AppOpenManager.getInstance().isInitialized) {
+                        AppOpenManager.getInstance().enableAppResume()
+                    }
+                    Log.e(RANDOM_REWARD_AD_TAG, "Rewarded ad failed to show: $error")
+                    Toast.makeText(
+                        this@CustomizeCharacterActivity,
+                        getString(R.string.ads_fail_to_show),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    hideNavigation()
+                    onAdClosed()
+                    preloadRandomRewardedAd()
+                }
+
+                override fun onAdClicked() {
+                    if (AppOpenManager.getInstance().isInitialized) {
+                        AppOpenManager.getInstance().disableAdResumeByClickAction()
+                    }
+                    FirebaseUtil.logClickAdsEvent(
+                        this@CustomizeCharacterActivity,
+                        rewardedAd.adUnitId
+                    )
+                }
+            }
+
+        rewardedAd.show(this) {
+            earned = true
+        }
     }
 
     override fun viewListener() {
@@ -202,6 +319,16 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             }
             btnRandom.tap {
                 viewModel.checkDataInternet(this@CustomizeCharacterActivity) {
+                    if (!hasReadyRandomRewardedAd()) {
+                        Toast.makeText(
+                            this@CustomizeCharacterActivity,
+                            getString(R.string.advertisement_not_ready),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        preloadRandomRewardedAd()
+                        return@checkDataInternet
+                    }
+
                     val dialogReward =
                         YesNoDialog(
                             this@CustomizeCharacterActivity,
@@ -1126,6 +1253,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     }
 
     override fun onDestroy() {
+        randomRewardedAd = null
         super.onDestroy()
         viewModel.setIsCreated(false)
     }
@@ -1143,6 +1271,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
     override fun initAds() {
         initNativeCollab()
+        preloadRandomRewardedAd()
     }
 
     override fun onRestart() {
@@ -1158,6 +1287,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
     override fun onResume() {
         super.onResume()
+        preloadRandomRewardedAd()
         android.util.Log.d("CustomizeLifecycle", "onResume() called")
     }
 
