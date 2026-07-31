@@ -149,8 +149,7 @@
     <string name="collect">RECOLECTAR</string>
     <string name="you_ve_unlocked_more_accessories_collect_them_and_create_your_own_character">¡Has desbloqueado más accesorios, recógelos y crea tu propio personaje!</string>
     <string name="spin">girar</string>
-    <string name="advertisement_not_ready">El anuncio no está listo... ¡Inténtalo de nuevo!</string>
-    <string name="all_items_unlocked">¡Todos los elementos están desbloqueados!</string>
+    <string name="advertisement_not_ready">El anuncio aún no está listo... ¡Inténtalo de nuevo en unos minutos!</string>    <string name="all_items_unlocked">¡Todos los elementos están desbloqueados!</string>
     <string name="cosplay_cat">gato cosplay</string>
     <string name="horror_emoji">Emoji de Terror</string>
     <string name="emoji_maker">Creador de Emoji</string>

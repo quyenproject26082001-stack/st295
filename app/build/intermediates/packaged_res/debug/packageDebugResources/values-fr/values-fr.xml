@@ -7,7 +7,9 @@
     <string name="add_to_telegram">Ajouter à Telegram</string>
     <string name="add_to_whatsapp">Ajouter à WhatsApp</string>
     <string name="added_to_package_successfully">Ajouté au package avec succès !</string>
-    <string name="advertisement_not_ready">La publicité n\'est pas prête... Veuillez réessayer !</string>
+    <string name="ads_fail_to_load">Échec du chargement de la publicité... Veuillez réessayer !</string>
+    <string name="ads_fail_to_show">Échec de l\'affichage de la publicité... Veuillez réessayer !</string>
+    <string name="advertisement_not_ready">La publicité n\'est pas encore prête... Veuillez réessayer dans quelques minutes !</string>
     <string name="all_items_unlocked">Tous les éléments sont débloqués !</string>
     <string name="allow">Autoriser</string>
     <string name="an_error_occurred">Une erreur s\'est produite, veuillez réessayer plus tard.</string>
@@ -38,6 +40,7 @@
     <string name="delete_failed_please_try_again">Échec de la suppression, veuillez réessayer !</string>
     <string name="delete_your_customize">Supprimer votre personnalisation</string>
     <string name="do_you_want_to_exit">Pas encore enregistré, voulez-vous quitter ?</string>
+    <string name="do_you_want_to_receive">Voulez-vous recevoir une récompense en regardant une publicité ?</string>
     <string name="done">Terminé</string>
     <string name="download">Télécharger</string>
     <string name="download_failed_please_try_again_later">Échec du téléchargement, veuillez réessayer plus tard !</string>
@@ -129,6 +132,7 @@
     <string name="rate_us">\u00A0\u00A0Évaluez-nous\u00A0\u00A0</string>
     <string name="rate_us_0">Vous ne l\'avez pas encore évalué !</string>
     <string name="reset">RÉINITIALISER</string>
+    <string name="reward_title">Récompense !</string>
     <string name="save">ENREGISTRER</string>
     <string name="save_failed_please_try_again">Échec de l\'enregistrement, veuillez réessayer !</string>
     <string name="settings">Paramètres</string>

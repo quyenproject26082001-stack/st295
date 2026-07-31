@@ -7,7 +7,9 @@
     <string name="add_to_telegram">टेलीग्राम में जोड़ें</string>
     <string name="add_to_whatsapp">व्हाट्सएप में जोड़ें</string>
     <string name="added_to_package_successfully">पैकेज में सफलतापूर्वक जोड़ा गया!</string>
-    <string name="advertisement_not_ready">विज्ञापन तैयार नहीं है... कृपया फिर से प्रयास करें!</string>
+    <string name="ads_fail_to_load">विज्ञापन लोड करने में विफल रहा... कृपया पुनः प्रयास करें!</string>
+    <string name="ads_fail_to_show">विज्ञापन दिखाने में विफल रहा... कृपया पुनः प्रयास करें!</string>
+    <string name="advertisement_not_ready">विज्ञापन अभी तैयार नहीं है... कृपया कुछ मिनटों बाद पुनः प्रयास करें!</string>
     <string name="all_items_unlocked">सभी आइटम अनलॉक हो गए हैं!</string>
     <string name="allow">अनुमति दें</string>
     <string name="an_error_occurred">एक त्रुटि हुई, कृपया बाद में फिर से प्रयास करें।</string>
@@ -38,6 +40,7 @@
     <string name="delete_failed_please_try_again">हटाना विफल हुआ, कृपया फिर से प्रयास करें!</string>
     <string name="delete_your_customize">अपना कस्टमाइज़ेशन हटाएं</string>
     <string name="do_you_want_to_exit">अभी तक सेव नहीं किया है, क्या आप बाहर निकलना चाहते हैं?</string>
+    <string name="do_you_want_to_receive">क्या आप विज्ञापन देखकर इनाम पाना चाहते हैं?</string>
     <string name="done">हो गया</string>
     <string name="download">डाउनलोड करें</string>
     <string name="download_failed_please_try_again_later">डाउनलोड विफल हुआ, कृपया बाद में फिर से प्रयास करें!</string>
@@ -129,6 +132,7 @@
     <string name="rate_us">\u00A0\u00A0हमें रेट करें\u00A0\u00A0</string>
     <string name="rate_us_0">आपने अभी तक रेट नहीं किया है!</string>
     <string name="reset">रीसेट करें</string>
+    <string name="reward_title">इनाम!</string>
     <string name="save">सेव करें</string>
     <string name="save_failed_please_try_again">सेव विफल हुआ, कृपया फिर से प्रयास करें!</string>
     <string name="settings">सेटिंग्स</string>

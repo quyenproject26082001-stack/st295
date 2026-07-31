@@ -38,29 +38,29 @@ class IntroActivity : BaseActivity<ActivityIntroBinding>() {
             ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                val params = binding.btnNext.layoutParams as androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
+//                val params = binding.btnNext.layoutParams as androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
 
-                if (position == 0) {
+                if (position == 1) {
                     binding.nativeAds.gone()
-                    // Set lại width về 100dp
-                    params.width = ViewGroup.LayoutParams.MATCH_PARENT
-                    params.height = (48 * resources.displayMetrics.density).toInt()
-                    params.bottomMargin = (5 * resources.displayMetrics.density).toInt()
-                    params.marginEnd = (5 * resources.displayMetrics.density).toInt()
-
-                    // Chiều cao
-                    binding.btnNext.layoutParams = params
-                    binding.btnNext.setTextColor(resources.getColor(R.color.white, null))
-                    binding.btnNext.setBackgroundResource(R.drawable.bg_next_button)
+//                    // Set lại width về 100dp
+//                    params.width = ViewGroup.LayoutParams.MATCH_PARENT
+//                    params.height = (48 * resources.displayMetrics.density).toInt()
+//                    params.bottomMargin = (5 * resources.displayMetrics.density).toInt()
+//                    params.marginEnd = (5 * resources.displayMetrics.density).toInt()
+//
+//                    // Chiều cao
+//                    binding.btnNext.layoutParams = params
+//                    binding.btnNext.setTextColor(resources.getColor(R.color.white, null))
+//                    binding.btnNext.setBackgroundResource(R.drawable.bg_next_button)
                 } else {
                     binding.nativeAds.visible()
                     // Đổi sang wrap_content
-                    params.width = ViewGroup.LayoutParams.WRAP_CONTENT
-                    params.marginEnd = (16 * resources.displayMetrics.density).toInt()
-                    params.bottomMargin = (0 * resources.displayMetrics.density).toInt()
-                    binding.btnNext.layoutParams = params
-                    binding.btnNext.setTextColor(Color.parseColor("#FFFFFF"))
-                    binding.btnNext.background = null
+//                    params.width = ViewGroup.LayoutParams.WRAP_CONTENT
+//                    params.marginEnd = (16 * resources.displayMetrics.density).toInt()
+//                    params.bottomMargin = (0 * resources.displayMetrics.density).toInt()
+//                    binding.btnNext.layoutParams = params
+//                    binding.btnNext.setTextColor(Color.parseColor("#FFFFFF"))
+//                    binding.btnNext.background = null
                 }
             }
         })

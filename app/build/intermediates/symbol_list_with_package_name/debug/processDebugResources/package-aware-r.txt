@@ -7432,6 +7432,8 @@ string add_to_package_2
 string add_to_telegram
 string add_to_whatsapp
 string added_to_package_successfully
+string ads_fail_to_load
+string ads_fail_to_show
 string ads_test_banner
 string ads_test_banner_collap
 string ads_test_inter
@@ -7554,6 +7556,7 @@ string delete
 string delete_failed_please_try_again
 string delete_your_customize
 string do_you_want_to_exit
+string do_you_want_to_receive
 string done
 string download
 string download_failed_please_try_again_later
@@ -7998,6 +8001,7 @@ string rate_us
 string rate_us_0
 string reset
 string reward_random
+string reward_title
 string s1
 string s2
 string s3

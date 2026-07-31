@@ -148,14 +148,13 @@
     <string name="collect">COLETAR</string>
     <string name="you_ve_unlocked_more_accessories_collect_them_and_create_your_own_character">Você desbloqueou mais acessórios, colete-os e crie seu próprio personagem!</string>
     <string name="spin">girar</string>
-    <string name="advertisement_not_ready">O anúncio não está pronto... Tente novamente!</string>
-    <string name="ads_fail_to_load">O anúncio falhou ao carregar... Tente novamente!</string>
-    <string name="ads_fail_to_show">O anúncio falhou ao exibir... Tente novamente!</string>
+    <string name="advertisement_not_ready">O anúncio ainda não está pronto... Tente novamente em alguns minutos!</string>    <string name="ads_fail_to_show">O anúncio falhou ao exibir... Tente novamente!</string>
     <string name="all_items_unlocked">Todos os itens foram desbloqueados!</string>
     <string name="cosplay_cat">gato cosplay</string>
     <string name="horror_emoji">Emoji de Terror</string>
     <string name="emoji_maker">Criador de Emoji</string>
     <string name="emoji_copy">Copiar Emoji</string>
+    <string name="ads_fail_to_load">The advertisement failed to load... Please try again!</string>
     <string name="add_to_package">Adicionar ao Pacote</string>
     <string name="add_to_package_">ADICIONAR AO PACOTE</string>
     <string name="new_package">Novo Pacote</string>

@@ -7,7 +7,9 @@
     <string name="add_to_telegram">Zu Telegram hinzufügen</string>
     <string name="add_to_whatsapp">Zu WhatsApp hinzufügen</string>
     <string name="added_to_package_successfully">Erfolgreich zum Paket hinzugefügt!</string>
-    <string name="advertisement_not_ready">Die Werbung ist noch nicht bereit... Bitte versuche es erneut!</string>
+    <string name="ads_fail_to_load">Die Anzeige konnte nicht geladen werden... Bitte versuchen Sie es erneut!</string>
+    <string name="ads_fail_to_show">Die Anzeige konnte nicht angezeigt werden... Bitte versuchen Sie es erneut!</string>
+    <string name="advertisement_not_ready">Die Anzeige ist noch nicht bereit... Bitte versuchen Sie es in ein paar Minuten erneut!</string>
     <string name="all_items_unlocked">Alle Elemente sind freigeschaltet!</string>
     <string name="allow">Erlauben</string>
     <string name="an_error_occurred">Ein Fehler ist aufgetreten, bitte versuche es später erneut.</string>
@@ -38,6 +40,7 @@
     <string name="delete_failed_please_try_again">Löschen fehlgeschlagen, bitte versuche es erneut!</string>
     <string name="delete_your_customize">Deine Anpassung löschen</string>
     <string name="do_you_want_to_exit">Noch nicht gespeichert, möchtest du beenden?</string>
+    <string name="do_you_want_to_receive">Möchtest du eine Belohnung erhalten, indem du eine Werbung ansiehst?</string>
     <string name="done">Fertig</string>
     <string name="download">Herunterladen</string>
     <string name="download_failed_please_try_again_later">Download fehlgeschlagen, bitte versuche es später erneut!</string>
@@ -129,6 +132,7 @@
     <string name="rate_us">\u00A0\u00A0Bewerte uns\u00A0\u00A0</string>
     <string name="rate_us_0">Du hast noch nicht bewertet!</string>
     <string name="reset">ZURÜCKSETZEN</string>
+    <string name="reward_title">Belohnung!</string>
     <string name="save">SPEICHERN</string>
     <string name="save_failed_please_try_again">Speichern fehlgeschlagen, bitte versuche es erneut!</string>
     <string name="settings">Einstellungen</string>

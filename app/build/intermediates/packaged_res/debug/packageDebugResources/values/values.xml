@@ -83,13 +83,15 @@
     <string name="add_to_telegram">Add To Telegram</string>
     <string name="add_to_whatsapp">Add To Whatsapp</string>
     <string name="added_to_package_successfully">Added to package successfully!</string>
+    <string name="ads_fail_to_load">The advertisement failed to load... Please try again!</string>
+    <string name="ads_fail_to_show">The advertisement failed to show... Please try again!</string>
     <string name="advertisement_not_ready">The advertisement is not ready... Please try again!</string>
     <string name="all_items_unlocked">All items are unlocked!</string>
     <string name="allow">Allow</string>
     <string name="an_error_occurred">An error occurred, please try again later.</string>
-    <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="app_id" translatable="false">ca-app-pub-9384003223514230~3553343565</string>
     <string name="app_name" translatable="false">Horror Emoji Maker</string>
-    <string name="appopen_resume" translatable="false">ca-app-pub-3940256099942544/9257395921</string>
+    <string name="appopen_resume" translatable="false">ca-app-pub-9384003223514230/4015914974</string>
     <string name="are_you_sure_want_to_delete_this_item">ARE YOU SURE WANT TO DELETE THIS ITEM?</string>
     <string name="are_you_sure_you_want_to_delete_the_image">Are you sure you want to delete the image?</string>
     <string name="avatar_random">\u00A0\u00A0AVATAR RANDOM\u00A0\u00A0</string>
@@ -117,6 +119,7 @@
     <string name="delete_failed_please_try_again">Delete failed, please try again!</string>
     <string name="delete_your_customize">Delete your customize</string>
     <string name="do_you_want_to_exit">Haven’t saved it yet, do you want to exit?</string>
+    <string name="do_you_want_to_receive">Do you want to receive a reward by watching an ad?</string>
     <string name="done">Done</string>
     <string name="download">Download</string>
     <string name="download_failed_please_try_again_later">Download failed, please try again later!</string>
@@ -164,9 +167,9 @@
     <string name="image_has_been_saved_successfully">The project has been saved successfully!</string>
     <string name="input_text">Input text</string>
     <string name="instruction">INSTRUCTION</string>
-    <string name="inter_all" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="inter_per" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="inter_splash" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="inter_all" translatable="false">ca-app-pub-9384003223514230/2702833303</string>
+    <string name="inter_per" translatable="false">ca-app-pub-9384003223514230/9295181874</string>
+    <string name="inter_splash" translatable="false">ca-app-pub-9384003223514230/5547508552</string>
     <string name="internet_required_for_more_characters">Internet required for more characters</string>
     <string name="invalid_action">Error</string>
     <string name="invalid_action_msg">Application not installed</string>
@@ -185,23 +188,23 @@
     <string name="my_design">Design</string>
     <string name="my_emoji">Emoji</string>
     <string name="my_work">My Work</string>
-    <string name="native_all" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_category" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_category" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_category_emoji" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_createEmoji" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_createHorror" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_detail" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_home" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_maker" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_maker_bg" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_myCreation" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_collap_success" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_emojiCoppy" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_intro" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_language" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_myCreation" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="native_per" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_all" translatable="false">ca-app-pub-9384003223514230/7332343450</string>
+    <string name="native_category" translatable="false">ca-app-pub-9384003223514230/7523915140</string>
+    <string name="native_collap_category" translatable="false">ca-app-pub-9384003223514230/8836996813</string>
+    <string name="native_collap_category_emoji" translatable="false">ca-app-pub-9384003223514230/2271588465</string>
+    <string name="native_collap_createEmoji" translatable="false">ca-app-pub-9384003223514230/9459813347</string>
+    <string name="native_collap_createHorror" translatable="false">ca-app-pub-9384003223514230/5355936868</string>
+    <string name="native_collap_detail" translatable="false">ca-app-pub-9384003223514230/1389751633</string>
+    <string name="native_collap_home" translatable="false">ca-app-pub-9384003223514230/3776241827</string>
+    <string name="native_collap_maker" translatable="false">ca-app-pub-9384003223514230/9268241650</string>
+    <string name="native_collap_maker_bg" translatable="false">ca-app-pub-9384003223514230/5164365175</string>
+    <string name="native_collap_myCreation" translatable="false">ca-app-pub-9384003223514230/7598956822</string>
+    <string name="native_collap_success" translatable="false">ca-app-pub-9384003223514230/6027000647</string>
+    <string name="native_emojiCoppy" translatable="false">ca-app-pub-9384003223514230/9958506796</string>
+    <string name="native_intro" translatable="false">ca-app-pub-9384003223514230/1608263544</string>
+    <string name="native_language" translatable="false">ca-app-pub-9384003223514230/4234426886</string>
+    <string name="native_myCreation" translatable="false">ca-app-pub-9384003223514230/3393098447</string>
+    <string name="native_per" translatable="false">ca-app-pub-9384003223514230/7715486837</string>
     <string name="new_package">New Package</string>
     <string name="new_package_">NEW PACKAGE</string>
     <string name="next">NEXT</string>
@@ -234,7 +237,8 @@
     <string name="rate_us">\u00A0\u00A0Rate Us\u00A0\u00A0</string>
     <string name="rate_us_0">You have not rated it yet!</string>
     <string name="reset">RESET</string>
-    <string name="reward_random" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="reward_random" translatable="false">ca-app-pub-9384003223514230/7790528512</string>
+    <string name="reward_title">Reward!</string>
     <string name="save">SAVE</string>
     <string name="save_failed_please_try_again">Save failed, please try again!</string>
     <string name="settings">Settings</string>

@@ -24,8 +24,8 @@ android {
         applicationId "com.emojimaker.horor.emoji"
         minSdk 24
         targetSdk 36
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def formattedDate = new Date().format('MM.dd.yyyy')
         archivesBaseName = "ST295_Horror_Emoji_Maker_V${versionName}_${formattedDate}"

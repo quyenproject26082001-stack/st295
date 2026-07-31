@@ -7,7 +7,9 @@
     <string name="add_to_telegram">Adicionar ao Telegram</string>
     <string name="add_to_whatsapp">Adicionar ao Whatsapp</string>
     <string name="added_to_package_successfully">Adicionado ao pacote com sucesso!</string>
-    <string name="advertisement_not_ready">O anúncio não está pronto... Tente novamente!</string>
+    <string name="ads_fail_to_load">The advertisement failed to load... Please try again!</string>
+    <string name="ads_fail_to_show">O anúncio falhou ao exibir... Tente novamente!</string>
+    <string name="advertisement_not_ready">O anúncio ainda não está pronto... Tente novamente em alguns minutos!</string>
     <string name="all_items_unlocked">Todos os itens foram desbloqueados!</string>
     <string name="allow">Permitir</string>
     <string name="an_error_occurred">Ocorreu um erro, tente novamente mais tarde.</string>
@@ -38,6 +40,7 @@
     <string name="delete_failed_please_try_again">Falha ao excluir, tente novamente!</string>
     <string name="delete_your_customize">Excluir sua personalização</string>
     <string name="do_you_want_to_exit">Ainda não foi salvo, deseja sair?</string>
+    <string name="do_you_want_to_receive">Você quer receber uma recompensa assistindo a um anúncio?</string>
     <string name="done">Concluído</string>
     <string name="download">Baixar</string>
     <string name="download_failed_please_try_again_later">Falha no download, tente novamente mais tarde!</string>
@@ -129,6 +132,7 @@
     <string name="rate_us">\u00A0\u00A0Avalie-nos\u00A0\u00A0</string>
     <string name="rate_us_0">Você ainda não avaliou!</string>
     <string name="reset">REDEFINIR</string>
+    <string name="reward_title">Recompensa!</string>
     <string name="save">SALVAR</string>
     <string name="save_failed_please_try_again">Falha ao salvar, tente novamente!</string>
     <string name="settings">Configurações</string>

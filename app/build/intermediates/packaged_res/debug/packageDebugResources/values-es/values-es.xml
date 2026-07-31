@@ -7,7 +7,9 @@
     <string name="add_to_telegram">Añadir a Telegram</string>
     <string name="add_to_whatsapp">Añadir a Whatsapp</string>
     <string name="added_to_package_successfully">¡Añadido al paquete con éxito!</string>
-    <string name="advertisement_not_ready">El anuncio no está listo... ¡Inténtalo de nuevo!</string>
+    <string name="ads_fail_to_load">Error al cargar el anuncio... ¡Inténtalo de nuevo!</string>
+    <string name="ads_fail_to_show">Error al mostrar el anuncio... ¡Inténtalo de nuevo!</string>
+    <string name="advertisement_not_ready">El anuncio aún no está listo... ¡Inténtalo de nuevo en unos minutos!</string>
     <string name="all_items_unlocked">¡Todos los elementos están desbloqueados!</string>
     <string name="allow">Permitir</string>
     <string name="an_error_occurred">Se produjo un error, inténtalo de nuevo más tarde.</string>
@@ -38,6 +40,7 @@
     <string name="delete_failed_please_try_again">¡Error al eliminar, inténtalo de nuevo!</string>
     <string name="delete_your_customize">Eliminar tu personalización</string>
     <string name="do_you_want_to_exit">Aún no lo has guardado, ¿quieres salir?</string>
+    <string name="do_you_want_to_receive">¿Quieres recibir una recompensa viendo un anuncio?</string>
     <string name="done">Hecho</string>
     <string name="download">Descargar</string>
     <string name="download_failed_please_try_again_later">¡Descarga fallida, inténtalo de nuevo más tarde!</string>
@@ -129,6 +132,7 @@
     <string name="rate_us">\u00A0\u00A0Califícanos\u00A0\u00A0</string>
     <string name="rate_us_0">¡Aún no la has calificado!</string>
     <string name="reset">RESTABLECER</string>
+    <string name="reward_title">¡Recompensa!</string>
     <string name="save">GUARDAR</string>
     <string name="save_failed_please_try_again">¡Error al guardar, inténtalo de nuevo!</string>
     <string name="settings">Ajustes</string>

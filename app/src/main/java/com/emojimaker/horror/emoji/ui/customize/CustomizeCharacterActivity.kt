@@ -49,8 +49,10 @@ import com.google.android.gms.ads.AdValue
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.OnPaidEventListener
+import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.lvt.ads.callback.RewardCallback
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -116,7 +118,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                         viewModel.setDataCustomize(list[safePosition])
                         viewModel.setIsDataAPI(list[safePosition].isFromAPI)
                         // Detect default gender từ layer đầu tiên của data
-                        val defaultGender = if (list[safePosition].layerList.firstOrNull()?.type == 2) 2 else 1
+                        val defaultGender =
+                            if (list[safePosition].layerList.firstOrNull()?.type == 2) 2 else 1
                         viewModel.setGender(defaultGender)
                         binding.btnMan.isSelected = defaultGender == 1
                         binding.btnWooman.isSelected = defaultGender == 2
@@ -151,8 +154,9 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 viewModel.bottomNavigationList.collect { bottomNavigationList ->
                     if (bottomNavigationList.isNotEmpty()) {
                         val selectedNavIndex = bottomNavigationList.indexOfFirst { it.isSelected }
-                        val navLayerIndex = if (selectedNavIndex >= 0) bottomNavigationList[selectedNavIndex].layerIndex
-                        else viewModel.positionNavSelected
+                        val navLayerIndex =
+                            if (selectedNavIndex >= 0) bottomNavigationList[selectedNavIndex].layerIndex
+                            else viewModel.positionNavSelected
                         bottomNavigationCustomizeAdapter.submitList(bottomNavigationList)
                         if (selectedNavIndex >= 0) {
                             binding.rcvNavigation.post {
@@ -179,7 +183,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
         val isFresh =
             SystemClock.elapsedRealtime() - randomRewardedAdLoadedAt <
-                RANDOM_REWARD_AD_MAX_AGE_MS
+                    RANDOM_REWARD_AD_MAX_AGE_MS
         if (!isFresh) {
             randomRewardedAd = null
             randomRewardedAdLoadedAt = 0L
@@ -188,7 +192,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     }
 
     private fun preloadRandomRewardedAd() {
-        if (!Admob.isShowAllAds ||
+        /*if (!Admob.isShowAllAds ||
             isFinishing ||
             isDestroyed ||
             isRandomRewardedAdLoading ||
@@ -227,83 +231,117 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                     Log.e(RANDOM_REWARD_AD_TAG, "Rewarded ad failed to preload: $error")
                 }
             }
-        )
+        )*/
+        Admob.getInstance()
+            .initRewardAds(this@CustomizeCharacterActivity, getString(R.string.reward_random))
     }
 
     private fun showRewardAds(
         onRewardSuccess: () -> Unit,
         onAdClosed: () -> Unit = {}
     ) {
-        val rewardedAd = randomRewardedAd
-        if (rewardedAd == null || !hasReadyRandomRewardedAd()) {
-            Toast.makeText(
-                this,
-                getString(R.string.advertisement_not_ready),
-                Toast.LENGTH_SHORT
-            ).show()
-            preloadRandomRewardedAd()
-            onAdClosed()
-            return
-        }
+        /*     val rewardedAd = randomRewardedAd
+             if (rewardedAd == null || !hasReadyRandomRewardedAd()) {
+                 Toast.makeText(
+                     this,
+                     getString(R.string.advertisement_not_ready),
+                     Toast.LENGTH_SHORT
+                 ).show()
+                 preloadRandomRewardedAd()
+                 onAdClosed()
+                 return
+             }
 
-        randomRewardedAd = null
-        randomRewardedAdLoadedAt = 0L
+             randomRewardedAd = null
+             randomRewardedAdLoadedAt = 0L
+             var earned = false
+             rewardedAd.fullScreenContentCallback =
+                 object : FullScreenContentCallback() {
+                     override fun onAdShowedFullScreenContent() {
+                         if (AppOpenManager.getInstance().isInitialized) {
+                             AppOpenManager.getInstance().disableAppResume()
+                         }
+                     }
+
+                     override fun onAdDismissedFullScreenContent() {
+                         if (AppOpenManager.getInstance().isInitialized) {
+                             AppOpenManager.getInstance().enableAppResume()
+                         }
+                         hideNavigation()
+                         if (earned) {
+                             onRewardSuccess()
+                         } else {
+                             Toast.makeText(
+                                 this@CustomizeCharacterActivity,
+                                 getString(R.string.advertisement_not_ready),
+                                 Toast.LENGTH_SHORT
+                             ).show()
+                         }
+                         onAdClosed()
+                         preloadRandomRewardedAd()
+                     }
+
+                     override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                         if (AppOpenManager.getInstance().isInitialized) {
+                             AppOpenManager.getInstance().enableAppResume()
+                         }
+                         Log.e(RANDOM_REWARD_AD_TAG, "Rewarded ad failed to show: $error")
+                         Toast.makeText(
+                             this@CustomizeCharacterActivity,
+                             getString(R.string.ads_fail_to_show),
+                             Toast.LENGTH_SHORT
+                         ).show()
+                         hideNavigation()
+                         onAdClosed()
+                         preloadRandomRewardedAd()
+                     }
+
+                     override fun onAdClicked() {
+                         if (AppOpenManager.getInstance().isInitialized) {
+                             AppOpenManager.getInstance().disableAdResumeByClickAction()
+                         }
+                         FirebaseUtil.logClickAdsEvent(
+                             this@CustomizeCharacterActivity,
+                             rewardedAd.adUnitId
+                         )
+                     }
+                 }
+
+             rewardedAd.show(this) {
+                 earned = true
+             }*/
         var earned = false
-        rewardedAd.fullScreenContentCallback =
-            object : FullScreenContentCallback() {
-                override fun onAdShowedFullScreenContent() {
-                    if (AppOpenManager.getInstance().isInitialized) {
-                        AppOpenManager.getInstance().disableAppResume()
-                    }
-                }
-
-                override fun onAdDismissedFullScreenContent() {
-                    if (AppOpenManager.getInstance().isInitialized) {
-                        AppOpenManager.getInstance().enableAppResume()
-                    }
-                    hideNavigation()
+        if (Admob.getInstance().rewardedAd != null) {
+            Admob.getInstance().showRewardAds(this@CustomizeCharacterActivity, object :
+                RewardCallback() {
+                override fun onAdClosed() {
+                    super.onAdClosed()
                     if (earned) {
                         onRewardSuccess()
-                    } else {
-                        Toast.makeText(
-                            this@CustomizeCharacterActivity,
-                            getString(R.string.advertisement_not_ready),
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
-                    onAdClosed()
                     preloadRandomRewardedAd()
                 }
 
-                override fun onAdFailedToShowFullScreenContent(error: AdError) {
-                    if (AppOpenManager.getInstance().isInitialized) {
-                        AppOpenManager.getInstance().enableAppResume()
-                    }
-                    Log.e(RANDOM_REWARD_AD_TAG, "Rewarded ad failed to show: $error")
+                override fun onEarnedReward(rewardItem: RewardItem?) {
+                    super.onEarnedReward(rewardItem)
+                    earned = true
+                }
+
+                override fun onAdFailedToShow(codeError: Int) {
+                    super.onAdFailedToShow(codeError)
+                    preloadRandomRewardedAd()
                     Toast.makeText(
                         this@CustomizeCharacterActivity,
-                        getString(R.string.ads_fail_to_show),
+                        getString(R.string.advertisement_not_ready),
                         Toast.LENGTH_SHORT
                     ).show()
-                    hideNavigation()
-                    onAdClosed()
-                    preloadRandomRewardedAd()
-                }
 
-                override fun onAdClicked() {
-                    if (AppOpenManager.getInstance().isInitialized) {
-                        AppOpenManager.getInstance().disableAdResumeByClickAction()
-                    }
-                    FirebaseUtil.logClickAdsEvent(
-                        this@CustomizeCharacterActivity,
-                        rewardedAd.adUnitId
-                    )
                 }
-            }
-
-        rewardedAd.show(this) {
-            earned = true
+            })
+        } else {
+            preloadRandomRewardedAd()
         }
+
     }
 
     override fun viewListener() {
@@ -319,16 +357,6 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             }
             btnRandom.tap {
                 viewModel.checkDataInternet(this@CustomizeCharacterActivity) {
-                    if (!hasReadyRandomRewardedAd()) {
-                        Toast.makeText(
-                            this@CustomizeCharacterActivity,
-                            getString(R.string.advertisement_not_ready),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        preloadRandomRewardedAd()
-                        return@checkDataInternet
-                    }
-
                     val dialogReward =
                         YesNoDialog(
                             this@CustomizeCharacterActivity,
@@ -341,15 +369,26 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                         hideNavigation()
                     }
                     dialogReward.onYesClick = {
-                        dialogReward.dismiss()
-                        hideNavigation()
+                        if (Admob.getInstance().rewardedAd == null) {
+                            Toast.makeText(
+                                this@CustomizeCharacterActivity,
+                                getString(R.string.advertisement_not_ready),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            preloadRandomRewardedAd()
+                        } else {
+                            dialogReward.dismiss()
+                            hideNavigation()
+                            showRewardAds(onRewardSuccess = {
+                                handleRandomAllLayer()
+                            })
 
-                        showRewardAds(onRewardSuccess = {
-                            handleRandomAllLayer()
-                        })
+                        }
+
                     }
 
                 }
+
             }
             btnMove.tap(1000) {
                 if (layoutMove.isVisible) {
@@ -389,7 +428,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 val iv = viewModel.imageViewList[viewModel.positionCustom]
                 val maxX = container.width.toFloat() / 2f
                 iv.translationX = (iv.translationX - step).coerceIn(-maxX, maxX)
-                viewModel.layerTransformList[viewModel.positionCustom].translationX = iv.translationX
+                viewModel.layerTransformList[viewModel.positionCustom].translationX =
+                    iv.translationX
                 updateResetBtn()
                 updateMoveButtons()
             }
@@ -398,7 +438,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 val iv = viewModel.imageViewList[viewModel.positionCustom]
                 val maxX = container.width.toFloat() / 2f
                 iv.translationX = (iv.translationX + step).coerceIn(-maxX, maxX)
-                viewModel.layerTransformList[viewModel.positionCustom].translationX = iv.translationX
+                viewModel.layerTransformList[viewModel.positionCustom].translationX =
+                    iv.translationX
                 updateResetBtn()
                 updateMoveButtons()
             }
@@ -407,7 +448,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 val iv = viewModel.imageViewList[viewModel.positionCustom]
                 val maxY = container.height.toFloat() / 2f
                 iv.translationY = (iv.translationY - step).coerceIn(-maxY, maxY)
-                viewModel.layerTransformList[viewModel.positionCustom].translationY = iv.translationY
+                viewModel.layerTransformList[viewModel.positionCustom].translationY =
+                    iv.translationY
                 updateResetBtn()
                 updateMoveButtons()
             }
@@ -416,7 +458,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 val iv = viewModel.imageViewList[viewModel.positionCustom]
                 val maxY = container.height.toFloat() / 2f
                 iv.translationY = (iv.translationY + step).coerceIn(-maxY, maxY)
-                viewModel.layerTransformList[viewModel.positionCustom].translationY = iv.translationY
+                viewModel.layerTransformList[viewModel.positionCustom].translationY =
+                    iv.translationY
                 updateResetBtn()
                 updateMoveButtons()
             }
@@ -598,7 +641,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             .isNullOrEmpty()
 
     private fun handleRcv() {
-            layerCustomizeAdapter.onItemClick =
+        layerCustomizeAdapter.onItemClick =
             { item, position ->
                 viewModel.checkDataInternet(this) {
                     binding.btnMove.apply {
@@ -633,7 +676,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                         positionBottomNavigation
                     )
                 }
-        }
+            }
     }
 
     private fun initData() {
@@ -730,7 +773,9 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                             .forEach { bodyIdx ->
                                 val posCustom = layers[bodyIdx].positionCustom
                                 val posNav = layers[bodyIdx].positionNavigation
-                                if (viewModel.pathSelectedList.getOrNull(posCustom).isNullOrEmpty()) {
+                                if (viewModel.pathSelectedList.getOrNull(posCustom)
+                                        .isNullOrEmpty()
+                                ) {
                                     val defaultPath = layers[bodyIdx].layer.first().image
                                     viewModel.setIsSelectedItem(posCustom)
                                     viewModel.setPathSelected(posCustom, defaultPath)
@@ -750,15 +795,17 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                             // Load tất cả body layers đã được set path
                             val layers = viewModel.dataCustomize.value!!.layerList
                             val manBodyIndex = layers.indexOfFirst { it.type == 1 || it.type == 0 }
-                            val womanBodyIndex = layers.indexOfFirst { it.type == 2 || it.type == 0 }
-                            setOf(manBodyIndex, womanBodyIndex).filter { it >= 0 }.distinct().forEach { bodyIdx ->
-                                val posCustom = layers[bodyIdx].positionCustom
-                                val path = viewModel.pathSelectedList.getOrNull(posCustom) ?: ""
-                                if (path.isNotEmpty()) {
-                                    Glide.with(this@CustomizeCharacterActivity).load(path)
-                                        .into(viewModel.imageViewList[posCustom])
+                            val womanBodyIndex =
+                                layers.indexOfFirst { it.type == 2 || it.type == 0 }
+                            setOf(manBodyIndex, womanBodyIndex).filter { it >= 0 }.distinct()
+                                .forEach { bodyIdx ->
+                                    val posCustom = layers[bodyIdx].positionCustom
+                                    val path = viewModel.pathSelectedList.getOrNull(posCustom) ?: ""
+                                    if (path.isNotEmpty()) {
+                                        Glide.with(this@CustomizeCharacterActivity).load(path)
+                                            .into(viewModel.imageViewList[posCustom])
+                                    }
                                 }
-                            }
                         }
 
                         // Edit
@@ -804,7 +851,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     private fun checkStatusColor() {
         if (viewModel.colorItemNavList[viewModel.positionNavSelected].size > 1) {
             binding.color.visible()
-             binding.btnColor.visible()
+            binding.btnColor.visible()
             val (res, status) = if (viewModel.isShowColorList[viewModel.positionNavSelected]) {
                 R.drawable.ic_color to true
             } else {
@@ -847,9 +894,15 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 Glide.with(this@CustomizeCharacterActivity).load(pathSelected)
                     .into(viewModel.imageViewList[viewModel.positionCustom])
                 val listToSubmit = viewModel.itemNavList[viewModel.positionNavSelected]
-                android.util.Log.d("FocusDebug", "handleFillLayer submitList: positionNavSelected=${viewModel.positionNavSelected}, listSize=${listToSubmit.size}")
+                android.util.Log.d(
+                    "FocusDebug",
+                    "handleFillLayer submitList: positionNavSelected=${viewModel.positionNavSelected}, listSize=${listToSubmit.size}"
+                )
                 listToSubmit.forEachIndexed { i, it ->
-                    android.util.Log.d("FocusDebug", "  submit[$i] isSelected=${it.isSelected} path=${it.path}")
+                    android.util.Log.d(
+                        "FocusDebug",
+                        "  submit[$i] isSelected=${it.isSelected} path=${it.path}"
+                    )
                 }
                 layerCustomizeAdapter.submitList(listToSubmit)
             }
@@ -897,7 +950,10 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 android.util.Log.d("RandomLayer", "Random not work: empty path returned")
                 return@launch
             }
-            android.util.Log.d("RandomLayer", "Random work: path=$pathRandom | isMoreColors=$isMoreColors")
+            android.util.Log.d(
+                "RandomLayer",
+                "Random work: path=$pathRandom | isMoreColors=$isMoreColors"
+            )
             withContext(Dispatchers.Main) {
                 Glide.with(this@CustomizeCharacterActivity).load(pathRandom)
                     .into(viewModel.imageViewList[viewModel.positionCustom])
@@ -912,7 +968,10 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     }
 
     private fun handleChangeColorLayer(position: Int) {
-        android.util.Log.d("ColorClick", "=== handleChangeColorLayer === position from adapter: $position")
+        android.util.Log.d(
+            "ColorClick",
+            "=== handleChangeColorLayer === position from adapter: $position"
+        )
         lifecycleScope.launch(Dispatchers.IO) {
             // 1. Lấy path màu mới cho item đang được chọn
             val pathColor = viewModel.setClickChangeColor(position)
@@ -983,8 +1042,9 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     }
 
     private fun handleClickBottomNavigation(positionBottomNavigation: Int) {
-        val layerIndex = viewModel.bottomNavigationList.value.getOrNull(positionBottomNavigation)?.layerIndex
-            ?: positionBottomNavigation
+        val layerIndex =
+            viewModel.bottomNavigationList.value.getOrNull(positionBottomNavigation)?.layerIndex
+                ?: positionBottomNavigation
         if (layerIndex == viewModel.positionNavSelected) return
         val keepMoveState = binding.layoutMove.isVisible
         lifecycleScope.launch(Dispatchers.IO) {
@@ -1071,7 +1131,10 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
                                         // ✅ 2) VẪN SANG AddCharacterActivity như bạn muốn
                                         showInterAll {
-                                            startIntentRightToLeft(AddCharacterActivity::class.java, result.path)
+                                            startIntentRightToLeft(
+                                                AddCharacterActivity::class.java,
+                                                result.path
+                                            )
                                         }
                                     }
                                 }
@@ -1104,9 +1167,13 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
     private fun handleGenderSwitch(gender: Int) {
         if (viewModel.selectedGender.value == gender) return
-        android.util.Log.d("GenderSwitch", "=== handleGenderSwitch: ${viewModel.selectedGender.value} -> $gender ===")
+        android.util.Log.d(
+            "GenderSwitch",
+            "=== handleGenderSwitch: ${viewModel.selectedGender.value} -> $gender ==="
+        )
         // Lưu nav đang chọn của gender hiện tại trước khi switch
-        viewModel.genderNavPositionMap[viewModel.selectedGender.value] = viewModel.positionNavSelected
+        viewModel.genderNavPositionMap[viewModel.selectedGender.value] =
+            viewModel.positionNavSelected
         binding.btnMan.isSelected = gender == 1
         binding.btnWooman.isSelected = gender == 2
         lifecycleScope.launch(Dispatchers.IO) {
@@ -1119,7 +1186,10 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             android.util.Log.d("GenderSwitch", "targetNav: layerIndex=${targetNav.layerIndex}")
             viewModel.setPositionNavSelected(targetNav.layerIndex)
             viewModel.setPositionCustom(viewModel.dataCustomize.value!!.layerList[targetNav.layerIndex].positionCustom)
-            android.util.Log.d("GenderSwitch", "positionNavSelected=${viewModel.positionNavSelected}, positionCustom=${viewModel.positionCustom}")
+            android.util.Log.d(
+                "GenderSwitch",
+                "positionNavSelected=${viewModel.positionNavSelected}, positionCustom=${viewModel.positionCustom}"
+            )
 
             val listToSubmit = viewModel.itemNavList[viewModel.positionNavSelected]
 
@@ -1128,8 +1198,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             if (currentPath.isNullOrEmpty()) {
                 val selectedItem = listToSubmit.firstOrNull {
                     it.isSelected &&
-                    it.path != com.emojimaker.horor.emoji.core.utils.key.AssetsKey.NONE_LAYER &&
-                    it.path != com.emojimaker.horor.emoji.core.utils.key.AssetsKey.RANDOM_LAYER
+                            it.path != com.emojimaker.horor.emoji.core.utils.key.AssetsKey.NONE_LAYER &&
+                            it.path != com.emojimaker.horor.emoji.core.utils.key.AssetsKey.RANDOM_LAYER
                 }
                 if (selectedItem != null) {
                     viewModel.setPathSelected(viewModel.positionCustom, selectedItem.path)
@@ -1198,21 +1268,22 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                     val layers = viewModel.dataCustomize.value!!.layerList
                     val manBodyIndex = layers.indexOfFirst { it.type == 1 || it.type == 0 }
                     val womanBodyIndex = layers.indexOfFirst { it.type == 2 || it.type == 0 }
-                    setOf(manBodyIndex, womanBodyIndex).filter { it >= 0 }.distinct().forEach { bodyIdx ->
-                        val posCustom = layers[bodyIdx].positionCustom
-                        val path = viewModel.pathSelectedList.getOrNull(posCustom) ?: ""
-                        if (path.isNotEmpty()) {
-                            Glide.with(this@CustomizeCharacterActivity).load(path)
-                                .into(viewModel.imageViewList[posCustom])
+                    setOf(manBodyIndex, womanBodyIndex).filter { it >= 0 }.distinct()
+                        .forEach { bodyIdx ->
+                            val posCustom = layers[bodyIdx].positionCustom
+                            val path = viewModel.pathSelectedList.getOrNull(posCustom) ?: ""
+                            if (path.isNotEmpty()) {
+                                Glide.with(this@CustomizeCharacterActivity).load(path)
+                                    .into(viewModel.imageViewList[posCustom])
+                            }
                         }
-                    }
                     layerCustomizeAdapter.submitList(viewModel.itemNavList[viewModel.positionNavSelected])
                     colorLayerCustomizeAdapter.submitList(viewModel.colorItemNavList[viewModel.positionNavSelected])
                     updateResetBtn()
                     updateMoveButtons()
                     updateScaleButtons()
                     updateMoveButtonState()
-                  hideNavigation()
+                    hideNavigation()
                 }
             }
         }
@@ -1229,10 +1300,14 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                 if (loadingDialog.isShowing.not()) loadingDialog.show()
             }
             val timeStart = System.currentTimeMillis()
-            val availablePositionsByLayer = viewModel.bottomNavigationList.value.associate { navigation ->
-                val layerItems = viewModel.itemNavList.getOrNull(navigation.layerIndex).orEmpty()
-                navigation.layerIndex to layerCustomizeAdapter.getUnlockedGifPositions(layerItems)
-            }
+            val availablePositionsByLayer =
+                viewModel.bottomNavigationList.value.associate { navigation ->
+                    val layerItems =
+                        viewModel.itemNavList.getOrNull(navigation.layerIndex).orEmpty()
+                    navigation.layerIndex to layerCustomizeAdapter.getUnlockedGifPositions(
+                        layerItems
+                    )
+                }
             val isOutTurn = viewModel.setClickRandomFullLayer(availablePositionsByLayer)
 
             withContext(Dispatchers.Main) {
@@ -1260,11 +1335,12 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
     @SuppressLint("GestureBackNavigation", "MissingSuperCall")
     override fun onBackPressed() {
-       // confirmExit()
+        // confirmExit()
     }
 
     fun initNativeCollab() {
-        Admob.getInstance().loadNativeCollapNotBanner(this,getString(R.string.native_collap_maker),
+        Admob.getInstance().loadNativeCollapNotBanner(
+            this, getString(R.string.native_collap_maker),
             binding.flNativeCollab
         )
     }
@@ -1313,6 +1389,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         applyUiCustomize()
         hideNavigation()
     }
+
     @Suppress("DEPRECATION")
     private fun applyUiCustomize() {
         // Cho phép app tự vẽ màu system bar
@@ -1329,7 +1406,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                     View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
                     View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
                     View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                     View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         // nếu muốn icon status bar đen thì thêm:
         // or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
     }

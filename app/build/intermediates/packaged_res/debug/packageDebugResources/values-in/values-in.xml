@@ -7,7 +7,9 @@
     <string name="add_to_telegram">Tambahkan ke Telegram</string>
     <string name="add_to_whatsapp">Tambahkan ke WhatsApp</string>
     <string name="added_to_package_successfully">Berhasil ditambahkan ke paket!</string>
-    <string name="advertisement_not_ready">Iklan belum siap... Silakan coba lagi!</string>
+    <string name="ads_fail_to_load">Iklan gagal dimuat... Silakan coba lagi!</string>
+    <string name="ads_fail_to_show">Iklan gagal ditampilkan... Silakan coba lagi!</string>
+    <string name="advertisement_not_ready">Iklan belum siap... Silakan coba lagi dalam beberapa menit!</string>
     <string name="all_items_unlocked">Semua item telah terbuka!</string>
     <string name="allow">Izinkan</string>
     <string name="an_error_occurred">Terjadi kesalahan, silakan coba lagi nanti.</string>
@@ -38,6 +40,7 @@
     <string name="delete_failed_please_try_again">Gagal menghapus, silakan coba lagi!</string>
     <string name="delete_your_customize">Hapus kustomisasi kamu</string>
     <string name="do_you_want_to_exit">Belum disimpan, apakah kamu ingin keluar?</string>
+    <string name="do_you_want_to_receive">Apakah kamu ingin mendapatkan hadiah dengan menonton iklan?</string>
     <string name="done">Selesai</string>
     <string name="download">Unduh</string>
     <string name="download_failed_please_try_again_later">Unduhan gagal, silakan coba lagi nanti!</string>
@@ -129,6 +132,7 @@
     <string name="rate_us">\u00A0\u00A0Beri Nilai\u00A0\u00A0</string>
     <string name="rate_us_0">Kamu belum memberi nilai!</string>
     <string name="reset">ATUR ULANG</string>
+    <string name="reward_title">Hadiah!</string>
     <string name="save">SIMPAN</string>
     <string name="save_failed_please_try_again">Gagal menyimpan, silakan coba lagi!</string>
     <string name="settings">Pengaturan</string>
