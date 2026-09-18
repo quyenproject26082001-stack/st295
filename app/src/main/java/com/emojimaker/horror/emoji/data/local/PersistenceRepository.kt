@@ -147,8 +147,6 @@ object PersistenceRepository {
 
         migrateSettings(context)
         migrateWhatsAppSettings(context)
-        migrateJsonCache(context, ValueKey.DATA_FILE_INTERNAL)
-        migrateJsonCache(context, ValueKey.DATA_FILE_API_INTERNAL)
         migrateJsonCache(context, ValueKey.SUGGESTION_FILE_INTERNAL)
         migrateSavedAvatars(context)
         syncAlbumFromFiles(context, ValueKey.DOWNLOAD_ALBUM)

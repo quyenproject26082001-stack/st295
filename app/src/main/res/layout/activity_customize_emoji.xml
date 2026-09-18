@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:clipToOutline="false"
     android:clipChildren="false"
-    android:background="#212121"
+    android:background="#FFF8F0"
     tools:context=".ui.customize.CustomizeCharacterActivity">
 
     <ImageView
@@ -17,6 +17,13 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@id/glHorizontal" />
 
+
+    <FrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000"
+        android:visibility="invisible" />
     <!-- layoutActionBar -->
     <FrameLayout
         android:id="@+id/layoutActionBar"
@@ -35,10 +42,10 @@
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="4dp"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_8"
+        app:cardCornerRadius="@dimen/dp_4"
         app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintVertical_bias="0"
@@ -62,7 +69,6 @@
                 android:id="@+id/stateBlackCover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/black"
                 android:visibility="gone"
                 tools:visibility="visible" />
 
@@ -84,19 +90,19 @@
                 android:maxLength="30"
                 android:singleLine="true"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="@dimen/sp_40"
                 android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvEmojiTextPreview"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="@dimen/dp_120"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="@dimen/sp_40"
                 android:visibility="invisible" />
         </FrameLayout>
 
@@ -113,10 +119,10 @@
     <!--    btnHide-->
     <ImageView
         android:id="@+id/btnHide"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_16"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_show"
         android:visibility="invisible"
@@ -135,32 +141,32 @@
 
     <FrameLayout
         android:id="@+id/btnLayer"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
         android:background="@drawable/ic_layer"
         tools:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/flBottomNav"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_16"
         />
 
     <FrameLayout
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
         app:layout_constraintEnd_toStartOf="@id/btnLayer"
         android:background="@drawable/ic_text_layer"
         app:layout_constraintTop_toTopOf="@id/btnLayer"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="@dimen/dp_10"
         tools:visibility="invisible"
         android:id="@+id/btnTextLayer"/>
 
     <FrameLayout
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
         app:layout_constraintEnd_toStartOf="@id/btnTextLayer"
         android:background="@drawable/ic_draw_layer"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="@dimen/dp_10"
         tools:visibility="invisible"
         app:layout_constraintTop_toTopOf="@id/btnTextLayer"
         android:id="@+id/btnDrawLayer"
@@ -176,7 +182,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/glHorizontal"
         android:background="#FF8600"
-        android:layout_marginTop="61dp"/>
+        android:layout_marginTop="@dimen/dp_61"/>
 
 
 
@@ -188,13 +194,13 @@
         android:id="@+id/rcvLayer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/dp_12"
         android:layerType="hardware"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
         android:clipToPadding="false"
 
-        android:paddingBottom="80dp"
+        android:paddingBottom="@dimen/dp_80"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg_cus"
@@ -208,7 +214,7 @@
     <LinearLayout
         android:id="@+id/flNavDrawAndEraser"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="@dimen/dp_38"
         android:layout_marginHorizontal="0dp"
         android:layout_marginBottom="0dp"
         android:clipChildren="false"
@@ -221,25 +227,25 @@
         >
         <ImageView
             android:id="@+id/tabDraw"
-            android:layout_width="156dp"
+            android:layout_width="@dimen/dp_156"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
-            android:paddingVertical="8dp"
+            android:paddingVertical="@dimen/dp_8"
             android:background="@drawable/ic_tab_emoji_uslt"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_16"
             android:src="@drawable/ic_draw_tab_uslt"/>
         <ImageView
             android:id="@+id/tabEraser"
-            android:layout_width="156dp"
+            android:layout_width="@dimen/dp_156"
             android:layout_weight="1"
             android:scaleType="fitCenter"
-            android:paddingVertical="8dp"
-            android:layout_marginEnd="16dp"
+            android:paddingVertical="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_16"
             android:background="@drawable/ic_tab_emoji_slt"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/dp_8"
             android:layout_height="match_parent"
             android:src="@drawable/ic_tab_eraser_slt"/>
     </LinearLayout>
@@ -252,8 +258,8 @@
         app:layout_constraintTop_toTopOf="@id/bg_cus"
         android:layout_height="wrap_content"
         android:clipToOutline="false"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/dp_14"
+        android:layout_marginTop="@dimen/dp_20"
         android:clipChildren="false"
         android:id="@+id/containerSeekbar"
         >
@@ -262,7 +268,7 @@
             android:id="@+id/tvSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp_18"
             android:fontFamily="@font/howli_layers_base"
             android:includeFontPadding="false"
             android:text="Size"
@@ -274,16 +280,16 @@
         <SeekBar
             android:id="@+id/seekbarSize"
             android:layout_width="0dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginEnd="16dp"
-            android:maxHeight="14dp"
-            android:minHeight="14dp"
+            android:layout_height="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_22"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:maxHeight="@dimen/dp_14"
+            android:minHeight="@dimen/dp_14"
             android:paddingStart="0dp"
             android:paddingEnd="0dp"
             android:splitTrack="false"
             android:thumb="@drawable/ic_customize_emoji_seekbar_thumb"
-            android:thumbOffset="17dp"
+            android:thumbOffset="@dimen/dp_17"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvSize"
@@ -299,7 +305,7 @@
         android:layout_height="0dp"
         android:layerType="hardware"
         android:clipToPadding="false"
-        android:paddingBottom="80dp"
+        android:paddingBottom="@dimen/dp_80"
         android:background="@color/app"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -316,7 +322,7 @@
         android:fontFamily="@font/howli_layers_base"
         android:text="@string/no_item_here"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/sp_24"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/rcvLayerLayer"
         app:layout_constraintEnd_toEndOf="@id/rcvLayerLayer"
@@ -329,29 +335,29 @@
         android:id="@+id/rcvLayerColor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/dp_12"
         android:layerType="hardware"
-        android:paddingHorizontal="9.5dp"
+        android:paddingHorizontal="@dimen/dp_9_5"
         android:clipToPadding="false"
-        android:paddingBottom="80dp"
+        android:paddingBottom="@dimen/dp_80"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerSeekbar"
         app:spanCount="5"
         android:visibility="visible"
         tools:visibility="invisible"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/dp_10"
         tools:itemCount="50"
         tools:listitem="@layout/item_color_circle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvTextColor"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/dp_56"
         android:clipToPadding="false"
         android:orientation="horizontal"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -360,11 +366,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvTextFont"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/dp_56"
         android:clipToPadding="false"
         android:orientation="horizontal"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -404,7 +410,7 @@
             android:id="@+id/flNativeCollab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="100dp"
+            android:elevation="@dimen/dp_100"
             app:layout_constraintBottom_toBottomOf="parent">
 
         </FrameLayout>

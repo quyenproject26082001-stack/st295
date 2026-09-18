@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="4dp">
+    android:padding="@dimen/dp_4">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="96dp"
+        android:layout_width="@dimen/dp_96"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="1dp"
+        app:cardCornerRadius="@dimen/dp_12"
+        app:cardElevation="@dimen/dp_1"
         app:strokeColor="#ADADAD"
-        app:strokeWidth="0.5dp"
+        app:strokeWidth="@dimen/dp_0_5"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="@dimen/dp_10">
 
             <!-- Label "Color N" -->
             <TextView
@@ -28,7 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:textSize="8sp"
+                android:textSize="@dimen/sp_8"
                 android:textColor="#000000"
                 android:text="Color 1"
                 app:layout_constraintTop_toTopOf="parent"
@@ -38,8 +38,8 @@
             <!-- X button -->
             <ImageView
                 android:id="@+id/btnRemoveColor"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
+                android:layout_width="@dimen/dp_12"
+                android:layout_height="@dimen/dp_12"
                 android:src="@drawable/ic_close_color_pick"
                 app:tint="#000000"
                 app:layout_constraintTop_toTopOf="parent"
@@ -48,9 +48,9 @@
             <!-- Color swatch -->
             <View
                 android:id="@+id/colorSwatch"
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="@dimen/dp_26"
+                android:layout_height="@dimen/dp_26"
+                android:layout_marginTop="@dimen/dp_8"
                 android:background="@drawable/bg_pride_color_swatch"
                 app:layout_constraintTop_toBottomOf="@id/tvColorLabel"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,12 +61,12 @@
                 android:id="@+id/tvColorHex"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="@dimen/dp_8"
                 android:fontFamily="@font/roboto_regular"
-                android:textSize="8sp"
+                android:textSize="@dimen/sp_8"
                 android:textColor="#555555"
                 android:text="#000000"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="@dimen/dp_2"
                 app:layout_constraintTop_toTopOf="@id/colorSwatch"
                 app:layout_constraintStart_toEndOf="@id/colorSwatch"
                 app:layout_constraintEnd_toEndOf="parent" />

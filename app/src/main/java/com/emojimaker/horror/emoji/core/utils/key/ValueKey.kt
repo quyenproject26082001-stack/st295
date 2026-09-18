@@ -1,9 +1,9 @@
 package com.emojimaker.horor.emoji.core.utils.key
 
 object ValueKey {
-    const val DOWNLOAD_ALBUM = "Horror Emoji Maker"
-    const val EMOJI_ALBUM = "Horror Emoji Maker_Emoji"
-    const val PACKAGE_ALBUM = "Horror Emoji Maker_Package"
+    const val DOWNLOAD_ALBUM = "Emoji Maker Plus"
+    const val EMOJI_ALBUM = "Emoji Maker Plus_Emoji"
+    const val PACKAGE_ALBUM = "Emoji Maker Plus_Package"
     const val DOWNLOAD_ALBUM_BACKGROUND = "Image Background"
     const val RANDOM_TEMP_ALBUM = "RANDOM_TEMP_ALBUM"
 

@@ -25,6 +25,9 @@ public final class ActivitySplashBinding implements ViewBinding {
   public final Guideline gld;
 
   @NonNull
+  public final ImageView imgAppName;
+
+  @NonNull
   public final ImageView ivLoading;
 
   @NonNull
@@ -34,9 +37,11 @@ public final class ActivitySplashBinding implements ViewBinding {
   public final TextView tvDes;
 
   private ActivitySplashBinding(@NonNull ConstraintLayout rootView, @NonNull Guideline gld,
-      @NonNull ImageView ivLoading, @NonNull ConstraintLayout main, @NonNull TextView tvDes) {
+      @NonNull ImageView imgAppName, @NonNull ImageView ivLoading, @NonNull ConstraintLayout main,
+      @NonNull TextView tvDes) {
     this.rootView = rootView;
     this.gld = gld;
+    this.imgAppName = imgAppName;
     this.ivLoading = ivLoading;
     this.main = main;
     this.tvDes = tvDes;
@@ -75,6 +80,12 @@ public final class ActivitySplashBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imgAppName;
+      ImageView imgAppName = ViewBindings.findChildViewById(rootView, id);
+      if (imgAppName == null) {
+        break missingId;
+      }
+
       id = R.id.ivLoading;
       ImageView ivLoading = ViewBindings.findChildViewById(rootView, id);
       if (ivLoading == null) {
@@ -89,7 +100,8 @@ public final class ActivitySplashBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivitySplashBinding((ConstraintLayout) rootView, gld, ivLoading, main, tvDes);
+      return new ActivitySplashBinding((ConstraintLayout) rootView, gld, imgAppName, ivLoading,
+          main, tvDes);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

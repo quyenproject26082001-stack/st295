@@ -36,15 +36,16 @@
     <string name="cosplay_cat">कॉस्प्ले बिल्ली</string>
     <string name="create_package_name">पैकेज नाम बनाएं</string>
     <string name="creation">मेरी\nक्रिएशन</string>
+    <string name="creation_data_updated_cannot_edit">यह रचना संपादन योग्य नहीं।</string>
     <string name="delete">हटाएं</string>
     <string name="delete_failed_please_try_again">हटाना विफल हुआ, कृपया फिर से प्रयास करें!</string>
     <string name="delete_your_customize">अपना कस्टमाइज़ेशन हटाएं</string>
     <string name="do_you_want_to_exit">अभी तक सेव नहीं किया है, क्या आप बाहर निकलना चाहते हैं?</string>
-    <string name="do_you_want_to_receive">क्या आप विज्ञापन देखकर इनाम पाना चाहते हैं?</string>
+    <string name="do_you_want_to_receive">वीडियो देखें और संबंधित इनाम पाएं!</string>
     <string name="done">हो गया</string>
     <string name="download">डाउनलोड करें</string>
     <string name="download_failed_please_try_again_later">डाउनलोड विफल हुआ, कृपया बाद में फिर से प्रयास करें!</string>
-    <string name="download_success">Horror Emoji Maker एल्बम में डाउनलोड सफल रहा</string>
+    <string name="download_success">Scary Emoji Maker एल्बम में डाउनलोड सफल रहा</string>
     <string name="downloading">डाउनलोड हो रहा है...</string>
     <string name="edit">एडिट करें</string>
     <string name="emoji_activities">इमोजी एक्टिविटीज़</string>
@@ -68,6 +69,7 @@
     <string name="four_star">आपके फीडबैक के लिए धन्यवाद</string>
     <string name="four_star_title">हम भी आपसे प्यार करते हैं!</string>
     <string name="free">मुफ़्त</string>
+    <string name="free1">मुफ़्त</string>
     <string name="generate">रैंडम</string>
     <string name="go_to_setting_message">ऐप को इस अनुमति की आवश्यकता है</string>
     <string name="granted_notification">सूचना अनुमति दी गई</string>
@@ -132,7 +134,7 @@
     <string name="rate_us">\u00A0\u00A0हमें रेट करें\u00A0\u00A0</string>
     <string name="rate_us_0">आपने अभी तक रेट नहीं किया है!</string>
     <string name="reset">रीसेट करें</string>
-    <string name="reward_title">इनाम!</string>
+    <string name="reward_title">इनाम</string>
     <string name="save">सेव करें</string>
     <string name="save_failed_please_try_again">सेव विफल हुआ, कृपया फिर से प्रयास करें!</string>
     <string name="settings">सेटिंग्स</string>

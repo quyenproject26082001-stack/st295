@@ -116,7 +116,7 @@ class CosplaySuccessfulActivity : BaseActivity<ActivityCosplaySuccessfulBinding>
                 val containerW = binding.progressContainer.width
                 val thumbW = binding.icThumb.width
                 val maxX = (containerW - thumbW).toFloat().coerceAtLeast(0f)
-                val offsetPx = 5f * resources.displayMetrics.density
+                val offsetPx = resources.getDimension(R.dimen.dp_5)
                 binding.icThumb.translationX = (finalProgress / 100f) * maxX - offsetPx
             }
             binding.tvProgress.text = "$finalProgress/100"

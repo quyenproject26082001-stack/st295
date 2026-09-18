@@ -2,8 +2,10 @@ package com.emojimaker.horor.emoji.dialog
 
 import android.app.Activity
 import android.graphics.Color
+import android.util.TypedValue
 import android.view.View
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.core.view.updateLayoutParams
 import com.emojimaker.horor.emoji.core.extensions.gone
 import com.emojimaker.horor.emoji.core.extensions.hideNavigation
@@ -11,7 +13,6 @@ import com.emojimaker.horor.emoji.core.extensions.select
 import com.emojimaker.horor.emoji.core.extensions.tap
 import com.emojimaker.horor.emoji.R
 import com.emojimaker.horor.emoji.core.base.BaseDialog
-import com.emojimaker.horor.emoji.core.extensions.dp
 import com.emojimaker.horor.emoji.core.extensions.setMargins
 import com.emojimaker.horor.emoji.core.extensions.strings
 import com.emojimaker.horor.emoji.databinding.DialogConfirmBinding
@@ -22,6 +23,7 @@ class YesNoDialog(
     val description: Int,
     val isError: Boolean = false,
     val notifAds: Boolean = false,
+    val isReward: Boolean = false,
 ) : BaseDialog<DialogConfirmBinding>(context, maxWidth = true, maxHeight = true) {
     override val layoutId: Int = R.layout.dialog_confirm
     override val isCancelOnTouchOutside: Boolean = false
@@ -35,16 +37,28 @@ class YesNoDialog(
     override fun initView() {
         initText()
         initBackground()
-        if (isError && isInternetDialog()) {
+        if (isError && isSingleActionDialog()) {
             binding.btnNo.gone()
-            binding.llButtons.setMargins(left = 70.dp(context), right = 70.dp(context))
+            binding.llButtons.setMargins(left = context.resources.getDimensionPixelSize(R.dimen.dp_70), right = context.resources.getDimensionPixelSize(R.dimen.dp_70))
             binding.btnYes.setMargins(left = 0, right = 0)
         }
         context.hideNavigation()
         binding.tvTitle.isSelected = true
         if(notifAds){
-            binding.tvDescription.textSize = 18f
+            binding.tvDescription.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.resources.getDimension(R.dimen.sp_18))
             binding.tvTitle.visibility ==View.GONE
+        }
+        if (isReward){
+            binding.btnYes.setText(R.string.free1)
+            binding.btnYes.setTextColor(ContextCompat.getColor(context,R.color.white))
+            binding.btnNo.setText(R.string.cancel)
+            binding.btnYes.setBackgroundResource(R.drawable.bg_dialog_btn_free)
+            binding.btnYes.setPadding(
+                context.resources.getDimensionPixelSize(R.dimen.dp_32),
+                binding.btnYes.paddingTop,
+                binding.btnYes.paddingRight,
+                binding.btnYes.paddingBottom
+            )
         }
     }
 
@@ -73,16 +87,17 @@ class YesNoDialog(
             tvDescription.text = context.strings(description)
             tvTitle.select()
             tvDescription.select()
-            if (isError && isInternetDialog()) {
+            if (isError && isSingleActionDialog()) {
                 btnYes.text = context.strings(R.string.ok)
                 btnYes.select()
             }
         }
     }
 
-    private fun isInternetDialog(): Boolean {
+    private fun isSingleActionDialog(): Boolean {
         return title == R.string.no_internet ||
                 description == R.string.please_check_your_internet ||
-                description == R.string.internet_required_for_more_characters
+                description == R.string.internet_required_for_more_characters ||
+                description == R.string.creation_data_updated_cannot_edit
     }
 }

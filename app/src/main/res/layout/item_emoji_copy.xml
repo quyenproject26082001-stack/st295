@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
+    android:layout_height="@dimen/dp_64"
     android:background="@color/transparent">
 
     <TextView
@@ -12,7 +12,7 @@
         android:fontFamily="sans"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:textSize="32sp"
+        android:textSize="@dimen/sp_32"
         tools:text="😀" />
 
 </FrameLayout>

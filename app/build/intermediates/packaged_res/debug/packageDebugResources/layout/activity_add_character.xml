@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_app"
+    android:background="#FFF8F0"
     android:clipChildren="false"
     android:descendantFocusability="beforeDescendants"
     android:focusable="true"
@@ -18,10 +18,10 @@
         android:id="@+id/flGetText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="48dp"
-        android:paddingHorizontal="5dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="5dp"
+        android:layout_marginHorizontal="@dimen/dp_48"
+        android:paddingHorizontal="@dimen/dp_5"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_5"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
             android:maxLength="30"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="40sp" />
+            android:textSize="@dimen/sp_40" />
     </FrameLayout>
 
 
@@ -65,7 +65,7 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="0dp"
         app:cardBackgroundColor="@color/transparent"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="@dimen/dp_10"
         app:cardElevation="0dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +95,70 @@
         </FrameLayout>
 
     </FrameLayout>
+
+    <!--    lnlBottom-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lnlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_38"
+        android:layout_marginHorizontal="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/gl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!--        btnBackground-->
+        <ImageView
+            android:id="@+id/btnBackground"
+            android:layout_width="@dimen/dp_82"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_background_selected"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        btnSticker-->
+        <ImageView
+            android:id="@+id/btnSticker"
+            android:layout_width="@dimen/dp_82"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_sticker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSpeech"
+            app:layout_constraintStart_toEndOf="@id/btnBackground"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        btnSpeech-->
+        <ImageView
+            android:id="@+id/btnSpeech"
+            android:layout_width="@dimen/dp_82"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_speech"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnText"
+            app:layout_constraintStart_toEndOf="@id/btnSticker"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        btnText-->
+        <ImageView
+            android:id="@+id/btnText"
+            android:layout_width="@dimen/dp_82"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <!--    flFunction-->
@@ -126,9 +190,9 @@
         <LinearLayout
             android:id="@+id/sectionTab"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="@dimen/dp_36"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
             android:background="@color/transparent"
             android:orientation="horizontal"
             android:visibility="gone"
@@ -158,7 +222,7 @@
                     android:scaleType="fitXY"
                     app:cardBackgroundColor="@color/white"
                     app:strokeColor="@color/transparent"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="@dimen/dp_16"
                     android:visibility="visible" />
 
                 <!--                tvBackgroundImage-->
@@ -173,7 +237,7 @@
                     android:includeFontPadding="false"
                     android:layout_gravity="center"
                     android:textColor="@color/app"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/sp_16" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/subTabImage"
@@ -181,13 +245,13 @@
                     android:layout_height="match_parent"
                     app:strokeColor="@color/transparent"
                     app:cardBackgroundColor="#33000000"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="@dimen/dp_16"
                     android:visibility="gone" />
 
             </FrameLayout>
 
             <Space
-                android:layout_width="16dp"
+                android:layout_width="@dimen/dp_16"
                 android:layout_height="match_parent" />
             <!--                btnBackgroundColor-->
             <FrameLayout
@@ -212,7 +276,7 @@
                     android:scaleType="fitXY"
                     android:scaleX="1"
                     app:strokeColor="@color/transparent"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="@dimen/dp_16"
                     app:cardBackgroundColor="@color/white"
                     android:visibility="gone"
                     tools:visibility="visible" />
@@ -230,7 +294,7 @@
                     android:gravity="center"
                     android:text="@string/color"
                     android:textColor="#C13F74"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/sp_16" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/subTabColor"
@@ -238,7 +302,7 @@
                     android:layout_height="match_parent"
                     app:strokeColor="@color/transparent"
                     app:cardBackgroundColor="#33000000"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="@dimen/dp_16"
                     android:visibility="gone" />
 
             </FrameLayout>
@@ -249,7 +313,7 @@
             android:id="@+id/lnlBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="62dp"
+            android:layout_marginTop="@dimen/dp_62"
             android:orientation="vertical"
             android:visibility="gone"
             tools:visibility="visible">
@@ -260,10 +324,10 @@
                 android:id="@+id/rcvBackgroundImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4.5dp"
+                android:layout_marginTop="@dimen/dp_4_5"
                 android:clipToPadding="false"
-                android:layout_marginHorizontal="5.dp"
-                android:paddingBottom="60dp"
+                android:layout_marginHorizontal="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_60"
                 android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="5"
@@ -277,10 +341,10 @@
                 android:id="@+id/rcvBackgroundColor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4.5dp"
+                android:layout_marginTop="@dimen/dp_4_5"
                 android:clipToPadding="false"
-                android:paddingHorizontal="5.dp"
-                android:paddingBottom="60dp"
+                android:paddingHorizontal="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_60"
                 android:visibility="gone"
 
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -297,19 +361,19 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_marginHorizontal="8dp"
+            android:layout_marginHorizontal="@dimen/dp_8"
             tools:visibility="gone">
             <!--            &lt;!&ndash; Title: Sticker &ndash;&gt;-->
             <TextView
                 android:id="@+id/tvTitleSticker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="@dimen/dp_7"
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
                 android:text="@string/sticker"
                 android:textColor="#C13F74"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_20"
                 android:visibility="gone" />
 
             <!--            rcvSticker-->
@@ -317,10 +381,10 @@
                 android:id="@+id/rcvSticker"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="11.5dp"
+                android:layout_marginTop="@dimen/dp_11_5"
                 android:clipToPadding="false"
 
-                android:paddingBottom="60dp"
+                android:paddingBottom="@dimen/dp_60"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="5"
                 tools:listitem="@layout/item_sticker" />
@@ -333,7 +397,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_marginHorizontal="8dp"
+            android:layout_marginHorizontal="@dimen/dp_8"
             tools:visibility="gone">
 
             <!-- Title: Speech Bubbles -->
@@ -341,12 +405,12 @@
                 android:id="@+id/tvTitleSpeech"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="@dimen/dp_12"
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
                 android:text="@string/speech_bubbles"
                 android:textColor="#C13F74"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_20"
                 android:visibility="gone" />
 
             <!--            rcvSticker-->
@@ -354,9 +418,9 @@
                 android:id="@+id/rcvSpeech"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="11.5dp"
+                android:layout_marginTop="@dimen/dp_11_5"
                 android:clipToPadding="false"
-                android:paddingBottom="60dp"
+                android:paddingBottom="@dimen/dp_60"
 
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="5"
@@ -370,7 +434,7 @@
             android:layout_height="match_parent"
             android:clipChildren="false"
             android:isScrollContainer="true"
-            android:paddingTop="25dp"
+            android:paddingTop="@dimen/dp_25"
             android:scrollbars="none"
             android:visibility="gone"
             tools:visibility="visible">
@@ -385,12 +449,12 @@
                     android:id="@+id/tvTitleText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/dp_8"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="center"
                     android:text="@string/text"
                     android:textColor="#C13F74"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/sp_20"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -400,14 +464,14 @@
                     android:id="@+id/tvText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="@dimen/dp_16"
                     android:layout_marginTop="0dp"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="start"
                     android:text="@string/text"
                     android:textColor="@color/white"
                     android:includeFontPadding="false"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/sp_16"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -416,9 +480,9 @@
                 <EditText
                     android:id="@+id/edtText"
                     android:layout_width="0dp"
-                    android:layout_height="37dp"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="@dimen/dp_37"
+                    android:layout_marginHorizontal="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_5"
                     android:background="@drawable/bg_edit_text"
                     android:ellipsize="end"
                     android:fontFamily="@font/howli_layers_base"
@@ -426,11 +490,11 @@
                     android:imeOptions="actionDone"
                     android:inputType="text"
                     android:maxLength="30"
-                    android:paddingHorizontal="16dp"
+                    android:paddingHorizontal="@dimen/dp_16"
                     android:singleLine="true"
                     android:textColor="@color/black"
                     android:textColorHint="#80868686"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/sp_14"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvText" />
@@ -440,14 +504,14 @@
                     android:id="@+id/tvFont"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="start"
                     android:text="@string/font"
                     android:includeFontPadding="false"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/sp_16"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/edtText" />
 
@@ -455,13 +519,13 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcvFont"
                     android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_5"
                     android:clipChildren="false"
                     android:clipToPadding="true"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="0.5dp"
+                    android:paddingHorizontal="@dimen/dp_0_5"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -472,14 +536,14 @@
                     android:id="@+id/tvColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="-5dp"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_minus_5"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="start"
                     android:text="@string/color_text"
                     android:includeFontPadding="false"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/sp_16"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rcvFont" />
 
@@ -487,9 +551,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcvTextColor"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_5"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -500,7 +564,7 @@
                 <Space
                     android:id="@+id/spaceTextBottom"
                     android:layout_width="match_parent"
-                    android:layout_height="16dp"
+                    android:layout_height="@dimen/dp_16"
                     app:layout_constraintTop_toBottomOf="@id/rcvTextColor" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -509,11 +573,11 @@
         <!--                    btnDoneText-->
         <ImageView
             android:id="@+id/btnDoneText"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
             android:layout_gravity="top|end"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_16"
             android:tint="@color/white"
             android:src="@drawable/ic_done_background"
             android:visibility="gone"
@@ -521,70 +585,6 @@
 
     </FrameLayout>
 
-
-    <!--    lnlBottom-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/lnlBottom"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_marginHorizontal="0dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/gl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <!--        btnBackground-->
-        <ImageView
-            android:id="@+id/btnBackground"
-            android:layout_width="82dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_background_selected"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--        btnSticker-->
-        <ImageView
-            android:id="@+id/btnSticker"
-            android:layout_width="82dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_sticker"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnSpeech"
-            app:layout_constraintStart_toEndOf="@id/btnBackground"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--        btnSpeech-->
-        <ImageView
-            android:id="@+id/btnSpeech"
-            android:layout_width="82dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_speech"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnText"
-            app:layout_constraintStart_toEndOf="@id/btnSticker"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--        btnText-->
-        <ImageView
-            android:id="@+id/btnText"
-            android:layout_width="82dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.Guideline

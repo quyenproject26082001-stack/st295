@@ -26,10 +26,10 @@
 
     <ImageView
         android:id="@+id/btnSettings"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_marginEnd="@dimen/dp_16"
         android:scaleType="fitXY"
         android:src="@drawable/ic_setting"
         android:visibility="gone"
@@ -40,10 +40,10 @@
         android:id="@+id/imgAppName"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="@dimen/dp_20"
         android:layout_marginTop="0dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/img_app_name"
+        android:src="@drawable/app_name"
         app:layout_constraintDimensionRatio="322:96"
         app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
 
@@ -53,7 +53,7 @@
         android:id="@+id/scvMain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="@dimen/dp_26"
         android:layout_marginBottom="0dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="30dp">
+            android:paddingBottom="@dimen/dp_30">
 
             <!--            glOverStart-->
             <androidx.constraintlayout.widget.Guideline
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="33dp" />
+                app:layout_constraintGuide_begin="@dimen/dp_33" />
 
             <!--            glOverEnd-->
             <androidx.constraintlayout.widget.Guideline
@@ -106,8 +106,8 @@
                 android:id="@+id/btnEmoji"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_8"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_home_1"
                 app:layout_constraintDimensionRatio="156:165"
@@ -125,28 +125,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="@dimen/dp_12"
                 android:clipToOutline="false"
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
-                android:paddingVertical="4dp"
+                android:paddingVertical="@dimen/dp_4"
                 android:text="@string/play"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_20"
                 app:layout_constraintBottom_toBottomOf="@+id/btnEmoji"
                 app:layout_constraintEnd_toEndOf="@id/btnEmoji"
                 app:layout_constraintStart_toStartOf="@id/btnEmoji"
                 app:layout_constraintTop_toTopOf="@+id/btnEmoji"
                 app:layout_constraintVertical_bias="1.0"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="3.5dp" />
+                app:outerStrokeWidth="@dimen/dp_3_5" />
 
             <ImageView
                 android:id="@+id/btnHorror"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
                 android:adjustViewBounds="true"
                 android:src="@drawable/img_home_2"
                 app:layout_constraintDimensionRatio="156:165"
@@ -166,26 +166,26 @@
                 android:layout_marginEnd="0dp"
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
-                android:paddingVertical="4dp"
+                android:paddingVertical="@dimen/dp_4"
                 android:text="@string/horror_emoji"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_20"
                 app:layout_constraintBottom_toBottomOf="@+id/btnHorror"
                 app:layout_constraintEnd_toEndOf="@id/btnHorror"
                 app:layout_constraintStart_toStartOf="@id/btnHorror"
                 app:layout_constraintTop_toTopOf="@+id/btnHorror"
                 app:layout_constraintVertical_bias="1.0"
                 app:outerStrokeColor="@color/app1"
-                android:layout_marginBottom="12dp"
-                app:outerStrokeWidth="3.5dp" />
+                android:layout_marginBottom="@dimen/dp_12"
+                app:outerStrokeWidth="@dimen/dp_3_5" />
 
             <ImageView
                 android:id="@+id/btnMaker"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_8"
                 android:scaleType="fitXY"
                 app:layout_constraintDimensionRatio="156:165"
                 android:src="@drawable/img_home_3"
@@ -201,28 +201,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="@dimen/dp_12"
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
                 android:maxLines="2"
-                android:paddingVertical="4dp"
+                android:paddingVertical="@dimen/dp_4"
                 android:text="@string/emoji_maker"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_20"
                 app:layout_constraintBottom_toBottomOf="@+id/btnMaker"
                 app:layout_constraintEnd_toEndOf="@id/btnMaker"
                 app:layout_constraintStart_toStartOf="@id/btnMaker"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="3.5dp" />
+                app:outerStrokeWidth="@dimen/dp_3_5" />
 
 
             <ImageView
                 android:id="@+id/btnEmojiCopy"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_16"
                 app:layout_constraintDimensionRatio="156:165"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_home_4"
@@ -241,24 +241,24 @@
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
                 android:letterSpacing="0.05"
-                android:paddingVertical="4dp"
-                android:layout_marginBottom="12dp"
+                android:paddingVertical="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_12"
                 android:text="@string/emoji_copy"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_20"
                 app:layout_constraintBottom_toBottomOf="@+id/btnEmojiCopy"
                 app:layout_constraintEnd_toEndOf="@id/btnEmojiCopy"
                 app:layout_constraintStart_toStartOf="@id/btnEmojiCopy"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="3.5dp" />
+                app:outerStrokeWidth="@dimen/dp_3_5" />
 
             <ImageView
                 android:id="@+id/btnMyCreation"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_12"
                 app:layout_constraintDimensionRatio="156:165"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_home_5"
@@ -277,16 +277,16 @@
                 android:fontFamily="@font/howli_layers_base"
                 android:gravity="center"
                 android:letterSpacing="0.05"
-                android:layout_marginBottom="12dp"
-                android:paddingVertical="4dp"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:paddingVertical="@dimen/dp_4"
                 android:text="@string/my_creation"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="@dimen/sp_20"
                 app:layout_constraintBottom_toBottomOf="@+id/btnMyCreation"
                 app:layout_constraintEnd_toEndOf="@id/btnMyCreation"
                 app:layout_constraintStart_toStartOf="@id/btnMyCreation"
                 app:outerStrokeColor="@color/app1"
-                app:outerStrokeWidth="3.5dp" />
+                app:outerStrokeWidth="@dimen/dp_3_5" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import android.text.Editable
 import android.text.SpannableString
 import android.text.TextWatcher
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,7 +62,6 @@ import com.emojimaker.horor.emoji.core.extensions.tap
 import com.emojimaker.horor.emoji.core.extensions.visible
 import com.emojimaker.horor.emoji.core.helper.BitmapHelper
 import com.emojimaker.horor.emoji.core.helper.LanguageHelper
-import com.emojimaker.horor.emoji.core.helper.UnitHelper
 import com.emojimaker.horor.emoji.core.utils.DataLocal
 import com.emojimaker.horor.emoji.core.utils.key.AssetsKey
 import com.emojimaker.horor.emoji.core.utils.key.IntentKey
@@ -301,7 +301,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                                 )
                                 window.clearFlags(android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
                                 viewModel.layoutParams.topMargin =
-                                    UnitHelper.dpToPx(this@AddCharacterActivity, -160)
+                                    -resources.getDimensionPixelSize(R.dimen.dp_160)
                                 flFunction.layoutParams = viewModel.layoutParams
                                 Log.d(
                                     "EditTextFlow",
@@ -753,7 +753,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         tabView.layoutParams = params
 
         // Set text size = 18sp
-        textView.textSize = 16f
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.sp_16))
 //
 //        if (textView is OuterStrokeTextView) {
 //            textView.setupSelectedTab()
@@ -761,8 +761,6 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
         // Apply gradient color from top to bottom - WHITE gradient for selected
         textView.setTextColor(Color.parseColor("#FF8600"))
-        val density =
-            focusImage.resources.displayMetrics.density
         // Show selected_tab drawable
 //        focusImage.updatePadding(
 //            left = (8 * density).toInt(),
@@ -773,8 +771,8 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         focusImage.scaleX = 1f
         focusImage.visible()
         tabView.updateLayoutParams {
-            width =(156* resources.displayMetrics.density).toInt()
-            height = (36*resources.displayMetrics.density).toInt()
+            width = resources.getDimensionPixelSize(R.dimen.dp_156)
+            height = resources.getDimensionPixelSize(R.dimen.dp_36)
         }
 
         // Hide subTab
@@ -795,27 +793,25 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 //        tabView.layoutParams = params
 
         tabView.updateLayoutParams {
-            width =(154* resources.displayMetrics.density).toInt()
-            height = (34*resources.displayMetrics.density).toInt()
+            width = resources.getDimensionPixelSize(R.dimen.dp_154)
+            height = resources.getDimensionPixelSize(R.dimen.dp_34)
         }
 
         // Set text size = 14sp, color = colorPrimary
-        textView.textSize = 16f
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.sp_16))
 
 //        if (textView is OuterStrokeTextView) {
 //            textView.setupUnselectedTab()
 //        }
         // Apply RED gradient for unselected
         textView.setTextColor(Color.parseColor("#FF8600"))
-        val density =
-            focusImage.resources.displayMetrics.density
         subTab.visible()
         // Show un_selected_tab drawable
         focusImage.updatePadding(
-            left = (8 * density).toInt(),
-            top = (4 * density).toInt(),
-            right = (8 * density).toInt(),
-            bottom = (2 * density).toInt()
+            left = resources.getDimensionPixelSize(R.dimen.dp_8),
+            top = resources.getDimensionPixelSize(R.dimen.dp_4),
+            right = resources.getDimensionPixelSize(R.dimen.dp_8),
+            bottom = resources.getDimensionPixelSize(R.dimen.dp_2)
         )
         // Flip horizontally if on left side
         focusImage.scaleX = if (isLeftTab) -1f else 1f

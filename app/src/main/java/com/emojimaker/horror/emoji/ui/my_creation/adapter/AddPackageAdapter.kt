@@ -61,14 +61,9 @@ class AddPackageAdapter : BaseAdapter<PackageModel, ItemAddPackageBinding>(ItemA
 
             val selected = item.id == selectedPackageId
             btnAvailable.strokeColor = if (selected) ContextCompat.getColor(root.context, R.color.app) else Color.parseColor("#212121")
-            btnAvailable.strokeWidth = if (selected) dp(3) else dp(0.5f)
+            btnAvailable.strokeWidth = root.resources.getDimensionPixelSize(if (selected) R.dimen.dp_3 else R.dimen.dp_0_5)
             btnAvailable.tap { onPackageClick.invoke(item) }
         }
     }
 
-    private fun dp(value: Float): Int {
-        return (value * android.content.res.Resources.getSystem().displayMetrics.density).toInt()
-    }
-
-    private fun dp(value: Int): Int = dp(value.toFloat())
 }

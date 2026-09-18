@@ -12,7 +12,6 @@ import com.emojimaker.horor.emoji.core.extensions.gone
 import com.emojimaker.horor.emoji.core.extensions.handleBackLeftToRight
 import com.emojimaker.horor.emoji.core.extensions.hideNavigation
 import com.emojimaker.horor.emoji.core.extensions.select
-import com.emojimaker.horor.emoji.core.extensions.dp
 import com.emojimaker.horor.emoji.core.extensions.setMargins
 import com.emojimaker.horor.emoji.core.extensions.showInterAll
 import com.emojimaker.horor.emoji.core.extensions.tap
@@ -47,7 +46,7 @@ class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBin
         binding.rcvPackageItem.itemAnimator = null
         binding.actionBar.tvCenter.text = intent.getStringExtra(IntentKey.PACKAGE_NAME_KEY).orEmpty()
         binding.actionBar.tvCenter.select()
-        binding.actionBar.tvCenter.setMargins(left = 100.dp(this), right = 100.dp(this))
+        binding.actionBar.tvCenter.setMargins(left = resources.getDimensionPixelSize(R.dimen.dp_100), right = resources.getDimensionPixelSize(R.dimen.dp_100))
     }
 
     override fun dataObservable() {
@@ -183,16 +182,16 @@ class ViewAllPackageActivity : WhatsappSharingActivity<ActivityViewAllPackageBin
         binding.actionBar.btnActionBarNextRight.apply {
             setImageResource(R.drawable.ic_delete_creation)
             updateLayoutParams {
-                width = (30f * resources.displayMetrics.density).toInt()
-                height = (30f * resources.displayMetrics.density).toInt()
+                width = resources.getDimensionPixelSize(R.dimen.dp_30)
+                height = resources.getDimensionPixelSize(R.dimen.dp_30)
             }
         }
         binding.actionBar.btnActionBarRight.visible()
         binding.actionBar.btnActionBarRight.apply {
             setImageResource(R.drawable.ic_not_select_all)
             updateLayoutParams {
-                width = (30f * resources.displayMetrics.density).toInt()
-                height = (30f * resources.displayMetrics.density).toInt()
+                width = resources.getDimensionPixelSize(R.dimen.dp_30)
+                height = resources.getDimensionPixelSize(R.dimen.dp_30)
             }
         }
         binding.flBottom.visible()

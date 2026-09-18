@@ -1,0 +1,113 @@
+com.emojimaker.horor.emoji.app-core-common-2.0.4-0 /home/lequyen/.gradle/caches/8.13/transforms/01a6da22ecea5da823908bf45855ac58/transformed/core-common-2.0.4/res
+com.emojimaker.horor.emoji.app-animation-core-release-1 /home/lequyen/.gradle/caches/8.13/transforms/01e6b5365f58aee61a2798ca7143d357/transformed/animation-core-release/res
+com.emojimaker.horor.emoji.app-lifecycle-viewmodel-savedstate-release-2 /home/lequyen/.gradle/caches/8.13/transforms/038adbd0e73fa5ea2c5574ae04de8363/transformed/lifecycle-viewmodel-savedstate-release/res
+com.emojimaker.horor.emoji.app-ads-adservices-1.1.0-beta11-3 /home/lequyen/.gradle/caches/8.13/transforms/06574a822ede7ec54b7c3f74afbdbda2/transformed/ads-adservices-1.1.0-beta11/res
+com.emojimaker.horor.emoji.app-lifecycle-livedata-core-2.9.4-4 /home/lequyen/.gradle/caches/8.13/transforms/09456a53391a0df6b319171dfbb178a0/transformed/lifecycle-livedata-core-2.9.4/res
+com.emojimaker.horor.emoji.app-drawerlayout-1.1.1-5 /home/lequyen/.gradle/caches/8.13/transforms/09d768b2f7e435f798976ca48ec571d8/transformed/drawerlayout-1.1.1/res
+com.emojimaker.horor.emoji.app-foundation-release-6 /home/lequyen/.gradle/caches/8.13/transforms/0ac99f30ec72449edb1c78365e9ed276/transformed/foundation-release/res
+com.emojimaker.horor.emoji.app-media3-exoplayer-1.8.0-7 /home/lequyen/.gradle/caches/8.13/transforms/0b09a63752752823a9f100d305740ce6/transformed/media3-exoplayer-1.8.0/res
+com.emojimaker.horor.emoji.app-ui-graphics-release-8 /home/lequyen/.gradle/caches/8.13/transforms/0dc399cccb1b5dc1b43a788b21c89106/transformed/ui-graphics-release/res
+com.emojimaker.horor.emoji.app-material-ripple-release-9 /home/lequyen/.gradle/caches/8.13/transforms/0e569da1837d1c2c774a59e79e61ec19/transformed/material-ripple-release/res
+com.emojimaker.horor.emoji.app-annotation-experimental-1.5.0-10 /home/lequyen/.gradle/caches/8.13/transforms/14116528c3f46ff43aa9a655e22c2c67/transformed/annotation-experimental-1.5.0/res
+com.emojimaker.horor.emoji.app-transition-1.5.0-11 /home/lequyen/.gradle/caches/8.13/transforms/15c50834f933fe0e395e7c621b0d03cd/transformed/transition-1.5.0/res
+com.emojimaker.horor.emoji.app-material-1.13.0-12 /home/lequyen/.gradle/caches/8.13/transforms/178f10206a8ceda4aa131a0757c9831a/transformed/material-1.13.0/res
+com.emojimaker.horor.emoji.app-mbridge_android_sdk-17.0.31-13 /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/res
+com.emojimaker.horor.emoji.app-shimmer-0.5.0-14 /home/lequyen/.gradle/caches/8.13/transforms/1a77dca491e65b3e52acca4ddd5b0e4c/transformed/shimmer-0.5.0/res
+com.emojimaker.horor.emoji.app-cronet-api-72.3626.96-15 /home/lequyen/.gradle/caches/8.13/transforms/1c14b00ac78a6c06826de44166161a1f/transformed/cronet-api-72.3626.96/res
+com.emojimaker.horor.emoji.app-media-1.0.0-16 /home/lequyen/.gradle/caches/8.13/transforms/1fbfeaa11a38ed702623e573115075c8/transformed/media-1.0.0/res
+com.emojimaker.horor.emoji.app-play-services-cronet-18.0.1-17 /home/lequyen/.gradle/caches/8.13/transforms/20873da6e49e97366e1b45303a24c268/transformed/play-services-cronet-18.0.1/res
+com.emojimaker.horor.emoji.app-room-ktx-2.8.4-18 /home/lequyen/.gradle/caches/8.13/transforms/20b03f4e0f0d6d923038fc204e9bb390/transformed/room-ktx-2.8.4/res
+com.emojimaker.horor.emoji.app-savedstate-release-19 /home/lequyen/.gradle/caches/8.13/transforms/246dcd1720b240b1434b8631d22166af/transformed/savedstate-release/res
+com.emojimaker.horor.emoji.app-work-runtime-ktx-2.11.0-20 /home/lequyen/.gradle/caches/8.13/transforms/267fd0d8aab5ec3ecea460c6c9dd48e1/transformed/work-runtime-ktx-2.11.0/res
+com.emojimaker.horor.emoji.app-glide-5.0.5-21 /home/lequyen/.gradle/caches/8.13/transforms/2ba1c9e62d800a3f6c60b0e02e818177/transformed/glide-5.0.5/res
+com.emojimaker.horor.emoji.app-facebook-messenger-18.0.3-22 /home/lequyen/.gradle/caches/8.13/transforms/2d8d31c2dff7119adfcec3f04b98cacb/transformed/facebook-messenger-18.0.3/res
+com.emojimaker.horor.emoji.app-material-icons-core-release-23 /home/lequyen/.gradle/caches/8.13/transforms/330fda9bf337d837bce8b4d75e4f13ed/transformed/material-icons-core-release/res
+com.emojimaker.horor.emoji.app-viewpager2-1.1.0-24 /home/lequyen/.gradle/caches/8.13/transforms/3736ea2328daf72900d70b8b02749527/transformed/viewpager2-1.1.0/res
+com.emojimaker.horor.emoji.app-datastore-preferences-release-25 /home/lequyen/.gradle/caches/8.13/transforms/37f820e826bb95e3af2b48dfdf157614/transformed/datastore-preferences-release/res
+com.emojimaker.horor.emoji.app-facebook-core-18.0.3-26 /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/res
+com.emojimaker.horor.emoji.app-savedstate-ktx-1.3.1-27 /home/lequyen/.gradle/caches/8.13/transforms/4341cc8618c14d6f98a6aba5db72d38b/transformed/savedstate-ktx-1.3.1/res
+com.emojimaker.horor.emoji.app-facebook-common-18.0.3-28 /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/res
+com.emojimaker.horor.emoji.app-ssp-android-1.1.1-29 /home/lequyen/.gradle/caches/8.13/transforms/47144a931fa0ee17af0a841d2b117113/transformed/ssp-android-1.1.1/res
+com.emojimaker.horor.emoji.app-customview-poolingcontainer-1.0.0-30 /home/lequyen/.gradle/caches/8.13/transforms/49466857907e40694327b7ec16d10ff3/transformed/customview-poolingcontainer-1.0.0/res
+com.emojimaker.horor.emoji.app-databinding-adapters-8.12.0-31 /home/lequyen/.gradle/caches/8.13/transforms/49a4113376f0e538d5002242de058ac9/transformed/databinding-adapters-8.12.0/res
+com.emojimaker.horor.emoji.app-lottie-6.7.1-32 /home/lequyen/.gradle/caches/8.13/transforms/4a1a01e2b7ac9bb3f410ea47c9810a11/transformed/lottie-6.7.1/res
+com.emojimaker.horor.emoji.app-lifecycle-livedata-2.9.4-33 /home/lequyen/.gradle/caches/8.13/transforms/4f6eeb7f5d25748946c3f7f3f5f88bb4/transformed/lifecycle-livedata-2.9.4/res
+com.emojimaker.horor.emoji.app-play-services-basement-18.9.0-34 /home/lequyen/.gradle/caches/8.13/transforms/51de55af32f71da1dd3e1b0bded407a5/transformed/play-services-basement-18.9.0/res
+com.emojimaker.horor.emoji.app-lifecycle-service-2.9.4-35 /home/lequyen/.gradle/caches/8.13/transforms/52173114d2405422bc9e256b1f848445/transformed/lifecycle-service-2.9.4/res
+com.emojimaker.horor.emoji.app-core-viewtree-1.0.0-36 /home/lequyen/.gradle/caches/8.13/transforms/5564f4dfc53fd816fb7f37827cbd52da/transformed/core-viewtree-1.0.0/res
+com.emojimaker.horor.emoji.app-animation-release-37 /home/lequyen/.gradle/caches/8.13/transforms/55bc475d30da6462755e0b22fbfb4d8c/transformed/animation-release/res
+com.emojimaker.horor.emoji.app-firebase-messaging-24.1.2-38 /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/res
+com.emojimaker.horor.emoji.app-sdp-android-1.1.1-39 /home/lequyen/.gradle/caches/8.13/transforms/5c1b727d66a3f3e16423f5cec9c0670d/transformed/sdp-android-1.1.1/res
+com.emojimaker.horor.emoji.app-tracing-1.2.0-40 /home/lequyen/.gradle/caches/8.13/transforms/5c3cd7300d8c498b45cd2032053dfd4d/transformed/tracing-1.2.0/res
+com.emojimaker.horor.emoji.app-graphics-shapes-release-41 /home/lequyen/.gradle/caches/8.13/transforms/5c5d2e4d5373ece65c9495548566cfe7/transformed/graphics-shapes-release/res
+com.emojimaker.horor.emoji.app-savedstate-compose-release-42 /home/lequyen/.gradle/caches/8.13/transforms/5f3c874d0cd4230dcb229440ee62c1d1/transformed/savedstate-compose-release/res
+com.emojimaker.horor.emoji.app-fragment-1.8.9-43 /home/lequyen/.gradle/caches/8.13/transforms/5f47e97e32175a3b476d030b37ca27e5/transformed/fragment-1.8.9/res
+com.emojimaker.horor.emoji.app-activity-ktx-1.10.1-44 /home/lequyen/.gradle/caches/8.13/transforms/5ffd73463c6ca0906c4c5d706e64a619/transformed/activity-ktx-1.10.1/res
+com.emojimaker.horor.emoji.app-facebook-share-18.0.3-45 /home/lequyen/.gradle/caches/8.13/transforms/63d591d66e8a04680c9135fe44a126cf/transformed/facebook-share-18.0.3/res
+com.emojimaker.horor.emoji.app-ui-geometry-release-46 /home/lequyen/.gradle/caches/8.13/transforms/6ac50e139bd8743ef7413ef8ccc056de/transformed/ui-geometry-release/res
+com.emojimaker.horor.emoji.app-mediation-sdk-9.1.0-47 /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/res
+com.emojimaker.horor.emoji.app-pag-sdk-ad-unfat-7702-20251023211715-release-48 /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/res
+com.emojimaker.horor.emoji.app-startup-runtime-1.1.1-49 /home/lequyen/.gradle/caches/8.13/transforms/6ea26a22d7b5d80148e4dd42ca16768a/transformed/startup-runtime-1.1.1/res
+com.emojimaker.horor.emoji.app-lifecycle-livedata-ktx-2.9.4-50 /home/lequyen/.gradle/caches/8.13/transforms/71ad2482c09b09727773bd0cc7766010/transformed/lifecycle-livedata-ktx-2.9.4/res
+com.emojimaker.horor.emoji.app-ui-util-release-51 /home/lequyen/.gradle/caches/8.13/transforms/72e1b10fb16a3c83533ab4f9aa543cb7/transformed/ui-util-release/res
+com.emojimaker.horor.emoji.app-tracing-ktx-1.2.0-52 /home/lequyen/.gradle/caches/8.13/transforms/75dfb9662ee77addf8bc468a0e07d7e0/transformed/tracing-ktx-1.2.0/res
+com.emojimaker.horor.emoji.app-cardview-1.0.0-53 /home/lequyen/.gradle/caches/8.13/transforms/77ad586a8c04213b8eca35518661e379/transformed/cardview-1.0.0/res
+com.emojimaker.horor.emoji.app-coordinatorlayout-1.1.0-54 /home/lequyen/.gradle/caches/8.13/transforms/77f17ec8b5b3d522ce8b3b2dcaeedb70/transformed/coordinatorlayout-1.1.0/res
+com.emojimaker.horor.emoji.app-lifecycle-runtime-compose-release-55 /home/lequyen/.gradle/caches/8.13/transforms/7a201c8a59ffbc8b57c85f8295cdf0ad/transformed/lifecycle-runtime-compose-release/res
+com.emojimaker.horor.emoji.app-databinding-runtime-8.12.0-56 /home/lequyen/.gradle/caches/8.13/transforms/891c8833d334d801af461aa3b12cca1c/transformed/databinding-runtime-8.12.0/res
+com.emojimaker.horor.emoji.app-lifecycle-viewmodel-release-57 /home/lequyen/.gradle/caches/8.13/transforms/8b36481bd5b3ed8afe5d6ea00cc4e55c/transformed/lifecycle-viewmodel-release/res
+com.emojimaker.horor.emoji.app-swiperefreshlayout-1.1.0-58 /home/lequyen/.gradle/caches/8.13/transforms/8d57bbcf266ec8719e801536b87b9b63/transformed/swiperefreshlayout-1.1.0/res
+com.emojimaker.horor.emoji.app-core-runtime-2.2.0-59 /home/lequyen/.gradle/caches/8.13/transforms/8e8c5ea404deb8221ebbd745f60af38f/transformed/core-runtime-2.2.0/res
+com.emojimaker.horor.emoji.app-material3-release-60 /home/lequyen/.gradle/caches/8.13/transforms/90a498de5f372c1f381338456b09d6d5/transformed/material3-release/res
+com.emojimaker.horor.emoji.app-ui-tooling-preview-release-61 /home/lequyen/.gradle/caches/8.13/transforms/912cf094ad0b678869e2c9b03abd4e2c/transformed/ui-tooling-preview-release/res
+com.emojimaker.horor.emoji.app-ads-adservices-java-1.1.0-beta11-62 /home/lequyen/.gradle/caches/8.13/transforms/922c2044e164797c0b8bdf6f549b6019/transformed/ads-adservices-java-1.1.0-beta11/res
+com.emojimaker.horor.emoji.app-play-services-ads-24.8.0-63 /home/lequyen/.gradle/caches/8.13/transforms/927b727cc6227bac2d78d7c366a05810/transformed/play-services-ads-24.8.0/res
+com.emojimaker.horor.emoji.app-play-services-ads-api-24.8.0-64 /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/res
+com.emojimaker.horor.emoji.app-profileinstaller-1.4.0-65 /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/res
+com.emojimaker.horor.emoji.app-browser-1.8.0-66 /home/lequyen/.gradle/caches/8.13/transforms/9964acc2680424d6d0eccd76e3935f4f/transformed/browser-1.8.0/res
+com.emojimaker.horor.emoji.app-SimpleRatingBar-1.5.1-67 /home/lequyen/.gradle/caches/8.13/transforms/998168df32d4f25fd36aee8f75f5d063/transformed/SimpleRatingBar-1.5.1/res
+com.emojimaker.horor.emoji.app-lifecycle-runtime-release-68 /home/lequyen/.gradle/caches/8.13/transforms/9bb9f678d94cb94d68a0fc060ef99bfa/transformed/lifecycle-runtime-release/res
+com.emojimaker.horor.emoji.app-datastore-core-release-69 /home/lequyen/.gradle/caches/8.13/transforms/9d9e4960a481c886e2423eded4fe62d5/transformed/datastore-core-release/res
+com.emojimaker.horor.emoji.app-firebase-crashlytics-19.4.4-70 /home/lequyen/.gradle/caches/8.13/transforms/9db497dff50b5f016c1528c0c05a0660/transformed/firebase-crashlytics-19.4.4/res
+com.emojimaker.horor.emoji.app-ui-unit-release-71 /home/lequyen/.gradle/caches/8.13/transforms/9e7304b400d2cbb074afa8f267c775ed/transformed/ui-unit-release/res
+com.emojimaker.horor.emoji.app-lifecycle-livedata-core-ktx-2.9.4-72 /home/lequyen/.gradle/caches/8.13/transforms/a03023b1515d3549468d011775871176/transformed/lifecycle-livedata-core-ktx-2.9.4/res
+com.emojimaker.horor.emoji.app-constraintlayout-2.2.1-73 /home/lequyen/.gradle/caches/8.13/transforms/a0d10138e17ea223a95adf53ade58ac3/transformed/constraintlayout-2.2.1/res
+com.emojimaker.horor.emoji.app-lifecycle-viewmodel-ktx-2.9.4-74 /home/lequyen/.gradle/caches/8.13/transforms/a30de8a8c51a4de2708d89b5ae2523bf/transformed/lifecycle-viewmodel-ktx-2.9.4/res
+com.emojimaker.horor.emoji.app-AdsLibrary-1.5.5-75 /home/lequyen/.gradle/caches/8.13/transforms/adc1fd5281ea71ca84b9480e64f6fdba/transformed/AdsLibrary-1.5.5/res
+com.emojimaker.horor.emoji.app-facebook-login-18.0.3-76 /home/lequyen/.gradle/caches/8.13/transforms/aded65c5b5405316b54b9738c6bbf239/transformed/facebook-login-18.0.3/res
+com.emojimaker.horor.emoji.app-ui-text-release-77 /home/lequyen/.gradle/caches/8.13/transforms/af0de43fffb519ed4506b54ace7841f2/transformed/ui-text-release/res
+com.emojimaker.horor.emoji.app-play-services-base-18.5.0-78 /home/lequyen/.gradle/caches/8.13/transforms/b46b3616a5da83ec0a6e352f2afd5fa6/transformed/play-services-base-18.5.0/res
+com.emojimaker.horor.emoji.app-work-runtime-2.11.0-79 /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/res
+com.emojimaker.horor.emoji.app-firebase-common-21.0.0-80 /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/res
+com.emojimaker.horor.emoji.app-graphics-path-1.0.1-81 /home/lequyen/.gradle/caches/8.13/transforms/b66c1079a76564cb55183194f571f845/transformed/graphics-path-1.0.1/res
+com.emojimaker.horor.emoji.app-activity-1.10.1-82 /home/lequyen/.gradle/caches/8.13/transforms/b917df60be14469660aba88a24342a6b/transformed/activity-1.10.1/res
+com.emojimaker.horor.emoji.app-appcompat-1.7.1-83 /home/lequyen/.gradle/caches/8.13/transforms/b93c75fa9e0816da75710196f32b8f92/transformed/appcompat-1.7.1/res
+com.emojimaker.horor.emoji.app-dynamicanimation-1.1.0-84 /home/lequyen/.gradle/caches/8.13/transforms/c1be6d86d84c4bef1c5cb0298823819b/transformed/dynamicanimation-1.1.0/res
+com.emojimaker.horor.emoji.app-recyclerview-1.3.1-85 /home/lequyen/.gradle/caches/8.13/transforms/c812df4f26fae1cd89096ebd0b1bdf3e/transformed/recyclerview-1.3.1/res
+com.emojimaker.horor.emoji.app-webkit-1.12.1-86 /home/lequyen/.gradle/caches/8.13/transforms/c9e31669cc48acdf1dd69decf4df8733/transformed/webkit-1.12.1/res
+com.emojimaker.horor.emoji.app-core-1.17.0-87 /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/res
+com.emojimaker.horor.emoji.app-core-ktx-1.17.0-88 /home/lequyen/.gradle/caches/8.13/transforms/d382ba6504d6f6afb7f65f36bf187dd2/transformed/core-ktx-1.17.0/res
+com.emojimaker.horor.emoji.app-lifecycle-process-2.9.4-89 /home/lequyen/.gradle/caches/8.13/transforms/d88055f793c566ebbc47a6b0f228e4d5/transformed/lifecycle-process-2.9.4/res
+com.emojimaker.horor.emoji.app-media3-ui-1.8.0-90 /home/lequyen/.gradle/caches/8.13/transforms/dd6e3d44bb511eca4d70c9e33ee14594/transformed/media3-ui-1.8.0/res
+com.emojimaker.horor.emoji.app-fragment-ktx-1.8.9-91 /home/lequyen/.gradle/caches/8.13/transforms/de03a8e1be9b1e9f21f78930c73067ac/transformed/fragment-ktx-1.8.9/res
+com.emojimaker.horor.emoji.app-emoji2-views-helper-1.3.0-92 /home/lequyen/.gradle/caches/8.13/transforms/de1ba7894034dbaee1f177c35cd86fbc/transformed/emoji2-views-helper-1.3.0/res
+com.emojimaker.horor.emoji.app-applovin-sdk-13.5.1-93 /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/res
+com.emojimaker.horor.emoji.app-KavehColorPicker-v1.0.0-94 /home/lequyen/.gradle/caches/8.13/transforms/eb04f042dd517a73d29b267f009cd7bc/transformed/KavehColorPicker-v1.0.0/res
+com.emojimaker.horor.emoji.app-ui-release-95 /home/lequyen/.gradle/caches/8.13/transforms/eb93b9d2b7829aa26262e9bb9adaf18f/transformed/ui-release/res
+com.emojimaker.horor.emoji.app-foundation-layout-release-96 /home/lequyen/.gradle/caches/8.13/transforms/eed6312e3832e5c21a6b25f4b3c31491/transformed/foundation-layout-release/res
+com.emojimaker.horor.emoji.app-Android-SpinKit-1.4.0-97 /home/lequyen/.gradle/caches/8.13/transforms/eee1789d10cd0d9da756e9cdbd58968d/transformed/Android-SpinKit-1.4.0/res
+com.emojimaker.horor.emoji.app-dotsindicator-5.1.0-98 /home/lequyen/.gradle/caches/8.13/transforms/f7df7f27e82045883208394d9d5763a6/transformed/dotsindicator-5.1.0/res
+com.emojimaker.horor.emoji.app-datastore-release-99 /home/lequyen/.gradle/caches/8.13/transforms/f9d0dd6459951ab4570702bb955375ee/transformed/datastore-release/res
+com.emojimaker.horor.emoji.app-emoji2-1.3.0-100 /home/lequyen/.gradle/caches/8.13/transforms/fc2dee47948c352c2e8b2527402eaece/transformed/emoji2-1.3.0/res
+com.emojimaker.horor.emoji.app-appcompat-resources-1.7.1-101 /home/lequyen/.gradle/caches/8.13/transforms/fd531ca0fa3a3fd4d4a803767ae09f4a/transformed/appcompat-resources-1.7.1/res
+com.emojimaker.horor.emoji.app-activity-compose-1.10.1-102 /home/lequyen/.gradle/caches/8.13/transforms/fdd83f56d4a284ae5c0e4090d1eade47/transformed/activity-compose-1.10.1/res
+com.emojimaker.horor.emoji.app-res-103 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/generated/crashlytics/res/release
+com.emojimaker.horor.emoji.app-google-services-104 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/generated/res/google-services/release
+com.emojimaker.horor.emoji.app-pngs-105 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/generated/res/pngs/release
+com.emojimaker.horor.emoji.app-resValues-106 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/generated/res/resValues/release
+com.emojimaker.horor.emoji.app-packageReleaseResources-107 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/incremental/release/packageReleaseResources/merged.dir
+com.emojimaker.horor.emoji.app-packageReleaseResources-108 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/incremental/release/packageReleaseResources/stripped.dir
+com.emojimaker.horor.emoji.app-merged-not-compiled-resources-109 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/merged-not-compiled-resources/release
+com.emojimaker.horor.emoji.app-release-110 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/merged_res/release/mergeReleaseResources
+com.emojimaker.horor.emoji.app-main-111 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/res
+com.emojimaker.horor.emoji.app-release-112 /home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/release/res

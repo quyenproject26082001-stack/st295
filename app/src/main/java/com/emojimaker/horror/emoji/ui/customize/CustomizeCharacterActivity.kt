@@ -361,7 +361,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                         YesNoDialog(
                             this@CustomizeCharacterActivity,
                             R.string.reward_title,
-                            R.string.do_you_want_to_receive
+                            R.string.do_you_want_to_receive,
+                            isReward = true
                         )
                     dialogReward.show()
                     dialogReward.onNoClick = {
@@ -1122,7 +1123,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                                         )
                                     }
                                     withContext(Dispatchers.Main) {
-                                        logEvent("click_item_${viewModel.positionSelected}_edit")
+                                        val dataName = viewModel.dataCustomize.value?.dataName.orEmpty()
+                                        logEvent("click_item_${dataName}_edit")
                                         // ✅ 1) GỬI RESULT VỀ ViewActivity NGAY (nhưng chưa finish)
                                         val data = android.content.Intent().apply {
                                             putExtra("NEW_PATH", result.path)
@@ -1148,7 +1150,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
                                         )
                                     }
                                     withContext(Dispatchers.Main) {
-                                        logEvent("click_item_${viewModel.positionSelected}_done")
+                                        val dataName = viewModel.dataCustomize.value?.dataName.orEmpty()
+                                        logEvent("click_item_${dataName}_done")
                                         showInterAll {
                                             startIntentRightToLeft(
                                                 AddCharacterActivity::class.java,

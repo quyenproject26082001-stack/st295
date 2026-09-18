@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_constraintDimensionRatio="1:1"
-    android:layout_margin="1.5dp">
+    android:layout_margin="@dimen/dp_1_5">
 
 
 
@@ -24,7 +24,7 @@
         android:id="@+id/cardLayerItem"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="2dp"
+        android:layout_margin="@dimen/dp_2"
         tools:background="@drawable/layer_slt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:padding="10dp"
+            android:padding="@dimen/dp_10"
             android:src="@color/red_BA"
             android:clipToOutline="true"
             />
@@ -66,10 +66,10 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
-            android:translationY="-2dp"
-            android:padding="16dp"
+            android:translationY="@dimen/dp_minus_2"
+            android:padding="@dimen/dp_16"
 
-            android:layout_margin="1dp"
+            android:layout_margin="@dimen/dp_1"
             android:scaleType="fitXY"
             app:tint="#212121"
             android:src="@drawable/ic_none"
@@ -82,12 +82,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
-            android:layout_margin="1dp"
+            android:layout_margin="@dimen/dp_1"
             android:focusable="true"
-            android:padding="16dp"
+            android:padding="@dimen/dp_16"
             app:tint="#212121"
 
-            android:translationY="-2dp"
+            android:translationY="@dimen/dp_minus_2"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_random_layer"
             android:visibility="gone" />

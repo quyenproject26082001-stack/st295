@@ -24,7 +24,7 @@ class TextColorAdapter : BaseAdapter<SelectedModel, ItemTextColorBinding>(ItemTe
 
         binding.apply {
             cardTextColor.strokeColor = Color.parseColor("#333333")
-            cardTextColor.strokeWidth = if (item.isSelected) dp(2) else dp(0)
+            cardTextColor.strokeWidth = if (item.isSelected) root.resources.getDimensionPixelSize(R.dimen.dp_2) else 0
 
             if (position == 0) {
                 Log.d("TextColorAdapter", "Position 0: Clearing and loading img0text_color")
@@ -55,8 +55,8 @@ class TextColorAdapter : BaseAdapter<SelectedModel, ItemTextColorBinding>(ItemTe
 
                 // Set margin to 2dp for other positions (keep normal size)
                 val layoutParams = imvColor.layoutParams as android.widget.FrameLayout.LayoutParams
-                val margin2dp = imvColor.context.resources.displayMetrics.density * 1
-                layoutParams.setMargins(margin2dp.toInt(), margin2dp.toInt(), margin2dp.toInt(), margin2dp.toInt())
+                val margin2dp = root.resources.getDimensionPixelSize(R.dimen.dp_1)
+                layoutParams.setMargins(margin2dp, margin2dp, margin2dp, margin2dp)
                 imvColor.layoutParams = layoutParams
 
                 imvColor.setImageResource(0) // Clear image resource
@@ -78,9 +78,6 @@ class TextColorAdapter : BaseAdapter<SelectedModel, ItemTextColorBinding>(ItemTe
         }
     }
 
-    private fun dp(value: Int): Int {
-        return (value * android.content.res.Resources.getSystem().displayMetrics.density).toInt()
-    }
 
     fun submitItem(position: Int, list: ArrayList<SelectedModel>) {
         Log.d("TextColorAdapter", "submitItem called with position=$position")

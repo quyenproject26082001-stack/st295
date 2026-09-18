@@ -15,7 +15,7 @@ import com.emojimaker.horor.emoji.databinding.ItemChooseAvatarBinding
 import java.io.File
 
 class ChooseCharacterAdapter : BaseAdapter<CustomizeModel, ItemChooseAvatarBinding>(ItemChooseAvatarBinding::inflate) {
-    var onItemClick: ((position: Int) -> Unit) = {}
+    var onItemClick: ((position: Int, item: CustomizeModel) -> Unit) = {_,_->}
 
 
     override fun onBind(binding: ItemChooseAvatarBinding, item: CustomizeModel, position: Int) {
@@ -64,7 +64,7 @@ class ChooseCharacterAdapter : BaseAdapter<CustomizeModel, ItemChooseAvatarBindi
                     }
                 })
                 .into(imvImage)
-            root.tap { onItemClick.invoke(position) }
+            root.tap { onItemClick.invoke(position, item) }
         }
     }
 }

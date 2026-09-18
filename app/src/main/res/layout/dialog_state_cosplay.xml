@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginHorizontal="@dimen/dp_16"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,19 +20,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/dp_30"
             android:background="@drawable/bg_frame_cosplayrandom"
             />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="58dp"
+            android:layout_height="@dimen/dp_58"
             android:id="@+id/BgTitle"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/title_win"
-            android:layout_marginHorizontal="24dp"
+            android:layout_marginHorizontal="@dimen/dp_24"
             >
             <TextView
                 android:id="@+id/tvTitle"
@@ -41,7 +41,7 @@
                 android:textColor="@color/app"
                 android:text="@string/loser"
                 android:gravity="center"
-                android:textSize="22sp"
+                android:textSize="@dimen/sp_22"
                 android:fontFamily="@font/howli_layers_base"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -50,8 +50,8 @@
                 />
             <ImageView
                 android:id="@+id/win1"
-                android:layout_width="46dp"
-                android:layout_height="36dp"
+                android:layout_width="@dimen/dp_46"
+                android:layout_height="@dimen/dp_36"
                 android:src="@drawable/img_win1"
                 app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintEnd_toStartOf="@id/tvTitle"
@@ -61,8 +61,8 @@
 
             <ImageView
                 android:id="@+id/win2"
-                android:layout_width="46dp"
-                android:layout_height="36dp"
+                android:layout_width="@dimen/dp_46"
+                android:layout_height="@dimen/dp_36"
                 android:src="@drawable/img_win1"
                 app:layout_constraintHorizontal_bias="0"
                 android:scaleX="-1"
@@ -77,11 +77,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="@dimen/dp_112"
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/ImgWin"
             android:src="@drawable/img_win"
-           android:layout_marginTop="66dp"
+           android:layout_marginTop="@dimen/dp_66"
             />
 
         <TextView
@@ -89,19 +89,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/ImgWin"
-            android:textSize="16sp"
+            android:textSize="@dimen/sp_16"
             android:textColor="@color/app"
             android:text="@string/congratulations_on_completing_the_challenge"
             android:fontFamily="@font/howli_layers_base"
             android:layout_marginTop="0dp"
             android:gravity="center"
-            android:layout_marginHorizontal="26dp"
+            android:layout_marginHorizontal="@dimen/dp_26"
             />
         
         <TextView
             android:id="@+id/btnNext"
-            android:layout_width="156dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/dp_156"
+            android:layout_height="@dimen/dp_40"
             android:background="@drawable/bg_btn_dialog"
             android:text="@string/next"
             android:fontFamily="@font/howli_layers_base"
@@ -113,7 +113,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="@dimen/dp_25"/>
         
         
         

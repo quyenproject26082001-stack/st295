@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app"
-    android:clipToPadding="true"
-    android:paddingTop="4dp"
+    android:clipToPadding="false"
+    android:paddingTop="@dimen/dp_4"
     tools:context=".ui.my_creation.fragment.MyEmojiFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -14,7 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false"
-        android:paddingHorizontal="4dp"
+        android:paddingBottom="@dimen/dp_50"
+        android:layout_marginBottom="@dimen/dp_80"
+        android:paddingHorizontal="@dimen/dp_4"
+        android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_my_emoji" />
@@ -24,14 +27,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/dp_50"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="152dp"
+            android:layout_height="@dimen/dp_152"
             android:adjustViewBounds="true"
             android:src="@drawable/img_no_item"
             android:visibility="invisible" />
@@ -40,13 +43,13 @@
             android:id="@+id/tvNoitem"
             style="@style/single_marquee"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="@dimen/dp_37"
             android:fontFamily="@font/howli_layers_base"
             android:gravity="center"
-            android:paddingHorizontal="33dp"
+            android:paddingHorizontal="@dimen/dp_33"
             android:text="@string/no_item_here"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimen/sp_18" />
     </LinearLayout>
 
 </FrameLayout>

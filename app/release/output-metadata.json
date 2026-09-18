@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "1.0.0",
-      "outputFile": "Horror Emoji Maker_v1.0.0_07.20.2026-release.apk"
+      "versionCode": 4,
+      "versionName": "1.0.3",
+      "outputFile": "ST295_Horror_Emoji_Maker_V1.0.3_07.31.2026-release.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/Horror Emoji Maker_v1.0.0_07.20.2026-release.dm"
+        "baselineProfiles/1/ST295_Horror_Emoji_Maker_V1.0.3_07.31.2026-release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/Horror Emoji Maker_v1.0.0_07.20.2026-release.dm"
+        "baselineProfiles/0/ST295_Horror_Emoji_Maker_V1.0.3_07.31.2026-release.dm"
       ]
     }
   ],

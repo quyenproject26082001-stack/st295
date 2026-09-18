@@ -25,11 +25,10 @@ class BackgroundColorAdapter :
 
 
         binding.apply {
-            cardBackgroundColor.strokeWidth = if (item.isSelected) dp(2) else 0
+            cardBackgroundColor.strokeWidth = if (item.isSelected) root.resources.getDimensionPixelSize(R.dimen.dp_2) else 0
             cardBackgroundColor.strokeColor = if (item.isSelected) Color.parseColor("#333333") else Color.TRANSPARENT
 
-            val radiusPx = (10f *
-                    root.context.resources.displayMetrics.density).toInt()
+            val radiusPx = root.resources.getDimensionPixelSize(R.dimen.dp_10)
             if (position == 0) {
                 Log.d("BackgroundColorAdapter", "Position 0: Loading img with CircleCrop")
                 Glide.with(root.context).clear(imvColor)
@@ -63,9 +62,6 @@ class BackgroundColorAdapter :
         }
     }
 
-    private fun dp(value: Int): Int {
-        return (value * android.content.res.Resources.getSystem().displayMetrics.density).toInt()
-    }
 
     fun submitItem(position: Int, list: ArrayList<SelectedModel>){
         Log.d("BackgroundColorAdapter", "submitItem called with position=$position")

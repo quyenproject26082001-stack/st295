@@ -121,6 +121,73 @@ public final class JsonCacheDao_Impl implements JsonCacheDao {
   }
 
   @Override
+  public Object getJsonLength(final String key, final Continuation<? super Integer> $completion) {
+    final String _sql = "SELECT length(json) FROM json_cache WHERE `key` = ? LIMIT 1";
+    return DBUtil.performSuspending(__db, true, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        if (key == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindText(_argIndex, key);
+        }
+        final Integer _result;
+        if (_stmt.step()) {
+          final Integer _tmp;
+          if (_stmt.isNull(0)) {
+            _tmp = null;
+          } else {
+            _tmp = (int) (_stmt.getLong(0));
+          }
+          _result = _tmp;
+        } else {
+          _result = null;
+        }
+        return _result;
+      } finally {
+        _stmt.close();
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object getJsonChunk(final String key, final int start, final int length,
+      final Continuation<? super String> $completion) {
+    final String _sql = "SELECT substr(json, ?, ?) FROM json_cache WHERE `key` = ? LIMIT 1";
+    return DBUtil.performSuspending(__db, true, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, start);
+        _argIndex = 2;
+        _stmt.bindLong(_argIndex, length);
+        _argIndex = 3;
+        if (key == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindText(_argIndex, key);
+        }
+        final String _result;
+        if (_stmt.step()) {
+          final String _tmp;
+          if (_stmt.isNull(0)) {
+            _tmp = null;
+          } else {
+            _tmp = _stmt.getText(0);
+          }
+          _result = _tmp;
+        } else {
+          _result = null;
+        }
+        return _result;
+      } finally {
+        _stmt.close();
+      }
+    }, $completion);
+  }
+
+  @Override
   public Object countKey(final String key, final Continuation<? super Integer> $completion) {
     final String _sql = "SELECT COUNT(*) FROM json_cache WHERE `key` = ?";
     return DBUtil.performSuspending(__db, true, false, (_connection) -> {

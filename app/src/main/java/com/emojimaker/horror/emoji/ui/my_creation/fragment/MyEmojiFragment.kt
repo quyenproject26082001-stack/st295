@@ -63,6 +63,9 @@ class MyEmojiFragment : BaseFragment<FragmentMyEmojiBinding>() {
                 launch {
                     viewModel.myEmojiList.collect { list ->
                         myEmojiAdapter.submitList(list)
+                        val isSelectionMode = list.any { it.isShowSelection }
+                        binding.root.clipToPadding = isSelectionMode
+                        binding.rcvMyEmoji.clipToPadding = isSelectionMode
                         binding.layoutNoItem.isVisible = list.isEmpty()
                         if (myCreationViewModel.typeStatus.value == ValueKey.EMOJI_TYPE) {
                             if (list.isEmpty()) myAlbumActivity.binding.lnlBottom.gone()

@@ -640,7 +640,7 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
 
             if (isShowBorder) {
                 val activeBorderBitmap = if (handlingDraw!!.isText) borderBitmapText else borderBitmap
-                val margin = 4 * resources.displayMetrics.density
+                val margin = resources.getDimension(R.dimen.dp_4)
                 val topLen = sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
                 val leftLen = sqrt((x3 - x1).pow(2) + (y3 - y1).pow(2))
                 val rightX = (x2 - x1) / topLen

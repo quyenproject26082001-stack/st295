@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_app"
+    android:background="#FFF8F0"
     tools:context=".ui.customize.CustomizeCharacterActivity">
 
     <ImageView
@@ -32,11 +32,11 @@
         android:id="@+id/layoutCustomLayerBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/dp_8"
         app:layout_constraintBottom_toTopOf="@id/containerBtnSamplePhoto"
         app:layout_constraintVertical_bias="0"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,10 +46,10 @@
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="4dp"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_8"
+        app:cardCornerRadius="@dimen/dp_4"
         app:cardElevation="0dp"
         app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintVertical_bias="0"
@@ -77,10 +77,10 @@
     <!--    btnHide-->
     <ImageView
         android:id="@+id/btnHide"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_16"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_show"
         android:visibility="invisible"
@@ -90,15 +90,15 @@
 
     <TextView
         android:id="@+id/btnMan"
-        android:layout_width="64dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="@dimen/dp_64"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_6"
         android:background="@drawable/selector_btn_man"
-        android:elevation="1dp"
+        android:elevation="@dimen/dp_1"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/dp_16"
         app:layout_constraintTop_toBottomOf="@id/layoutCustomLayerBackground"
         />
     
@@ -109,9 +109,9 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="28dp"
+        app:cardCornerRadius="@dimen/dp_28"
         app:strokeColor="#861629"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginHorizontal="@dimen/dp_16"
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="@+id/containerBtnSamplePhoto"
@@ -123,7 +123,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="28dp"
+            android:layout_height="@dimen/dp_28"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toTopOf="@id/bg_cus"
             app:layout_constraintEnd_toEndOf="parent"
@@ -138,8 +138,8 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="4dp"
+        android:layout_marginEnd="@dimen/dp_16"
+        app:cardCornerRadius="@dimen/dp_4"
         app:strokeColor="#861629"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/bg_cus"
@@ -149,8 +149,8 @@
 
         <ImageView
             android:id="@+id/btnSamplePhoto"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toTopOf="@id/bg_cus"
             app:layout_constraintEnd_toEndOf="parent"
@@ -160,11 +160,11 @@
 
     <TextView
         android:id="@+id/btnWooman"
-        android:layout_width="64dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="@dimen/dp_64"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="@dimen/dp_12"
         android:background="@drawable/selector_btn_woman"
-        android:elevation="1dp"
+        android:elevation="@dimen/dp_1"
         android:visibility="gone"
         app:layout_constraintStart_toEndOf="@id/bg_cus"
         app:layout_constraintTop_toTopOf="@id/bg_cus"
@@ -185,13 +185,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="0dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginBottom="@dimen/dp_6"
         android:background="@color/transparent"
-        android:elevation="1dp"
+        android:elevation="@dimen/dp_1"
         android:orientation="horizontal"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_7"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/flBottomNav"
         app:layout_constraintEnd_toStartOf="@id/btnRandom"
@@ -200,8 +200,8 @@
         <!--    btnColor-->
         <ImageView
             android:id="@+id/btnColor"
-            android:layout_width="40dp"
-            android:layout_height="39dp"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_39"
             android:src="@drawable/ic_color"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -214,9 +214,9 @@
             android:id="@+id/flColor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
+            android:layout_marginStart="@dimen/dp_7"
             android:layout_marginEnd="0dp"
-            android:elevation="1dp"
+            android:elevation="@dimen/dp_1"
             android:gravity="start"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/btnColor"
@@ -230,19 +230,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:cardBackgroundColor="#80FFFFFF"
-                app:cardCornerRadius="16dp"
+                app:cardCornerRadius="@dimen/dp_16"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="#FF8600"
-                app:strokeWidth="2dp">
+                app:strokeWidth="@dimen/dp_2">
 
 
                 <RelativeLayout
                     android:id="@+id/relative"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginVertical="@dimen/dp_8"
                 >
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -251,7 +251,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="4dp"
+                        android:layout_marginHorizontal="@dimen/dp_4"
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -271,24 +271,24 @@
 
     <ImageView
         android:id="@+id/btnRandom"
-        android:layout_width="40dp"
-        android:layout_height="38.8dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_38_8"
+        android:layout_marginTop="@dimen/dp_4"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_random"
-        android:elevation="2dp"
-        android:layout_marginBottom="16dp"
+        android:elevation="@dimen/dp_2"
+        android:layout_marginBottom="@dimen/dp_16"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/btnMove"
         app:layout_constraintEnd_toEndOf="@id/btnMove" />
 
     <ImageView
         android:id="@+id/btnMove"
-        android:layout_width="39dp"
-        android:layout_height="39dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/dp_39"
+        android:layout_height="@dimen/dp_39"
+        android:layout_marginEnd="@dimen/dp_16"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:elevation="2dp"
+        android:elevation="@dimen/dp_2"
         android:src="@drawable/ic_move"
         app:layout_constraintTop_toTopOf="@id/color"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -300,7 +300,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/glHorizontal"
         android:background="#FF8600"
-        android:layout_marginTop="61dp"/>
+        android:layout_marginTop="@dimen/dp_61"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -308,25 +308,25 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#FF8600"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="@dimen/dp_61"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/glHorizontal"
         android:visibility="invisible">
 
         <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
             android:id="@+id/btnResetMove"
-            android:layout_width="120dp"
-            android:layout_height="38dp"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_38"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/bg_btn_move"
             android:text="@string/reset"
             style="@style/single_marquee"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp_18"
             android:textColor="@color/app"
             android:gravity="center"
-            android:paddingHorizontal="6dp"
+            android:paddingHorizontal="@dimen/dp_6"
             app:layout_constraintBottom_toTopOf="@id/btnMoveUp"
             android:fontFamily="@font/howli_layers_base"
             app:layout_constraintStart_toStartOf="parent"
@@ -335,9 +335,9 @@
 
         <ImageView
             android:id="@+id/rotateToRight"
-            android:layout_width="70dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="21dp"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_38"
+            android:layout_marginStart="@dimen/dp_21"
             android:layout_marginTop="0dp"
             android:background="@drawable/ic_rotate_to_right"
             android:gravity="center"
@@ -348,9 +348,9 @@
 
         <ImageView
             android:id="@+id/rotateToLeft"
-            android:layout_width="70dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="21dp"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_38"
+            android:layout_marginStart="@dimen/dp_21"
             app:layout_constraintBottom_toBottomOf="@id/btnMoveDown"
             android:background="@drawable/ic_rotate_to_left"
             android:gravity="center"
@@ -360,9 +360,9 @@
 
         <ImageView
             android:id="@+id/btnPlus"
-            android:layout_width="70dp"
-            android:layout_height="38dp"
-            android:layout_marginEnd="21dp"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_38"
+            android:layout_marginEnd="@dimen/dp_21"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="0dp"
             android:background="@drawable/ic_plus"
@@ -373,9 +373,9 @@
 
         <ImageView
             android:id="@+id/btnMinus"
-            android:layout_width="70dp"
-            android:layout_height="38dp"
-            android:layout_marginEnd="21dp"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_38"
+            android:layout_marginEnd="@dimen/dp_21"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="0dp"
             android:background="@drawable/ic_minus"
@@ -385,8 +385,8 @@
 
         <ImageView
             android:id="@+id/btnMoveLeft"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
+            android:layout_width="@dimen/dp_38"
+            android:layout_height="@dimen/dp_38"
             app:layout_constraintVertical_bias=".6"
             app:layout_constraintHorizontal_bias=".4"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -397,8 +397,8 @@
 
         <ImageView
             android:id="@+id/btnMoveUp"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
+            android:layout_width="@dimen/dp_38"
+            android:layout_height="@dimen/dp_38"
             android:background="@drawable/ic_arrow_move"
             android:rotation="90"
             app:layout_constraintBottom_toTopOf="@id/btnMoveLeft"
@@ -406,8 +406,8 @@
 
         <ImageView
             android:id="@+id/btnMoveDown"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
+            android:layout_width="@dimen/dp_38"
+            android:layout_height="@dimen/dp_38"
             android:background="@drawable/ic_arrow_move"
             android:rotation="-90"
             app:layout_constraintStart_toEndOf="@id/btnMoveLeft"
@@ -426,8 +426,8 @@
 
         <ImageView
             android:id="@+id/btnMoveRight"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
+            android:layout_width="@dimen/dp_38"
+            android:layout_height="@dimen/dp_38"
             android:background="@drawable/ic_arrow_move"
             android:rotation="180"
             app:layout_constraintStart_toEndOf="@id/btnMoveUp"
@@ -442,11 +442,11 @@
         android:id="@+id/rcvLayer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/dp_12"
         android:layerType="hardware"
-        android:paddingHorizontal="9.5dp"
+        android:paddingHorizontal="@dimen/dp_9_5"
         android:clipToPadding="false"
-        android:paddingBottom="80dp"
+        android:paddingBottom="@dimen/dp_80"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg_cus"
@@ -488,7 +488,7 @@ app:layout_constraintBottom_toTopOf="@id/layoutMove"
         <FrameLayout
             android:id="@+id/flNativeCollab"
             android:layout_width="match_parent"
-            android:elevation="100dp"
+            android:elevation="@dimen/dp_100"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent">
 

@@ -415,7 +415,7 @@ class CosplayCustomizeActivity : BaseActivity<ActivityCosplayCustomizeBinding>()
             val fillBoundary = containerH - clipH  // top của vùng fill (tính từ top container)
             // Bottom của thumb bám vào top của fill: center = fillBoundary - thumbH/2
             val thumbCenter = (fillBoundary - thumbH / 4f).coerceIn(thumbH / 2f, containerH - thumbH / 2f)
-            val completedOffset = if (progress == 100) 15f * resources.displayMetrics.density else 0f
+            val completedOffset = if (progress == 100) resources.getDimension(R.dimen.dp_15) else 0f
             binding.icThumb.translationY = thumbCenter - containerH / 2f - completedOffset
             binding.tvThumbProgress.text = "$progress%"
             binding.tvThumbProgress.select()

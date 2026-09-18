@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityCheckerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-18T03:45:38.122Z" hostname="quyen-lt" time="0.183">
+  <properties/>
+  <testcase name="unchangedDataRemainsEditable" classname="com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityCheckerTest" time="0.03"/>
+  <testcase name="fingerprintRejectsChangedSourceData" classname="com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityCheckerTest" time="0.008"/>
+  <testcase name="legacySnapshotAllowsAdditionalItemWhenOldItemsRemain" classname="com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityCheckerTest" time="0.008"/>
+  <testcase name="legacySnapshotRejectsRemovedItemAndChangedPosition" classname="com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityCheckerTest" time="0.0"/>
+  <testcase name="oldJsonWithoutNewFieldsUsesLegacyValidation" classname="com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityCheckerTest" time="0.136"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

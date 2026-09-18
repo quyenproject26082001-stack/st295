@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#FF8600"
     android:layout_height="match_parent"
-    android:paddingTop="16dp"
+    android:paddingTop="@dimen/dp_16"
     android:clipToPadding="true"
     tools:context=".ui.my_creation.fragment.MyDesignFragment">
 
@@ -14,7 +14,7 @@
         android:id="@+id/rcvMyDesign"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="4dp"
+        android:paddingHorizontal="@dimen/dp_4"
         android:clipChildren="false"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/dp_50"
         android:orientation="vertical"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,7 +39,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="152dp"
+            android:layout_height="@dimen/dp_152"
             android:visibility="invisible"
             android:adjustViewBounds="true"
             android:src="@drawable/img_no_item" />
@@ -49,13 +49,13 @@
 
             style="@style/single_marquee"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="@dimen/dp_37"
             android:fontFamily="@font/howli_layers_base"
             android:gravity="center"
-            android:paddingHorizontal="33dp"
+            android:paddingHorizontal="@dimen/dp_33"
             android:text="@string/no_item_here"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp_18"
             android:translationY="0dp" />
     </LinearLayout>
 

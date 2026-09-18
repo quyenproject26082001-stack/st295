@@ -115,7 +115,7 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
 
     override fun initView() {
         binding.seekbarSize.progressDrawable =
-            TaperedSeekBarDrawable(resources.displayMetrics.density)
+            TaperedSeekBarDrawable(resources.getDimension(R.dimen.dp_1))
         initDrawView()
         initRecyclerViews()
         setupKeyboardAwareTextPanels()
@@ -149,20 +149,20 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
             btnActionBarRightText.setBackgroundResource(R.drawable.bg_done_customize_emoji)
             btnActionBarRightText.layoutParams =
                 (btnActionBarRightText.layoutParams as ConstraintLayout.LayoutParams).apply {
-                    width = (80 * resources.displayMetrics.density).toInt()
-                    height = (36 * resources.displayMetrics.density).toInt()
+                    width = resources.getDimensionPixelSize(R.dimen.dp_80)
+                    height = resources.getDimensionPixelSize(R.dimen.dp_36)
                     bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID
                     topToTop = ConstraintLayout.LayoutParams.UNSET
                     endToEnd = ConstraintLayout.LayoutParams.PARENT_ID
-                    bottomMargin = (10 * resources.displayMetrics.density).toInt()
-                    marginEnd = (16 * resources.displayMetrics.density).toInt()
+                    bottomMargin = resources.getDimensionPixelSize(R.dimen.dp_10)
+                    marginEnd = resources.getDimensionPixelSize(R.dimen.dp_16)
                 }
         }
         updateUndoRedoButtons()
     }
 
     private fun setCenterActionButtonSpacing() {
-        val gap = (16 * resources.displayMetrics.density).toInt()
+        val gap = resources.getDimensionPixelSize(R.dimen.dp_16)
         binding.actionBar.btnActionBarCenterLeft.layoutParams =
             (binding.actionBar.btnActionBarCenterLeft.layoutParams as ConstraintLayout.LayoutParams).apply {
                 startToStart = ConstraintLayout.LayoutParams.PARENT_ID
@@ -204,7 +204,7 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
         iconRes: Int,
         onClick: () -> Unit
     ): MaterialCardView {
-        val size = (36 * resources.displayMetrics.density).toInt()
+        val size = resources.getDimensionPixelSize(R.dimen.dp_36)
         val card = MaterialCardView(this).apply {
             id = View.generateViewId()
             visibility = View.GONE
@@ -476,6 +476,8 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
         currentState = EditorState.STATE_1
         disableTextKeyboardResize()
         binding.apply {
+            bgCus.visible()
+            overlay.invisible()
             drawView.setLocked(false)
             layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
             stateBlackCover.invisible()
@@ -507,6 +509,8 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
         currentState = EditorState.STATE_2
         disableTextKeyboardResize()
         binding.apply {
+            bgCus.visible()
+            overlay.visible()
             drawView.setLocked(true)
             layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
             stateBlackCover.visible()
@@ -544,6 +548,8 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
         window.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         enableTextKeyboardResize()
         binding.apply {
+            bgCus.invisible()
+            overlay.visible()
             drawView.setLocked(true)
             layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
             stateBlackCover.visible()
@@ -587,6 +593,8 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
         currentState = EditorState.STATE_4
         disableTextKeyboardResize()
         binding.apply {
+            bgCus.visible()
+            overlay.invisible()
             drawView.setLocked(false)
             layoutCustomLayer.setBackgroundColor(Color.TRANSPARENT)
             stateBlackCover.invisible()
@@ -914,11 +922,11 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
         binding.actionBar.btnActionBarCenterRight.visibility = View.INVISIBLE
         textColorToolCard?.apply {
             visibility = View.VISIBLE
-            strokeWidth = if (isColor) (3 * resources.displayMetrics.density).toInt() else 0
+            strokeWidth = if (isColor) resources.getDimensionPixelSize(R.dimen.dp_3) else 0
         }
         textFontToolCard?.apply {
             visibility = View.VISIBLE
-            strokeWidth = if (!isColor) (3 * resources.displayMetrics.density).toInt() else 0
+            strokeWidth = if (!isColor) resources.getDimensionPixelSize(R.dimen.dp_3) else 0
         }
     }
 
@@ -988,7 +996,7 @@ open class CustomizeEmojiActivity : BaseActivity<ActivityCustomizeEmojiBinding>(
         emojiLayerAdapter.onStartDrag = { holder -> layerTouchHelper.startDrag(holder) }
         val deletePaint = Paint().apply { color = Color.parseColor("#FF3434") }
         val deleteIcon = ContextCompat.getDrawable(this, R.drawable.ic_delete_layer)
-        val deleteIconSize = (24 * resources.displayMetrics.density).toInt()
+        val deleteIconSize = resources.getDimensionPixelSize(R.dimen.dp_24)
         layerTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.LEFT

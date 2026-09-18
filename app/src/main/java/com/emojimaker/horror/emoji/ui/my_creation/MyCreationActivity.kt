@@ -371,8 +371,8 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             tvCenter.visible()
             tvCenter.setText(R.string.my_creation)
             tvCenter.select()
-            btnActionBarRight.translationX = -5 * resources.displayMetrics.density
-            btnActionBarNextRight.translationX = -1 * resources.displayMetrics.density
+            btnActionBarRight.translationX = -resources.getDimension(R.dimen.dp_5)
+            btnActionBarNextRight.translationX = -resources.getDimension(R.dimen.dp_1)
             btnActionBarRight.invisible()
         }
     }
@@ -605,15 +605,15 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
         binding.actionBar.apply {
             btnActionBarNextRight.visible()
             btnActionBarNextRight.setImageResource(R.drawable.ic_delete_creation)
-            btnActionBarNextRight.translationY = -2f * resources.displayMetrics.density
+            btnActionBarNextRight.translationY = -resources.getDimension(R.dimen.dp_2)
             btnActionBarRight.updateLayoutParams {
-                width = (26f*resources.displayMetrics.density).toInt()
-                height = (26f*resources.displayMetrics.density).toInt()
+                width = resources.getDimensionPixelSize(R.dimen.dp_26)
+                height = resources.getDimensionPixelSize(R.dimen.dp_26)
             }
 
             btnActionBarNextRight.updateLayoutParams {
-                width = (26f*resources.displayMetrics.density).toInt()
-                height = (26f*resources.displayMetrics.density).toInt()
+                width = resources.getDimensionPixelSize(R.dimen.dp_26)
+                height = resources.getDimensionPixelSize(R.dimen.dp_26)
             }
             btnActionBarRight.visible()
             btnActionBarRight.translationY = 0f * resources.displayMetrics.density

@@ -1,5 +1,7 @@
 package com.emojimaker.horor.emoji.ui.customize
 
+import com.emojimaker.horor.emoji.R
+
 import android.graphics.Color
 import com.emojimaker.horor.emoji.core.base.BaseAdapter
 import com.emojimaker.horor.emoji.core.extensions.select
@@ -12,7 +14,7 @@ class TextColorEmojiAdapter : BaseAdapter<SelectedModel, ItemColorTextEmojiBindi
 
     override fun onBind(binding: ItemColorTextEmojiBinding, item: SelectedModel, position: Int) {
         binding.apply {
-            cardTextColorEmoji.strokeWidth = if (item.isSelected) dp(binding, 3) else 0
+            cardTextColorEmoji.strokeWidth = if (item.isSelected) root.resources.getDimensionPixelSize(R.dimen.dp_3) else 0
             cardTextColorEmoji.strokeColor = Color.parseColor("#FF8600")
             cardTextColorEmoji.setCardBackgroundColor(item.color)
             tvColor.text = ""
@@ -27,7 +29,4 @@ class TextColorEmojiAdapter : BaseAdapter<SelectedModel, ItemColorTextEmojiBindi
         notifyDataSetChanged()
     }
 
-    private fun dp(binding: ItemColorTextEmojiBinding, value: Int): Int {
-        return (value *  binding.root.resources.displayMetrics.density).toInt()
-    }
 }

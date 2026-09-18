@@ -18,7 +18,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             android:layout_height="0dp"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/dp_8"
             app:cardBackgroundColor="@color/transparent"
             app:strokeColor="@color/transparent">
 
@@ -28,8 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:strokeColor="@color/app"
-                app:cardCornerRadius="24dp"
-                app:strokeWidth="3dp"
+                app:cardCornerRadius="@dimen/dp_24"
+                app:strokeWidth="@dimen/dp_3"
                 app:cardBackgroundColor="@color/white"
                 >
 

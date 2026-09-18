@@ -42,7 +42,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
-        android:paddingHorizontal="8dp"
+        android:paddingHorizontal="@dimen/dp_8"
         android:clipChildren="false"
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -55,7 +55,7 @@
 <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
     <FrameLayout
         android:id="@+id/flNativeCollab"
-        android:elevation="100dp"
+        android:elevation="@dimen/dp_100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">

@@ -132,11 +132,9 @@ class ChooseCharacterActivity : BaseActivity<ActivityChooseCharacterBinding>() {
         binding.apply {
             actionBar.btnActionBarLeft.tap { showInterAll { handleBackLeftToRight() } }
         }
-        chooseCharacterAdapter.onItemClick = { position ->
-            AdmobEvent.logEvent(this@ChooseCharacterActivity, "click_item_$position", null)
+        chooseCharacterAdapter.onItemClick = { position, model ->
+            AdmobEvent.logEvent(this@ChooseCharacterActivity, "click_item_${model.dataName}", null)
 
-            android.util.Log.d("ChooseCharacter", "========================================")
-            android.util.Log.d("ChooseCharacter", "Item clicked: position $position")
 
             // ✅ FIX: Use isFromAPI flag from character data instead of position
             val selectedCharacter = dataViewModel.allData.value.getOrNull(position)
@@ -154,8 +152,6 @@ class ChooseCharacterActivity : BaseActivity<ActivityChooseCharacterBinding>() {
 
 
 
-            android.util.Log.d("ChooseCharacter", "Character isFromAPI: $needsInternet")
-            android.util.Log.d("ChooseCharacter", "Character name: ${selectedCharacter?.dataName}")
 
             if (needsInternet) {
                 android.util.Log.d("ChooseCharacter", "API character - checking internet...")

@@ -36,15 +36,16 @@
     <string name="cosplay_cat">gato cosplay</string>
     <string name="create_package_name">Criar Nome do Pacote</string>
     <string name="creation">MINHA\nCRIAÇÃO</string>
+    <string name="creation_data_updated_cannot_edit">Esta criação não é editável.</string>
     <string name="delete">EXCLUIR</string>
     <string name="delete_failed_please_try_again">Falha ao excluir, tente novamente!</string>
     <string name="delete_your_customize">Excluir sua personalização</string>
     <string name="do_you_want_to_exit">Ainda não foi salvo, deseja sair?</string>
-    <string name="do_you_want_to_receive">Você quer receber uma recompensa assistindo a um anúncio?</string>
+    <string name="do_you_want_to_receive">Assista ao vídeo e receba as recompensas correspondentes!</string>
     <string name="done">Concluído</string>
     <string name="download">Baixar</string>
     <string name="download_failed_please_try_again_later">Falha no download, tente novamente mais tarde!</string>
-    <string name="download_success">Download concluído com sucesso no álbum Horror Emoji Maker</string>
+    <string name="download_success">Download concluído com sucesso no álbum Scary Emoji Maker</string>
     <string name="downloading">Baixando...</string>
     <string name="edit">EDITAR</string>
     <string name="emoji_activities">Emoji Atividades</string>
@@ -68,6 +69,7 @@
     <string name="four_star">Obrigado pelo seu feedback</string>
     <string name="four_star_title">Nós também amamos você!</string>
     <string name="free">GRÁTIS</string>
+    <string name="free1">Grátis</string>
     <string name="generate">ALEATÓRIO</string>
     <string name="go_to_setting_message">O aplicativo precisa desta permissão</string>
     <string name="granted_notification">Permissão de notificação concedida</string>
@@ -132,7 +134,7 @@
     <string name="rate_us">\u00A0\u00A0Avalie-nos\u00A0\u00A0</string>
     <string name="rate_us_0">Você ainda não avaliou!</string>
     <string name="reset">REDEFINIR</string>
-    <string name="reward_title">Recompensa!</string>
+    <string name="reward_title">Recompensas</string>
     <string name="save">SALVAR</string>
     <string name="save_failed_please_try_again">Falha ao salvar, tente novamente!</string>
     <string name="settings">Configurações</string>

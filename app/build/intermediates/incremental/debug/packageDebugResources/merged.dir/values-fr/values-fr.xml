@@ -36,15 +36,16 @@
     <string name="cosplay_cat">chat cosplay</string>
     <string name="create_package_name">Créer un nom de package</string>
     <string name="creation">MA\nCRÉATION</string>
+    <string name="creation_data_updated_cannot_edit">Cette création n’est plus modifiable.</string>
     <string name="delete">SUPPRIMER</string>
     <string name="delete_failed_please_try_again">Échec de la suppression, veuillez réessayer !</string>
     <string name="delete_your_customize">Supprimer votre personnalisation</string>
     <string name="do_you_want_to_exit">Pas encore enregistré, voulez-vous quitter ?</string>
-    <string name="do_you_want_to_receive">Voulez-vous recevoir une récompense en regardant une publicité ?</string>
+    <string name="do_you_want_to_receive">Regardez la vidéo et obtenez les récompenses correspondantes !</string>
     <string name="done">Terminé</string>
     <string name="download">Télécharger</string>
     <string name="download_failed_please_try_again_later">Échec du téléchargement, veuillez réessayer plus tard !</string>
-    <string name="download_success">Téléchargement réussi dans l\'album Horror Emoji Maker</string>
+    <string name="download_success">Téléchargement réussi dans l\'album Scary Emoji Maker</string>
     <string name="downloading">Téléchargement en cours...</string>
     <string name="edit">MODIFIER</string>
     <string name="emoji_activities">Emoji Activités</string>
@@ -68,6 +69,7 @@
     <string name="four_star">Merci pour votre avis</string>
     <string name="four_star_title">Nous vous aimons aussi !</string>
     <string name="free">GRATUIT</string>
+    <string name="free1">Gratuit</string>
     <string name="generate">ALÉATOIRE</string>
     <string name="go_to_setting_message">L\'application a besoin de cette autorisation</string>
     <string name="granted_notification">Autorisation de notification accordée</string>
@@ -132,7 +134,7 @@
     <string name="rate_us">\u00A0\u00A0Évaluez-nous\u00A0\u00A0</string>
     <string name="rate_us_0">Vous ne l\'avez pas encore évalué !</string>
     <string name="reset">RÉINITIALISER</string>
-    <string name="reward_title">Récompense !</string>
+    <string name="reward_title">Récompenses</string>
     <string name="save">ENREGISTRER</string>
     <string name="save_failed_please_try_again">Échec de l\'enregistrement, veuillez réessayer !</string>
     <string name="settings">Paramètres</string>

@@ -1,0 +1,1649 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.emojimaker.horor.emoji"
+4    android:versionCode="4"
+5    android:versionName="1.0.3" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="36" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+12-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:6:5-77
+12-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:6:22-74
+13    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+13-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:7:5-79
+13-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:7:22-76
+14    <uses-permission
+14-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:8:5-11:40
+15        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+15-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:9:9-65
+16        android:maxSdkVersion="32" />
+16-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:10:9-35
+17
+18    <queries>
+18-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:8:5-12:15
+19        <intent>
+19-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:9:9-11:18
+20            <action android:name="com.attribution.REFERRAL_PROVIDER" />
+20-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:10:13-72
+20-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:10:21-69
+21        </intent>
+22        <!-- For browser content -->
+23        <intent>
+23-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:38:9-44:18
+24            <action android:name="android.intent.action.VIEW" />
+24-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:13-65
+24-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:21-62
+25
+26            <category android:name="android.intent.category.BROWSABLE" />
+26-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:41:13-74
+26-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:41:23-71
+27
+28            <data android:scheme="https" />
+28-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:13-44
+28-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:19-41
+29        </intent> <!-- End of browser content -->
+30        <!-- For CustomTabsService -->
+31        <intent>
+31-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:47:9-49:18
+32            <action android:name="android.support.customtabs.action.CustomTabsService" />
+32-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:48:13-90
+32-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:48:21-87
+33        </intent> <!-- End of CustomTabsService -->
+34        <!-- For MRAID capabilities -->
+35        <intent>
+35-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:52:9-56:18
+36            <action android:name="android.intent.action.INSERT" />
+36-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:53:13-67
+36-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:53:21-64
+37
+38            <data android:mimeType="vnd.android.cursor.dir/event" />
+38-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:13-44
+39        </intent>
+40        <intent>
+40-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:57:9-61:18
+41            <action android:name="android.intent.action.VIEW" />
+41-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:13-65
+41-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:21-62
+42
+43            <data android:scheme="sms" />
+43-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:13-44
+43-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:19-41
+44        </intent>
+45        <intent>
+45-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:62:9-66:18
+46            <action android:name="android.intent.action.DIAL" />
+46-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:63:13-65
+46-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:63:21-62
+47
+48            <data android:path="tel:" />
+48-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:13-44
+49        </intent>
+50
+51        <package android:name="com.facebook.katana" />
+51-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:16:9-55
+51-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:16:18-52
+52
+53        <intent>
+53-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:12:9-14:18
+54            <action android:name="android.intent.action.MAIN" />
+54-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:109:17-69
+54-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:109:25-66
+55        </intent>
+56        <intent>
+56-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:15:9-17:18
+57            <action android:name="android.intent.action.VIEW" />
+57-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:13-65
+57-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:21-62
+58        </intent>
+59    </queries>
+60
+61    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+61-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:14:5-79
+61-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:14:22-76
+62    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS" />
+62-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:17:5-83
+62-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:17:22-80
+63    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+63-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:18:5-88
+63-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:18:22-85
+64    <uses-permission android:name="android.permission.WAKE_LOCK" />
+64-->[com.github.LVTapp:AdsLibrary:1.5.5] /home/lequyen/.gradle/caches/8.13/transforms/adc1fd5281ea71ca84b9480e64f6fdba/transformed/AdsLibrary-1.5.5/AndroidManifest.xml:10:5-68
+64-->[com.github.LVTapp:AdsLibrary:1.5.5] /home/lequyen/.gradle/caches/8.13/transforms/adc1fd5281ea71ca84b9480e64f6fdba/transformed/AdsLibrary-1.5.5/AndroidManifest.xml:10:22-65
+65    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+65-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:27:5-82
+65-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:27:22-79
+66    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+66-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:26:5-77
+66-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:26:22-74
+67    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+67-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:26:5-82
+67-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:26:22-79
+68    <uses-permission android:name="android.permission.VIBRATE" />
+68-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:15:5-66
+68-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:15:22-63
+69    <uses-permission android:name="com.android.vending.CHECK_LICENSE" /> <!-- Permissions required by Open Measurement SDK -->
+69-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:17:5-73
+69-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:17:22-70
+70    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+70-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:20:5-76
+70-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:20:22-73
+71    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+71-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:26:5-110
+71-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:26:22-107
+72    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_CUSTOM_AUDIENCE" />
+72-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:18:5-92
+72-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:18:22-89
+73
+74    <permission
+74-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:22:5-24:47
+75        android:name="com.emojimaker.horor.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+75-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:23:9-81
+76        android:protectionLevel="signature" />
+76-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:24:9-44
+77
+78    <uses-permission android:name="com.emojimaker.horor.emoji.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+78-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:26:5-97
+78-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:26:22-94
+79
+80    <application
+80-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:13:5-166:19
+81        android:name="com.emojimaker.horor.emoji.core.utils.App"
+81-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:14:9-39
+82        android:allowBackup="true"
+82-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:15:9-35
+83        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+83-->[androidx.core:core:1.17.0] /home/lequyen/.gradle/caches/8.13/transforms/d1ac6a904b2c4b568e861b28f4302de5/transformed/core-1.17.0/AndroidManifest.xml:28:18-86
+84        android:dataExtractionRules="@xml/data_extraction_rules"
+84-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:16:9-65
+85        android:extractNativeLibs="false"
+86        android:fullBackupContent="@xml/backup_rules"
+86-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:17:9-54
+87        android:icon="@mipmap/ic_launcher"
+87-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:18:9-43
+88        android:label="@string/app_name"
+88-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:19:9-41
+89        android:networkSecurityConfig="@xml/network_security_config"
+89-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:23:9-69
+90        android:roundIcon="@mipmap/ic_launcher_round"
+90-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:20:9-54
+91        android:supportsRtl="true"
+91-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:21:9-35
+92        android:theme="@style/Theme.BaseProject" >
+92-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:22:9-49
+93        <activity
+93-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:25:9-28:52
+94            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplayRandomActivity"
+94-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:26:13-61
+95            android:exported="false"
+95-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:27:13-37
+96            android:screenOrientation="portrait" />
+96-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:28:13-49
+97        <activity
+97-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:29:9-33:52
+98            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplayCustomizeActivity"
+98-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:30:13-64
+99            android:exported="false"
+99-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:31:13-37
+100            android:hardwareAccelerated="true"
+100-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:32:13-47
+101            android:screenOrientation="portrait" />
+101-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:33:13-49
+102        <activity
+102-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:34:9-37:52
+103            android:name="com.emojimaker.horor.emoji.ui.cosplay.CosplaySuccessfulActivity"
+103-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:35:13-65
+104            android:exported="false"
+104-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:36:13-37
+105            android:screenOrientation="portrait" />
+105-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:37:13-49
+106        <activity
+106-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:46:9-50:58
+107            android:name="com.emojimaker.horor.emoji.ui.add_character.AddCharacterActivity"
+107-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:47:13-66
+108            android:exported="true"
+108-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:48:13-36
+109            android:screenOrientation="portrait"
+109-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:49:13-49
+110            android:windowSoftInputMode="adjustResize" />
+110-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:50:13-55
+111        <activity
+111-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:51:9-54:52
+112            android:name="com.emojimaker.horor.emoji.ui.random_character.RandomCharacterActivity"
+112-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:52:13-72
+113            android:exported="false"
+113-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:53:13-37
+114            android:screenOrientation="portrait" />
+114-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:54:13-49
+115        <activity
+115-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:55:9-58:52
+116            android:name="com.emojimaker.horor.emoji.ui.trending.TrendingActivity"
+116-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:56:13-57
+117            android:exported="false"
+117-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:57:13-37
+118            android:screenOrientation="portrait" />
+118-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:58:13-49
+119        <activity
+119-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:59:9-62:52
+120            android:name="com.emojimaker.horor.emoji.ui.choose_character.ChooseCharacterActivity"
+120-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:60:13-72
+121            android:exported="false"
+121-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:61:13-37
+122            android:screenOrientation="portrait" />
+122-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:62:13-49
+123        <activity
+123-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:63:9-67:52
+124            android:name="com.emojimaker.horor.emoji.ui.customize.CustomizeCharacterActivity"
+124-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:64:13-68
+125            android:exported="false"
+125-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:65:13-37
+126            android:hardwareAccelerated="true"
+126-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:66:13-47
+127            android:screenOrientation="portrait" />
+127-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:67:13-49
+128        <activity
+128-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:68:9-73:58
+129            android:name="com.emojimaker.horor.emoji.ui.customize.NormalEmojiActivity"
+129-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:69:13-61
+130            android:exported="false"
+130-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:70:13-37
+131            android:hardwareAccelerated="true"
+131-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:71:13-47
+132            android:screenOrientation="portrait"
+132-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:72:13-49
+133            android:windowSoftInputMode="adjustResize" />
+133-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:73:13-55
+134        <activity
+134-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:74:9-79:58
+135            android:name="com.emojimaker.horor.emoji.ui.customize.HorrorEmojiActivity"
+135-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:75:13-61
+136            android:exported="false"
+136-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:76:13-37
+137            android:hardwareAccelerated="true"
+137-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:77:13-47
+138            android:screenOrientation="portrait"
+138-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:78:13-49
+139            android:windowSoftInputMode="adjustResize" />
+139-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:79:13-55
+140        <activity
+140-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:80:9-83:52
+141            android:name="com.emojimaker.horor.emoji.ui.view.ViewActivity"
+141-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:81:13-49
+142            android:exported="false"
+142-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:82:13-37
+143            android:screenOrientation="portrait" />
+143-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:83:13-49
+144        <activity
+144-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:84:9-87:52
+145            android:name="com.emojimaker.horor.emoji.ui.package_view.ViewAllPackageActivity"
+145-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:85:13-67
+146            android:exported="false"
+146-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:86:13-37
+147            android:screenOrientation="portrait" />
+147-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:87:13-49
+148        <activity
+148-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:88:9-91:52
+149            android:name="com.emojimaker.horor.emoji.ui.package_view.ViewPackageActivity"
+149-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:89:13-64
+150            android:exported="false"
+150-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:90:13-37
+151            android:screenOrientation="portrait" />
+151-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:91:13-49
+152        <activity
+152-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:92:9-95:52
+153            android:name="com.emojimaker.horor.emoji.ui.success.SuccessActivity"
+153-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:93:13-55
+154            android:exported="false"
+154-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:94:13-37
+155            android:screenOrientation="portrait" />
+155-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:95:13-49
+156        <activity
+156-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:96:9-99:52
+157            android:name="com.emojimaker.horor.emoji.ui.my_creation.MyCreationActivity"
+157-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:97:13-62
+158            android:exported="false"
+158-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:98:13-37
+159            android:screenOrientation="portrait" />
+159-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:99:13-49
+160        <activity
+160-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:100:9-103:52
+161            android:name="com.emojimaker.horor.emoji.ui.emoji_copy.EmojiCopyActivity"
+161-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:101:13-60
+162            android:exported="false"
+162-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:102:13-37
+163            android:screenOrientation="portrait" />
+163-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:103:13-49
+164        <activity
+164-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:104:9-113:20
+165            android:name="com.emojimaker.horor.emoji.ui.splash.SplashActivity"
+165-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:105:13-53
+166            android:exported="true"
+166-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:106:13-36
+167            android:screenOrientation="portrait" >
+167-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:107:13-49
+168            <intent-filter>
+168-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:108:13-112:29
+169                <action android:name="android.intent.action.MAIN" />
+169-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:109:17-69
+169-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:109:25-66
+170
+171                <category android:name="android.intent.category.LAUNCHER" />
+171-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:111:17-77
+171-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:111:27-74
+172            </intent-filter>
+173        </activity>
+174        <activity
+174-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:114:9-117:52
+175            android:name="com.emojimaker.horor.emoji.ui.permission.PermissionActivity"
+175-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:115:13-61
+176            android:exported="false"
+176-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:116:13-37
+177            android:screenOrientation="portrait" />
+177-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:117:13-49
+178        <activity
+178-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:118:9-121:52
+179            android:name="com.emojimaker.horor.emoji.ui.intro.IntroActivity"
+179-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:119:13-51
+180            android:exported="false"
+180-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:120:13-37
+181            android:screenOrientation="portrait" />
+181-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:121:13-49
+182        <activity
+182-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:122:9-125:52
+183            android:name="com.emojimaker.horor.emoji.ui.language.LanguageActivity"
+183-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:123:13-57
+184            android:exported="false"
+184-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:124:13-37
+185            android:screenOrientation="portrait" />
+185-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:125:13-49
+186        <activity
+186-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:126:9-129:52
+187            android:name="com.emojimaker.horor.emoji.ui.home.HomeActivity"
+187-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:127:13-49
+188            android:exported="true"
+188-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:128:13-36
+189            android:screenOrientation="portrait" />
+189-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:129:13-49
+190        <activity
+190-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:130:9-133:52
+191            android:name="com.emojimaker.horor.emoji.ui.SettingsActivity"
+191-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:131:13-48
+192            android:exported="false"
+192-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:132:13-37
+193            android:screenOrientation="portrait" />
+193-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:133:13-49
+194        <activity
+194-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:134:9-137:52
+195            android:name="com.emojimaker.horor.emoji.ui.pride.PrideActivity"
+195-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:135:13-51
+196            android:exported="false"
+196-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:136:13-37
+197            android:screenOrientation="portrait" />
+197-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:137:13-49
+198
+199        <provider
+200            android:name="androidx.core.content.FileProvider"
+200-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:140:13-62
+201            android:authorities="com.emojimaker.horor.emoji.provider"
+201-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:141:13-60
+202            android:exported="false"
+202-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:142:13-37
+203            android:grantUriPermissions="true" >
+203-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:143:13-47
+204            <meta-data
+204-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:144:13-146:54
+205                android:name="android.support.FILE_PROVIDER_PATHS"
+205-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:145:17-67
+206                android:resource="@xml/file_paths" />
+206-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:146:17-51
+207        </provider>
+208        <provider
+208-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:148:9-153:66
+209            android:name="com.emojimaker.horor.emoji.core.utils.share.whatsapp.StickerContentProvider"
+209-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:149:13-77
+210            android:authorities="com.emojimaker.horor.emoji.core.utils.share.whatsapp.StickerContentProvider"
+210-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:150:13-110
+211            android:enabled="true"
+211-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:151:13-35
+212            android:exported="true"
+212-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:152:13-36
+213            android:readPermission="com.whatsapp.sticker.READ" />
+213-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:153:13-63
+214
+215        <service
+215-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:155:9-165:19
+216            android:name="com.emojimaker.horor.emoji.core.service.MyFirebaseMessagingService"
+216-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:156:13-68
+217            android:exported="false" >
+217-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:157:13-37
+218            <intent-filter>
+218-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:158:13-164:29
+219                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+219-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:159:17-78
+219-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:159:25-75
+220                <action android:name="android.intent.action.PICK" />
+220-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:160:17-69
+220-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:160:25-66
+221
+222                <category android:name="android.intent.category.DEFAULT" />
+222-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:162:17-76
+222-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:162:27-73
+223                <category android:name="android.intent.category.OPENABLE" />
+223-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:163:17-77
+223-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:163:27-74
+224            </intent-filter>
+225        </service>
+226
+227        <activity
+227-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:21:9-27:74
+228            android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+228-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:22:13-74
+229            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+229-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:23:13-170
+230            android:enableOnBackInvokedCallback="false"
+230-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:24:13-56
+231            android:exported="false"
+231-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:25:13-37
+232            android:hardwareAccelerated="true"
+232-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:26:13-47
+233            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+233-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:27:13-71
+234        <activity
+234-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:28:9-34:86
+235            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+235-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:29:13-85
+236            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+236-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:30:13-170
+237            android:enableOnBackInvokedCallback="false"
+237-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:31:13-56
+238            android:exported="false"
+238-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:32:13-37
+239            android:hardwareAccelerated="true"
+239-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:33:13-47
+240            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+240-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:34:13-83
+241        <activity
+241-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:35:9-41:86
+242            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+242-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:36:13-93
+243            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+243-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:37:13-170
+244            android:enableOnBackInvokedCallback="false"
+244-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:38:13-56
+245            android:exported="false"
+245-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:39:13-37
+246            android:hardwareAccelerated="false"
+246-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:40:13-48
+247            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+247-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:41:13-83
+248        <activity
+248-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:42:9-48:74
+249            android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+249-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:43:13-82
+250            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+250-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:44:13-170
+251            android:enableOnBackInvokedCallback="false"
+251-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:45:13-56
+252            android:exported="false"
+252-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:46:13-37
+253            android:hardwareAccelerated="false"
+253-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:47:13-48
+254            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+254-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:48:13-71
+255        <activity
+255-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:49:9-55:74
+256            android:name="com.unity3d.ads.adplayer.FullScreenWebViewDisplay"
+256-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:50:13-77
+257            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+257-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:51:13-170
+258            android:enableOnBackInvokedCallback="false"
+258-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:52:13-56
+259            android:exported="false"
+259-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:53:13-37
+260            android:hardwareAccelerated="true"
+260-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:54:13-47
+261            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+261-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:55:13-71
+262
+263        <provider
+263-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:57:9-67:20
+264            android:name="androidx.startup.InitializationProvider"
+264-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:58:13-67
+265            android:authorities="com.emojimaker.horor.emoji.androidx-startup"
+265-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:59:13-68
+266            android:exported="false" >
+266-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:32:13-37
+267            <meta-data
+267-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:61:13-63:52
+268                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+268-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:62:17-78
+269                android:value="androidx.startup" />
+269-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:63:17-49
+270            <meta-data
+270-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:64:13-66:52
+271                android:name="com.unity3d.services.core.configuration.AdsSdkInitializer"
+271-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:65:17-89
+272                android:value="androidx.startup" />
+272-->[com.unity3d.ads:unity-ads:4.16.4] /home/lequyen/.gradle/caches/8.13/transforms/e12414deefdf84ed31c4ac2d580f18df/transformed/unity-ads-4.16.4/AndroidManifest.xml:66:17-49
+273            <meta-data
+273-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:34:13-36:52
+274                android:name="androidx.work.WorkManagerInitializer"
+274-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:35:17-68
+275                android:value="androidx.startup" />
+275-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:36:17-49
+276            <meta-data
+276-->[androidx.emoji2:emoji2:1.3.0] /home/lequyen/.gradle/caches/8.13/transforms/fc2dee47948c352c2e8b2527402eaece/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+277                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+277-->[androidx.emoji2:emoji2:1.3.0] /home/lequyen/.gradle/caches/8.13/transforms/fc2dee47948c352c2e8b2527402eaece/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+278                android:value="androidx.startup" />
+278-->[androidx.emoji2:emoji2:1.3.0] /home/lequyen/.gradle/caches/8.13/transforms/fc2dee47948c352c2e8b2527402eaece/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+279            <meta-data
+279-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+280                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+280-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+281                android:value="androidx.startup" />
+281-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+282        </provider>
+283
+284        <activity
+284-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:8:9-12:50
+285            android:name="com.ironsource.sdk.controller.ControllerActivity"
+285-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:9:13-76
+286            android:configChanges="orientation|screenSize"
+286-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:10:13-59
+287            android:exported="false"
+287-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:11:13-37
+288            android:hardwareAccelerated="true"
+288-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:12:13-47
+289            android:theme="@android:style/Theme.NoTitleBar" />
+289-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:16:13-60
+290        <activity
+290-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:13:9-18:75
+291            android:name="com.ironsource.sdk.controller.InterstitialActivity"
+291-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:14:13-78
+292            android:configChanges="orientation|screenSize"
+292-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:15:13-59
+293            android:exported="false"
+293-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:16:13-37
+294            android:hardwareAccelerated="true"
+294-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:17:13-47
+295            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+295-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:18:13-72
+296        <activity
+296-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:19:9-24:75
+297            android:name="com.ironsource.sdk.controller.OpenUrlActivity"
+297-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:20:13-73
+298            android:configChanges="orientation|screenSize"
+298-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:21:13-59
+299            android:exported="false"
+299-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:22:13-37
+300            android:hardwareAccelerated="true"
+300-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:23:13-47
+301            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+301-->[com.google.ads.mediation:ironsource:9.1.0.0] /home/lequyen/.gradle/caches/8.13/transforms/23e2273637146682cbabc113f078b195/transformed/ironsource-9.1.0.0/AndroidManifest.xml:24:13-72
+302        <activity
+302-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:73:9-79:43
+303            android:name="com.google.android.gms.ads.AdActivity"
+303-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:74:13-65
+304            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+304-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:75:13-122
+305            android:enableOnBackInvokedCallback="false"
+305-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:76:13-56
+306            android:exported="false"
+306-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:77:13-37
+307            android:theme="@android:style/Theme.Translucent" />
+307-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:78:13-61
+308
+309        <service
+309-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:88:9-92:43
+310            android:name="com.google.android.gms.ads.AdService"
+310-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:89:13-64
+311            android:enabled="true"
+311-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:90:13-35
+312            android:exported="false" />
+312-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:91:13-37
+313
+314        <activity
+314-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:94:9-98:43
+315            android:name="com.google.android.gms.ads.OutOfContextTestingActivity"
+315-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:95:13-82
+316            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+316-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:96:13-122
+317            android:exported="false" />
+317-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:97:13-37
+318        <activity
+318-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:99:9-106:43
+319            android:name="com.google.android.gms.ads.NotificationHandlerActivity"
+319-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:100:13-82
+320            android:excludeFromRecents="true"
+320-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:101:13-46
+321            android:exported="false"
+321-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:102:13-37
+322            android:launchMode="singleTask"
+322-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:103:13-44
+323            android:taskAffinity=""
+323-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:104:13-36
+324            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+324-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:105:13-72
+325
+326        <meta-data
+326-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:108:9-110:36
+327            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+327-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:109:13-79
+328            android:value="true" />
+328-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:110:13-33
+329        <meta-data
+329-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:111:9-113:36
+330            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+330-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:112:13-83
+331            android:value="true" />
+331-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:113:13-33
+332
+333        <service
+333-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:39:9-45:35
+334            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+334-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:40:13-84
+335            android:directBootAware="false"
+335-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:41:13-44
+336            android:enabled="@bool/enable_system_job_service_default"
+336-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:42:13-70
+337            android:exported="true"
+337-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:43:13-36
+338            android:permission="android.permission.BIND_JOB_SERVICE" />
+338-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:44:13-69
+339        <service
+339-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:46:9-52:35
+340            android:name="androidx.work.impl.foreground.SystemForegroundService"
+340-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:47:13-81
+341            android:directBootAware="false"
+341-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:48:13-44
+342            android:enabled="@bool/enable_system_foreground_service_default"
+342-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:49:13-77
+343            android:exported="false" />
+343-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:50:13-37
+344
+345        <receiver
+345-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:54:9-59:35
+346            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+346-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:55:13-88
+347            android:directBootAware="false"
+347-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:56:13-44
+348            android:enabled="true"
+348-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:57:13-35
+349            android:exported="false" />
+349-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:58:13-37
+350        <receiver
+350-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:60:9-69:20
+351            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+351-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:61:13-88
+352            android:directBootAware="false"
+352-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:62:13-44
+353            android:enabled="false"
+353-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:63:13-36
+354            android:exported="false" >
+354-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:64:13-37
+355            <intent-filter>
+355-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:66:13-68:29
+356                <action android:name="android.intent.action.BOOT_COMPLETED" />
+356-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:67:17-79
+356-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:67:25-76
+357            </intent-filter>
+358        </receiver>
+359        <receiver
+359-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:70:9-80:20
+360            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+360-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:71:13-78
+361            android:directBootAware="false"
+361-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:72:13-44
+362            android:enabled="true"
+362-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:73:13-35
+363            android:exported="true"
+363-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:74:13-36
+364            android:permission="android.permission.DUMP" >
+364-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:75:13-57
+365            <intent-filter>
+365-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:77:13-79:29
+366                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+366-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:78:17-88
+366-->[androidx.work:work-runtime:2.11.0] /home/lequyen/.gradle/caches/8.13/transforms/b4dec946eac08a3c0130fedb62200967/transformed/work-runtime-2.11.0/AndroidManifest.xml:78:25-85
+367            </intent-filter>
+368        </receiver>
+369
+370        <service
+370-->[androidx.room:room-runtime-android:2.8.4] /home/lequyen/.gradle/caches/8.13/transforms/ec8684950433015be03805b164c9af16/transformed/room-runtime/AndroidManifest.xml:24:9-28:63
+371            android:name="androidx.room.MultiInstanceInvalidationService"
+371-->[androidx.room:room-runtime-android:2.8.4] /home/lequyen/.gradle/caches/8.13/transforms/ec8684950433015be03805b164c9af16/transformed/room-runtime/AndroidManifest.xml:25:13-74
+372            android:directBootAware="true"
+372-->[androidx.room:room-runtime-android:2.8.4] /home/lequyen/.gradle/caches/8.13/transforms/ec8684950433015be03805b164c9af16/transformed/room-runtime/AndroidManifest.xml:26:13-43
+373            android:exported="false" />
+373-->[androidx.room:room-runtime-android:2.8.4] /home/lequyen/.gradle/caches/8.13/transforms/ec8684950433015be03805b164c9af16/transformed/room-runtime/AndroidManifest.xml:27:13-37
+374
+375        <activity
+375-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:20:9-23:66
+376            android:name="com.facebook.FacebookActivity"
+376-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:21:13-57
+377            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+377-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:22:13-96
+378            android:theme="@style/com_facebook_activity_theme" />
+378-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:23:13-63
+379        <activity android:name="com.facebook.CustomTabMainActivity" />
+379-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:24:9-71
+379-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:24:19-68
+380        <activity
+380-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:25:9-39:20
+381            android:name="com.facebook.CustomTabActivity"
+381-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:26:13-58
+382            android:exported="true" >
+382-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:27:13-36
+383            <intent-filter>
+383-->[com.facebook.android:facebook-common:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/45b97aa8d130a4c46005bbd6e39ae626/transformed/facebook-common-18.0.3/AndroidManifest.xml:29:13-38:29
+384                <action android:name="android.intent.action.VIEW" />
+384-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:13-65
+384-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:39:21-62
+385
+386                <category android:name="android.intent.category.DEFAULT" />
+386-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:162:17-76
+386-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:162:27-73
+387                <category android:name="android.intent.category.BROWSABLE" />
+387-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:41:13-74
+387-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:41:23-71
+388
+389                <data
+389-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:13-44
+390                    android:host="cct.com.emojimaker.horor.emoji"
+391                    android:scheme="fbconnect" />
+391-->[com.google.android.gms:play-services-ads-api:24.8.0] /home/lequyen/.gradle/caches/8.13/transforms/933b1a4f77e16944f2e9aedf1848e4b7/transformed/play-services-ads-api-24.8.0/AndroidManifest.xml:43:19-41
+392            </intent-filter>
+393        </activity>
+394
+395        <receiver
+395-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:29:9-40:20
+396            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+396-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:30:13-78
+397            android:exported="true"
+397-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:31:13-36
+398            android:permission="com.google.android.c2dm.permission.SEND" >
+398-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:32:13-73
+399            <intent-filter>
+399-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:33:13-35:29
+400                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+400-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:34:17-81
+400-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:34:25-78
+401            </intent-filter>
+402
+403            <meta-data
+403-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:37:13-39:40
+404                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+404-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:38:17-92
+405                android:value="true" />
+405-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:39:17-37
+406        </receiver>
+407        <!--
+408             FirebaseMessagingService performs security checks at runtime,
+409             but set to not exported to explicitly avoid allowing another app to call it.
+410        -->
+411        <service
+411-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:46:9-53:19
+412            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+412-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:47:13-82
+413            android:directBootAware="true"
+413-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:48:13-43
+414            android:exported="false" >
+414-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:49:13-37
+415            <intent-filter android:priority="-500" >
+415-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:50:13-52:29
+415-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:50:28-51
+416                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+416-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:159:17-78
+416-->/home/lequyen/LVT/ST295_Horror Emoji Maker/app/src/main/AndroidManifest.xml:159:25-75
+417            </intent-filter>
+418        </service>
+419        <service
+419-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:54:9-63:19
+420            android:name="com.google.firebase.components.ComponentDiscoveryService"
+420-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:55:13-84
+421            android:directBootAware="true"
+421-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+422            android:exported="false" >
+422-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:56:13-37
+423            <meta-data
+423-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:57:13-59:85
+424                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+424-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:58:17-122
+425                android:value="com.google.firebase.components.ComponentRegistrar" />
+425-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:59:17-82
+426            <meta-data
+426-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:60:13-62:85
+427                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+427-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:61:17-119
+428                android:value="com.google.firebase.components.ComponentRegistrar" />
+428-->[com.google.firebase:firebase-messaging:24.1.2] /home/lequyen/.gradle/caches/8.13/transforms/5a748cc638faf92985990a33f21507cb/transformed/firebase-messaging-24.1.2/AndroidManifest.xml:62:17-82
+429            <meta-data
+429-->[com.google.firebase:firebase-config:22.1.2] /home/lequyen/.gradle/caches/8.13/transforms/6c4f83dc463f570c9d2f0b4efc704a6e/transformed/firebase-config-22.1.2/AndroidManifest.xml:29:13-31:85
+430                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar"
+430-->[com.google.firebase:firebase-config:22.1.2] /home/lequyen/.gradle/caches/8.13/transforms/6c4f83dc463f570c9d2f0b4efc704a6e/transformed/firebase-config-22.1.2/AndroidManifest.xml:30:17-128
+431                android:value="com.google.firebase.components.ComponentRegistrar" />
+431-->[com.google.firebase:firebase-config:22.1.2] /home/lequyen/.gradle/caches/8.13/transforms/6c4f83dc463f570c9d2f0b4efc704a6e/transformed/firebase-config-22.1.2/AndroidManifest.xml:31:17-82
+432            <meta-data
+432-->[com.google.firebase:firebase-config:22.1.2] /home/lequyen/.gradle/caches/8.13/transforms/6c4f83dc463f570c9d2f0b4efc704a6e/transformed/firebase-config-22.1.2/AndroidManifest.xml:32:13-34:85
+433                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+433-->[com.google.firebase:firebase-config:22.1.2] /home/lequyen/.gradle/caches/8.13/transforms/6c4f83dc463f570c9d2f0b4efc704a6e/transformed/firebase-config-22.1.2/AndroidManifest.xml:33:17-117
+434                android:value="com.google.firebase.components.ComponentRegistrar" />
+434-->[com.google.firebase:firebase-config:22.1.2] /home/lequyen/.gradle/caches/8.13/transforms/6c4f83dc463f570c9d2f0b4efc704a6e/transformed/firebase-config-22.1.2/AndroidManifest.xml:34:17-82
+435            <meta-data
+435-->[com.google.firebase:firebase-crashlytics:19.4.4] /home/lequyen/.gradle/caches/8.13/transforms/9db497dff50b5f016c1528c0c05a0660/transformed/firebase-crashlytics-19.4.4/AndroidManifest.xml:15:13-17:85
+436                android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar"
+436-->[com.google.firebase:firebase-crashlytics:19.4.4] /home/lequyen/.gradle/caches/8.13/transforms/9db497dff50b5f016c1528c0c05a0660/transformed/firebase-crashlytics-19.4.4/AndroidManifest.xml:16:17-126
+437                android:value="com.google.firebase.components.ComponentRegistrar" />
+437-->[com.google.firebase:firebase-crashlytics:19.4.4] /home/lequyen/.gradle/caches/8.13/transforms/9db497dff50b5f016c1528c0c05a0660/transformed/firebase-crashlytics-19.4.4/AndroidManifest.xml:17:17-82
+438            <meta-data
+438-->[com.google.firebase:firebase-crashlytics:19.4.4] /home/lequyen/.gradle/caches/8.13/transforms/9db497dff50b5f016c1528c0c05a0660/transformed/firebase-crashlytics-19.4.4/AndroidManifest.xml:18:13-20:85
+439                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+439-->[com.google.firebase:firebase-crashlytics:19.4.4] /home/lequyen/.gradle/caches/8.13/transforms/9db497dff50b5f016c1528c0c05a0660/transformed/firebase-crashlytics-19.4.4/AndroidManifest.xml:19:17-115
+440                android:value="com.google.firebase.components.ComponentRegistrar" />
+440-->[com.google.firebase:firebase-crashlytics:19.4.4] /home/lequyen/.gradle/caches/8.13/transforms/9db497dff50b5f016c1528c0c05a0660/transformed/firebase-crashlytics-19.4.4/AndroidManifest.xml:20:17-82
+441            <meta-data
+441-->[com.google.android.gms:play-services-measurement-api:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/2465b80b435170c079d9fed3c3904ef7/transformed/play-services-measurement-api-22.5.0/AndroidManifest.xml:33:13-35:85
+442                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+442-->[com.google.android.gms:play-services-measurement-api:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/2465b80b435170c079d9fed3c3904ef7/transformed/play-services-measurement-api-22.5.0/AndroidManifest.xml:34:17-139
+443                android:value="com.google.firebase.components.ComponentRegistrar" />
+443-->[com.google.android.gms:play-services-measurement-api:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/2465b80b435170c079d9fed3c3904ef7/transformed/play-services-measurement-api-22.5.0/AndroidManifest.xml:35:17-82
+444            <meta-data
+444-->[com.google.firebase:firebase-sessions:2.1.2] /home/lequyen/.gradle/caches/8.13/transforms/8a6ede2cf4536386e399b8a9bb95487d/transformed/firebase-sessions-2.1.2/AndroidManifest.xml:29:13-31:85
+445                android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar"
+445-->[com.google.firebase:firebase-sessions:2.1.2] /home/lequyen/.gradle/caches/8.13/transforms/8a6ede2cf4536386e399b8a9bb95487d/transformed/firebase-sessions-2.1.2/AndroidManifest.xml:30:17-117
+446                android:value="com.google.firebase.components.ComponentRegistrar" />
+446-->[com.google.firebase:firebase-sessions:2.1.2] /home/lequyen/.gradle/caches/8.13/transforms/8a6ede2cf4536386e399b8a9bb95487d/transformed/firebase-sessions-2.1.2/AndroidManifest.xml:31:17-82
+447            <meta-data
+447-->[com.google.firebase:firebase-installations:18.0.0] /home/lequyen/.gradle/caches/8.13/transforms/6ec3ac48e9c675e73954b8ec21df5678/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+448                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+448-->[com.google.firebase:firebase-installations:18.0.0] /home/lequyen/.gradle/caches/8.13/transforms/6ec3ac48e9c675e73954b8ec21df5678/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+449                android:value="com.google.firebase.components.ComponentRegistrar" />
+449-->[com.google.firebase:firebase-installations:18.0.0] /home/lequyen/.gradle/caches/8.13/transforms/6ec3ac48e9c675e73954b8ec21df5678/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+450            <meta-data
+450-->[com.google.firebase:firebase-installations:18.0.0] /home/lequyen/.gradle/caches/8.13/transforms/6ec3ac48e9c675e73954b8ec21df5678/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+451                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+451-->[com.google.firebase:firebase-installations:18.0.0] /home/lequyen/.gradle/caches/8.13/transforms/6ec3ac48e9c675e73954b8ec21df5678/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+452                android:value="com.google.firebase.components.ComponentRegistrar" />
+452-->[com.google.firebase:firebase-installations:18.0.0] /home/lequyen/.gradle/caches/8.13/transforms/6ec3ac48e9c675e73954b8ec21df5678/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+453            <meta-data
+453-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/fbbc314557c3d53998513dcb1dd7074b/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+454                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+454-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/fbbc314557c3d53998513dcb1dd7074b/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+455                android:value="com.google.firebase.components.ComponentRegistrar" />
+455-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/fbbc314557c3d53998513dcb1dd7074b/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+456            <meta-data
+456-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+457                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+457-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+458                android:value="com.google.firebase.components.ComponentRegistrar" />
+458-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+459            <meta-data
+459-->[com.google.firebase:firebase-abt:21.1.1] /home/lequyen/.gradle/caches/8.13/transforms/b8f1508ad0a63e7c59fa4a96c50727d8/transformed/firebase-abt-21.1.1/AndroidManifest.xml:12:13-14:85
+460                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+460-->[com.google.firebase:firebase-abt:21.1.1] /home/lequyen/.gradle/caches/8.13/transforms/b8f1508ad0a63e7c59fa4a96c50727d8/transformed/firebase-abt-21.1.1/AndroidManifest.xml:13:17-109
+461                android:value="com.google.firebase.components.ComponentRegistrar" />
+461-->[com.google.firebase:firebase-abt:21.1.1] /home/lequyen/.gradle/caches/8.13/transforms/b8f1508ad0a63e7c59fa4a96c50727d8/transformed/firebase-abt-21.1.1/AndroidManifest.xml:14:17-82
+462            <meta-data
+462-->[com.google.firebase:firebase-datatransport:19.0.0] /home/lequyen/.gradle/caches/8.13/transforms/28a1789e66dd787ccbd5030b139740fe/transformed/firebase-datatransport-19.0.0/AndroidManifest.xml:25:13-27:85
+463                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+463-->[com.google.firebase:firebase-datatransport:19.0.0] /home/lequyen/.gradle/caches/8.13/transforms/28a1789e66dd787ccbd5030b139740fe/transformed/firebase-datatransport-19.0.0/AndroidManifest.xml:26:17-115
+464                android:value="com.google.firebase.components.ComponentRegistrar" />
+464-->[com.google.firebase:firebase-datatransport:19.0.0] /home/lequyen/.gradle/caches/8.13/transforms/28a1789e66dd787ccbd5030b139740fe/transformed/firebase-datatransport-19.0.0/AndroidManifest.xml:27:17-82
+465        </service>
+466
+467        <provider
+467-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:23:9-27:39
+468            android:name="com.applovin.sdk.AppLovinInitProvider"
+468-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:24:13-65
+469            android:authorities="com.emojimaker.horor.emoji.applovininitprovider"
+469-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:25:13-72
+470            android:exported="false"
+470-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:26:13-37
+471            android:initOrder="101" /> <!-- Init order is 101 so we're before Firebase/Google which uses 100 -->
+471-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:27:13-36
+472        <activity
+472-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:29:9-36:74
+473            android:name="com.applovin.adview.AppLovinFullscreenActivity"
+473-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:30:13-74
+474            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+474-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:31:13-139
+475            android:exported="false"
+475-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:32:13-37
+476            android:hardwareAccelerated="true"
+476-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:33:13-47
+477            android:launchMode="singleTop"
+477-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:34:13-43
+478            android:screenOrientation="behind"
+478-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:35:13-47
+479            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+479-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:36:13-71
+480        <activity
+480-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:37:9-43:63
+481            android:name="com.applovin.adview.AppLovinFullscreenImmersiveActivity"
+481-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:38:13-83
+482            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+482-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:39:13-139
+483            android:exported="false"
+483-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:40:13-37
+484            android:hardwareAccelerated="true"
+484-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:41:13-47
+485            android:launchMode="singleTop"
+485-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:42:13-43
+486            android:theme="@android:style/Theme.NoTitleBar" />
+486-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:43:13-60
+487        <activity
+487-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:44:9-46:142
+488            android:name="com.applovin.sdk.AppLovinWebViewActivity"
+488-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:45:13-68
+489            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" /> <!-- Mediation Debugger Activities -->
+489-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:46:13-139
+490        <activity
+490-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:49:9-52:87
+491            android:name="com.applovin.mediation.MaxDebuggerActivity"
+491-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:50:13-70
+492            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+492-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:51:13-139
+493            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+493-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:52:13-84
+494        <activity
+494-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:53:9-56:87
+495            android:name="com.applovin.mediation.MaxDebuggerDetailActivity"
+495-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:54:13-76
+496            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+496-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:55:13-139
+497            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+497-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:56:13-84
+498        <activity
+498-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:57:9-60:87
+499            android:name="com.applovin.mediation.MaxDebuggerMultiAdActivity"
+499-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:58:13-77
+500            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+500-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:59:13-139
+501            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+501-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:60:13-84
+502        <activity
+502-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:61:9-64:87
+503            android:name="com.applovin.mediation.MaxDebuggerAdUnitsListActivity"
+503-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:62:13-81
+504            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+504-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:63:13-139
+505            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+505-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:64:13-84
+506        <activity
+506-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:65:9-68:87
+507            android:name="com.applovin.mediation.MaxDebuggerAdUnitWaterfallsListActivity"
+507-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:66:13-90
+508            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+508-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:67:13-139
+509            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+509-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:68:13-84
+510        <activity
+510-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:69:9-72:87
+511            android:name="com.applovin.mediation.MaxDebuggerAdUnitDetailActivity"
+511-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:70:13-82
+512            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+512-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:71:13-139
+513            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+513-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:72:13-84
+514        <activity
+514-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:73:9-76:87
+515            android:name="com.applovin.mediation.MaxDebuggerCmpNetworksListActivity"
+515-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:74:13-85
+516            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+516-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:75:13-139
+517            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+517-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:76:13-84
+518        <activity
+518-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:77:9-80:87
+519            android:name="com.applovin.mediation.MaxDebuggerTcfConsentStatusesListActivity"
+519-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:78:13-92
+520            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+520-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:79:13-139
+521            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+521-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:80:13-84
+522        <activity
+522-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:81:9-84:87
+523            android:name="com.applovin.mediation.MaxDebuggerTcfInfoListActivity"
+523-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:82:13-81
+524            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+524-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:83:13-139
+525            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+525-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:84:13-84
+526        <activity
+526-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:85:9-88:87
+527            android:name="com.applovin.mediation.MaxDebuggerTcfStringActivity"
+527-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:86:13-79
+528            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+528-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:87:13-139
+529            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+529-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:88:13-84
+530        <activity
+530-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:89:9-92:87
+531            android:name="com.applovin.mediation.MaxDebuggerTestLiveNetworkActivity"
+531-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:90:13-85
+532            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+532-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:91:13-139
+533            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+533-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:92:13-84
+534        <activity
+534-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:93:9-96:87
+535            android:name="com.applovin.mediation.MaxDebuggerTestModeNetworkActivity"
+535-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:94:13-85
+536            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+536-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:95:13-139
+537            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+537-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:96:13-84
+538        <activity
+538-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:97:9-100:87
+539            android:name="com.applovin.mediation.MaxDebuggerUnifiedFlowActivity"
+539-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:98:13-81
+540            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+540-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:99:13-139
+541            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+541-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:100:13-84
+542        <activity
+542-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:101:9-104:87
+543            android:name="com.applovin.mediation.MaxDebuggerWaterfallSegmentsActivity"
+543-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:102:13-87
+544            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+544-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:103:13-139
+545            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+545-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:104:13-84
+546        <activity
+546-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:105:9-108:91
+547            android:name="com.applovin.creative.MaxCreativeDebuggerActivity"
+547-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:106:13-77
+548            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+548-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:107:13-139
+549            android:theme="@style/com.applovin.creative.CreativeDebuggerActivity.Theme" />
+549-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:108:13-88
+550        <activity
+550-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:109:9-112:91
+551            android:name="com.applovin.creative.MaxCreativeDebuggerDisplayedAdActivity"
+551-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:110:13-88
+552            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+552-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:111:13-139
+553            android:theme="@style/com.applovin.creative.CreativeDebuggerActivity.Theme" /> <!-- Services -->
+553-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:112:13-88
+554        <service
+554-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:115:9-118:44
+555            android:name="com.applovin.impl.adview.activity.FullscreenAdService"
+555-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:116:13-81
+556            android:exported="false"
+556-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:117:13-37
+557            android:stopWithTask="false" />
+557-->[com.applovin:applovin-sdk:13.5.1] /home/lequyen/.gradle/caches/8.13/transforms/e5b4b88bc5c152690c69d1162ee3b71b/transformed/applovin-sdk-13.5.1/AndroidManifest.xml:118:13-41
+558
+559        <receiver
+559-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:29:9-33:20
+560            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+560-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:30:13-85
+561            android:enabled="true"
+561-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:31:13-35
+562            android:exported="false" >
+562-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:32:13-37
+563        </receiver>
+564
+565        <service
+565-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:35:9-38:40
+566            android:name="com.google.android.gms.measurement.AppMeasurementService"
+566-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:36:13-84
+567            android:enabled="true"
+567-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:37:13-35
+568            android:exported="false" />
+568-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:38:13-37
+569        <service
+569-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:39:9-43:72
+570            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+570-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:40:13-87
+571            android:enabled="true"
+571-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:41:13-35
+572            android:exported="false"
+572-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:42:13-37
+573            android:permission="android.permission.BIND_JOB_SERVICE" />
+573-->[com.google.android.gms:play-services-measurement:22.5.0] /home/lequyen/.gradle/caches/8.13/transforms/f35a03f07502eb8be7666f11179c665b/transformed/play-services-measurement-22.5.0/AndroidManifest.xml:43:13-69
+574        <service
+574-->[com.google.firebase:firebase-sessions:2.1.2] /home/lequyen/.gradle/caches/8.13/transforms/8a6ede2cf4536386e399b8a9bb95487d/transformed/firebase-sessions-2.1.2/AndroidManifest.xml:22:9-25:40
+575            android:name="com.google.firebase.sessions.SessionLifecycleService"
+575-->[com.google.firebase:firebase-sessions:2.1.2] /home/lequyen/.gradle/caches/8.13/transforms/8a6ede2cf4536386e399b8a9bb95487d/transformed/firebase-sessions-2.1.2/AndroidManifest.xml:23:13-80
+576            android:enabled="true"
+576-->[com.google.firebase:firebase-sessions:2.1.2] /home/lequyen/.gradle/caches/8.13/transforms/8a6ede2cf4536386e399b8a9bb95487d/transformed/firebase-sessions-2.1.2/AndroidManifest.xml:24:13-35
+577            android:exported="false" />
+577-->[com.google.firebase:firebase-sessions:2.1.2] /home/lequyen/.gradle/caches/8.13/transforms/8a6ede2cf4536386e399b8a9bb95487d/transformed/firebase-sessions-2.1.2/AndroidManifest.xml:25:13-37
+578
+579        <provider
+579-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+580            android:name="com.google.firebase.provider.FirebaseInitProvider"
+580-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+581            android:authorities="com.emojimaker.horor.emoji.firebaseinitprovider"
+581-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+582            android:directBootAware="true"
+582-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+583            android:exported="false"
+583-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+584            android:initOrder="100" />
+584-->[com.google.firebase:firebase-common:21.0.0] /home/lequyen/.gradle/caches/8.13/transforms/b619ee157016d9a9fa2e66e1f88d1e22/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+585
+586        <activity
+586-->[com.google.android.gms:play-services-base:18.5.0] /home/lequyen/.gradle/caches/8.13/transforms/b46b3616a5da83ec0a6e352f2afd5fa6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+587            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+587-->[com.google.android.gms:play-services-base:18.5.0] /home/lequyen/.gradle/caches/8.13/transforms/b46b3616a5da83ec0a6e352f2afd5fa6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+588            android:exported="false"
+588-->[com.google.android.gms:play-services-base:18.5.0] /home/lequyen/.gradle/caches/8.13/transforms/b46b3616a5da83ec0a6e352f2afd5fa6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+589            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+589-->[com.google.android.gms:play-services-base:18.5.0] /home/lequyen/.gradle/caches/8.13/transforms/b46b3616a5da83ec0a6e352f2afd5fa6/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+590
+591        <meta-data
+591-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:24:9-26:39
+592            android:name="com.bytedance.sdk.pangle.version"
+592-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:25:13-60
+593            android:value="7.7.0.2" /> <!-- 下面的activity和service必须注册 -->
+593-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:26:13-36
+594        <activity
+594-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:28:9-35:20
+595            android:name="com.bytedance.sdk.openadsdk.activity.TTCeilingLandingPageActivity"
+595-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:29:13-93
+596            android:configChanges="keyboardHidden|orientation|screenSize"
+596-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:30:13-74
+597            android:launchMode="standard" >
+597-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:31:13-42
+598            <property
+598-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+599                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+599-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+600                android:value="true" />
+600-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+601        </activity>
+602        <activity
+602-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:36:9-44:20
+603            android:name="com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity"
+603-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:37:13-86
+604            android:configChanges="keyboardHidden|orientation|screenSize"
+604-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:38:13-74
+605            android:launchMode="standard"
+605-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:39:13-42
+606            android:theme="@style/tt_landing_page" >
+606-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:40:13-51
+607            <property
+607-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+608                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+608-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+609                android:value="true" />
+609-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+610        </activity>
+611        <activity
+611-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:45:9-53:20
+612            android:name="com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity"
+612-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:46:13-94
+613            android:configChanges="keyboardHidden|orientation|screenSize"
+613-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:47:13-74
+614            android:launchMode="standard"
+614-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:48:13-42
+615            android:theme="@style/tt_landing_page" >
+615-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:49:13-51
+616            <property
+616-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+617                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+617-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+618                android:value="true" />
+618-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+619        </activity>
+620        <activity
+620-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:54:9-62:20
+621            android:name="com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity"
+621-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:55:13-96
+622            android:configChanges="keyboardHidden|orientation|screenSize"
+622-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:56:13-74
+623            android:launchMode="standard"
+623-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:57:13-42
+624            android:theme="@style/tt_landing_page" >
+624-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:58:13-51
+625            <property
+625-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+626                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+626-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+627                android:value="true" />
+627-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+628        </activity>
+629        <activity
+629-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:63:9-70:20
+630            android:name="com.bytedance.sdk.openadsdk.activity.TTDelegateActivity"
+630-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:64:13-83
+631            android:launchMode="standard"
+631-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:65:13-42
+632            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+632-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:66:13-72
+633            <property
+633-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+634                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+634-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+635                android:value="true" />
+635-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+636        </activity>
+637        <activity
+637-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:71:9-79:20
+638            android:name="com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity"
+638-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:72:13-82
+639            android:launchMode="standard"
+639-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:73:13-42
+640            android:screenOrientation="portrait"
+640-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:74:13-49
+641            android:theme="@style/tt_privacy_landing_page" >
+641-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:75:13-59
+642            <property
+642-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+643                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+643-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+644                android:value="true" />
+644-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+645        </activity>
+646
+647        <service android:name="com.bytedance.sdk.openadsdk.multipro.aidl.BinderPoolService" />
+647-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:81:9-95
+647-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:81:18-92
+648
+649        <activity
+649-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:83:9-91:20
+650            android:name="com.bytedance.sdk.openadsdk.activity.TTAppOpenAdActivity"
+650-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:84:13-84
+651            android:configChanges="keyboardHidden|orientation|screenSize"
+651-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:85:13-74
+652            android:launchMode="standard"
+652-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:86:13-42
+653            android:theme="@style/tt_app_open_ad_no_animation" >
+653-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:87:13-63
+654            <property
+654-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+655                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+655-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+656                android:value="true" />
+656-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+657        </activity>
+658        <activity
+658-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:92:9-100:20
+659            android:name="com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity"
+659-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:93:13-86
+660            android:configChanges="keyboardHidden|orientation|screenSize"
+660-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:94:13-74
+661            android:launchMode="standard"
+661-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:95:13-42
+662            android:theme="@style/tt_full_screen_new" >
+662-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:96:13-54
+663            <property
+663-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+664                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+664-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+665                android:value="true" />
+665-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+666        </activity>
+667        <activity
+667-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:101:9-109:20
+668            android:name="com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity"
+668-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:102:13-93
+669            android:configChanges="keyboardHidden|orientation|screenSize"
+669-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:103:13-74
+670            android:launchMode="standard"
+670-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:104:13-42
+671            android:theme="@style/tt_full_screen_new" >
+671-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:105:13-54
+672            <property
+672-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+673                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+673-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+674                android:value="true" />
+674-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+675        </activity>
+676        <activity
+676-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:110:9-118:20
+677            android:name="com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity"
+677-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:111:13-90
+678            android:configChanges="keyboardHidden|orientation|screenSize"
+678-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:112:13-74
+679            android:launchMode="standard"
+679-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:113:13-42
+680            android:theme="@style/tt_full_screen_new" >
+680-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:114:13-54
+681            <property
+681-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+682                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+682-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+683                android:value="true" />
+683-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+684        </activity>
+685        <activity
+685-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:119:9-127:20
+686            android:name="com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity"
+686-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:120:13-97
+687            android:configChanges="keyboardHidden|orientation|screenSize"
+687-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:121:13-74
+688            android:launchMode="standard"
+688-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:122:13-42
+689            android:theme="@style/tt_full_screen_new" >
+689-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:123:13-54
+690            <property
+690-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+691                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+691-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+692                android:value="true" />
+692-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+693        </activity>
+694        <activity
+694-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:128:9-136:20
+695            android:name="com.bytedance.sdk.openadsdk.activity.TTInterstitialActivity"
+695-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:129:13-87
+696            android:configChanges="keyboardHidden|orientation|screenSize"
+696-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:130:13-74
+697            android:launchMode="standard"
+697-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:131:13-42
+698            android:theme="@style/tt_full_screen_interaction" >
+698-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:132:13-62
+699            <property
+699-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+700                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+700-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+701                android:value="true" />
+701-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+702        </activity>
+703        <activity
+703-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:137:9-145:20
+704            android:name="com.bytedance.sdk.openadsdk.activity.TTInterstitialExpressActivity"
+704-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:138:13-94
+705            android:configChanges="keyboardHidden|orientation|screenSize"
+705-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:139:13-74
+706            android:launchMode="standard"
+706-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:140:13-42
+707            android:theme="@style/tt_full_screen_interaction" >
+707-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:141:13-62
+708            <property
+708-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+709                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+709-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+710                android:value="true" />
+710-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+711        </activity>
+712        <activity
+712-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:146:9-154:20
+713            android:name="com.bytedance.sdk.openadsdk.activity.TTAdActivity"
+713-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:147:13-77
+714            android:configChanges="keyboardHidden|orientation|screenSize"
+714-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:148:13-74
+715            android:launchMode="standard"
+715-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:149:13-42
+716            android:theme="@style/tt_full_screen_new" >
+716-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:150:13-54
+717            <property
+717-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:32:13-34:40
+718                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+718-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:33:17-92
+719                android:value="true" />
+719-->[com.pangle.global:pag-sdk-ad:unfat-7702-20251023211715-release] /home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/AndroidManifest.xml:34:17-37
+720        </activity>
+721        <!--
+722         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+723         with the application context. This config is merged in with the host app's manifest,
+724         but there can only be one provider with the same authority activated at any given
+725         point; so if the end user has two or more different apps that use Facebook SDK, only the
+726         first one will be able to use the provider. To work around this problem, we use the
+727         following placeholder in the authority to identify each host application as if it was
+728         a completely different provider.
+729        -->
+730        <provider
+730-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:32:9-35:40
+731            android:name="com.facebook.internal.FacebookInitProvider"
+731-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:33:13-70
+732            android:authorities="com.emojimaker.horor.emoji.FacebookInitProvider"
+732-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:34:13-72
+733            android:exported="false" />
+733-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:35:13-37
+734
+735        <receiver
+735-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:37:9-43:20
+736            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+736-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:38:13-86
+737            android:exported="false" >
+737-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:39:13-37
+738            <intent-filter>
+738-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:40:13-42:29
+739                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+739-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:41:17-95
+739-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:41:25-92
+740            </intent-filter>
+741        </receiver>
+742        <receiver
+742-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:44:9-50:20
+743            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+743-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:45:13-118
+744            android:exported="false" >
+744-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:46:13-37
+745            <intent-filter>
+745-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:47:13-49:29
+746                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+746-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:48:17-103
+746-->[com.facebook.android:facebook-core:18.0.3] /home/lequyen/.gradle/caches/8.13/transforms/3ba3a4701753837e14362fedc83124ec/transformed/facebook-core-18.0.3/AndroidManifest.xml:48:25-100
+747            </intent-filter>
+748        </receiver>
+749
+750        <uses-library
+750-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/lequyen/.gradle/caches/8.13/transforms/06574a822ede7ec54b7c3f74afbdbda2/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:23:9-25:40
+751            android:name="android.ext.adservices"
+751-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/lequyen/.gradle/caches/8.13/transforms/06574a822ede7ec54b7c3f74afbdbda2/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:24:13-50
+752            android:required="false" />
+752-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /home/lequyen/.gradle/caches/8.13/transforms/06574a822ede7ec54b7c3f74afbdbda2/transformed/ads-adservices-1.1.0-beta11/AndroidManifest.xml:25:13-37
+753
+754        <activity
+754-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:20:9-24:75
+755            android:name="com.facebook.ads.AudienceNetworkActivity"
+755-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:21:13-68
+756            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+756-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:22:13-106
+757            android:exported="false"
+757-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:23:13-37
+758            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+758-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:24:13-72
+759
+760        <provider
+760-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:26:9-29:40
+761            android:name="com.facebook.ads.AudienceNetworkContentProvider"
+761-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:27:13-75
+762            android:authorities="com.emojimaker.horor.emoji.AudienceNetworkContentProvider"
+762-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:28:13-82
+763            android:exported="false" />
+763-->[com.facebook.android:audience-network-sdk:6.21.0] /home/lequyen/.gradle/caches/8.13/transforms/ac1db89018aadff6824d6e9e0d194f4a/transformed/audience-network-sdk-6.21.0/AndroidManifest.xml:29:13-37
+764
+765        <meta-data
+765-->[com.google.android.gms:play-services-basement:18.9.0] /home/lequyen/.gradle/caches/8.13/transforms/51de55af32f71da1dd3e1b0bded407a5/transformed/play-services-basement-18.9.0/AndroidManifest.xml:21:9-23:69
+766            android:name="com.google.android.gms.version"
+766-->[com.google.android.gms:play-services-basement:18.9.0] /home/lequyen/.gradle/caches/8.13/transforms/51de55af32f71da1dd3e1b0bded407a5/transformed/play-services-basement-18.9.0/AndroidManifest.xml:22:13-58
+767            android:value="@integer/google_play_services_version" />
+767-->[com.google.android.gms:play-services-basement:18.9.0] /home/lequyen/.gradle/caches/8.13/transforms/51de55af32f71da1dd3e1b0bded407a5/transformed/play-services-basement-18.9.0/AndroidManifest.xml:23:13-66
+768
+769        <activity
+769-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:27:9-31:75
+770            android:name="com.unity3d.ironsourceads.internal.services.InlineStoreActivity"
+770-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:28:13-91
+771            android:configChanges="orientation|screenSize"
+771-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:29:13-59
+772            android:hardwareAccelerated="true"
+772-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:30:13-47
+773            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+773-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:31:13-72
+774        <activity
+774-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:32:9-41:20
+775            android:name="com.ironsource.mediationsdk.testSuite.TestSuiteActivity"
+775-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:33:13-83
+776            android:configChanges="orientation|screenSize"
+776-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:34:13-59
+777            android:exported="false"
+777-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:35:13-37
+778            android:hardwareAccelerated="true"
+778-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:36:13-47
+779            android:theme="@android:style/Theme.NoTitleBar" >
+779-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:37:13-60
+780            <meta-data
+780-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:38:13-40:40
+781                android:name="android.webkit.WebView.EnableSafeBrowsing"
+781-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:39:17-73
+782                android:value="true" />
+782-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:40:17-37
+783        </activity>
+784
+785        <provider
+785-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:43:9-46:40
+786            android:name="com.ironsource.lifecycle.IronsourceLifecycleProvider"
+786-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:44:13-80
+787            android:authorities="com.emojimaker.horor.emoji.IronsourceLifecycleProvider"
+787-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:45:13-79
+788            android:exported="false" />
+788-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:46:13-37
+789        <provider
+789-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:47:9-50:40
+790            android:name="com.ironsource.lifecycle.LevelPlayActivityLifecycleProvider"
+790-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:48:13-87
+791            android:authorities="com.emojimaker.horor.emoji.LevelPlayActivityLifecycleProvider"
+791-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:49:13-86
+792            android:exported="false" />
+792-->[com.unity3d.ads-mediation:mediation-sdk:9.1.0] /home/lequyen/.gradle/caches/8.13/transforms/6c57f396974beff26e3a8bb77d386267/transformed/mediation-sdk-9.1.0/AndroidManifest.xml:50:13-37
+793
+794        <service
+794-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/089fedf7b58bb969565cc8af6385304a/transformed/transport-backend-cct-3.3.0/AndroidManifest.xml:26:9-32:19
+795            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+795-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/089fedf7b58bb969565cc8af6385304a/transformed/transport-backend-cct-3.3.0/AndroidManifest.xml:27:13-103
+796            android:exported="false" >
+796-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/089fedf7b58bb969565cc8af6385304a/transformed/transport-backend-cct-3.3.0/AndroidManifest.xml:28:13-37
+797            <meta-data
+797-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/089fedf7b58bb969565cc8af6385304a/transformed/transport-backend-cct-3.3.0/AndroidManifest.xml:29:13-31:39
+798                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+798-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/089fedf7b58bb969565cc8af6385304a/transformed/transport-backend-cct-3.3.0/AndroidManifest.xml:30:17-94
+799                android:value="cct" />
+799-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/089fedf7b58bb969565cc8af6385304a/transformed/transport-backend-cct-3.3.0/AndroidManifest.xml:31:17-36
+800        </service>
+801
+802        <receiver
+802-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+803            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+803-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+804            android:directBootAware="false"
+804-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+805            android:enabled="true"
+805-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+806            android:exported="true"
+806-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+807            android:permission="android.permission.DUMP" >
+807-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+808            <intent-filter>
+808-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+809                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+809-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+809-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+810            </intent-filter>
+811            <intent-filter>
+811-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+812                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+812-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+812-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+813            </intent-filter>
+814            <intent-filter>
+814-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+815                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+815-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+815-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+816            </intent-filter>
+817            <intent-filter>
+817-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+818                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+818-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+818-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/lequyen/.gradle/caches/8.13/transforms/943b11dea15b3ff69e737bdfeee200e2/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+819            </intent-filter>
+820        </receiver>
+821
+822        <service
+822-->[com.google.android.datatransport:transport-runtime:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/f3b5150807381144d581a8f3e9eca961/transformed/transport-runtime-3.3.0/AndroidManifest.xml:24:9-28:19
+823            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+823-->[com.google.android.datatransport:transport-runtime:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/f3b5150807381144d581a8f3e9eca961/transformed/transport-runtime-3.3.0/AndroidManifest.xml:25:13-117
+824            android:exported="false"
+824-->[com.google.android.datatransport:transport-runtime:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/f3b5150807381144d581a8f3e9eca961/transformed/transport-runtime-3.3.0/AndroidManifest.xml:26:13-37
+825            android:permission="android.permission.BIND_JOB_SERVICE" >
+825-->[com.google.android.datatransport:transport-runtime:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/f3b5150807381144d581a8f3e9eca961/transformed/transport-runtime-3.3.0/AndroidManifest.xml:27:13-69
+826        </service>
+827
+828        <receiver
+828-->[com.google.android.datatransport:transport-runtime:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/f3b5150807381144d581a8f3e9eca961/transformed/transport-runtime-3.3.0/AndroidManifest.xml:30:9-32:40
+829            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+829-->[com.google.android.datatransport:transport-runtime:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/f3b5150807381144d581a8f3e9eca961/transformed/transport-runtime-3.3.0/AndroidManifest.xml:31:13-132
+830            android:exported="false" />
+830-->[com.google.android.datatransport:transport-runtime:3.3.0] /home/lequyen/.gradle/caches/8.13/transforms/f3b5150807381144d581a8f3e9eca961/transformed/transport-runtime-3.3.0/AndroidManifest.xml:32:13-37
+831
+832        <provider
+832-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:21:9-24:40
+833            android:name="com.mbridge.msdk.config.component.status.MBComponentLifecycleProvider"
+833-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:22:13-97
+834            android:authorities="com.emojimaker.horor.emoji.mbcomponentlifcycleprovider"
+834-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:23:13-79
+835            android:exported="false" />
+835-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:24:13-37
+836
+837        <activity
+837-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:26:9-31:75
+838            android:name="com.mbridge.msdk.config.activity.MBRewardVideoActivity"
+838-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:27:13-82
+839            android:configChanges="orientation|keyboardHidden|screenSize"
+839-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:28:13-74
+840            android:excludeFromRecents="true"
+840-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:29:13-46
+841            android:exported="false"
+841-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:30:13-37
+842            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- mbridge base activity -->
+842-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:31:13-72
+843        <activity
+843-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:33:9-37:80
+844            android:name="com.mbridge.msdk.activity.MBCommonActivity"
+844-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:34:13-70
+845            android:configChanges="keyboard|orientation"
+845-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:35:13-57
+846            android:exported="false"
+846-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:36:13-37
+847            android:theme="@style/mbridge_transparent_common_activity_style" /> <!-- integration rewardVideo if aggregation nativeX pls add start -->
+847-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:37:13-77
+848        <activity android:name="com.mbridge.msdk.out.LoadingActivity" /> <!-- integration rewardVideo if aggregation nativeX pls add end -->
+848-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:40:9-73
+848-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:40:19-70
+849        <activity
+849-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:43:9-46:75
+850            android:name="com.mbridge.msdk.reward.player.MBRewardVideoActivity"
+850-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:44:13-80
+851            android:configChanges="orientation|keyboardHidden|screenSize"
+851-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:45:13-74
+852            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+852-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:46:13-72
+853
+854        <receiver
+854-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:48:9-54:20
+855            android:name="com.mbridge.msdk.foundation.same.broadcast.NetWorkChangeReceiver"
+855-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:49:13-92
+856            android:exported="true" >
+856-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:50:13-36
+857            <intent-filter>
+857-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:51:13-53:29
+858                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+858-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:52:17-79
+858-->[com.mbridge.msdk.oversea:mbridge_android_sdk:17.0.31] /home/lequyen/.gradle/caches/8.13/transforms/17e782916841923759c86971ce5cabb7/transformed/mbridge_android_sdk-17.0.31/AndroidManifest.xml:52:25-76
+859            </intent-filter>
+860        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+861        <activity
+861-->[com.google.android.play:core-common:2.0.4] /home/lequyen/.gradle/caches/8.13/transforms/01a6da22ecea5da823908bf45855ac58/transformed/core-common-2.0.4/AndroidManifest.xml:14:9-18:65
+862            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+862-->[com.google.android.play:core-common:2.0.4] /home/lequyen/.gradle/caches/8.13/transforms/01a6da22ecea5da823908bf45855ac58/transformed/core-common-2.0.4/AndroidManifest.xml:15:13-93
+863            android:exported="false"
+863-->[com.google.android.play:core-common:2.0.4] /home/lequyen/.gradle/caches/8.13/transforms/01a6da22ecea5da823908bf45855ac58/transformed/core-common-2.0.4/AndroidManifest.xml:16:13-37
+864            android:stateNotNeeded="true"
+864-->[com.google.android.play:core-common:2.0.4] /home/lequyen/.gradle/caches/8.13/transforms/01a6da22ecea5da823908bf45855ac58/transformed/core-common-2.0.4/AndroidManifest.xml:17:13-42
+865            android:theme="@style/Theme.PlayCore.Transparent" />
+865-->[com.google.android.play:core-common:2.0.4] /home/lequyen/.gradle/caches/8.13/transforms/01a6da22ecea5da823908bf45855ac58/transformed/core-common-2.0.4/AndroidManifest.xml:18:13-62
+866    </application>
+867
+868</manifest>

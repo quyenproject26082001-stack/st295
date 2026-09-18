@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    tools:context=".ui.cosplay.CosplaySuccessfulActivity">
+
+
+    <!-- layoutActionBar -->
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/starSS"
+        android:layout_width="216dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@id/containerVS"
+        android:src="@drawable/four_star_ss"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerVS"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="0dp"
+        app:layout_constraintBottom_toTopOf="@id/progressContainer"
+        app:layout_constraintTop_toBottomOf="@id/starSS">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.36" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <!--    cvImage-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:visibility="visible"
+            app:strokeWidth="4dp"
+            app:strokeColor="@color/app"
+            app:cardCornerRadius="30dp"
+            app:layout_constraintBottom_toTopOf="@id/guidelineHalf"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/imvImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="11dp"
+                android:scaleType="fitCenter" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/containerBtnSamplePhoto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="0dp"
+            android:visibility="visible"
+            app:strokeWidth="4dp"
+            app:strokeColor="@color/app"
+            app:cardCornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHalf"
+            >
+
+            <ImageView
+                android:id="@+id/btnSamplePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                tools:src="@color/dark" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/vsImg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintDimensionRatio="284:284"
+            android:background="@drawable/vs_img"
+            app:layout_constraintBottom_toBottomOf="@id/containerBtnSamplePhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cvImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/progressContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="56dp"
+        android:layout_marginTop="35dp"
+        android:visibility="visible"
+        app:cardCornerRadius="28dp"
+        app:layout_constraintBottom_toTopOf="@id/tvProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#861629">
+
+        <ImageView
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_progess_h"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@id/btnMan"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/ic_thumb"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_thumb_ss"
+        android:fontFamily="@font/howli_layers_base"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/progressContainer"
+        app:layout_constraintStart_toStartOf="@id/progressContainer"
+        app:layout_constraintTop_toTopOf="@id/progressContainer" />
+
+    <TextView
+        android:id="@+id/tvProgress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/howli_layers_base"
+        android:gravity="center"
+        android:text="10/100"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/app"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/lnlBottom"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/progressContainer" />
+
+    <!--    lnlBottom-->
+    <FrameLayout
+        android:id="@+id/lnlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="15dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <include
+            android:id="@+id/includeLayoutBottom"
+            layout="@layout/layout_bottom_cosplay" />
+
+    </FrameLayout>
+
+
+    <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/flNativeCollab"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+    <!--        <include layout="@layout/ads_shimmer_collap_native" />-->
+    <!--    </FrameLayout>-->
+
+
+    <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/flNativeCollab"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+    <!--    </FrameLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

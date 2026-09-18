@@ -10,9 +10,13 @@ import com.emojimaker.horor.emoji.core.helper.InternetHelper
 import com.emojimaker.horor.emoji.core.helper.MediaHelper
 import com.emojimaker.horor.emoji.core.utils.key.ValueKey
 import com.emojimaker.horor.emoji.core.utils.state.HandleState
+import com.emojimaker.horor.emoji.data.local.PersistenceRepository
 import com.emojimaker.horor.emoji.data.model.MyAlbumModel
 import com.emojimaker.horor.emoji.data.model.custom.CustomizeModel
+import com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibility
+import com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityChecker
 import com.emojimaker.horor.emoji.data.model.custom.SuggestionModel
+import com.google.gson.Gson
 import com.emojimaker.horor.emoji.ui.my_creation.MyCreationActivity
 import com.emojimaker.horor.emoji.ui.random_character.RandomCharacterActivity
 import kotlinx.coroutines.Dispatchers
@@ -95,16 +99,48 @@ class MyAvatarViewModel : ViewModel() {
         _myAvatarList.value = newAvatarList
     }
 
-    suspend fun editItem(context: Context, pathInternal: String, allData: ArrayList<CustomizeModel>){
-        val originList = MediaHelper
-            .readListFromFile<SuggestionModel>(context, ValueKey.EDIT_FILE_INTERNAL)
-            .toCollection(ArrayList())
+    suspend fun editItem(
+        context: Context,
+        pathInternal: String,
+        allData: ArrayList<CustomizeModel>
+    ): MakerEditCompatibility {
+        positionCharacter = -1
+        isApi = false
+        if (allData.isEmpty()) return MakerEditCompatibility.DATA_UNAVAILABLE
 
-        editModel = originList.first { it.pathInternalEdit == pathInternal }
-        positionCharacter = allData.indexOfFirst { it.avatar == editModel.avatarPath }
-        // ✅ FIX: Use isFromAPI flag from character data instead of position
-        isApi = if (positionCharacter >= 0) allData[positionCharacter].isFromAPI else false
-        MediaHelper.writeModelToFile(context, ValueKey.SUGGESTION_FILE_INTERNAL, editModel)
+        val originList = runCatching {
+            MediaHelper.readListFromFile<SuggestionModel>(context, ValueKey.EDIT_FILE_INTERNAL)
+        }.getOrElse { return MakerEditCompatibility.INVALID_SAVED_DATA }
+        val savedModel = runCatching {
+            originList.firstOrNull { it.pathInternalEdit == pathInternal }
+        }.getOrElse { return MakerEditCompatibility.INVALID_SAVED_DATA }
+            ?: return MakerEditCompatibility.CREATION_NOT_FOUND
+
+        val exactAvatarPosition = allData.indexOfFirst { it.avatar == savedModel.avatarPath }
+        positionCharacter = if (exactAvatarPosition >= 0) exactAvatarPosition else {
+            val sourceName = savedModel.sourceDataName.orEmpty()
+            if (sourceName.isBlank()) -1 else allData.indexOfFirst { it.dataName == sourceName }
+        }
+        if (positionCharacter < 0) return MakerEditCompatibility.CHARACTER_NOT_FOUND
+
+        val currentCharacter = allData[positionCharacter]
+        val compatibility = runCatching {
+            MakerEditCompatibilityChecker.check(savedModel, currentCharacter)
+        }.getOrElse { MakerEditCompatibility.INVALID_SAVED_DATA }
+        if (compatibility != MakerEditCompatibility.COMPATIBLE) return compatibility
+
+        val stored = runCatching {
+            PersistenceRepository.writeModelJson(
+                context,
+                ValueKey.SUGGESTION_FILE_INTERNAL,
+                Gson().toJson(savedModel)
+            )
+        }.isSuccess
+        if (!stored) return MakerEditCompatibility.INVALID_SAVED_DATA
+
+        editModel = savedModel
+        isApi = currentCharacter.isFromAPI
+        return MakerEditCompatibility.COMPATIBLE
     }
 
     fun checkDataInternet(context: BaseActivity<*>, action: (() -> Unit)) {

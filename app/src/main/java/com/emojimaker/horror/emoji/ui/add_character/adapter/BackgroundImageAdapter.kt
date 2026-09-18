@@ -29,7 +29,7 @@ class BackgroundImageAdapter :
     override fun onBind(binding: ItemBackgroundImageBinding, item: SelectedModel, position: Int) {
         binding.apply {
             tvAddImg.select()
-            cardBackgroundImage.strokeWidth = if (item.isSelected) dp(2) else 0
+            cardBackgroundImage.strokeWidth = if (item.isSelected) root.resources.getDimensionPixelSize(R.dimen.dp_2) else 0
             cardBackgroundImage.strokeColor = if (item.isSelected) Color.parseColor("#333333") else Color.TRANSPARENT
             if (position == 0) {
                 lnlAddItem.visible()
@@ -46,7 +46,7 @@ class BackgroundImageAdapter :
                 lnlAddItem.gone()
                 imvImage.visible()
                 imvImage.scaleType = android.widget.ImageView.ScaleType.CENTER_CROP
-                val cornerRadiusPx = (10 * root.context.resources.displayMetrics.density).toInt()
+                val cornerRadiusPx = root.resources.getDimensionPixelSize(R.dimen.dp_10)
                 Glide.with(root)
                     .load(item.path)
                     .override(256, 256)
@@ -58,9 +58,6 @@ class BackgroundImageAdapter :
         }
     }
 
-    private fun dp(value: Int): Int {
-        return (value * android.content.res.Resources.getSystem().displayMetrics.density).toInt()
-    }
 
     fun submitItem(position: Int, list: ArrayList<SelectedModel>) {
         items.clear()

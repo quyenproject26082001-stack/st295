@@ -27,10 +27,10 @@
 
     <TextView
         android:id="@+id/legacyBtnActionBarLeft"
-        android:layout_width="36dp"
-        android:elevation="1dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="22dp"
+        android:layout_width="@dimen/dp_36"
+        android:elevation="@dimen/dp_1"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginStart="@dimen/dp_22"
         android:background="@drawable/ic_back"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,15 +45,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         style="@style/single_marquee"
-        android:layout_marginTop="52dp"
-        android:elevation="1dp"
+        android:layout_marginTop="@dimen/dp_52"
+        android:elevation="@dimen/dp_1"
         android:fontFamily="@font/howli_layers_base"
         android:gravity="center"
         android:text="@string/settings"
-        android:textSize="24sp"
+        android:textSize="@dimen/sp_24"
         android:textColor="@color/app"
         android:visibility="gone"
-        app:outerStrokeWidth="6dp"
+        app:outerStrokeWidth="@dimen/dp_6"
         app:outerStrokeColor="@color/app"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,22 +63,22 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="20dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingHorizontal="@dimen/dp_20"
         app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="48dp"
+            android:paddingBottom="@dimen/dp_48"
             android:orientation="vertical">
 
             <!--            btnLang-->
             <LinearLayout
                 android:id="@+id/btnLang"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/dp_50"
                 android:background="@drawable/setting_frame"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -87,34 +87,34 @@
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="26dp"
-                    android:paddingBottom="4dp"
+                    android:layout_marginStart="@dimen/dp_26"
+                    android:paddingBottom="@dimen/dp_4"
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="@dimen/dp_22"
+                        android:layout_height="@dimen/dp_22"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginVertical="17dp"
+                        android:layout_marginVertical="@dimen/dp_17"
                         android:src="@drawable/ic_lang_set" />
                 </FrameLayout>
 
                 <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/dp_10"
                     android:layout_weight="8"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="center_vertical"
                     android:text="@string/language"
                     android:textColor="@color/app"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/sp_18" />
                 <TextView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
                     android:visibility="gone"
                     android:background="@drawable/arrow"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="@dimen/dp_15"
                     />
 
 
@@ -125,8 +125,8 @@
             <LinearLayout
                 android:id="@+id/btnRate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_20"
                 android:background="@drawable/setting_frame"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -135,35 +135,35 @@
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="26dp"
-                    android:paddingBottom="4dp"
+                    android:layout_marginStart="@dimen/dp_26"
+                    android:paddingBottom="@dimen/dp_4"
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="@dimen/dp_22"
+                        android:layout_height="@dimen/dp_22"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginVertical="17dp"
+                        android:layout_marginVertical="@dimen/dp_17"
                         android:src="@drawable/ic_rate_set" />
                 </FrameLayout>
 
                 <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/dp_10"
                     android:layout_weight="8"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="center_vertical"
                     android:text="@string/rate_us"
                     android:textColor="@color/app"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/sp_18" />
                 <TextView
-                    android:layout_width="22dp"
+                    android:layout_width="@dimen/dp_22"
                     android:visibility="gone"
 
-                    android:layout_height="22dp"
+                    android:layout_height="@dimen/dp_22"
                     android:background="@drawable/arrow"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="@dimen/dp_15"
                     />
 
 
@@ -173,8 +173,8 @@
             <LinearLayout
                 android:id="@+id/btnShareApp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_20"
                 android:background="@drawable/setting_frame"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -183,36 +183,36 @@
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="26dp"
-                    android:paddingBottom="4dp"
+                    android:layout_marginStart="@dimen/dp_26"
+                    android:paddingBottom="@dimen/dp_4"
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="@dimen/dp_22"
+                        android:layout_height="@dimen/dp_22"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginVertical="17dp"
+                        android:layout_marginVertical="@dimen/dp_17"
                         android:src="@drawable/ic_share_set" />
                 </FrameLayout>
 
                 <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/dp_10"
                     android:layout_weight="8"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="center_vertical"
                     android:text="@string/share_app"
                     android:textColor="@color/app"
 
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/sp_18" />
                 <TextView
-                    android:layout_width="22dp"
+                    android:layout_width="@dimen/dp_22"
                     android:visibility="gone"
 
-                    android:layout_height="22dp"
+                    android:layout_height="@dimen/dp_22"
                     android:background="@drawable/arrow"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="@dimen/dp_15"
                     />
 
             </LinearLayout>
@@ -221,8 +221,8 @@
             <LinearLayout
                 android:id="@+id/btnPolicy"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_20"
                 android:background="@drawable/setting_frame"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -231,34 +231,34 @@
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="26dp"
-                    android:paddingBottom="4dp"
+                    android:layout_marginStart="@dimen/dp_26"
+                    android:paddingBottom="@dimen/dp_4"
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="@dimen/dp_22"
+                        android:layout_height="@dimen/dp_22"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginVertical="17dp"
+                        android:layout_marginVertical="@dimen/dp_17"
                         android:src="@drawable/ic_policy_set" />
                 </FrameLayout>
 
                 <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/dp_10"
                     android:layout_weight="8"
                     android:fontFamily="@font/howli_layers_base"
                     android:gravity="center_vertical"
                     android:text="@string/privacy_policy"
                     android:textColor="@color/app"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/sp_18" />
                 <TextView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
                     android:visibility="gone"
                     android:background="@drawable/arrow"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="@dimen/dp_15"
                     />
 
             </LinearLayout>

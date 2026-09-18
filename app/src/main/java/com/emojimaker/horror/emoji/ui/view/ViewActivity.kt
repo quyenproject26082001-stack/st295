@@ -35,6 +35,7 @@ import com.emojimaker.horor.emoji.core.utils.key.ValueKey
 import com.emojimaker.horor.emoji.core.utils.key.ValueKey.AVATAR_TYPE
 import com.emojimaker.horor.emoji.core.utils.state.HandleState
 import com.emojimaker.horor.emoji.data.local.PackageRepository
+import com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibility
 import com.emojimaker.horor.emoji.databinding.ActivityViewBinding
 import com.emojimaker.horor.emoji.dialog.AddNewPackageDialog
 import com.emojimaker.horor.emoji.dialog.AddPackageDialog
@@ -46,8 +47,10 @@ import com.emojimaker.horor.emoji.ui.permission.PermissionViewModel
 import com.lvt.ads.util.Admob
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 
 class ViewActivity : BaseActivity<ActivityViewBinding>() {
     private val viewModel: ViewViewModel by viewModels()
@@ -296,11 +299,24 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
     private fun handleEditClick(pathInternal: String) {
         lifecycleScope.launch(Dispatchers.IO) {
             showLoading()
-            myAvatarViewModel.editItem(this@ViewActivity, pathInternal, dataViewModel.allData.value)
+            dataViewModel.ensureData(this@ViewActivity)
+            val loaded = withTimeoutOrNull(20_000) {
+                dataViewModel.dataLoadFinished.first { it }
+            } != null
+            val compatibility = if (loaded) {
+                myAvatarViewModel.editItem(this@ViewActivity, pathInternal, dataViewModel.allData.value)
+            } else {
+                MakerEditCompatibility.DATA_UNAVAILABLE
+            }
 
             withContext(Dispatchers.Main) {
                 delay(300)
                 dismissLoading()
+
+                if (compatibility != MakerEditCompatibility.COMPATIBLE) {
+                    showEditUnavailableDialog()
+                    return@withContext
+                }
 
                 myAvatarViewModel.checkDataInternet(this@ViewActivity) {
                     val intent =
@@ -313,6 +329,21 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
                     overridePendingTransition(R.anim.slide_out_left, R.anim.slide_in_right) }
                 }
             }
+        }
+    }
+
+    private fun showEditUnavailableDialog() {
+        val dialog = YesNoDialog(
+            this,
+            R.string.error,
+            R.string.creation_data_updated_cannot_edit,
+            isError = true
+        )
+        LanguageHelper.setLocale(this)
+        dialog.show()
+        dialog.onYesClick = {
+            dialog.dismiss()
+            hideNavigation()
         }
     }
 

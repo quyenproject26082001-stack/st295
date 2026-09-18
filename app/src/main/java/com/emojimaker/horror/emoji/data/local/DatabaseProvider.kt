@@ -14,6 +14,7 @@ object DatabaseProvider {
                 AppDatabase::class.java,
                 "app_database"
             )
+                .addMigrations(DatabaseMigrations.MIGRATION_2_3)
                 .fallbackToDestructiveMigration(true)
                 .build()
                 .also { INSTANCE = it }

@@ -76,6 +76,131 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow_F6">#F6CD46</color>
+    <dimen name="actionbar">105dp</dimen>
+    <dimen name="dp_0_2">0.2dp</dimen>
+    <dimen name="dp_0_5">0.5dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_105">105dp</dimen>
+    <dimen name="dp_108">108dp</dimen>
+    <dimen name="dp_10_5">10.5dp</dimen>
+    <dimen name="dp_11">11dp</dimen>
+    <dimen name="dp_112">112dp</dimen>
+    <dimen name="dp_114">114dp</dimen>
+    <dimen name="dp_116">116dp</dimen>
+    <dimen name="dp_11_5">11.5dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_120">120dp</dimen>
+    <dimen name="dp_13">13dp</dimen>
+    <dimen name="dp_136">136dp</dimen>
+    <dimen name="dp_14">14dp</dimen>
+    <dimen name="dp_140">140dp</dimen>
+    <dimen name="dp_144">144dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_152">152dp</dimen>
+    <dimen name="dp_154">154dp</dimen>
+    <dimen name="dp_156">156dp</dimen>
+    <dimen name="dp_15_5">15.5dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_160">160dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_176">176dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_180">180dp</dimen>
+    <dimen name="dp_184">184dp</dimen>
+    <dimen name="dp_188">188dp</dimen>
+    <dimen name="dp_19">19dp</dimen>
+    <dimen name="dp_194">194dp</dimen>
+    <dimen name="dp_1_5">1.5dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_202">202dp</dimen>
+    <dimen name="dp_21">21dp</dimen>
+    <dimen name="dp_216">216dp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_220">220dp</dimen>
+    <dimen name="dp_23">23dp</dimen>
+    <dimen name="dp_234">234dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="dp_250">250dp</dimen>
+    <dimen name="dp_26">26dp</dimen>
+    <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_311">311dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_324">324dp</dimen>
+    <dimen name="dp_328">328dp</dimen>
+    <dimen name="dp_329">329dp</dimen>
+    <dimen name="dp_33">33dp</dimen>
+    <dimen name="dp_34">34dp</dimen>
+    <dimen name="dp_35">35dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+    <dimen name="dp_37">37dp</dimen>
+    <dimen name="dp_38">38dp</dimen>
+    <dimen name="dp_38_8">38.8dp</dimen>
+    <dimen name="dp_39">39dp</dimen>
+    <dimen name="dp_3_5">3.5dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_42">42dp</dimen>
+    <dimen name="dp_44">44dp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+    <dimen name="dp_46">46dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_4_5">4.5dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_52">52dp</dimen>
+    <dimen name="dp_56">56dp</dimen>
+    <dimen name="dp_58">58dp</dimen>
+    <dimen name="dp_59">59dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_61">61dp</dimen>
+    <dimen name="dp_62">62dp</dimen>
+    <dimen name="dp_64">64dp</dimen>
+    <dimen name="dp_65">65dp</dimen>
+    <dimen name="dp_66">66dp</dimen>
+    <dimen name="dp_67">67dp</dimen>
+    <dimen name="dp_68">68dp</dimen>
+    <dimen name="dp_7">7dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+    <dimen name="dp_72">72dp</dimen>
+    <dimen name="dp_74">74dp</dimen>
+    <dimen name="dp_78">78dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_80">80dp</dimen>
+    <dimen name="dp_81">81dp</dimen>
+    <dimen name="dp_82">82dp</dimen>
+    <dimen name="dp_9">9dp</dimen>
+    <dimen name="dp_90">90dp</dimen>
+    <dimen name="dp_94">94dp</dimen>
+    <dimen name="dp_96">96dp</dimen>
+    <dimen name="dp_99">99dp</dimen>
+    <dimen name="dp_9_5">9.5dp</dimen>
+    <dimen name="dp_minus_10">-10dp</dimen>
+    <dimen name="dp_minus_15">-15dp</dimen>
+    <dimen name="dp_minus_2">-2dp</dimen>
+    <dimen name="dp_minus_35">-35dp</dimen>
+    <dimen name="dp_minus_5">-5dp</dimen>
+    <dimen name="dp_minus_76">-76dp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_30">30sp</dimen>
+    <dimen name="sp_32">32sp</dimen>
+    <dimen name="sp_40">40sp</dimen>
+    <dimen name="sp_68">68sp</dimen>
+    <dimen name="sp_8">8sp</dimen>
+    <dimen name="splash">25dp</dimen>
+    <dimen name="splash1">120dp</dimen>
     <string name="add_image">Add Image</string>
     <string name="add_to_package">Add To Package</string>
     <string name="add_to_package_">ADD TO PACKAGE</string>
@@ -89,9 +214,9 @@
     <string name="all_items_unlocked">All items are unlocked!</string>
     <string name="allow">Allow</string>
     <string name="an_error_occurred">An error occurred, please try again later.</string>
-    <string name="app_id" translatable="false">ca-app-pub-9384003223514230~3553343565</string>
-    <string name="app_name" translatable="false">Horror Emoji Maker</string>
-    <string name="appopen_resume" translatable="false">ca-app-pub-9384003223514230/4015914974</string>
+    <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="app_name" translatable="false">Scary Emoji Maker</string>
+    <string name="appopen_resume" translatable="false">ca-app-pub-3940256099942544/9257395921</string>
     <string name="are_you_sure_want_to_delete_this_item">ARE YOU SURE WANT TO DELETE THIS ITEM?</string>
     <string name="are_you_sure_you_want_to_delete_the_image">Are you sure you want to delete the image?</string>
     <string name="avatar_random">\u00A0\u00A0AVATAR RANDOM\u00A0\u00A0</string>
@@ -115,15 +240,16 @@
     <string name="cosplay_cat">cosplay cat</string>
     <string name="create_package_name">Create Package Name</string>
     <string name="creation">MY\nCREATION</string>
+    <string name="creation_data_updated_cannot_edit">This creation can’t be edited.</string>
     <string name="delete">DELETE</string>
     <string name="delete_failed_please_try_again">Delete failed, please try again!</string>
     <string name="delete_your_customize">Delete your customize</string>
     <string name="do_you_want_to_exit">Haven’t saved it yet, do you want to exit?</string>
-    <string name="do_you_want_to_receive">Do you want to receive a reward by watching an ad?</string>
+    <string name="do_you_want_to_receive">Watch the video and get the \ncorresponding rewards!</string>
     <string name="done">Done</string>
     <string name="download">Download</string>
     <string name="download_failed_please_try_again_later">Download failed, please try again later!</string>
-    <string name="download_success">Download successful to the Horror Emoji Maker album</string>
+    <string name="download_success">Download successful to the Scary Emoji Maker album</string>
     <string name="downloading">Downloading...</string>
     <string name="edit">EDIT</string>
     <string name="emoji_activities">Emoji Activities</string>
@@ -147,6 +273,7 @@
     <string name="four_star">Thanks for your feedback</string>
     <string name="four_star_title">We love you too!</string>
     <string name="free">FREE</string>
+    <string name="free1">Free</string>
     <string name="gcm_defaultSenderId" translatable="false">216533881226</string>
     <string name="generate">RANDOM</string>
     <string name="go_to_setting_message">The app needs this permission</string>
@@ -167,9 +294,9 @@
     <string name="image_has_been_saved_successfully">The project has been saved successfully!</string>
     <string name="input_text">Input text</string>
     <string name="instruction">INSTRUCTION</string>
-    <string name="inter_all" translatable="false">ca-app-pub-9384003223514230/2702833303</string>
-    <string name="inter_per" translatable="false">ca-app-pub-9384003223514230/9295181874</string>
-    <string name="inter_splash" translatable="false">ca-app-pub-9384003223514230/5547508552</string>
+    <string name="inter_all" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="inter_per" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="inter_splash" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
     <string name="internet_required_for_more_characters">Internet required for more characters</string>
     <string name="invalid_action">Error</string>
     <string name="invalid_action_msg">Application not installed</string>
@@ -188,23 +315,23 @@
     <string name="my_design">Design</string>
     <string name="my_emoji">Emoji</string>
     <string name="my_work">My Work</string>
-    <string name="native_all" translatable="false">ca-app-pub-9384003223514230/7332343450</string>
-    <string name="native_category" translatable="false">ca-app-pub-9384003223514230/7523915140</string>
-    <string name="native_collap_category" translatable="false">ca-app-pub-9384003223514230/8836996813</string>
-    <string name="native_collap_category_emoji" translatable="false">ca-app-pub-9384003223514230/2271588465</string>
-    <string name="native_collap_createEmoji" translatable="false">ca-app-pub-9384003223514230/9459813347</string>
-    <string name="native_collap_createHorror" translatable="false">ca-app-pub-9384003223514230/5355936868</string>
-    <string name="native_collap_detail" translatable="false">ca-app-pub-9384003223514230/1389751633</string>
-    <string name="native_collap_home" translatable="false">ca-app-pub-9384003223514230/3776241827</string>
-    <string name="native_collap_maker" translatable="false">ca-app-pub-9384003223514230/9268241650</string>
-    <string name="native_collap_maker_bg" translatable="false">ca-app-pub-9384003223514230/5164365175</string>
-    <string name="native_collap_myCreation" translatable="false">ca-app-pub-9384003223514230/7598956822</string>
-    <string name="native_collap_success" translatable="false">ca-app-pub-9384003223514230/6027000647</string>
-    <string name="native_emojiCoppy" translatable="false">ca-app-pub-9384003223514230/9958506796</string>
-    <string name="native_intro" translatable="false">ca-app-pub-9384003223514230/1608263544</string>
-    <string name="native_language" translatable="false">ca-app-pub-9384003223514230/4234426886</string>
-    <string name="native_myCreation" translatable="false">ca-app-pub-9384003223514230/3393098447</string>
-    <string name="native_per" translatable="false">ca-app-pub-9384003223514230/7715486837</string>
+    <string name="native_all" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_category" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_category" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_category_emoji" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_createEmoji" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_createHorror" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_detail" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_home" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_maker" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_maker_bg" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_myCreation" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_collap_success" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_emojiCoppy" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_intro" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_language" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_myCreation" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_per" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
     <string name="new_package">New Package</string>
     <string name="new_package_">NEW PACKAGE</string>
     <string name="next">NEXT</string>
@@ -237,8 +364,8 @@
     <string name="rate_us">\u00A0\u00A0Rate Us\u00A0\u00A0</string>
     <string name="rate_us_0">You have not rated it yet!</string>
     <string name="reset">RESET</string>
-    <string name="reward_random" translatable="false">ca-app-pub-9384003223514230/7790528512</string>
-    <string name="reward_title">Reward!</string>
+    <string name="reward_random" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="reward_title">Rewards</string>
     <string name="save">SAVE</string>
     <string name="save_failed_please_try_again">Save failed, please try again!</string>
     <string name="settings">Settings</string>
@@ -281,35 +408,35 @@
     </style>
     <style name="CutCornerCardShape" ns1:keep="@style/CutCornerCardShape" parent="">
         <item name="cornerFamily">cut</item>
-        <item name="cornerSize">12dp</item>
+        <item name="cornerSize">@dimen/dp_12</item>
     </style>
     <style name="RoundedImageView">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">25dp</item>
+        <item name="cornerSize">@dimen/dp_25</item>
     </style>
     <style name="ShapeAppearance.LeftRoundedCard" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopLeft">28dp</item>
-        <item name="cornerSizeBottomLeft">28dp</item>
+        <item name="cornerSizeTopLeft">@dimen/dp_28</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_28</item>
         <item name="cornerSizeTopRight">0dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
     <style name="ShapeAppearanceOverlay.Pony.Rounded20" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">40dp</item>
+        <item name="cornerSize">@dimen/dp_40</item>
     </style>
     <style name="Theme.BaseProject" parent="Base.Theme.BaseProject"/>
     <style name="border_image_5" ns1:keep="@style/border_image_5" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">5dp</item>
+        <item name="cornerSize">@dimen/dp_5</item>
     </style>
     <style name="border_image_6" ns1:keep="@style/border_image_6" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">6dp</item>
+        <item name="cornerSize">@dimen/dp_6</item>
     </style>
     <style name="border_image_99" ns1:keep="@style/border_image_99" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">99dp</item>
+        <item name="cornerSize">@dimen/dp_99</item>
     </style>
     <style name="single_marquee">
         <item name="android:singleLine">true</item>

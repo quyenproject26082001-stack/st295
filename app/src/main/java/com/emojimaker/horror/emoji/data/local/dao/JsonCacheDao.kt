@@ -10,6 +10,12 @@ interface JsonCacheDao {
     @Query("SELECT json FROM json_cache WHERE `key` = :key LIMIT 1")
     suspend fun getJson(key: String): String?
 
+    @Query("SELECT length(json) FROM json_cache WHERE `key` = :key LIMIT 1")
+    suspend fun getJsonLength(key: String): Int?
+
+    @Query("SELECT substr(json, :start, :length) FROM json_cache WHERE `key` = :key LIMIT 1")
+    suspend fun getJsonChunk(key: String, start: Int, length: Int): String?
+
     @Query("SELECT COUNT(*) FROM json_cache WHERE `key` = :key")
     suspend fun countKey(key: String): Int
 

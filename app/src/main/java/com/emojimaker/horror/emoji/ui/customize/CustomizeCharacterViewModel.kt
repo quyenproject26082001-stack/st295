@@ -25,6 +25,7 @@ import com.emojimaker.horor.emoji.data.model.custom.LayerListModel
 import com.emojimaker.horor.emoji.data.model.custom.LayerTransformModel
 import com.emojimaker.horor.emoji.data.model.custom.NavigationModel
 import com.emojimaker.horor.emoji.data.model.custom.SuggestionModel
+import com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibilityChecker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -768,8 +769,11 @@ class CustomizeCharacterViewModel : ViewModel() {
     }
 
     fun getSuggestionList(): SuggestionModel {
+        val sourceData = _dataCustomize.value
         return SuggestionModel(
             avatarPath = avatarPath,
+            sourceDataName = sourceData?.dataName.orEmpty(),
+            sourceDataFingerprint = sourceData?.let(MakerEditCompatibilityChecker::fingerprint).orEmpty(),
             positionColorItemList = ArrayList(positionColorItemList),
             itemNavList = ArrayList(itemNavList),
             colorItemNavList = ArrayList(colorItemNavList),
@@ -805,6 +809,9 @@ class CustomizeCharacterViewModel : ViewModel() {
         if (indexEdit != -1) {
             editList[indexEdit].apply {
                 avatarPath = this@CustomizeCharacterViewModel.avatarPath
+                sourceDataName = dataCustomize.value?.dataName.orEmpty()
+                sourceDataFingerprint = dataCustomize.value
+                    ?.let(MakerEditCompatibilityChecker::fingerprint).orEmpty()
                 positionColorItemList = ArrayList(this@CustomizeCharacterViewModel.positionColorItemList)
                 itemNavList = ArrayList(this@CustomizeCharacterViewModel.itemNavList.map { ArrayList(it) })
                 colorItemNavList = ArrayList(this@CustomizeCharacterViewModel.colorItemNavList.map { ArrayList(it) })
@@ -829,6 +836,9 @@ class CustomizeCharacterViewModel : ViewModel() {
         val editList = loadEditList(context)
         val newEditModel = SuggestionModel(
             avatarPath = avatarPath,
+            sourceDataName = dataCustomize.value?.dataName.orEmpty(),
+            sourceDataFingerprint = dataCustomize.value
+                ?.let(MakerEditCompatibilityChecker::fingerprint).orEmpty(),
             positionColorItemList = this@CustomizeCharacterViewModel.positionColorItemList,
             itemNavList = this@CustomizeCharacterViewModel.itemNavList,
             colorItemNavList = this@CustomizeCharacterViewModel.colorItemNavList,

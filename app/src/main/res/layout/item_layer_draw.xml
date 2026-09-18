@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/white"
-    android:layout_height="58dp">
+    android:layout_height="@dimen/dp_58">
 
     <ImageView
         android:id="@+id/btnShowLayer"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginStart="@dimen/dp_16"
         android:src="@drawable/ic_show_emoji"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,16 +18,16 @@
         tools:visibility="visible" />
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        app:cardCornerRadius="6dp"
+        android:layout_width="@dimen/dp_42"
+        android:layout_height="@dimen/dp_42"
+        app:cardCornerRadius="@dimen/dp_6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnShowLayer"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="#212121"
         app:cardBackgroundColor="@color/white"
-        android:layout_marginStart="13dp"
-        app:strokeWidth="1dp">
+        android:layout_marginStart="@dimen/dp_13"
+        app:strokeWidth="@dimen/dp_1">
 
         <ImageView
             android:id="@+id/imvLayer"
@@ -41,9 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Layer"
+        android:textSize="@dimen/sp_16"
         android:fontFamily="@font/howli_layers_base"
         android:textColor="#212121"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="@dimen/dp_70"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnShowLayer"/>
@@ -59,18 +60,18 @@
         tools:visibility="visible"
         />
     <ImageView
-        android:layout_width="20dp"
+        android:layout_width="@dimen/dp_20"
         android:adjustViewBounds="true"
         android:layout_height="match_parent"
         android:src="@drawable/ic_move_layer_item"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/dp_16"
         app:layout_constraintEnd_toStartOf="@id/btnDelete"
         />
         
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dp_1"
         android:background="#CACACA"
         app:layout_constraintBottom_toBottomOf="parent"
         />

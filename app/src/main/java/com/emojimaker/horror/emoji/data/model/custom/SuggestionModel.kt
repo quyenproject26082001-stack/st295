@@ -2,6 +2,8 @@ package com.emojimaker.horor.emoji.data.model.custom
 
 data class SuggestionModel (
     var avatarPath: String = "",
+    var sourceDataName: String = "",
+    var sourceDataFingerprint: String = "",
     var positionColorItemList : ArrayList<Int> = arrayListOf(),
     var itemNavList : ArrayList<ArrayList<ItemNavCustomModel>> = arrayListOf(),
     var colorItemNavList : ArrayList<ArrayList<ItemColorModel>> = arrayListOf(),
@@ -14,7 +16,6 @@ data class SuggestionModel (
     var isFlip: Boolean = false,
     var layerTransformList: ArrayList<LayerTransformModel> = arrayListOf(),
 )
-
 
 
 

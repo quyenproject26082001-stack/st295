@@ -80,6 +80,9 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
   public final ConstraintLayout main;
 
   @NonNull
+  public final FrameLayout overlay;
+
+  @NonNull
   public final PaintDrawView paintDrawView;
 
   @NonNull
@@ -129,13 +132,14 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
       @NonNull FrameLayout flNativeCollab, @NonNull LinearLayout flNavDrawAndEraser,
       @NonNull Guideline glBtn, @NonNull Guideline glHorizontal,
       @NonNull FrameLayout layoutActionBar, @NonNull FrameLayout layoutCustomLayer,
-      @NonNull ConstraintLayout main, @NonNull PaintDrawView paintDrawView,
-      @NonNull RecyclerView rcvLayer, @NonNull RecyclerView rcvLayerColor,
-      @NonNull RecyclerView rcvLayerLayer, @NonNull RecyclerView rcvNavigation,
-      @NonNull RecyclerView rcvTextColor, @NonNull RecyclerView rcvTextFont,
-      @NonNull SeekBar seekbarSize, @NonNull View stateBlackCover, @NonNull ImageView tabDraw,
-      @NonNull ImageView tabEraser, @NonNull TextView tvEmojiTextPreview,
-      @NonNull TextView tvNoLayerItem, @NonNull TextView tvSize) {
+      @NonNull ConstraintLayout main, @NonNull FrameLayout overlay,
+      @NonNull PaintDrawView paintDrawView, @NonNull RecyclerView rcvLayer,
+      @NonNull RecyclerView rcvLayerColor, @NonNull RecyclerView rcvLayerLayer,
+      @NonNull RecyclerView rcvNavigation, @NonNull RecyclerView rcvTextColor,
+      @NonNull RecyclerView rcvTextFont, @NonNull SeekBar seekbarSize,
+      @NonNull View stateBlackCover, @NonNull ImageView tabDraw, @NonNull ImageView tabEraser,
+      @NonNull TextView tvEmojiTextPreview, @NonNull TextView tvNoLayerItem,
+      @NonNull TextView tvSize) {
     this.rootView = rootView;
     this.actionBar = actionBar;
     this.bgCus = bgCus;
@@ -154,6 +158,7 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
     this.layoutActionBar = layoutActionBar;
     this.layoutCustomLayer = layoutCustomLayer;
     this.main = main;
+    this.overlay = overlay;
     this.paintDrawView = paintDrawView;
     this.rcvLayer = rcvLayer;
     this.rcvLayerColor = rcvLayerColor;
@@ -296,6 +301,12 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
+      id = R.id.overlay;
+      FrameLayout overlay = ViewBindings.findChildViewById(rootView, id);
+      if (overlay == null) {
+        break missingId;
+      }
+
       id = R.id.paintDrawView;
       PaintDrawView paintDrawView = ViewBindings.findChildViewById(rootView, id);
       if (paintDrawView == null) {
@@ -383,7 +394,7 @@ public final class ActivityCustomizeEmojiBinding implements ViewBinding {
       return new ActivityCustomizeEmojiBinding((ConstraintLayout) rootView, binding_actionBar,
           bgCus, btnDrawLayer, btnHide, btnLayer, btnTextLayer, containerSeekbar, drawView,
           edtEmojiText, flBottomNav, flNativeCollab, flNavDrawAndEraser, glBtn, glHorizontal,
-          layoutActionBar, layoutCustomLayer, main, paintDrawView, rcvLayer, rcvLayerColor,
+          layoutActionBar, layoutCustomLayer, main, overlay, paintDrawView, rcvLayer, rcvLayerColor,
           rcvLayerLayer, rcvNavigation, rcvTextColor, rcvTextFont, seekbarSize, stateBlackCover,
           tabDraw, tabEraser, tvEmojiTextPreview, tvNoLayerItem, tvSize);
     }

@@ -66,7 +66,7 @@ class DrawColorAdapter : RecyclerView.Adapter<DrawColorAdapter.ColorViewHolder>(
                     }
                 }
             }
-            cardColorDraw.strokeWidth = if (position == selectedPosition && color != null) dp(3) else 0
+            cardColorDraw.strokeWidth = if (position == selectedPosition && color != null) root.resources.getDimensionPixelSize(R.dimen.dp_3) else 0
             cardColorDraw.strokeColor = Color.parseColor("#212121")
             if (color == null) {
                 imvColorDraw.setImageResource(R.drawable.add_color_emoji)
@@ -92,8 +92,5 @@ class DrawColorAdapter : RecyclerView.Adapter<DrawColorAdapter.ColorViewHolder>(
             }
         }
 
-        private fun dp(value: Int): Int {
-            return (value * binding.root.resources.displayMetrics.density).toInt()
-        }
     }
 }

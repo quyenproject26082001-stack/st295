@@ -69,6 +69,9 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
                 launch {
                     viewModel.myDesignList.collect { list ->
                         myDesignAdapter.submitList(list)
+                        val isSelectionMode = list.any { it.isShowSelection }
+                        binding.root.clipToPadding = isSelectionMode
+                        binding.rcvMyDesign.clipToPadding = isSelectionMode
                         binding.layoutNoItem.isVisible = list.isEmpty()
                         if (myCreationViewModel.typeStatus.value == ValueKey.MY_DESIGN_TYPE) {
                             if (list.isEmpty()) myAlbumActivity.binding.lnlBottom.gone()

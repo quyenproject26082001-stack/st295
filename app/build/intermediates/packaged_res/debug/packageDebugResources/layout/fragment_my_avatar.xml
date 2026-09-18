@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app"
-    android:paddingTop="4dp"
-    android:clipToPadding="true"
+    android:paddingTop="@dimen/dp_4"
+    android:clipToPadding="false"
     tools:context=".ui.my_creation.fragment.MyAvatarFragment">
 
     <!--    rcvMyAvatar-->
@@ -14,9 +14,12 @@
         android:id="@+id/rcvMyAvatar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="4dp"
-        android:clipChildren="true"
-        android:clipToPadding="true"
+        android:paddingHorizontal="@dimen/dp_4"
+        android:clipChildren="false"
+        android:paddingBottom="@dimen/dp_50"
+        android:layout_marginBottom="@dimen/dp_80"
+
+        android:clipToPadding="false"
         android:layout_marginTop="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
@@ -29,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/dp_50"
         android:orientation="vertical"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,9 +41,9 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutActionBar">
 
         <ImageView
-            android:layout_width="114dp"
+            android:layout_width="@dimen/dp_114"
             android:visibility="invisible"
-            android:layout_height="152dp"
+            android:layout_height="@dimen/dp_152"
             android:adjustViewBounds="true"
             android:src="@drawable/img_no_item" />
 
@@ -48,13 +51,13 @@
             android:id="@+id/tvNoitem"
             style="@style/single_marquee"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="@dimen/dp_37"
             android:fontFamily="@font/howli_layers_base"
             android:gravity="center"
-            android:paddingHorizontal="33dp"
+            android:paddingHorizontal="@dimen/dp_33"
             android:text="@string/no_item_here"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/sp_18"
             android:translationY="0dp" />
     </LinearLayout>
 

@@ -32,6 +32,7 @@ import com.emojimaker.horor.emoji.core.helper.MediaHelper
 import com.emojimaker.horor.emoji.core.utils.key.IntentKey
 import com.emojimaker.horor.emoji.core.utils.key.ValueKey
 import com.emojimaker.horor.emoji.core.utils.state.HandleState
+import com.emojimaker.horor.emoji.data.model.custom.MakerEditCompatibility
 import com.emojimaker.horor.emoji.databinding.FragmentMyAvatarBinding
 import com.emojimaker.horor.emoji.dialog.YesNoDialog
 import com.emojimaker.horor.emoji.ui.customize.CustomizeCharacterActivity
@@ -43,8 +44,10 @@ import com.emojimaker.horor.emoji.ui.my_creation.adapter.MyAvatarAdapter
 import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyAvatarViewModel
 import com.emojimaker.horor.emoji.ui.view.ViewActivity
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 
 class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
     private val viewModel: MyAvatarViewModel by viewModels()
@@ -76,6 +79,9 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                 launch {
                     viewModel.myAvatarList.collect { list ->
                         myAvatarAdapter.submitList(list)
+                        val isSelectionMode = list.any { it.isShowSelection }
+                        binding.root.clipToPadding = isSelectionMode
+                        binding.rcvMyAvatar.clipToPadding = isSelectionMode
                         binding.layoutNoItem.isVisible = list.isEmpty()
                         if (myCreationViewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {
                             if (list.isEmpty()) myAlbumActivity.binding.lnlBottom.gone()
@@ -226,9 +232,21 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
     private fun handleEditClick(pathInternal: String) {
         lifecycleScope.launch(Dispatchers.IO) {
             myAlbumActivity.showLoading()
-            viewModel.editItem(myAlbumActivity, pathInternal, dataViewModel.allData.value)
+            dataViewModel.ensureData(myAlbumActivity)
+            val loaded = withTimeoutOrNull(20_000) {
+                dataViewModel.dataLoadFinished.first { it }
+            } != null
+            val compatibility = if (loaded) {
+                viewModel.editItem(myAlbumActivity, pathInternal, dataViewModel.allData.value)
+            } else {
+                MakerEditCompatibility.DATA_UNAVAILABLE
+            }
             withContext(Dispatchers.Main) {
                 myAlbumActivity.dismissLoading()
+                if (compatibility != MakerEditCompatibility.COMPATIBLE) {
+                    showEditUnavailableDialog()
+                    return@withContext
+                }
                 viewModel.checkDataInternet(myAlbumActivity) {
                     val intent = Intent(myAlbumActivity, CustomizeCharacterActivity::class.java)
                     intent.putExtra(IntentKey.INTENT_KEY, viewModel.positionCharacter)
@@ -239,6 +257,21 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                     myAlbumActivity.showInterAll {  startActivity(intent, option.toBundle()) }
                 }
             }
+        }
+    }
+
+    private fun showEditUnavailableDialog() {
+        val dialog = YesNoDialog(
+            myAlbumActivity,
+            R.string.error,
+            R.string.creation_data_updated_cannot_edit,
+            isError = true
+        )
+        LanguageHelper.setLocale(myAlbumActivity)
+        dialog.show()
+        dialog.onYesClick = {
+            dialog.dismiss()
+            myAlbumActivity.hideNavigation()
         }
     }
 

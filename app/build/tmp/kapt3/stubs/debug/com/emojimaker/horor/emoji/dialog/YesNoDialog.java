@@ -1,6 +1,6 @@
 package com.emojimaker.horor.emoji.dialog;
 
-@kotlin.Metadata(mv = {2, 2, 0}, k = 1, xi = 48, d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0011\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B3\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\t\u00a2\u0006\u0004\b\u000b\u0010\fJ\b\u0010%\u001a\u00020\u001aH\u0016J\b\u0010&\u001a\u00020\u001aH\u0002J\b\u0010\'\u001a\u00020\u001aH\u0016J\b\u0010(\u001a\u00020\u001aH\u0016J\b\u0010)\u001a\u00020\u001aH\u0002J\b\u0010*\u001a\u00020\tH\u0002R\u0011\u0010\u0003\u001a\u00020\u0004\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0007\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0010R\u0011\u0010\b\u001a\u00020\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0012R\u0011\u0010\n\u001a\u00020\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0012R\u0014\u0010\u0014\u001a\u00020\u0006X\u0096\u0004\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\tX\u0096D\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0012R\u0014\u0010\u0017\u001a\u00020\tX\u0096D\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0012R \u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR \u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b \u0010\u001c\"\u0004\b!\u0010\u001eR \u0010\"\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b#\u0010\u001c\"\u0004\b$\u0010\u001e\u00a8\u0006+"}, d2 = {"Lcom/emojimaker/horor/emoji/dialog/YesNoDialog;", "Lcom/emojimaker/horor/emoji/core/base/BaseDialog;", "Lcom/emojimaker/horor/emoji/databinding/DialogConfirmBinding;", "context", "Landroid/app/Activity;", "title", "", "description", "isError", "", "notifAds", "<init>", "(Landroid/app/Activity;IIZZ)V", "getContext", "()Landroid/app/Activity;", "getTitle", "()I", "getDescription", "()Z", "getNotifAds", "layoutId", "getLayoutId", "isCancelOnTouchOutside", "isCancelableByBack", "onNoClick", "Lkotlin/Function0;", "", "getOnNoClick", "()Lkotlin/jvm/functions/Function0;", "setOnNoClick", "(Lkotlin/jvm/functions/Function0;)V", "onYesClick", "getOnYesClick", "setOnYesClick", "onDismissClick", "getOnDismissClick", "setOnDismissClick", "initView", "initBackground", "initAction", "onDismissListener", "initText", "isInternetDialog", "ST295_Horror_Emoji_Maker_V1.0.2_07.31.2026_debug"})
+@kotlin.Metadata(mv = {2, 2, 0}, k = 1, xi = 48, d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0011\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B=\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\t\u0012\b\b\u0002\u0010\u000b\u001a\u00020\t\u00a2\u0006\u0004\b\f\u0010\rJ\b\u0010&\u001a\u00020\u001bH\u0016J\b\u0010\'\u001a\u00020\u001bH\u0002J\b\u0010(\u001a\u00020\u001bH\u0016J\b\u0010)\u001a\u00020\u001bH\u0016J\b\u0010*\u001a\u00020\u001bH\u0002J\b\u0010+\u001a\u00020\tH\u0002R\u0011\u0010\u0003\u001a\u00020\u0004\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\u0007\u001a\u00020\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0011R\u0011\u0010\b\u001a\u00020\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\b\u0010\u0013R\u0011\u0010\n\u001a\u00020\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0013R\u0011\u0010\u000b\u001a\u00020\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\u0013R\u0014\u0010\u0015\u001a\u00020\u0006X\u0096\u0004\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0011R\u0014\u0010\u0017\u001a\u00020\tX\u0096D\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0013R\u0014\u0010\u0018\u001a\u00020\tX\u0096D\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0013R \u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR \u0010 \u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u001d\"\u0004\b\"\u0010\u001fR \u0010#\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b$\u0010\u001d\"\u0004\b%\u0010\u001f\u00a8\u0006,"}, d2 = {"Lcom/emojimaker/horor/emoji/dialog/YesNoDialog;", "Lcom/emojimaker/horor/emoji/core/base/BaseDialog;", "Lcom/emojimaker/horor/emoji/databinding/DialogConfirmBinding;", "context", "Landroid/app/Activity;", "title", "", "description", "isError", "", "notifAds", "isReward", "<init>", "(Landroid/app/Activity;IIZZZ)V", "getContext", "()Landroid/app/Activity;", "getTitle", "()I", "getDescription", "()Z", "getNotifAds", "layoutId", "getLayoutId", "isCancelOnTouchOutside", "isCancelableByBack", "onNoClick", "Lkotlin/Function0;", "", "getOnNoClick", "()Lkotlin/jvm/functions/Function0;", "setOnNoClick", "(Lkotlin/jvm/functions/Function0;)V", "onYesClick", "getOnYesClick", "setOnYesClick", "onDismissClick", "getOnDismissClick", "setOnDismissClick", "initView", "initBackground", "initAction", "onDismissListener", "initText", "isSingleActionDialog", "ST295_Horror_Emoji_Maker_V1.0.3_09.18.2026_debug"})
 public final class YesNoDialog extends com.emojimaker.horor.emoji.core.base.BaseDialog<com.emojimaker.horor.emoji.databinding.DialogConfirmBinding> {
     @org.jetbrains.annotations.NotNull()
     private final android.app.Activity context = null;
@@ -8,6 +8,7 @@ public final class YesNoDialog extends com.emojimaker.horor.emoji.core.base.Base
     private final int description = 0;
     private final boolean isError = false;
     private final boolean notifAds = false;
+    private final boolean isReward = false;
     private final int layoutId = com.emojimaker.horor.emoji.R.layout.dialog_confirm;
     private final boolean isCancelOnTouchOutside = false;
     private final boolean isCancelableByBack = false;
@@ -19,7 +20,7 @@ public final class YesNoDialog extends com.emojimaker.horor.emoji.core.base.Base
     private kotlin.jvm.functions.Function0<kotlin.Unit> onDismissClick;
     
     public YesNoDialog(@org.jetbrains.annotations.NotNull()
-    android.app.Activity context, int title, int description, boolean isError, boolean notifAds) {
+    android.app.Activity context, int title, int description, boolean isError, boolean notifAds, boolean isReward) {
         super(null, 0, false, false);
     }
     
@@ -41,6 +42,10 @@ public final class YesNoDialog extends com.emojimaker.horor.emoji.core.base.Base
     }
     
     public final boolean getNotifAds() {
+        return false;
+    }
+    
+    public final boolean isReward() {
         return false;
     }
     
@@ -104,7 +109,7 @@ public final class YesNoDialog extends com.emojimaker.horor.emoji.core.base.Base
     private final void initText() {
     }
     
-    private final boolean isInternetDialog() {
+    private final boolean isSingleActionDialog() {
         return false;
     }
 }

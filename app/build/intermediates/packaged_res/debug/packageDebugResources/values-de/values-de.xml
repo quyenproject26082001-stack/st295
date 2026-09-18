@@ -36,15 +36,16 @@
     <string name="cosplay_cat">Cosplay-Katze</string>
     <string name="create_package_name">Paketnamen erstellen</string>
     <string name="creation">MEINE\nKREATION</string>
+    <string name="creation_data_updated_cannot_edit">Diese Kreation ist nicht bearbeitbar.</string>
     <string name="delete">LÖSCHEN</string>
     <string name="delete_failed_please_try_again">Löschen fehlgeschlagen, bitte versuche es erneut!</string>
     <string name="delete_your_customize">Deine Anpassung löschen</string>
     <string name="do_you_want_to_exit">Noch nicht gespeichert, möchtest du beenden?</string>
-    <string name="do_you_want_to_receive">Möchtest du eine Belohnung erhalten, indem du eine Werbung ansiehst?</string>
+    <string name="do_you_want_to_receive">Sieh dir das Video an und erhalte die passenden Belohnungen!</string>
     <string name="done">Fertig</string>
     <string name="download">Herunterladen</string>
     <string name="download_failed_please_try_again_later">Download fehlgeschlagen, bitte versuche es später erneut!</string>
-    <string name="download_success">Download erfolgreich im Album Horror Emoji Maker gespeichert</string>
+    <string name="download_success">Download erfolgreich im Album Scary Emoji Maker gespeichert</string>
     <string name="downloading">Wird heruntergeladen...</string>
     <string name="edit">BEARBEITEN</string>
     <string name="emoji_activities">Emoji Aktivitäten</string>
@@ -68,6 +69,7 @@
     <string name="four_star">Danke für dein Feedback</string>
     <string name="four_star_title">Wir lieben dich auch!</string>
     <string name="free">KOSTENLOS</string>
+    <string name="free1">Kostenlos</string>
     <string name="generate">ZUFALL</string>
     <string name="go_to_setting_message">Die App benötigt diese Berechtigung</string>
     <string name="granted_notification">Benachrichtigungsberechtigung erteilt</string>
@@ -132,7 +134,7 @@
     <string name="rate_us">\u00A0\u00A0Bewerte uns\u00A0\u00A0</string>
     <string name="rate_us_0">Du hast noch nicht bewertet!</string>
     <string name="reset">ZURÜCKSETZEN</string>
-    <string name="reward_title">Belohnung!</string>
+    <string name="reward_title">Belohnungen</string>
     <string name="save">SPEICHERN</string>
     <string name="save_failed_please_try_again">Speichern fehlgeschlagen, bitte versuche es erneut!</string>
     <string name="settings">Einstellungen</string>

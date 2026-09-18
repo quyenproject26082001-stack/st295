@@ -142,17 +142,18 @@
     <string name="cosplay_cat">kucing cosplay</string>
     <string name="create_package_name">Buat Nama Paket</string>
     <string name="creation">KREASI\nSAYA</string>
+    <string name="creation_data_updated_cannot_edit">Kreasi ini tidak dapat diedit.</string>
     <string msgid="8038256446254964252" name="default_error_message">"Input tidak valid"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Jendela Pop-Up"</string>
     <string name="delete">HAPUS</string>
     <string name="delete_failed_please_try_again">Gagal menghapus, silakan coba lagi!</string>
     <string name="delete_your_customize">Hapus kustomisasi kamu</string>
     <string name="do_you_want_to_exit">Belum disimpan, apakah kamu ingin keluar?</string>
-    <string name="do_you_want_to_receive">Apakah kamu ingin mendapatkan hadiah dengan menonton iklan?</string>
+    <string name="do_you_want_to_receive">Tonton video dan dapatkan hadiah yang sesuai!</string>
     <string name="done">Selesai</string>
     <string name="download">Unduh</string>
     <string name="download_failed_please_try_again_later">Unduhan gagal, silakan coba lagi nanti!</string>
-    <string name="download_success">Unduhan berhasil ke album Horror Emoji Maker</string>
+    <string name="download_success">Unduhan berhasil ke album Scary Emoji Maker</string>
     <string name="downloading">Mengunduh...</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Menu dropdown"</string>
     <string name="edit">EDIT</string>
@@ -233,6 +234,7 @@
     <string name="four_star">Terima kasih atas masukannya</string>
     <string name="four_star_title">Kami juga menyayangi kamu!</string>
     <string name="free">GRATIS</string>
+    <string name="free1">Gratis</string>
     <string name="generate">ACAK</string>
     <string name="go_to_setting_message">Aplikasi ini memerlukan izin ini</string>
     <string name="granted_notification">Izin notifikasi diberikan</string>
@@ -441,7 +443,7 @@
     <string name="rate_us">\u00A0\u00A0Beri Nilai\u00A0\u00A0</string>
     <string name="rate_us_0">Kamu belum memberi nilai!</string>
     <string name="reset">ATUR ULANG</string>
-    <string name="reward_title">Hadiah!</string>
+    <string name="reward_title">Hadiah</string>
     <string name="s1">Simpan gambar</string>
     <string name="s2">Izinkan Iklan menyimpan gambar di Galeri foto?</string>
     <string name="s3">Terima</string>

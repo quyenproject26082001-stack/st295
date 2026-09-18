@@ -5,7 +5,6 @@ import android.content.res.AssetManager
 import android.graphics.Bitmap
 import android.util.Log
 import com.emojimaker.horor.emoji.core.utils.key.AssetsKey
-import com.emojimaker.horor.emoji.core.utils.key.ValueKey
 import com.emojimaker.horor.emoji.data.model.custom.ColorModel
 import com.emojimaker.horor.emoji.data.model.custom.CustomizeModel
 import com.emojimaker.horor.emoji.data.model.custom.LayerListModel
@@ -187,7 +186,6 @@ object AssetHelper {
             customList.add(CustomizeModel(character, avatar, layerListModelList, level = 100))
             Log.d("nbhieu", "----------------------------------------------------------------------------------")
         }
-        MediaHelper.writeListToFile(context, ValueKey.DATA_FILE_INTERNAL, customList)
         customList.forEach {
             Log.d("nbhieu", "customList: ${it}")
         }

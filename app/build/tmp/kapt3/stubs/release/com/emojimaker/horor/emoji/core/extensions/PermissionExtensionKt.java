@@ -1,0 +1,20 @@
+package com.emojimaker.horor.emoji.core.extensions;
+
+@kotlin.Metadata(mv = {2, 2, 0}, k = 2, xi = 48, d1 = {"\u0000,\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\u001a\u001d\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u00a2\u0006\u0002\u0010\u0006\u001a%\u0010\u0007\u001a\u00020\b*\u00020\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u000b\u001a\u00020\f\u00a2\u0006\u0002\u0010\r\u001a\n\u0010\u000e\u001a\u00020\b*\u00020\t\u00a8\u0006\u000f"}, d2 = {"checkPermissions", "", "Landroid/content/Context;", "listPermission", "", "", "(Landroid/content/Context;[Ljava/lang/String;)Z", "requestPermission", "", "Landroid/app/Activity;", "permissions", "requestCode", "", "(Landroid/app/Activity;[Ljava/lang/String;I)V", "goToSettings", "ST295_Horror_Emoji_Maker_V1.0.3_09.18.2026_release"})
+public final class PermissionExtensionKt {
+    
+    public static final boolean checkPermissions(@org.jetbrains.annotations.NotNull()
+    android.content.Context $this$checkPermissions, @org.jetbrains.annotations.NotNull()
+    java.lang.String[] listPermission) {
+        return false;
+    }
+    
+    public static final void requestPermission(@org.jetbrains.annotations.NotNull()
+    android.app.Activity $this$requestPermission, @org.jetbrains.annotations.NotNull()
+    java.lang.String[] permissions, int requestCode) {
+    }
+    
+    public static final void goToSettings(@org.jetbrains.annotations.NotNull()
+    android.app.Activity $this$goToSettings) {
+    }
+}

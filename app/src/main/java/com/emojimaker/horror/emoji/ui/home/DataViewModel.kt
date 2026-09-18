@@ -8,15 +8,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.emojimaker.horor.emoji.core.helper.AssetHelper
 import com.emojimaker.horor.emoji.core.helper.InternetHelper
-import com.emojimaker.horor.emoji.core.helper.MediaHelper
 import com.emojimaker.horor.emoji.core.service.RetrofitClient
 import com.emojimaker.horor.emoji.core.service.RetrofitPreventive
 import com.emojimaker.horor.emoji.core.utils.DataLocal.isFailBaseURL
-import com.emojimaker.horor.emoji.core.utils.key.AssetsKey
 import com.emojimaker.horor.emoji.core.utils.key.DomainKey
 import com.emojimaker.horor.emoji.core.utils.key.ValueKey
 import com.emojimaker.horor.emoji.core.utils.state.HandleState
 import com.emojimaker.horor.emoji.data.local.PersistenceRepository
+import com.emojimaker.horor.emoji.data.local.MakerCharacterRepository
 import com.emojimaker.horor.emoji.data.model.DataAPI
 import com.emojimaker.horor.emoji.data.model.PartAPI
 import com.emojimaker.horor.emoji.data.model.custom.ColorModel
@@ -56,12 +55,13 @@ class DataViewModel() : ViewModel() {
             val timeStart = System.currentTimeMillis()
             Log.d("TIMING_TRENDING", "saveAndReadData() START")
             val list = withContext(Dispatchers.IO) {
-                // Lần đầu vào app -> Load data Asset -> Lưu file internal
+                // Import local assets once; Maker data is stored in normalized Room tables.
                 val assetStart = System.currentTimeMillis()
-                val isFirstRun = !MediaHelper.checkFileInternal(context, ValueKey.DATA_FILE_INTERNAL)
+                val isFirstRun = !MakerCharacterRepository.hasSource(context, MakerCharacterRepository.SOURCE_LOCAL)
                 if (isFirstRun) {
-                    AssetHelper.getDataFromAsset(context)
-                    Log.d("TIMING_TRENDING", "  [Asset] copy từ assets → internal: ${System.currentTimeMillis() - assetStart}ms")
+                    val localAssets = AssetHelper.getDataFromAsset(context)
+                    MakerCharacterRepository.replaceLocalCharacters(context, localAssets)
+                    Log.d("TIMING_TRENDING", "  [Asset] import vào Room: ${System.currentTimeMillis() - assetStart}ms")
                     Log.d("nbhieu", "=== FIRST LAUNCH ===")
                     Log.d("nbhieu", "Device: ${android.os.Build.MANUFACTURER} ${android.os.Build.MODEL} (Android ${android.os.Build.VERSION.RELEASE}, SDK ${android.os.Build.VERSION.SDK_INT})")
                     try {
@@ -76,24 +76,25 @@ class DataViewModel() : ViewModel() {
                 }
 
                 val localStart = System.currentTimeMillis()
-                val totalData = MediaHelper.readListFromFile<CustomizeModel>(context, ValueKey.DATA_FILE_INTERNAL)
-                    .toCollection(ArrayList())
-                Log.d("TIMING_TRENDING", "  [Local] đọc DATA_FILE_INTERNAL: ${System.currentTimeMillis() - localStart}ms | items=${totalData.size}")
+                MakerCharacterRepository.importLegacyApiIfNeeded(context, ValueKey.DATA_FILE_API_INTERNAL)
+                var roomData = MakerCharacterRepository.getAllCharacters(context)
+                val localData = roomData.filter { !it.isFromAPI }
+                Log.d("TIMING_TRENDING", "  [Local] đọc Room: ${System.currentTimeMillis() - localStart}ms | items=${localData.size}")
                 if (isFirstRun) {
-                    Log.d("nbhieu", "Init asset data: ${totalData.size} characters loaded")
+                    Log.d("nbhieu", "Init asset data: ${localData.size} characters loaded")
                 }
 
                 val apiCacheStart = System.currentTimeMillis()
-                var dataApi = MediaHelper.readListFromFile<CustomizeModel>(context, ValueKey.DATA_FILE_API_INTERNAL)
-                    ?: arrayListOf()
-                Log.d("TIMING_TRENDING", "  [Local] đọc DATA_FILE_API_INTERNAL (cache): ${System.currentTimeMillis() - apiCacheStart}ms | items=${dataApi.size}")
+                var dataApi = roomData.filter { it.isFromAPI }
+                Log.d("TIMING_TRENDING", "  [API] đọc Room cache: ${System.currentTimeMillis() - apiCacheStart}ms | items=${dataApi.size}")
                 if (hasStaleApiAssetDomain(dataApi)) {
                     Log.w(
                         "TIMING_TRENDING",
-                        "  [API] cache domain cũ, clear DATA_FILE_API_INTERNAL để rebuild bằng ${DomainKey.SUB_DOMAIN}"
+                        "  [API] cache domain cũ, clear API Room/cache để rebuild bằng ${DomainKey.SUB_DOMAIN}"
                     )
+                    MakerCharacterRepository.clearApiCharacters(context)
                     PersistenceRepository.clearInternalData(context, ValueKey.DATA_FILE_API_INTERNAL)
-                    dataApi = arrayListOf()
+                    dataApi = emptyList()
                 }
 
                 if (InternetHelper.checkInternet(context)) {
@@ -103,9 +104,10 @@ class DataViewModel() : ViewModel() {
                         when (state) {
                             HandleState.LOADING -> {}
                             HandleState.SUCCESS -> {
-                                Log.d("TIMING_TRENDING", "  [API] response + parse + lưu file: ${System.currentTimeMillis() - apiCallStart}ms")
-                                dataApi = MediaHelper.readListFromFile<CustomizeModel>(context, ValueKey.DATA_FILE_API_INTERNAL)
-                                Log.d("TIMING_TRENDING", "  [API] đọc lại file sau lưu: items=${dataApi?.size ?: 0}")
+                                Log.d("TIMING_TRENDING", "  [API] response + parse + lưu Room: ${System.currentTimeMillis() - apiCallStart}ms")
+                                roomData = MakerCharacterRepository.getAllCharacters(context)
+                                dataApi = roomData.filter { it.isFromAPI }
+                                Log.d("TIMING_TRENDING", "  [API] đọc lại Room sau lưu: items=${dataApi.size}")
                             }
                             else -> {
                                 Log.d("TIMING_TRENDING", "  [API] FAIL sau ${System.currentTimeMillis() - apiCallStart}ms")
@@ -116,10 +118,7 @@ class DataViewModel() : ViewModel() {
                     Log.d("TIMING_TRENDING", "  [API] bỏ qua vì không có mạng, dùng cache hiện tại")
                 }
 
-                totalData.addAll(dataApi)
-                // Sort all data by level (ascending order)
-                totalData.sortBy { it.level }
-                totalData
+                MakerCharacterRepository.getAllCharacters(context)
             }
             _allData.value = list
             _dataLoadFinished.value = true
@@ -191,17 +190,20 @@ class DataViewModel() : ViewModel() {
             response.body()?.forEach { (key, dataBody) ->
                 dataMap.add(DataAPI(key, dataBody))
             }
-            withContext(Dispatchers.IO) {
-                getDataAPI(context, dataMap)
+            val saved = try {
+                withContext(Dispatchers.IO) { getDataAPI(context, dataMap) }
+            } catch (error: Exception) {
+                Log.e("TIMING_TRENDING", "  [API] parse/Room save failed", error)
+                false
             }
-            emit(HandleState.SUCCESS)
+            emit(if (saved) HandleState.SUCCESS else HandleState.FAIL)
         } else {
             Log.w("TIMING_TRENDING", "  [API] request fail, giữ cache API cũ để app vẫn có data")
             emit(HandleState.FAIL)
         }
     }
 
-    fun getDataAPI(context: Context, dataList: ArrayList<DataAPI>) {
+    suspend fun getDataAPI(context: Context, dataList: ArrayList<DataAPI>): Boolean {
         val allDataAPI: ArrayList<CustomizeModel> = arrayListOf()
         // Character 1, Character 2,...
         dataList.forEachIndexed { indexCharacter, data ->
@@ -262,10 +264,11 @@ class DataViewModel() : ViewModel() {
             )
             allDataAPI.add(dataApi)
         }
-        MediaHelper.writeListToFile(context, ValueKey.DATA_FILE_API_INTERNAL, allDataAPI)
+        val saved = MakerCharacterRepository.replaceApiCharacters(context, allDataAPI)
         allDataAPI.forEach {
             Log.d("nbhieu", "avatar: ${it.avatar}")
         }
+        return saved
     }
 
     private fun getDataLayer(baseDomain: String, partData: PartAPI, layer: String): ArrayList<LayerModel> {

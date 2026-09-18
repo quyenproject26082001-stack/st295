@@ -39,14 +39,15 @@
 
 
 
+
     <!--    frmList-->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frmList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
         app:layout_goneMarginTop="0dp"
-        android:layout_marginTop="-0dp"
+        tools:background="@color/white"
+        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cvType" />
     <!--    cvType-->
@@ -54,8 +55,8 @@
         android:id="@+id/cvType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="1dp"
-        android:layout_marginTop="10dp"
+        android:elevation="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_10"
         android:layout_marginHorizontal="0dp"
         app:layout_constraintTop_toBottomOf="@id/native_ads">
 
@@ -73,9 +74,9 @@
 
                 <FrameLayout
                     android:id="@+id/btnMyEmoji"
-                    android:layout_width="156dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_width="@dimen/dp_156"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginEnd="@dimen/dp_6"
                     android:background="@drawable/bg_creation_tab_unselected">
 
                     <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
@@ -88,7 +89,7 @@
                         android:includeFontPadding="false"
                         android:text="@string/my_emoji"
                         android:textColor="#FF8600"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/sp_18" />
 
                     <View
                         android:id="@+id/overlayMyEmoji"
@@ -101,9 +102,9 @@
 
                 <FrameLayout
                     android:id="@+id/btnMyPixel"
-                    android:layout_width="156dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_width="@dimen/dp_156"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginEnd="@dimen/dp_6"
                     android:background="@drawable/bg_creation_tab_unselected">
 
                     <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
@@ -116,7 +117,7 @@
                         android:includeFontPadding="false"
                         android:text="@string/my_avatar"
                         android:textColor="#FF8600"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/sp_18" />
 
                     <View
                         android:id="@+id/overlayMyPride"
@@ -129,9 +130,9 @@
 
                 <FrameLayout
                     android:id="@+id/btnMyDesign"
-                    android:layout_width="156dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_width="@dimen/dp_156"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginEnd="@dimen/dp_6"
                     android:background="@drawable/bg_creation_tab_unselected">
 
                     <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
@@ -144,7 +145,7 @@
                         android:includeFontPadding="false"
                         android:text="@string/my_design"
                         android:textColor="#FF8600"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/sp_18" />
 
                     <View
                         android:id="@+id/overlayMyDesign"
@@ -157,8 +158,8 @@
 
                 <FrameLayout
                     android:id="@+id/btnPackage"
-                    android:layout_width="156dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/dp_156"
+                    android:layout_height="@dimen/dp_40"
                     android:background="@drawable/bg_creation_tab_unselected">
 
                     <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
@@ -171,7 +172,7 @@
                         android:includeFontPadding="false"
                         android:text="@string/package_"
                         android:textColor="#FF8600"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/sp_18" />
 
                     <View
                         android:id="@+id/overlayPackage"
@@ -194,7 +195,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="0dp"
-        android:elevation="2dp"
+        android:elevation="@dimen/dp_2"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/lnlBottom">
 
@@ -211,11 +212,11 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="0dp"
         android:background="@color/transparent"
-        android:elevation="1dp"
+        android:elevation="@dimen/dp_1"
         android:visibility="visible"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="@dimen/dp_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_goneMarginBottom="24dp">
+        app:layout_goneMarginBottom="@dimen/dp_24">
 
         <include layout="@layout/layout_bottom" />
 
@@ -227,7 +228,7 @@
             android:id="@+id/flNativeCollab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="100dp"
+            android:elevation="@dimen/dp_100"
             app:layout_constraintBottom_toBottomOf="parent">
 
         </FrameLayout>

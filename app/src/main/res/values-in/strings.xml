@@ -60,11 +60,12 @@
     <string name="ok">Ok</string>
     <string name="wait_a_minute">MOHON TUNGGU SEBENTAR</string>
     <string name="reset">ATUR ULANG</string>
-    <string name="download_success">Unduhan berhasil ke album Horror Emoji Maker</string>
+    <string name="download_success">Unduhan berhasil ke album Emoji Maker Plus</string>
     <string name="please_check_your_internet">Silakan periksa koneksi internet kamu</string>
     <string name="please_select_an_image">Silakan pilih gambar</string>
     <string name="error">Kesalahan</string>
     <string name="an_error_occurred">Terjadi kesalahan, silakan coba lagi nanti.</string>
+    <string name="creation_data_updated_cannot_edit">Kreasi ini tidak dapat diedit.</string>
     <string name="image_has_been_saved_successfully">Proyek berhasil disimpan!</string>
     <string name="save">SIMPAN</string>
     <string name="are_you_sure_want_to_delete_this_item">APAKAH KAMU YAKIN INGIN MENGHAPUS ITEM INI?</string>
@@ -175,7 +176,8 @@
     <string name="emoji_horror">Emoji Horor</string>
     <string name="emoji_nature">Emoji Alam</string>
     <string name="emoji_activities">Emoji Aktivitas</string>
-    <string name="reward_title">Hadiah!</string>
-    <string name="do_you_want_to_receive">Apakah kamu ingin mendapatkan hadiah dengan menonton iklan?</string>
+    <string name="reward_title">Hadiah</string>
+    <string name="do_you_want_to_receive">Tonton video dan dapatkan hadiah yang sesuai!</string>
+    <string name="free1">Gratis</string>
 
 </resources>

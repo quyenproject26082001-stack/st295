@@ -1,5 +1,7 @@
 package com.emojimaker.horor.emoji.core.custom.drawview
 
+import com.emojimaker.horor.emoji.R
+
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
@@ -58,7 +60,7 @@ class CropView : AppCompatImageView {
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-        cornerRadius = 12f * resources.displayMetrics.density
+        cornerRadius = resources.getDimension(R.dimen.dp_12)
     }
 
     override fun onDraw(canvas: Canvas) {

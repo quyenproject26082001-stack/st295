@@ -58,11 +58,12 @@
     <string name="ok">Ok</string>
     <string name="wait_a_minute">AGUARDE UM MOMENTO</string>
     <string name="reset">REDEFINIR</string>
-    <string name="download_success">Download concluído com sucesso no álbum Horror Emoji Maker</string>
+    <string name="download_success">Download concluído com sucesso no álbum Emoji Maker Plus</string>
     <string name="please_check_your_internet">Verifique sua conexão com a internet</string>
     <string name="please_select_an_image">Selecione uma imagem</string>
     <string name="error">Erro</string>
     <string name="an_error_occurred">Ocorreu um erro, tente novamente mais tarde.</string>
+    <string name="creation_data_updated_cannot_edit">Esta criação não é editável.</string>
     <string name="image_has_been_saved_successfully">O projeto foi salvo com sucesso!</string>
     <string name="save">SALVAR</string>
     <string name="are_you_sure_want_to_delete_this_item">TEM CERTEZA QUE DESEJA EXCLUIR ESTE ITEM?</string>
@@ -175,7 +176,8 @@
     <string name="emoji_horror">Emoji Terror</string>
     <string name="emoji_nature">Emoji Natureza</string>
     <string name="emoji_activities">Emoji Atividades</string>
-    <string name="reward_title">Recompensa!</string>
-    <string name="do_you_want_to_receive">Você quer receber uma recompensa assistindo a um anúncio?</string>
+    <string name="reward_title">Recompensas</string>
+    <string name="do_you_want_to_receive">Assista ao vídeo e receba as recompensas correspondentes!</string>
+    <string name="free1">Grátis</string>
 
 </resources>
