@@ -9,7 +9,7 @@ object DatabaseProvider {
 
     fun getDatabase(context: Context): AppDatabase {
         return INSTANCE ?: synchronized(this) {
-            Room.databaseBuilder(
+            INSTANCE ?: Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
                 "app_database"

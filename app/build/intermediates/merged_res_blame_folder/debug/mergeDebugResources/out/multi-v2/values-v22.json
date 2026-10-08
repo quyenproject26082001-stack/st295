@@ -4,7 +4,7 @@
             "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "/home/lequyen/.gradle/caches/8.13/transforms/b93c75fa9e0816da75710196f32b8f92/transformed/appcompat-1.7.1/res/values-v22/values-v22.xml",
+                    "source": "C:\\Users\\aaa\\.gradle\\caches\\8.13\\transforms\\b93c75fa9e0816da75710196f32b8f92\\transformed\\appcompat-1.7.1\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

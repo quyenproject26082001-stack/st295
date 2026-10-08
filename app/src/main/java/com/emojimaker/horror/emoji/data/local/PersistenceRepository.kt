@@ -13,7 +13,12 @@ import com.emojimaker.horor.emoji.data.model.custom.SuggestionModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import java.io.File
 
@@ -22,8 +27,19 @@ object PersistenceRepository {
     private const val MIGRATED_LEGACY_KEY = "_legacy_migrated_v1"
     private const val WHATSAPP_BUNDLE_NAME = "APP_BUNDLE_NAME"
     private val gson = Gson()
+    private val migrationMutex = Mutex()
+    private val _creationRevision = MutableStateFlow(0L)
+    val creationRevision = _creationRevision.asStateFlow()
+
+    private fun notifyCreationChanged() {
+        _creationRevision.update { it + 1 }
+    }
 
     fun readListJson(context: Context, fileName: String): String? = runBlocking(Dispatchers.IO) {
+        readListJsonAsync(context, fileName)
+    }
+
+    suspend fun readListJsonAsync(context: Context, fileName: String): String? = withContext(Dispatchers.IO) {
         migrateLegacyIfNeeded(context)
         val db = DatabaseProvider.getDatabase(context)
         when (fileName) {
@@ -47,6 +63,9 @@ object PersistenceRepository {
                 db.savedAvatarDao().replaceAll(suggestions.toSavedAvatarEntities())
             }
             else -> db.jsonCacheDao().upsert(JsonCacheEntity(fileName, json))
+        }
+        if (fileName == ValueKey.EDIT_FILE_INTERNAL || fileName == ValueKey.PACKAGE_FILE_INTERNAL) {
+            notifyCreationChanged()
         }
     }
 
@@ -77,9 +96,14 @@ object PersistenceRepository {
             else -> db.jsonCacheDao().deleteByKey(fileName)
         }
         File(context.filesDir, fileName).takeIf { it.exists() }?.delete()
+        notifyCreationChanged()
     }
 
     fun getAlbumPaths(context: Context, album: String): ArrayList<String> = runBlocking(Dispatchers.IO) {
+        getAlbumPathsAsync(context, album)
+    }
+
+    suspend fun getAlbumPathsAsync(context: Context, album: String): ArrayList<String> = withContext(Dispatchers.IO) {
         migrateLegacyIfNeeded(context)
         syncAlbumFromFiles(context, album)
         val db = DatabaseProvider.getDatabase(context)
@@ -100,19 +124,23 @@ object PersistenceRepository {
         DatabaseProvider.getDatabase(context).mediaItemDao().upsert(
             MediaItemEntity(path = path, album = album, createdAt = timestamp, updatedAt = timestamp)
         )
+        notifyCreationChanged()
     }
 
     fun deleteMediaItems(context: Context, paths: List<String>) = runBlocking(Dispatchers.IO) {
         migrateLegacyIfNeeded(context)
         if (paths.isNotEmpty()) {
             DatabaseProvider.getDatabase(context).mediaItemDao().deleteByPaths(paths)
+            notifyCreationChanged()
         }
     }
 
     fun deleteSavedAvatars(context: Context, paths: List<String>): Boolean = runBlocking(Dispatchers.IO) {
         migrateLegacyIfNeeded(context)
         if (paths.isEmpty()) return@runBlocking false
-        DatabaseProvider.getDatabase(context).savedAvatarDao().deleteByPaths(paths) > 0
+        val deleted = DatabaseProvider.getDatabase(context).savedAvatarDao().deleteByPaths(paths) > 0
+        if (deleted) notifyCreationChanged()
+        deleted
     }
 
     fun getStringSetting(context: Context, key: String, defaultValue: String): String = runBlocking(Dispatchers.IO) {
@@ -142,20 +170,22 @@ object PersistenceRepository {
     }
 
     private suspend fun migrateLegacyIfNeeded(context: Context) = withContext(Dispatchers.IO) {
-        val db = DatabaseProvider.getDatabase(context)
-        if (db.appSettingDao().getValue(MIGRATED_LEGACY_KEY) == "true") return@withContext
+        migrationMutex.withLock {
+            val db = DatabaseProvider.getDatabase(context)
+            if (db.appSettingDao().getValue(MIGRATED_LEGACY_KEY) == "true") return@withLock
 
-        migrateSettings(context)
-        migrateWhatsAppSettings(context)
-        migrateJsonCache(context, ValueKey.SUGGESTION_FILE_INTERNAL)
-        migrateSavedAvatars(context)
-        syncAlbumFromFiles(context, ValueKey.DOWNLOAD_ALBUM)
-        syncAlbumFromFiles(context, ValueKey.EMOJI_ALBUM)
-        syncAlbumFromFiles(context, ValueKey.DOWNLOAD_ALBUM_BACKGROUND)
-        syncAlbumFromFiles(context, ValueKey.PRIDE_ALBUM)
-        syncAlbumFromFiles(context, ValueKey.RANDOM_TEMP_ALBUM)
+            migrateSettings(context)
+            migrateWhatsAppSettings(context)
+            migrateJsonCache(context, ValueKey.SUGGESTION_FILE_INTERNAL)
+            migrateSavedAvatars(context)
+            syncAlbumFromFiles(context, ValueKey.DOWNLOAD_ALBUM)
+            syncAlbumFromFiles(context, ValueKey.EMOJI_ALBUM)
+            syncAlbumFromFiles(context, ValueKey.DOWNLOAD_ALBUM_BACKGROUND)
+            syncAlbumFromFiles(context, ValueKey.PRIDE_ALBUM)
+            syncAlbumFromFiles(context, ValueKey.RANDOM_TEMP_ALBUM)
 
-        db.appSettingDao().upsert(AppSettingEntity(MIGRATED_LEGACY_KEY, "true"))
+            db.appSettingDao().upsert(AppSettingEntity(MIGRATED_LEGACY_KEY, "true"))
+        }
     }
 
     private suspend fun migrateSettings(context: Context) {

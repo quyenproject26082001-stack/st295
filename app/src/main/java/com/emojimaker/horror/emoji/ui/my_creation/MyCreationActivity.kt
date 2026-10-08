@@ -83,7 +83,18 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     override fun initView() {
-        val initialTab = intent.getIntExtra(IntentKey.TAB_KEY, ValueKey.EMOJI_TYPE)
+        myEmojiFragment = supportFragmentManager.findFragmentByTag("MyEmojiFragment") as? MyEmojiFragment
+        myAvatarFragment = supportFragmentManager.findFragmentByTag("MyAvatarFragment") as? MyAvatarFragment
+        myDesignFragment = supportFragmentManager.findFragmentByTag("MyDesignFragment") as? MyDesignFragment
+        packageFragment = supportFragmentManager.findFragmentByTag("PackageFragment") as? PackageFragment
+        val restoredTab = when {
+            myEmojiFragment?.isHidden == false -> ValueKey.EMOJI_TYPE
+            myAvatarFragment?.isHidden == false -> ValueKey.AVATAR_TYPE
+            myDesignFragment?.isHidden == false -> ValueKey.MY_DESIGN_TYPE
+            packageFragment?.isHidden == false -> ValueKey.PACKAGE_TYPE
+            else -> intent.getIntExtra(IntentKey.TAB_KEY, ValueKey.EMOJI_TYPE)
+        }
+        val initialTab = viewModel.typeStatus.value.takeIf { it != -1 } ?: restoredTab
         viewModel.setTypeStatus(initialTab)
         viewModel.setStatusFrom(intent.getBooleanExtra(IntentKey.FROM_SAVE, false))
 
@@ -103,7 +114,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     override fun dataObservable() {
         binding.apply {
             lifecycleScope.launch {
-                repeatOnLifecycle(Lifecycle.State.CREATED) {
+                repeatOnLifecycle(Lifecycle.State.STARTED) {
                     launch {
                         viewModel.typeStatus.collect { type ->
                             if (type != -1) {
@@ -138,6 +149,7 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
                                     }
                                 }
                                 updateBottomButtonsVisibility()
+                                exitSelectionMode()
                             }
                         }
                     }
@@ -475,52 +487,31 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
     }
 
     private fun showFragment(type: Int) {
-        val transaction = supportFragmentManager.beginTransaction()
-
-        if (myEmojiFragment == null) {
-            myEmojiFragment = MyEmojiFragment()
-            transaction.add(R.id.frmList, myEmojiFragment!!, "MyEmojiFragment")
+        if (supportFragmentManager.isStateSaved) return
+        val (fragment, tag) = when (type) {
+            ValueKey.EMOJI_TYPE -> (myEmojiFragment ?: MyEmojiFragment().also { myEmojiFragment = it }) to "MyEmojiFragment"
+            ValueKey.AVATAR_TYPE -> (myAvatarFragment ?: MyAvatarFragment().also { myAvatarFragment = it }) to "MyAvatarFragment"
+            ValueKey.MY_DESIGN_TYPE -> (myDesignFragment ?: MyDesignFragment().also { myDesignFragment = it }) to "MyDesignFragment"
+            ValueKey.PACKAGE_TYPE -> (packageFragment ?: PackageFragment().also { packageFragment = it }) to "PackageFragment"
+            else -> return
         }
-        if (myAvatarFragment == null) {
-            myAvatarFragment = MyAvatarFragment()
-            transaction.add(R.id.frmList, myAvatarFragment!!, "MyAvatarFragment")
+        if (isInSelectionMode) {
+            myEmojiFragment?.takeIf { it.isVisible }?.resetSelectionMode()
+            myAvatarFragment?.takeIf { it.isVisible }?.resetSelectionMode()
+            myDesignFragment?.takeIf { it.isVisible }?.resetSelectionMode()
+            packageFragment?.takeIf { it.isVisible }?.resetSelectionMode()
         }
-        if (myDesignFragment == null) {
-            myDesignFragment = MyDesignFragment()
-            transaction.add(R.id.frmList, myDesignFragment!!, "MyDesignFragment")
-        }
-        if (packageFragment == null) {
-            packageFragment = PackageFragment()
-            transaction.add(R.id.frmList, packageFragment!!, "PackageFragment")
-        }
-        when (type) {
-            ValueKey.EMOJI_TYPE -> {
-                myEmojiFragment?.let { transaction.show(it) }
-                myAvatarFragment?.let { transaction.hide(it) }
-                myDesignFragment?.let { transaction.hide(it) }
-                packageFragment?.let { transaction.hide(it) }
+        val transaction = supportFragmentManager.beginTransaction().setReorderingAllowed(true)
+        listOfNotNull(myEmojiFragment, myAvatarFragment, myDesignFragment, packageFragment)
+            .filter { it !== fragment && it.isAdded }
+            .forEach {
+                transaction.hide(it)
+                transaction.setMaxLifecycle(it, Lifecycle.State.STARTED)
             }
-            ValueKey.AVATAR_TYPE -> {
-                myEmojiFragment?.let { transaction.hide(it) }
-                myAvatarFragment?.let { transaction.show(it) }
-                myDesignFragment?.let { transaction.hide(it) }
-                packageFragment?.let { transaction.hide(it) }
-            }
-            ValueKey.MY_DESIGN_TYPE -> {
-                myEmojiFragment?.let { transaction.hide(it) }
-                myAvatarFragment?.let { transaction.hide(it) }
-                myDesignFragment?.let { transaction.show(it) }
-                packageFragment?.let { transaction.hide(it) }
-            }
-            ValueKey.PACKAGE_TYPE -> {
-                myEmojiFragment?.let { transaction.hide(it) }
-                myAvatarFragment?.let { transaction.hide(it) }
-                myDesignFragment?.let { transaction.hide(it) }
-                packageFragment?.let { transaction.show(it) }
-            }
-        }
-
-        transaction.commit()
+        if (!fragment.isAdded) transaction.add(R.id.frmList, fragment, tag)
+        transaction.show(fragment)
+        transaction.setMaxLifecycle(fragment, Lifecycle.State.RESUMED)
+        transaction.commitNow()
     }
 
     @SuppressLint("MissingSuperCall", "GestureBackNavigation")
@@ -652,7 +643,9 @@ class MyCreationActivity : WhatsappSharingActivity<ActivityAlbumBinding>() {
             ValueKey.PACKAGE_TYPE -> packageFragment?.getAllPackageIds()?.isEmpty() ?: true
             else -> true
         }
-        if (!currentlyEmpty) {
+        if (currentlyEmpty) {
+            binding.lnlBottom.gone()
+        } else {
             if (viewModel.typeStatus.value == ValueKey.EMOJI_TYPE) {
                 binding.lnlBottom.visible()
             } else if (viewModel.typeStatus.value == ValueKey.AVATAR_TYPE) {

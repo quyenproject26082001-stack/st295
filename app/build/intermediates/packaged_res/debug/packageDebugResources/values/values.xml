@@ -403,10 +403,10 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowSoftInputMode">adjustResize</item>
     </style>
-    <style name="BaseDialog" ns1:keep="@style/BaseDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <style name="BaseDialog" parent="Theme.AppCompat.Light.Dialog.Alert" ns1:keep="@style/BaseDialog">
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
-    <style name="CutCornerCardShape" ns1:keep="@style/CutCornerCardShape" parent="">
+    <style name="CutCornerCardShape" parent="" ns1:keep="@style/CutCornerCardShape">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">@dimen/dp_12</item>
     </style>
@@ -426,15 +426,15 @@
         <item name="cornerSize">@dimen/dp_40</item>
     </style>
     <style name="Theme.BaseProject" parent="Base.Theme.BaseProject"/>
-    <style name="border_image_5" ns1:keep="@style/border_image_5" parent="">
+    <style name="border_image_5" parent="" ns1:keep="@style/border_image_5">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/dp_5</item>
     </style>
-    <style name="border_image_6" ns1:keep="@style/border_image_6" parent="">
+    <style name="border_image_6" parent="" ns1:keep="@style/border_image_6">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/dp_6</item>
     </style>
-    <style name="border_image_99" ns1:keep="@style/border_image_99" parent="">
+    <style name="border_image_99" parent="" ns1:keep="@style/border_image_99">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/dp_99</item>
     </style>

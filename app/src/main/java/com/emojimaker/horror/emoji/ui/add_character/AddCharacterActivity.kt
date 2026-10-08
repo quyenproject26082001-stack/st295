@@ -84,6 +84,8 @@ import com.emojimaker.horor.emoji.ui.add_character.adapter.TextFontAdapter
 import com.emojimaker.horor.emoji.ui.permission.PermissionViewModel
 import com.emojimaker.horor.emoji.ui.view.ViewActivity
 import com.emojimaker.horor.emoji.ui.success.SuccessActivity
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -94,6 +96,8 @@ import kotlin.toString
 
 class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
     private val viewModel: AddCharacterViewModel by viewModels()
+    private var isSaving = false
+    private var drawGeneration = 0
     private val permissionViewModel: PermissionViewModel by viewModels()
     private val backgroundImageAdapter by lazy { BackgroundImageAdapter() }
     private val backgroundColorAdapter by lazy { BackgroundColorAdapter() }
@@ -595,40 +599,39 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         isCharacter: Boolean = false,
         bitmapText: Bitmap? = null
     ) {
+        val generation = drawGeneration
         lifecycleScope.launch(Dispatchers.IO) {
             try {
-                val bitmapDefault = if (bitmapText == null) {
-                    Glide.with(this@AddCharacterActivity)
-                        .asBitmap()
-                        .load(path)
-                        .override(512, 512)
-                        .encodeQuality(90)
-                        .submit()
-                        .get()
-                } else {
-                    bitmapText
+                val bitmap = bitmapText ?: run {
+                    val glide = Glide.with(applicationContext)
+                    val target = glide.asBitmap().load(path)
+                        .disallowHardwareConfig().submit(512, 512)
+                    try {
+                        // The canvas keeps its own pixels after Glide releases its request.
+                        checkNotNull(target.get().copy(Bitmap.Config.ARGB_8888, false))
+                    } finally {
+                        glide.clear(target)
+                    }
                 }
-
-                val drawableEmoji = viewModel.loadDrawableEmoji(
-                    this@AddCharacterActivity,
-                    bitmapDefault,
-                    isCharacter
-                )
-
                 withContext(Dispatchers.Main) {
-                    binding.drawView.addDraw(drawableEmoji)
+                    if (generation == drawGeneration) {
+                        binding.drawView.addDraw(viewModel.loadDrawableEmoji(
+                            this@AddCharacterActivity, bitmap, isCharacter
+                        ))
+                    }
                 }
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
-                Log.e("AddCharacterActivity", "Failed to add drawable: ${e.message}", e)
-                withContext(Dispatchers.Main) {
-                    showToast(getString(R.string.save_failed_please_try_again))
-                }
+                Log.e("AddCharacterActivity", "Failed to add drawable", e)
+                withContext(Dispatchers.Main) { showToast(R.string.save_failed_please_try_again) }
             }
         }
     }
 
     private fun initDrawView() {
         binding.drawView.apply {
+            setHistoryLimit(30)
             setConstrained(true)
             setLocked(false)
             setOnDrawListener(object : OnDrawListener {
@@ -674,11 +677,11 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
 
                 override fun onUndoDeleteDraw(draw: List<Draw?>) {}
 
-                override fun onUndoUpdateDraw(draw: List<Draw?>) {}
+                override fun onUndoUpdateDraw(draw: List<Draw?>) { syncDrawReferences() }
 
-                override fun onUndoDeleteAll() {}
+                override fun onUndoDeleteAll() { syncDrawReferences() }
 
-                override fun onRedoAll() {}
+                override fun onRedoAll() { syncDrawReferences() }
 
                 override fun onReplaceDraw(draw: Draw) {}
 
@@ -889,10 +892,11 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
                 dismissDialog()
                 lifecycleScope.launch {
                     showLoading()
+                    drawGeneration++
                     withContext(Dispatchers.IO) {
                         viewModel.loadDataDefault(this@AddCharacterActivity)
-                        viewModel.resetDraw()
                     }
+                    viewModel.resetDraw()
                     binding.drawView.removeAllDraw()
                     binding.imvBackground.setImageBitmap(null)
                     binding.imvBackground.setBackgroundColor(getColor(R.color.transparent))
@@ -920,7 +924,7 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
             Glide.with(this).clear(binding.imvBackground)
             binding.imvBackground.setImageBitmap(null)
         } else {
-            loadImage(this, path, binding.imvBackground)
+            Glide.with(this).load(path).disallowHardwareConfig().into(binding.imvBackground)
         }
         lifecycleScope.launch(Dispatchers.IO) {
             viewModel.updateBackgroundImageSelected(position)
@@ -1104,47 +1108,57 @@ class AddCharacterActivity : BaseActivity<ActivityAddCharacterBinding>() {
         }
     }
 
+    private fun syncDrawReferences() {
+        viewModel.drawViewList = ArrayList(binding.drawView.drawList)
+        viewModel.currentDraw = null
+    }
+
     private fun clearFocus() {
         binding.drawView.hideSelect()
     }
 
     private fun handleSave() {
-        binding.apply {
-            clearFocus()
-            lifecycleScope.launch(Dispatchers.IO) {
+        if (isSaving) return
+        isSaving = true
+        val saveButton = binding.actionBar.btnActionBarRight
+        val saveView = binding.flSave
+        saveButton.isEnabled = false
+        clearFocus()
+        lifecycleScope.launch {
+            var savedPath: String? = null
+            try {
                 showLoading()
-                delay(200)
-                viewModel.saveImageFromView(this@AddCharacterActivity, flSave).collect { result ->
+                viewModel.saveImageFromView(this@AddCharacterActivity, saveView).collect { result ->
                     when (result) {
-                        is SaveState.Loading -> showLoading()
-
-                        is SaveState.Error -> {
-                            dismissLoading()
-                            withContext(Dispatchers.Main) {
-                                showToast(R.string.save_failed_please_try_again)
-                            }
-                        }
-
-                        is SaveState.Success -> {
-                            val intent =
-                                Intent(this@AddCharacterActivity, SuccessActivity::class.java)
-                            intent.putExtra(IntentKey.INTENT_KEY, result.path)
-                            val options = ActivityOptions.makeCustomAnimation(
-                                this@AddCharacterActivity,
-                                R.anim.slide_in_right,
-                                R.anim.slide_out_left
-                            )
-                            dismissLoading()
-                            withContext(Dispatchers.Main) {
-                                showInterAll { startActivity(intent, options.toBundle()) }
-                            }
-                        }
+                        is SaveState.Loading -> Unit
+                        is SaveState.Error -> showToast(R.string.save_failed_please_try_again)
+                        is SaveState.Success -> savedPath = result.path
                     }
+                }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                Log.e("AddCharacterActivity", "Save failed", e)
+                showToast(R.string.save_failed_please_try_again)
+            } finally {
+                withContext(NonCancellable + Dispatchers.Main.immediate) {
+                    dismissLoading()
+                    isSaving = false
+                    if (!isDestroyed) saveButton.isEnabled = true
+                }
+            }
+            savedPath?.let { path ->
+                val intent = Intent(this@AddCharacterActivity, SuccessActivity::class.java)
+                    .putExtra(IntentKey.INTENT_KEY, path)
+                val options = ActivityOptions.makeCustomAnimation(
+                    this@AddCharacterActivity, R.anim.slide_in_right, R.anim.slide_out_left
+                )
+                showInterAll {
+                    if (!isFinishing && !isDestroyed) startActivity(intent, options.toBundle())
                 }
             }
         }
     }
-
 
     @Deprecated("Use OnBackPressedCallback instead")
     @SuppressLint("GestureBackNavigation")

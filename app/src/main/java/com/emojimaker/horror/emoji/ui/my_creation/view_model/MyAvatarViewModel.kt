@@ -2,6 +2,9 @@ package com.emojimaker.horor.emoji.ui.my_creation.view_model
 
 import android.app.Activity
 import android.content.Context
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.CancellationException
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.emojimaker.horor.emoji.R
@@ -39,37 +42,32 @@ class MyAvatarViewModel : ViewModel() {
     var positionCharacter = -1
     var editModel = SuggestionModel()
 
-    fun loadMyAvatar(context: Context) {
-        android.util.Log.d("MyAvatarViewModel", "📂 loadMyAvatar() START")
-        android.util.Log.d("MyAvatarViewModel", "Thread: ${Thread.currentThread().name}")
-        android.util.Log.d("MyAvatarViewModel", "Context: ${context.javaClass.simpleName}")
+    private var loadJob: Job? = null
+    private var loadedRevision = -1L
+    private var loadingRevision = -1L
 
-        try {
-            val editList = MediaHelper.readListFromFile<SuggestionModel>(context, ValueKey.EDIT_FILE_INTERNAL)
-            android.util.Log.d("MyAvatarViewModel", "✅ Loaded ${editList.size} items from EDIT_FILE_INTERNAL")
-
-            editList.forEachIndexed { index, suggestion ->
-                android.util.Log.d("MyAvatarViewModel", "  [$index] path: ${suggestion.pathInternalEdit}")
-                android.util.Log.d("MyAvatarViewModel", "  [$index] avatarPath: ${suggestion.avatarPath}")
-                // Check if file exists
-                val file = java.io.File(suggestion.pathInternalEdit)
-                val exists = file.exists()
-                val size = if (exists) file.length() else 0
-                android.util.Log.d("MyAvatarViewModel", "  [$index] File exists: $exists, Size: $size bytes")
+    fun loadMyAvatar(context: Context, force: Boolean = false) {
+        val revision = PersistenceRepository.creationRevision.value
+        if (!force && (loadedRevision == revision || (loadJob?.isActive == true && loadingRevision == revision))) return
+        loadingRevision = revision
+        val appContext = context.applicationContext
+        loadJob?.cancel()
+        loadJob = viewModelScope.launch {
+            try {
+                val items = withContext(Dispatchers.IO) {
+                    MediaHelper.readListFromFileAsync<SuggestionModel>(appContext, ValueKey.EDIT_FILE_INTERNAL)
+                        .map { MyAlbumModel(it.pathInternalEdit) }.toCollection(ArrayList())
+                }
+                _myAvatarList.value = items
+                loadedRevision = revision
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                android.util.Log.e("MyAvatarViewModel", "Failed to load items", e)
+                _myAvatarList.value = arrayListOf()
             }
-
-            val albumList = editList.map { MyAlbumModel(it.pathInternalEdit) }.toCollection(ArrayList())
-            _myAvatarList.value = albumList
-
-            android.util.Log.d("MyAvatarViewModel", "✅ Updated myAvatarList with ${albumList.size} items")
-            android.util.Log.d("MyAvatarViewModel", "Current myAvatarList size: ${_myAvatarList.value.size}")
-        } catch (e: Exception) {
-            android.util.Log.e("MyAvatarViewModel", "❌ ERROR loading avatars: ${e.message}", e)
-            _myAvatarList.value = arrayListOf()
+            checkLastItem()
         }
-
-        checkLastItem()
-        android.util.Log.d("MyAvatarViewModel", "📂 loadMyAvatar() END")
     }
 
     private fun checkLastItem() {
@@ -168,6 +166,8 @@ class MyAvatarViewModel : ViewModel() {
     }
 
     fun showLongClick(positionSelect: Int) {
+        // Keep a pending refresh from clearing a selection the user just started.
+        loadJob?.cancel()
         _myAvatarList.value = _myAvatarList.value.mapIndexed { position, item ->
             item.copy(isSelected = position == positionSelect, isShowSelection = true)
         }.toCollection(ArrayList())

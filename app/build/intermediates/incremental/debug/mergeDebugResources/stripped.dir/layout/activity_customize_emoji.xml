@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="false"
+    android:clipChildren="false"
+    android:background="#FFF8F0"
+    tools:context=".ui.customize.CustomizeCharacterActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A1CCEF"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/glHorizontal" />
+
+
+    <FrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000"
+        android:visibility="invisible" />
+    <!-- layoutActionBar -->
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <!-- Layout Image Layer -->
+
+    <!-- Layout Image Layer -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_8"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/glHorizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar">
+
+        <FrameLayout
+            android:id="@+id/layoutCustomLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.emojimaker.horor.emoji.core.custom.drawview.DrawView
+                android:id="@+id/drawView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:id="@+id/stateBlackCover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.emojimaker.horor.emoji.core.custom.paintview.PaintDrawView
+                android:id="@+id/paintDrawView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtEmojiText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:hint=""
+                android:includeFontPadding="false"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_40"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvEmojiTextPreview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_40"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <!--    glHorizontal-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <!--    btnHide-->
+    <ImageView
+        android:id="@+id/btnHide"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_show"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <FrameLayout
+        android:id="@+id/btnLayer"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:background="@drawable/ic_layer"
+        tools:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/flBottomNav"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_16"
+        />
+
+    <FrameLayout
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        app:layout_constraintEnd_toStartOf="@id/btnLayer"
+        android:background="@drawable/ic_text_layer"
+        app:layout_constraintTop_toTopOf="@id/btnLayer"
+        android:layout_marginEnd="@dimen/dp_10"
+        tools:visibility="invisible"
+        android:id="@+id/btnTextLayer"/>
+
+    <FrameLayout
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        app:layout_constraintEnd_toStartOf="@id/btnTextLayer"
+        android:background="@drawable/ic_draw_layer"
+        android:layout_marginEnd="@dimen/dp_10"
+        tools:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/btnTextLayer"
+        android:id="@+id/btnDrawLayer"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/bg_cus"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glHorizontal"
+        android:background="#FF8600"
+        android:layout_marginTop="@dimen/dp_61"/>
+
+
+
+
+
+
+    <!--    rcvLayer-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layerType="hardware"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:clipToPadding="false"
+
+        android:paddingBottom="@dimen/dp_80"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bg_cus"
+        app:spanCount="5"
+        android:visibility="visible"
+        tools:visibility="invisible"
+        tools:itemCount="50"
+        tools:listitem="@layout/item_customize" />
+
+    <!--    flBottomNav-->
+    <LinearLayout
+        android:id="@+id/flNavDrawAndEraser"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_38"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginBottom="0dp"
+        android:clipChildren="false"
+        tools:visibility="visible"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bg_cus"
+        >
+        <ImageView
+            android:id="@+id/tabDraw"
+            android:layout_width="@dimen/dp_156"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:paddingVertical="@dimen/dp_8"
+            android:background="@drawable/ic_tab_emoji_uslt"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_16"
+            android:src="@drawable/ic_draw_tab_uslt"/>
+        <ImageView
+            android:id="@+id/tabEraser"
+            android:layout_width="@dimen/dp_156"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:paddingVertical="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@drawable/ic_tab_emoji_slt"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_tab_eraser_slt"/>
+    </LinearLayout>
+
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bg_cus"
+        android:layout_height="wrap_content"
+        android:clipToOutline="false"
+        android:layout_marginStart="@dimen/dp_14"
+        android:layout_marginTop="@dimen/dp_20"
+        android:clipChildren="false"
+        android:id="@+id/containerSeekbar"
+        >
+        
+        <TextView
+            android:id="@+id/tvSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_18"
+            android:fontFamily="@font/howli_layers_base"
+            android:includeFontPadding="false"
+            android:text="Size"
+            app:layout_constraintTop_toTopOf="@id/seekbarSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/seekbarSize"
+            android:textColor="@color/white"/>
+        
+        <SeekBar
+            android:id="@+id/seekbarSize"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_22"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:maxHeight="@dimen/dp_14"
+            android:minHeight="@dimen/dp_14"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:splitTrack="false"
+            android:thumb="@drawable/ic_customize_emoji_seekbar_thumb"
+            android:thumbOffset="@dimen/dp_17"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    rcvLayer-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLayerLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layerType="hardware"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp_80"
+        android:background="@color/app"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/flBottomNav"
+        android:visibility="visible"
+        tools:visibility="visible"
+        tools:itemCount="0"
+        tools:listitem="@layout/item_layer_draw" />
+
+    <TextView
+        android:id="@+id/tvNoLayerItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/howli_layers_base"
+        android:text="@string/no_item_here"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/rcvLayerLayer"
+        app:layout_constraintEnd_toEndOf="@id/rcvLayerLayer"
+        app:layout_constraintStart_toStartOf="@id/rcvLayerLayer"
+        app:layout_constraintTop_toTopOf="@id/rcvLayerLayer"
+        tools:visibility="visible" />
+
+    <!--    rcvLayer-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLayerColor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layerType="hardware"
+        android:paddingHorizontal="@dimen/dp_9_5"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp_80"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerSeekbar"
+        app:spanCount="5"
+        android:visibility="visible"
+        tools:visibility="invisible"
+        android:layout_marginBottom="@dimen/dp_10"
+        tools:itemCount="50"
+        tools:listitem="@layout/item_color_circle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvTextColor"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_56"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_color_text_emoji" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvTextFont"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_56"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_font" />
+
+
+    <!--    flBottomNav-->
+    <FrameLayout
+        android:id="@+id/flBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginBottom="0dp"
+        android:clipChildren="false"
+        tools:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bg_cus"
+        >
+
+        <!--        rcvNavigation-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:layout_gravity="center_vertical"
+            android:clipToPadding="false"
+            android:layerType="hardware"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_bottom_navigation" />
+    </FrameLayout>
+
+    <!--    &lt;!&ndash;    flNativeCollab&ndash;&gt;-->
+        <FrameLayout
+            android:id="@+id/flNativeCollab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dp_100"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,19 @@ import java.io.File
 import java.util.UUID
 
 object PackageRepository {
+    suspend fun getPackagesAsync(context: Context): ArrayList<PackageModel> =
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+            MediaHelper.readListFromFileAsync<PackageModel>(context, ValueKey.PACKAGE_FILE_INTERNAL)
+                .map { pkg ->
+                    pkg.copy(
+                        items = pkg.items.filter { File(it).exists() }.toCollection(ArrayList()),
+                        isSelected = false,
+                        isShowSelection = false
+                    )
+                }
+                .toCollection(ArrayList())
+        }
+
     fun getPackages(context: Context): ArrayList<PackageModel> {
         return MediaHelper.readListFromFile<PackageModel>(context, ValueKey.PACKAGE_FILE_INTERNAL)
             .map { pkg ->

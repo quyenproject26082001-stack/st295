@@ -4,7 +4,7 @@
             "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-tw/values-tw.xml",
             "map": [
                 {
-                    "source": "/home/lequyen/.gradle/caches/8.13/transforms/6e47fad9ac895307bd37834dd181b773/transformed/pag-sdk-ad-unfat-7702-20251023211715-release/res/values-tw/values-tw.xml",
+                    "source": "C:\\Users\\aaa\\.gradle\\caches\\8.13\\transforms\\6e47fad9ac895307bd37834dd181b773\\transformed\\pag-sdk-ad-unfat-7702-20251023211715-release\\res\\values-tw\\values-tw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

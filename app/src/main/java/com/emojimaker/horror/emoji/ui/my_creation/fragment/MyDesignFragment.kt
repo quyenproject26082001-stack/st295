@@ -1,6 +1,8 @@
 package com.emojimaker.horor.emoji.ui.my_creation.fragment
 
 import android.app.ActivityOptions
+import com.emojimaker.horor.emoji.data.local.PersistenceRepository
+import kotlinx.coroutines.flow.combine
 import android.content.Intent
 import androidx.core.app.ActivityOptionsCompat
 import android.view.LayoutInflater
@@ -39,7 +41,6 @@ import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyAvatarViewModel
 import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyDesignViewModel
 import com.emojimaker.horor.emoji.ui.view.ViewActivity
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.getValue
@@ -59,13 +60,11 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
     override fun initView() {
         binding.tvNoitem.select()
         initRcv()
-        // ✅ FIX: Removed redundant load - onStart() will handle it
-        android.util.Log.d("MyDesignFragment", "initView() - NOT loading data (onStart will do it)")
     }
 
     override fun dataObservable() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     viewModel.myDesignList.collect { list ->
                         myDesignAdapter.submitList(list)
@@ -79,20 +78,12 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
                         }
                     }
                 }
-                // Removed - action bar buttons are disabled
-                // launch {
-                //     viewModel.isLastItem.collect { selectStatus ->
-                //         myAlbumActivity.changeImageActionBarRight(selectStatus)
-                //     }
-                // }
                 launch {
-                    // ✅ FIX: Only reload on actual tab changes
-                    myCreationViewModel.typeStatus
-                        .drop(1) // Skip initial emission
-                        .collect { status ->
-                            android.util.Log.d("MyDesignFragment", "Tab switched to MyDesign - reloading data")
-                            resetData()
-                        }
+                    combine(myCreationViewModel.typeStatus, PersistenceRepository.creationRevision) { type, revision ->
+                        type to revision
+                    }.collect { (type, _) ->
+                        if (type == ValueKey.MY_DESIGN_TYPE) viewModel.loadMyDesign(myAlbumActivity)
+                    }
                 }
             }
         }
@@ -208,13 +199,9 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
     }
 
     private fun resetData() {
-        android.util.Log.d("MyDesignFragment", "========================================")
-        android.util.Log.d("MyDesignFragment", "resetData() called")
-        android.util.Log.d("MyDesignFragment", "Loading from: ValueKey.DOWNLOAD_ALBUM")
-        viewModel.loadMyDesign(myAlbumActivity)
+        viewModel.clearSelection()
         myAlbumActivity.exitSelectionMode()
-        android.util.Log.d("MyDesignFragment", "resetData() completed")
-        android.util.Log.d("MyDesignFragment", "========================================")
+        viewModel.loadMyDesign(myAlbumActivity)
     }
 
     fun getAllPaths(): ArrayList<String> {
@@ -258,11 +245,7 @@ class MyDesignFragment : BaseFragment<FragmentMyDesignBinding>() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        android.util.Log.w("MyDesignFragment", "🔵 onStart() called - Fragment is starting")
-        resetData()
-    }
+
 
     override fun onResume() {
         super.onResume()

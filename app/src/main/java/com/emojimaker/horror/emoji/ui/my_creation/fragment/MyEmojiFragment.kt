@@ -1,5 +1,7 @@
 package com.emojimaker.horor.emoji.ui.my_creation.fragment
 
+import com.emojimaker.horor.emoji.data.local.PersistenceRepository
+import kotlinx.coroutines.flow.combine
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -30,7 +32,6 @@ import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyCreationViewModel
 import com.emojimaker.horor.emoji.ui.my_creation.view_model.MyEmojiViewModel
 import com.emojimaker.horor.emoji.ui.view.ViewActivity
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -58,8 +59,8 @@ class MyEmojiFragment : BaseFragment<FragmentMyEmojiBinding>() {
     }
 
     override fun dataObservable() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     viewModel.myEmojiList.collect { list ->
                         myEmojiAdapter.submitList(list)
@@ -74,8 +75,10 @@ class MyEmojiFragment : BaseFragment<FragmentMyEmojiBinding>() {
                     }
                 }
                 launch {
-                    myCreationViewModel.typeStatus.drop(1).collect {
-                        resetData()
+                    combine(myCreationViewModel.typeStatus, PersistenceRepository.creationRevision) { type, revision ->
+                        type to revision
+                    }.collect { (type, _) ->
+                        if (type == ValueKey.EMOJI_TYPE) viewModel.loadMyEmoji(myAlbumActivity)
                     }
                 }
             }
@@ -154,8 +157,9 @@ class MyEmojiFragment : BaseFragment<FragmentMyEmojiBinding>() {
     }
 
     fun resetData() {
-        viewModel.loadMyEmoji(myAlbumActivity)
+        viewModel.clearSelection()
         myAlbumActivity.exitSelectionMode()
+        viewModel.loadMyEmoji(myAlbumActivity)
     }
 
     fun getAllPaths(): ArrayList<String> {
@@ -193,8 +197,5 @@ class MyEmojiFragment : BaseFragment<FragmentMyEmojiBinding>() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        resetData()
-    }
+
 }

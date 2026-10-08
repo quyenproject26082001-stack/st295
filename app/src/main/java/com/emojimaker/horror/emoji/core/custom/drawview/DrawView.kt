@@ -69,8 +69,11 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     val drawList = ArrayList<DrawableDraw>()
     private val iconList = ArrayList<BitmapDrawIcon>()
 
-    public val undoList = ArrayList<List<DrawableDraw>>()
-    public val undoTempList = ArrayList<DrawableDraw>()
+    private val history = UndoHistory<List<DrawableDraw>>(emptyList())
+
+    fun setHistoryLimit(limit: Int) {
+        history.limit = limit
+    }
 
     private val borderPaint = Paint()
     private val stickerRect = RectF()
@@ -391,17 +394,13 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         return handlingDraw
     }
 
-    public val redoList = ArrayList<List<DrawableDraw>>()
+    fun canUndo(): Boolean = history.canUndo()
 
-    fun canUndo(): Boolean = undoList.isNotEmpty()
-
-    fun canRedo(): Boolean = redoList.isNotEmpty()
+    fun canRedo(): Boolean = history.canRedo()
 
     fun undo(): Boolean {
-        if (!canUndo()) return false
-        redoList.add(captureDrawState())
-        undoList.removeAt(undoList.size - 1)
-        restoreDrawState(undoList.lastOrNull().orEmpty())
+        val previousState = history.undo() ?: return false
+        restoreDrawState(previousState)
         if (drawList.isEmpty()) {
             OnDrawListener?.onUndoDeleteAll()
         } else {
@@ -411,9 +410,7 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     }
 
     fun redo(): Boolean {
-        if (!canRedo()) return false
-        val nextDrawState = redoList.removeAt(redoList.size - 1)
-        undoList.add(nextDrawState)
+        val nextDrawState = history.redo() ?: return false
         restoreDrawState(nextDrawState)
         OnDrawListener?.onRedoAll()
         return true
@@ -421,6 +418,7 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
 
     fun removeAllDraw() {
         drawList.clear()
+        history.clear(emptyList())
         initialScaleMap.clear()
         handlingDraw?.release()
         handlingDraw = null
@@ -428,8 +426,7 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     }
 
     private fun saveDrawState() {
-        undoList.add(captureDrawState())
-        redoList.clear()
+        history.record(captureDrawState())
         OnDrawListener?.onUndoUpdateDraw(drawList)
     }
 
@@ -899,6 +896,7 @@ open class DrawView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         drawableDrawNew.setFlippedH(drawableDraw.isFlippedH)
         drawableDrawNew.setFlippedV(drawableDraw.isFlippedV)
         drawableDrawNew.isText = drawableDraw.isText
+        drawableDrawNew.isCharacter = drawableDraw.isCharacter
         return drawableDrawNew
     }
 

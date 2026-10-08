@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_12"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <FrameLayout
+        android:id="@+id/root"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/white"
+            app:strokeColor="@color/transparent"
+            app:cardCornerRadius="@dimen/dp_24"
+            >
+
+            <com.emojimaker.horor.emoji.core.custom.imageview.ShapeClipImageView
+                android:id="@+id/imvImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@color/dark" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--btnDelete-->
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="end|top"
+            android:layout_margin="@dimen/dp_8"
+            android:src="@drawable/ic_delete_item" />
+
+        <!--btnEdit-->
+        <ImageView
+            android:id="@+id/btnEdit"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="start|top"
+            android:layout_margin="@dimen/dp_8"
+            android:visibility="visible"
+            android:src="@drawable/ic_edit_item" />
+
+        <!--btnSelect-->
+        <ImageView
+            android:id="@+id/btnSelect"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="end|top"
+            android:layout_margin="@dimen/dp_8"
+            android:src="@drawable/ic_not_select"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

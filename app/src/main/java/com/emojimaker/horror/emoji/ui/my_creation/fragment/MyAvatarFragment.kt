@@ -1,6 +1,8 @@
 package com.emojimaker.horor.emoji.ui.my_creation.fragment
 
 import android.app.ActivityOptions
+import com.emojimaker.horor.emoji.data.local.PersistenceRepository
+import kotlinx.coroutines.flow.combine
 import android.content.Intent
 import androidx.core.app.ActivityOptionsCompat
 import android.os.Bundle
@@ -16,7 +18,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import kotlinx.coroutines.flow.drop
 import androidx.recyclerview.widget.RecyclerView
 import com.emojimaker.horor.emoji.R
 import com.emojimaker.horor.emoji.core.base.BaseFragment
@@ -69,13 +70,11 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
         binding.tvNoitem.select()
         initRcv()
         dataViewModel.ensureData(myAlbumActivity)
-        // ✅ FIX: Removed redundant loadMyAvatar() - onStart() will handle it
-        android.util.Log.d("MyAvatarFragment", "initView() - NOT loading data (onStart will do it)")
     }
 
     override fun dataObservable() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     viewModel.myAvatarList.collect { list ->
                         myAvatarAdapter.submitList(list)
@@ -89,24 +88,12 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
                         }
                     }
                 }
-                // Removed - action bar buttons are disabled
-                // launch {
-                //     viewModel.isLastItem.collect { selectStatus ->
-                //         myAlbumActivity.changeImageActionBarRight(selectStatus)
-                //     }
-                // }
                 launch {
-                    // ✅ FIX: Only reload on actual tab changes, not initial value
-                    // StateFlow already has distinctUntilChanged built-in
-                    myCreationViewModel.typeStatus
-                        .drop(1) // Skip the first emission (initial value)
-                        .collect { status ->
-                            android.util.Log.d(
-                                "MyAvatarFragment",
-                                "Tab switched to MyAvatar - reloading data"
-                            )
-                            resetData()
-                        }
+                    combine(myCreationViewModel.typeStatus, PersistenceRepository.creationRevision) { type, revision ->
+                        type to revision
+                    }.collect { (type, _) ->
+                        if (type == ValueKey.AVATAR_TYPE) viewModel.loadMyAvatar(myAlbumActivity)
+                    }
                 }
             }
         }
@@ -313,16 +300,9 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
     }
 
     private fun resetData() {
-        android.util.Log.d("MyAvatarFragment", "========================================")
-        android.util.Log.d("MyAvatarFragment", "resetData() called")
-        android.util.Log.d("MyAvatarFragment", "Current thread: ${Thread.currentThread().name}")
-        android.util.Log.d("MyAvatarFragment", "Fragment state: ${lifecycle.currentState}")
-        viewModel.loadMyAvatar(myAlbumActivity)
+        viewModel.clearSelection()
         myAlbumActivity.exitSelectionMode()
-        // Disable select mode margins in adapter
-        myAvatarAdapter.isSelectMode = false
-        android.util.Log.d("MyAvatarFragment", "resetData() completed")
-        android.util.Log.d("MyAvatarFragment", "========================================")
+        viewModel.loadMyAvatar(myAlbumActivity)
     }
 
     fun deleteSelectedItems() {
@@ -371,16 +351,11 @@ class MyAvatarFragment : BaseFragment<FragmentMyAvatarBinding>() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        android.util.Log.w("MyAvatarFragment", "🔵 onStart() called - Fragment is starting")
-        resetData()
-    }
+
 
     override fun onResume() {
         super.onResume()
         android.util.Log.w("MyAvatarFragment", "🟢 onResume() called - Fragment is visible")
-        // onStart() already handles data loading - no need to reload here
     }
 
     override fun onPause() {

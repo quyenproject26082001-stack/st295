@@ -1,5 +1,7 @@
 package com.emojimaker.horor.emoji.ui.my_creation.fragment
 
+import com.emojimaker.horor.emoji.data.local.PersistenceRepository
+import kotlinx.coroutines.flow.combine
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -48,13 +50,22 @@ class PackageFragment : BaseFragment<FragmentPackageBinding>() {
     }
 
     override fun dataObservable() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.packageList.collect { list ->
-                    packageAdapter.submitList(list)
-                    binding.layoutNoItem.isVisible = list.isEmpty()
-                    if (myCreationViewModel.typeStatus.value == ValueKey.PACKAGE_TYPE) {
-                        myAlbumActivity.binding.lnlBottom.gone()
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.packageList.collect { list ->
+                        packageAdapter.submitList(list)
+                        binding.layoutNoItem.isVisible = list.isEmpty()
+                        if (myCreationViewModel.typeStatus.value == ValueKey.PACKAGE_TYPE) {
+                            myAlbumActivity.binding.lnlBottom.gone()
+                        }
+                    }
+                }
+                launch {
+                    combine(myCreationViewModel.typeStatus, PersistenceRepository.creationRevision) { type, revision ->
+                        type to revision
+                    }.collect { (type, _) ->
+                        if (type == ValueKey.PACKAGE_TYPE) viewModel.loadPackages(myAlbumActivity)
                     }
                 }
             }
@@ -134,8 +145,5 @@ class PackageFragment : BaseFragment<FragmentPackageBinding>() {
         if (!hidden) myAlbumActivity.binding.lnlBottom.gone()
     }
 
-    override fun onStart() {
-        super.onStart()
-        viewModel.loadPackages(myAlbumActivity)
-    }
+
 }

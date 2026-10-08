@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.language.LanguageActivity">
+
+    <!-- Background -->
+    <ImageView
+        android:id="@+id/btnBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_app"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/layout_actionbar" />
+    </FrameLayout>
+
+    <!-- checkmark done button (top-right) -->
+    <ImageView
+        android:id="@+id/btnDone"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:src="@drawable/ic_done"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tvLang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLang" />
+
+    <!-- rcv -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_8"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:paddingHorizontal="@dimen/dp_16"
+        android:paddingBottom="@dimen/dp_3"
+        app:layout_constraintBottom_toTopOf="@id/native_ads"
+        app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_language" />
+
+
+    <!-- LANGUAGE title (overlapping card top) -->
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
+        android:id="@+id/tvLang"
+        style="@style/single_marquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_56"
+        android:fontFamily="@font/howli_layers_base"
+        android:gravity="start|center_vertical"
+        android:text="@string/language"
+        android:textSize="@dimen/sp_24"
+        android:visibility="gone"
+
+        android:layout_marginStart="@dimen/dp_25"
+        android:textColor="@color/white"
+        app:outerStrokeWidth="@dimen/dp_5"
+        app:outerStrokeColor="@color/app"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- LANGUAGE title (overlapping card top) -->
+    <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
+        android:id="@+id/tvLangSetting"
+        android:visibility="gone"
+        style="@style/single_marquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_56"
+        android:fontFamily="@font/howli_layers_base"
+        android:gravity="start|center_vertical"
+        android:text="@string/language"
+        android:textSize="@dimen/sp_24"
+        android:layout_marginStart="@dimen/dp_25"
+        android:textColor="@color/white"
+        app:outerStrokeWidth="@dimen/dp_5"
+        app:outerStrokeColor="@color/app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/native_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <include layout="@layout/ads_native_big_btn_bottom_shimmer" />
+
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/btnDoneLangSetting"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:src="@drawable/ic_done_lang_settings"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tvLangSetting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLangSetting" />
+
+    <TextView
+        android:id="@+id/btnBackLangSetting"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginStart="@dimen/dp_24"
+        android:background="@drawable/ic_back"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tvLang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLang" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

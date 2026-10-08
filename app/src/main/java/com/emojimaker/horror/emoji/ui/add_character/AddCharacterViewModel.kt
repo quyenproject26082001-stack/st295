@@ -26,6 +26,9 @@ import com.emojimaker.horor.emoji.data.model.draw.Draw
 import com.emojimaker.horor.emoji.data.model.draw.DrawableDraw
 import com.emojimaker.horor.emoji.dialog.YesNoDialog
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -196,6 +199,7 @@ class AddCharacterViewModel : ViewModel() {
 
     fun deleteDrawView(draw: Draw) {
         drawViewList.removeIf { it == draw }
+        if (currentDraw == draw) currentDraw = null
     }
 
     fun updatePathDefault(path: String){
@@ -211,16 +215,32 @@ class AddCharacterViewModel : ViewModel() {
 
     fun resetDraw() {
         drawViewList.clear()
+        currentDraw = null
 
     }
 
     fun saveImageFromView(context: Context, view: View): Flow<SaveState> = flow {
         emit(SaveState.Loading)
-        val bitmap = BitmapHelper.createBimapFromView(view)
-        MediaHelper.saveBitmapToInternalStorage(context, ValueKey.DOWNLOAD_ALBUM, bitmap).collect { state ->
-            emit(state)
+        var snapshot: Bitmap? = null
+        try {
+            withContext(Dispatchers.Main.immediate) {
+                require(view.isLaidOut && view.width > 0 && view.height > 0) { "View is not ready to save" }
+                snapshot = BitmapHelper.createBimapFromView(view)
+            }
+            MediaHelper.saveBitmapToInternalStorage(context.applicationContext, ValueKey.DOWNLOAD_ALBUM, checkNotNull(snapshot))
+                .collect { state -> emit(state) }
+        } finally {
+            // This is our private export bitmap, never an image owned by Glide or history.
+            snapshot?.takeUnless { it.isRecycled }?.recycle()
         }
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(Dispatchers.IO).catch { error ->
+        if (error is CancellationException) throw error
+        when (error) {
+            is Exception -> emit(SaveState.Error(error))
+            is OutOfMemoryError -> emit(SaveState.Error(IllegalStateException("Not enough memory to save image", error)))
+            else -> throw error
+        }
+    }
 
     fun checkDataInternet(context: AddCharacterActivity, action:
     (() -> Unit)) {

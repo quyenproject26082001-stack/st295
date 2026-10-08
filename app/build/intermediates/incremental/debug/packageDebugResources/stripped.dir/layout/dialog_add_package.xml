@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:tag="layout/dialog_add_package_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:strokeColor="@color/app"
+        app:cardCornerRadius="@dimen/dp_50"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        app:strokeWidth="@dimen/dp_3">
+
+        <com.emojimaker.horor.emoji.core.custom.text.DoubleStrokeTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/howli_layers_base"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_18"
+            android:text="@string/add_to_package_"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_24"
+            app:outerStrokeColor="@color/app"
+            app:outerStrokeWidth="@dimen/dp_6" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvPackage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_74"
+            tools:listitem="@layout/item_add_package"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            app:strokeColor="@color/app"
+            app:strokeWidth="@dimen/dp_2"
+            app:cardCornerRadius="@dimen/dp_16"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_194"
+            android:id="@+id/btnAddPackage"
+            >
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app"
+                android:textSize="@dimen/sp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:text="@string/add_to_package_2"
+                android:fontFamily="@font/howli_layers_base"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:includeFontPadding="false"/>
+            
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_234"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+         

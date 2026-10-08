@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+    <!--    flOutSide-->
+    <FrameLayout
+        android:id="@+id/flOutSide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/dialog_loading_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <!--        layoutMain-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layoutMain"
+            app:cardBackgroundColor="@color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            app:cardCornerRadius="@dimen/dp_8"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerDialog"
+                android:layout_width="@dimen/dp_311"
+                android:layout_height="@dimen/dp_202"
+                android:background="@drawable/bg_dialog_delete_exit">
+
+                <!--  tvTitle (Top) -->
+                <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/single_marquee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_70"
+                    android:layout_marginTop="@dimen/dp_22"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/howli_layers_base"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:text="@string/loading"
+                    android:textColor="@color/app"
+                    android:textSize="@dimen/sp_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- ivSpinner (Center) -->
+                <ImageView
+                    android:id="@+id/ivSpinner"
+                    android:layout_width="@dimen/dp_38"
+                    android:layout_height="@dimen/dp_38"
+                    android:tint="@color/app"
+                    android:src="@drawable/ic_loading_spinner"
+                    app:layout_constraintBottom_toTopOf="@id/tvDescription"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+                <!--  tvDescription (Bottom) -->
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_28"
+                    android:fontFamily="@font/howli_layers_base"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp_24"
+                    android:text="@string/wait_a_minute"
+                    android:textColor="#7F7F7F"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+         

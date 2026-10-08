@@ -163,6 +163,23 @@ object MediaHelper {
         }
     }
 
+    suspend inline fun <reified T> readListFromFileAsync(context: Context, fileName: String): List<T> =
+        kotlinx.coroutines.withContext(Dispatchers.IO) {
+            try {
+                val json = PersistenceRepository.readListJsonAsync(context, fileName)
+                    ?: context.openFileInput(fileName).bufferedReader().use { it.readText() }
+                val type = object : TypeToken<List<T>>() {}.type
+                Gson().fromJson<List<T>>(json, type) ?: emptyList()
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                throw e
+            } catch (e: FileNotFoundException) {
+                emptyList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                emptyList()
+            }
+        }
+
     inline fun <reified T> readListFromFile(context: Context, fileName: String): List<T> {
         return try {
             val json = PersistenceRepository.readListJson(context, fileName)
@@ -279,7 +296,7 @@ object MediaHelper {
             val file = File(directory, name)
 
             FileOutputStream(file).use { output ->
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, output)
+                check(bitmap.compress(Bitmap.CompressFormat.PNG, 100, output)) { "Image compression failed" }
                 output.flush()
             }
 
@@ -287,6 +304,8 @@ object MediaHelper {
             PersistenceRepository.upsertMediaItem(context, album, file.absolutePath)
 
             emit(SaveState.Success(file.absolutePath))
+        } catch (e: kotlinx.coroutines.CancellationException) {
+            throw e
         } catch (e: Exception) {
             emit(SaveState.Error(e))
         }

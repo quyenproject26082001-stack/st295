@@ -4,7 +4,7 @@
             "outputFile": "com.emojimaker.horor.emoji.app-mergeDebugResources-107:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/home/lequyen/.gradle/caches/8.13/transforms/178f10206a8ceda4aa131a0757c9831a/transformed/material-1.13.0/res/values-w400dp-port-v13/values-w400dp-port-v13.xml",
+                    "source": "C:\\Users\\aaa\\.gradle\\caches\\8.13\\transforms\\178f10206a8ceda4aa131a0757c9831a\\transformed\\material-1.13.0\\res\\values-w400dp-port-v13\\values-w400dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

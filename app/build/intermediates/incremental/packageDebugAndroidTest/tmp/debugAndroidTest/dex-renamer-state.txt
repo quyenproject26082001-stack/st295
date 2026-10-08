@@ -1,7 +1,7 @@
-#Thu Oct 08 12:19:05 ICT 2026
-base.0=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
-base.1=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
-base.2=/home/lequyen/LVT/ST295_Horror Emoji Maker/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/2/classes.dex
+#Thu Oct 08 03:20:17 PDT 2026
+base.0=D\:\\app\\st295\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=D\:\\app\\st295\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=D\:\\app\\st295\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\2\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=2/classes.dex
