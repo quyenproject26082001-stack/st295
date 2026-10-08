@@ -45,25 +45,7 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                     "[$position] type=$itemType | isSelected=${item.isSelected} | path=${item.path} | colors=${item.listImageColor.size}"
                 )
 
-                if (item.isSelected) {
-                    // Bring selected item to front with elevation
-                    root.translationZ = 16f
-                    root.scaleX = 1.0f
-                    root.scaleY = 1.0f
-                    vFocus.gone()
-
-                    cardLayerItem.setBackgroundResource(R.drawable.layer_slt)
-                    // vFocus.setBackgroundResource(R.drawable.bg_10_stroke_yellow)
-                } else {
-                    // Reset to normal state
-                    root.translationZ = 0f
-                    root.scaleX = 1f
-                    root.scaleY = 1f
-                    vFocus.gone()
-                    cardLayerItem.setBackgroundResource(R.drawable.layer_uslt)
-
-
-                }
+                bindSelection(item.isSelected)
 
                 when (item.path) {
                     AssetsKey.NONE_LAYER -> {
@@ -132,11 +114,14 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                 }
 
                 binding.imvImage.tap(100) {
+                    val currentPosition = bindingAdapterPosition
+                    if (currentPosition == RecyclerView.NO_POSITION) return@tap
+                    val currentItem = getItem(currentPosition)
                     android.util.Log.d(
                         "ItemCustomizeClick",
-                        "position=$position | adapterPosition=$bindingAdapterPosition | path=${item.path} | thumb=${item.thumb} | positionCustom=${item.positionCustom} | positionNavigation=${item.positionNavigation} | isSelected=${item.isSelected} | colorCount=${item.listImageColor.size}"
+                        "position=$currentPosition | adapterPosition=$bindingAdapterPosition | path=${currentItem.path} | thumb=${currentItem.thumb} | positionCustom=${currentItem.positionCustom} | positionNavigation=${currentItem.positionNavigation} | isSelected=${currentItem.isSelected} | colorCount=${currentItem.listImageColor.size}"
                     )
-                    onItemClick.invoke(item, position)
+                    onItemClick.invoke(currentItem, currentPosition)
                 }
 
                 binding.btnRandom.tap {
@@ -144,11 +129,27 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
                     onRandomClick.invoke()
                 }
 
-                binding.btnNone.tap { onNoneClick.invoke(position) }
+                binding.btnNone.tap {
+                    val currentPosition = bindingAdapterPosition
+                    if (currentPosition != RecyclerView.NO_POSITION) {
+                        onNoneClick.invoke(currentPosition)
+                    }
+                }
             }
 
         }
 
+        fun bindSelection(isSelected: Boolean) {
+            binding.apply {
+                root.translationZ = if (isSelected) 16f else 0f
+                root.scaleX = 1f
+                root.scaleY = 1f
+                vFocus.gone()
+                cardLayerItem.setBackgroundResource(
+                    if (isSelected) R.drawable.layer_slt else R.drawable.layer_uslt
+                )
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomizeViewHolder {
@@ -158,7 +159,21 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
     override fun onBindViewHolder(holder: CustomizeViewHolder, position: Int) {
         holder.bind(getItem(position), position)
     }
+    override fun onBindViewHolder(
+        holder: CustomizeViewHolder,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
+        if (payloads.isNotEmpty() && payloads.all { it == SELECTION_PAYLOAD }) {
+            holder.bindSelection(getItem(position).isSelected)
+        } else {
+            super.onBindViewHolder(holder, position, payloads)
+        }
+    }
+
     companion object {
+        private const val SELECTION_PAYLOAD = "selection"
+
         val DiffCallback = object : DiffUtil.ItemCallback<ItemNavCustomModel>(){
             override fun areItemsTheSame(oldItem: ItemNavCustomModel, newItem: ItemNavCustomModel): Boolean {
                 return oldItem.path == newItem.path
@@ -166,6 +181,16 @@ class LayerCustomizeAdapter(val context: Context) : ListAdapter<ItemNavCustomMod
 
             override fun areContentsTheSame(oldItem: ItemNavCustomModel, newItem: ItemNavCustomModel): Boolean {
                 return oldItem == newItem
+            }
+
+            override fun getChangePayload(oldItem: ItemNavCustomModel, newItem: ItemNavCustomModel): Any? {
+                return if (oldItem.isSelected != newItem.isSelected &&
+                    oldItem.copy(isSelected = newItem.isSelected) == newItem
+                ) {
+                    SELECTION_PAYLOAD
+                } else {
+                    null
+                }
             }
         }
     }

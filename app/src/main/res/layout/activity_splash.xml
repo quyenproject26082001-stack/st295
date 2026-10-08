@@ -13,8 +13,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bg_app" />
 
-
-
     <ImageView
         android:id="@+id/imgAppName"
         android:layout_width="match_parent"
@@ -39,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/imgAppName"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
     <!-- tvDes -->
     <TextView
         android:id="@+id/tvDes"

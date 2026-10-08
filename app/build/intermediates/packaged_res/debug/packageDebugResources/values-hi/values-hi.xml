@@ -45,7 +45,7 @@
     <string name="done">हो गया</string>
     <string name="download">डाउनलोड करें</string>
     <string name="download_failed_please_try_again_later">डाउनलोड विफल हुआ, कृपया बाद में फिर से प्रयास करें!</string>
-    <string name="download_success">Scary Emoji Maker एल्बम में डाउनलोड सफल रहा</string>
+    <string name="download_success">Emoji Maker Plus एल्बम में डाउनलोड सफल रहा</string>
     <string name="downloading">डाउनलोड हो रहा है...</string>
     <string name="edit">एडिट करें</string>
     <string name="emoji_activities">इमोजी एक्टिविटीज़</string>
